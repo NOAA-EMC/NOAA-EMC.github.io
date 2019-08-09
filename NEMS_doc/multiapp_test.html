@@ -33,7 +33,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">NEMS
-   &#160;<span id="projectnumber">master@2db048d501</span>
+   &#160;<span id="projectnumber">master@7bd61225cb</span>
    </div>
    <div id="projectbrief">This is a living document and may be updated at any time.</div>
   </td>
@@ -249,7 +249,7 @@ nohup sh -c 'cat apps.def commit.def | ./multi-app-test.sh &lt;ID&gt; &lt;PLATFO
 <li>User Somebody.Else pushes to masters of all apps and NEMS. For this step to work, user Somebody.Else must have the ability to push to all masters directly, bypassing Gerrit Code Review or other protections. <pre class="fragment">cd NEMS/tests
 nohup sh -c 'cat apps.def commit.def | ./multi-app-test.sh &lt;ID&gt; &lt;PLATFORM&gt; master /path/to/file/with/commit/message'
 </pre></li>
-<li>On each NOAA machine, user Somebody.Else deletes the temporary test branches: <pre class="fragment">cd NEMS/tests
+<li>On one NOAA machine, user Somebody.Else deletes the temporary test branches: <pre class="fragment">cd NEMS/tests
 nohup sh -c 'cat apps.def commit.def | ./multi-app-test.sh &lt;ID&gt; &lt;PLATFORM&gt; delete_branches'
 </pre></li>
 <li>If needed, also delete the development branches for this commit.</li>
