@@ -1,7 +1,7 @@
 var _f_v3 =
 [
     [ "Preface", "preface.html", null ],
-    [ "FV³ Introduction", "introduction.html", null ],
+    [ "FV&sup3; Introduction", "introduction.html", null ],
     [ "Stabilization and filtering options", "stabilization.html", null ],
     [ "Physics-dynamics coupling", "physics.html", null ],
     [ "Grid refinement techniques", "grid.html", null ],

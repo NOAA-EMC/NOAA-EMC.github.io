@@ -1,81 +1,72 @@
 
 \begin{DoxyItemize}
-\item \mbox{\hyperlink{preface}{Preface}}
-\item \mbox{\hyperlink{introduction}{FV\textthreesuperior{} Introduction}}
-\item \mbox{\hyperlink{stabilization}{Stabilization and filtering options}}
-\item \mbox{\hyperlink{physics}{Physics-\/dynamics coupling}}
-\item \mbox{\hyperlink{grid}{Grid refinement techniques}}
-\item \mbox{\hyperlink{namelist}{Namelist Guide}}
-\item \mbox{\hyperlink{variables}{Variables and notation}}
-\item \mbox{\hyperlink{references}{References}}
-\item \mbox{\hyperlink{revisionHistory}{Revision History}} 
+\item \hyperlink{preface}{Preface}
+\item \hyperlink{introduction}{F\-V Introduction}
+\item \hyperlink{stabilization}{Stabilization and filtering options}
+\item \hyperlink{physics}{Physics-\/dynamics coupling}
+\item \hyperlink{grid}{Grid refinement techniques}
+\item \hyperlink{namelist}{Namelist Guide}
+\item \hyperlink{variables}{Variables and notation}
+\item \hyperlink{references}{References}
+\item \hyperlink{revisionHistory}{Revision History} 
 \end{DoxyItemize}\hypertarget{preface}{}\section{Preface}\label{preface}
-{\bfseries A\+U\+T\+H\+O\+RS\+: S\+H\+I\+A\+N-\/\+J\+I\+A\+NN L\+IN, W\+I\+L\+L\+I\+AM P\+U\+T\+M\+AN, L\+U\+C\+AS H\+A\+R\+R\+IS A\+ND T\+HE G\+F\+DL FV\textthreesuperior{} T\+E\+AM}
+{\bfseries A\-U\-T\-H\-O\-R\-S\-: S\-H\-I\-A\-N-\/\-J\-I\-A\-N\-N L\-I\-N, W\-I\-L\-L\-I\-A\-M P\-U\-T\-M\-A\-N, L\-U\-C\-A\-S H\-A\-R\-R\-I\-S A\-N\-D T\-H\-E G\-F\-D\-L F\-V T\-E\-A\-M}
 
-{\bfseries V\+E\+R\+S\+I\+ON 1.\+0 (D\+R\+A\+FT)}
+{\bfseries V\-E\-R\-S\-I\-O\-N 1.\-0 (D\-R\-A\-F\-T)}
 
 {\itshape Date November 29, 2017}
 
-{\ttfamily R\+E\+S\+P\+O\+N\+S\+I\+B\+LE O\+R\+G\+A\+N\+I\+Z\+A\+T\+I\+ON\+:} {\bfseries O\+A\+R/\+G\+F\+DL}
+{\ttfamily R\-E\-S\-P\-O\-N\-S\-I\-B\-L\-E O\-R\-G\-A\-N\-I\-Z\-A\-T\-I\-O\-N\-:} {\bfseries O\-A\-R/\-G\-F\-D\-L}
 
-{\bfseries C\+H\+A\+N\+GE R\+E\+C\+O\+RD P\+A\+GE}
+{\bfseries C\-H\-A\-N\-G\-E R\-E\-C\-O\-R\-D P\-A\-G\-E}
 
-\tabulinesep=1mm
-\begin{longtabu} spread 0pt [c]{*{4}{|X[-1]}|}
+\begin{TabularC}{4}
 \hline
-\rowcolor{\tableheadbgcolor}\textbf{ Version  }&\textbf{ Date  }&\textbf{ Page affected  }&\textbf{ Description   }\\\cline{1-4}
-\endfirsthead
-\hline
-\endfoot
-\hline
-\rowcolor{\tableheadbgcolor}\textbf{ Version  }&\textbf{ Date  }&\textbf{ Page affected  }&\textbf{ Description   }\\\cline{1-4}
-\endhead
-1.\+0 (D\+R\+A\+FT)  &11/28/2017  &all  &Draft submitted to E\+MC   \\\cline{1-4}
-\end{longtabu}
-
-
+\rowcolor{lightgray}\PBS\raggedleft {\bf Version }&\PBS\centering {\bf Date }&{\bf Page affected }&{\bf Description  }\\\cline{1-4}
+\PBS\raggedleft 1.\-0 (D\-R\-A\-F\-T) &\PBS\centering 11/28/2017 &all &Draft submitted to E\-M\-C \\\cline{1-4}
+\end{TabularC}
 \subsection*{Disclaimer}
 
-We have made every effort to ensure that the information in this document is as accurate, complete, and as up-\/to-\/date as possible. However, due to the rapid pace of FV\textthreesuperior{} and FV\textthreesuperior{}-\/powered model development the document may not always reflect the current state of FV\textthreesuperior{} capabilities. Often, the code itself is the best description of the current capabilities and the available options, which due to limited space cannot all be described in full detail here. Contact G\+F\+DL FV\textthreesuperior{} support ( oar.\+gfdl.\+fv\+G\+F\+S\+\_\+supportnoaa.\+gov) for assistance and more information. \hypertarget{introduction}{}\section{FV\textthreesuperior{} Introduction}\label{introduction}
+We have made every effort to ensure that the information in this document is as accurate, complete, and as up-\/to-\/date as possible. However, due to the rapid pace of F\-V and F\-V-\/powered model development the document may not always reflect the current state of F\-V capabilities. Often, the code itself is the best description of the current capabilities and the available options, which due to limited space cannot all be described in full detail here. Contact G\-F\-D\-L F\-V support ( oar.\-gfdl.\-fv\-G\-F\-S\-\_\-supportnoaa.\-gov) for assistance and more information. \hypertarget{introduction}{}\section{F\-V Introduction}\label{introduction}
 \subsection*{Chapter 1}
 
-\subsubsection*{1.\+1 A brief history of FV\textthreesuperior{}}
+\subsubsection*{1.\-1 A brief history of F\-V}
 
-FV\textthreesuperior{} is a natural evolution of the hydrostatic Finite-\/\+Volume dynamical core (FV core) originally developed in the 90s on the latitude-\/longitude grid. The FV core started its life at N\+A\+S\+A/\+Goddard Space Flight Center (G\+S\+FC) during early and mid 90s as an offline transport model with emphasis on the con-\/ servation, accuracy, consistency (tracer to tracer correlation), and efficiency of the transport process. The development and applications of monotonicity-\/ preserving Finite-\/\+Volume schemes at G\+S\+FC were motivated in part by the need to have a solution for the noisy and unphysical negative water vapor and chemical species (L94, L\+R96). It subsequently has been used by sev-\/ eral high-\/profile Chemistry Transport Models (C\+T\+Ms), including the N\+A\+S\+A-\/ community G\+MI model (Rotman et al., 2001, J. Geophys. Res.), G\+O\+C\+A\+RT (Chin et al., 2000, J. Geophys. Res.), and the Harvard University-\/developed G\+E\+O\+S-\/\+C\+H\+EM community model (Bey et al, 2001, , J. Geophys. Res.). This transport module has also been used by some climate models, including the E\+C\+H\+A\+M5 A\+G\+CM (Roeckner et al, 2003, M\+P\+I-\/\+Report No. 349). Motivated by the success of monotonicity-\/preserving FV schemes in C\+TM applications, a consistently-\/formulated shallow-\/water model was developed. This solver was first presented at the 1994 P\+DE on the Sphere Workshop, and pub-\/ lished in L\+R97. The Lin-\/\+Rood algorithm for shallow-\/water equations main-\/ tains mass conservation and a key Mimetic property of “no false vorticity generation”, and for the first time in computational geophysical fluid dynamics, uses high-\/order monotonic advection consistently for momentum and all other prognostic variables, instead of the inconsistent hybrid finite-\/ difference and finite-\/volume approach used by practically all other “finite-\/ volume” models today. The full 3D hydrostatic dynamical core, the FV core, was constructed based on the L\+R96 transport algorithm and the Lin-\/\+Rood shallow-\/water algorithm (L\+R97). The pressure gradient force is computed by the L97 finite-\/volume integration method, derived from Green’s integral the-\/ orem and based directly on first principles, and demonstrated errors an or-\/ der of magnitude smaller than other pressure-\/gradient schemes at the time. The vertical discretization is the “vertically Lagrangian” scheme described by L04, the most powerful aspect of FV\textthreesuperior{}, which permits great computational efficiency as well as greater accuracy given the same vertical resolution. The FV core was implemented in the N\+C\+AR C\+E\+SM model in 2001 (Rasch et al, 2006, J. Climate) and in the G\+F\+DL C\+M2 model in 2004 (Delworth et al, 2006, J. Climate).
+F\-V is a natural evolution of the hydrostatic Finite-\/\-Volume dynamical core (F\-V core) originally developed in the 90s on the latitude-\/longitude grid. The F\-V core started its life at N\-A\-S\-A/\-Goddard Space Flight Center (G\-S\-F\-C) during early and mid 90s as an offline transport model with emphasis on the con-\/ servation, accuracy, consistency (tracer to tracer correlation), and efficiency of the transport process. The development and applications of monotonicity-\/ preserving Finite-\/\-Volume schemes at G\-S\-F\-C were motivated in part by the need to have a solution for the noisy and unphysical negative water vapor and chemical species (L94, L\-R96). It subsequently has been used by sev-\/ eral high-\/profile Chemistry Transport Models (C\-T\-Ms), including the N\-A\-S\-A-\/ community G\-M\-I model (Rotman et al., 2001, J. Geophys. Res.), G\-O\-C\-A\-R\-T (Chin et al., 2000, J. Geophys. Res.), and the Harvard University-\/developed G\-E\-O\-S-\/\-C\-H\-E\-M community model (Bey et al, 2001, , J. Geophys. Res.). This transport module has also been used by some climate models, including the E\-C\-H\-A\-M5 A\-G\-C\-M (Roeckner et al, 2003, M\-P\-I-\/\-Report No. 349). Motivated by the success of monotonicity-\/preserving F\-V schemes in C\-T\-M applications, a consistently-\/formulated shallow-\/water model was developed. This solver was first presented at the 1994 P\-D\-E on the Sphere Workshop, and pub-\/ lished in L\-R97. The Lin-\/\-Rood algorithm for shallow-\/water equations main-\/ tains mass conservation and a key Mimetic property of “no false vorticity generation”, and for the first time in computational geophysical fluid dynamics, uses high-\/order monotonic advection consistently for momentum and all other prognostic variables, instead of the inconsistent hybrid finite-\/ difference and finite-\/volume approach used by practically all other “finite-\/ volume” models today. The full 3\-D hydrostatic dynamical core, the F\-V core, was constructed based on the L\-R96 transport algorithm and the Lin-\/\-Rood shallow-\/water algorithm (L\-R97). The pressure gradient force is computed by the L97 finite-\/volume integration method, derived from Green’s integral the-\/ orem and based directly on first principles, and demonstrated errors an or-\/ der of magnitude smaller than other pressure-\/gradient schemes at the time. The vertical discretization is the “vertically Lagrangian” scheme described by L04, the most powerful aspect of F\-V, which permits great computational efficiency as well as greater accuracy given the same vertical resolution. The F\-V core was implemented in the N\-C\-A\-R C\-E\-S\-M model in 2001 (Rasch et al, 2006, J. Climate) and in the G\-F\-D\-L C\-M2 model in 2004 (Delworth et al, 2006, J. Climate).
 
-The need to scale to larger number of processors in modern massively-\/ parallel environments and the scientific advantage of eliminating the polar filter led to the development of FV\textthreesuperior{}, the cubed-\/sphere version of FV. The cubed-\/sphere FV\textthreesuperior{} is in use in all G\+F\+DL and G\+S\+FC global models, and the cubed-\/sphere version of the L\+R96 advection scheme is used by the most re-\/ cent version of G\+E\+O\+S-\/\+C\+H\+EM. Most recently, a computationally efficient non-\/ hydrostatic solver has been implemented using a traditional semi-\/implicit approach for treating the vertically propagating sound waves. A second op-\/ tion for the non-\/hydrostatic solver, using a Riemann solver to nearly exactly solve for vertical sound-\/wave propagation, is also available. The Riemann solver is highly accurate and is very efficient if the Courant number for verti-\/ cal sound wave propagation is small, and so may be very useful for extremely high ($<$ 1 km) horizontal resolutions. In July 2016 this nonhydrostatic core has been selected for the Next-\/\+Generation Global Prediction System (N\+G-\/ G\+PS), paving the way for the unification of not only weather and climate models but also potentially regional and global models.
+The need to scale to larger number of processors in modern massively-\/ parallel environments and the scientific advantage of eliminating the polar filter led to the development of F\-V, the cubed-\/sphere version of F\-V. The cubed-\/sphere F\-V is in use in all G\-F\-D\-L and G\-S\-F\-C global models, and the cubed-\/sphere version of the L\-R96 advection scheme is used by the most re-\/ cent version of G\-E\-O\-S-\/\-C\-H\-E\-M. Most recently, a computationally efficient non-\/ hydrostatic solver has been implemented using a traditional semi-\/implicit approach for treating the vertically propagating sound waves. A second op-\/ tion for the non-\/hydrostatic solver, using a Riemann solver to nearly exactly solve for vertical sound-\/wave propagation, is also available. The Riemann solver is highly accurate and is very efficient if the Courant number for verti-\/ cal sound wave propagation is small, and so may be very useful for extremely high ($<$ 1 km) horizontal resolutions. In July 2016 this nonhydrostatic core has been selected for the Next-\/\-Generation Global Prediction System (N\-G-\/ G\-P\-S), paving the way for the unification of not only weather and climate models but also potentially regional and global models.
 
-\subsubsection*{1.\+2 Outline of the solver}
+\subsubsection*{1.\-2 Outline of the solver}
 
-FV\textthreesuperior{} is the solver that integrates the compressible, adiabatic Euler equa-\/ tions in a weather or climate model. The solver is modular and designed to be called as a largely independent component of a numerical model, con-\/ sistent with modern standards for model design; however for best results it is recommended that a model using FV\textthreesuperior{} as its dynamical core should use the provided application programming interface (A\+PI) to invoke the solver as well as to use the provided utility routines consistent with the dynam-\/ ics, particularly for the initialization, updating the model state by time ten-\/ dencies from the physics, and for incorporating increments from the data assimilation system.
+F\-V is the solver that integrates the compressible, adiabatic Euler equa-\/ tions in a weather or climate model. The solver is modular and designed to be called as a largely independent component of a numerical model, con-\/ sistent with modern standards for model design; however for best results it is recommended that a model using F\-V as its dynamical core should use the provided application programming interface (A\-P\-I) to invoke the solver as well as to use the provided utility routines consistent with the dynam-\/ ics, particularly for the initialization, updating the model state by time ten-\/ dencies from the physics, and for incorporating increments from the data assimilation system.
 
-The leftmost column of Figure 1.\+1 shows the external A\+PI calls used dur-\/ ing a typical process-\/split model integration procedure. First, the solver is called, which advances the solver a full “physics” time step. This updated state is then passed to the physical parameterization package, which then computes the physics tendencies over the same time interval. Finally, the tendencies are then used to update the model state using a forward-\/in-\/time evaluation consistent with the dynamics, as described in Chapter 3.
+The leftmost column of Figure 1.\-1 shows the external A\-P\-I calls used dur-\/ ing a typical process-\/split model integration procedure. First, the solver is called, which advances the solver a full “physics” time step. This updated state is then passed to the physical parameterization package, which then computes the physics tendencies over the same time interval. Finally, the tendencies are then used to update the model state using a forward-\/in-\/time evaluation consistent with the dynamics, as described in Chapter 3.
 
-There are two levels of time-\/stepping inside FV\textthreesuperior{}. The first is the “remap-\/ ping” loop, the orange column in Figure 1.\+1. This loop has three steps\+:
+There are two levels of time-\/stepping inside F\-V. The first is the “remap-\/ ping” loop, the orange column in Figure 1.\-1. This loop has three steps\-:
 \begin{DoxyEnumerate}
-\item Perform the Lagrangian dynamics, the loop shown in the green column of Figure 1.\+1
+\item Perform the Lagrangian dynamics, the loop shown in the green column of Figure 1.\-1
 \item Perform the sub-\/cycled tracer advection along Lagrangian surfaces,using accumulated mass fluxes from the Lagrangian dynamics. Subcycling is done independently within each layer to maintain local (within each layer) stability.
-\item Remap the deformed Lagrangian surfaces on to the reference, or “\+Eulerian”, coordinate levels.
+\item Remap the deformed Lagrangian surfaces on to the reference, or “\-Eulerian”, coordinate levels.
 \end{DoxyEnumerate}
 
- {\bfseries Figure 1.\+1\+:} {\itshape F\+V3 structure, including subroutines and time-\/stepping. Blue represents external A\+PI routines, called once per physics time step; orange routines are called once per remapping time step; green routines once per acoustic time step.}
+ {\bfseries Figure 1.\-1\-:} {\itshape F\-V3 structure, including subroutines and time-\/stepping. Blue represents external A\-P\-I routines, called once per physics time step; orange routines are called once per remapping time step; green routines once per acoustic time step.}
 
 This loop is typically performed once per call to the solver, although it is possible to improve the model’s stability by executing the loop (and thereby the vertical remapping) multiple times per solver call.
 
-The Lagrangian dynamics is the second level of time-\/stepping in FV\textthreesuperior{}. This is the integration of the dynamics along the Lagrangian surfaces, across which there is no mass transport. Since the time step of the Lagrangian dynamics is limited by horizontal sound-\/wave processes, this is called the “acoustic” time step loop. (Note that the typical assumption that the advec-\/ tive wind speed is much slower than the sound wave speed is often violated near the poles, since the speed of the polar night jets can exceed two-\/thirds of the speed of sound.) The Lagrangian dynamics has two parts\+: the C-\/grid winds are advanced a half-\/time step, using simplified (but similarly con-\/ structed) core routines, which are then used to provide the advective fluxes to advance the D-\/grid prognostic fields a full time step. The integration procedure is similar for both grids\+: the along-\/surface flux terms (mass, heat, vertical momentum, and vorticity, and the kinetic energy gradient terms) are evaluated forward-\/in-\/time, and the pressure-\/gradient force and elastic terms are then evaluated backwards-\/in-\/time, to achieve enhanced stability. \hypertarget{stabilization}{}\section{Stabilization and filtering options}\label{stabilization}
+The Lagrangian dynamics is the second level of time-\/stepping in F\-V. This is the integration of the dynamics along the Lagrangian surfaces, across which there is no mass transport. Since the time step of the Lagrangian dynamics is limited by horizontal sound-\/wave processes, this is called the “acoustic” time step loop. (Note that the typical assumption that the advec-\/ tive wind speed is much slower than the sound wave speed is often violated near the poles, since the speed of the polar night jets can exceed two-\/thirds of the speed of sound.) The Lagrangian dynamics has two parts\-: the C-\/grid winds are advanced a half-\/time step, using simplified (but similarly con-\/ structed) core routines, which are then used to provide the advective fluxes to advance the D-\/grid prognostic fields a full time step. The integration procedure is similar for both grids\-: the along-\/surface flux terms (mass, heat, vertical momentum, and vorticity, and the kinetic energy gradient terms) are evaluated forward-\/in-\/time, and the pressure-\/gradient force and elastic terms are then evaluated backwards-\/in-\/time, to achieve enhanced stability. \hypertarget{stabilization}{}\section{Stabilization and filtering options}\label{stabilization}
 \subsection*{Chapter 2}
 
-\subsubsection*{2.\+1 Divergence damping}
+\subsubsection*{2.\-1 Divergence damping}
 
-Horizontal divergence (along a Lagrangian surface) is computed as a cell-\/ integrated quantity on the dual grid\+:
+Horizontal divergence (along a Lagrangian surface) is computed as a cell-\/ integrated quantity on the dual grid\-:
 
 \[ D = \frac{1}{\Delta A_c} \left[ \delta_x (u_c \Delta y_c sin\alpha) + \delta_y (v_c \Delta x_c sin \alpha) \right] \\ \tag {2.1} \]
 
-The Laplacian of D can also be computed as a cell-\/integrated quantity on the dual grid\+:
+The Laplacian of D can also be computed as a cell-\/integrated quantity on the dual grid\-:
 
 \[ \nabla^2 D = \frac{1}{\Delta A_c} \left[ \delta_x \left(\frac{\delta_x D}{\Delta x} \Delta y_c sin\alpha \right) + \delta_y \left(\frac{\delta_y D}{\Delta y} \Delta x_c sin \alpha \right) \right] \\ \tag {2.2} \]
 
-This operator can be applied on {$\nabla$}\textsuperscript{2}D instead of D to yield {$\nabla$}\textsuperscript{4}D. The damping is then applied when the forward time step is taken for the horizontal dynamics along vertically-\/\+Lagrangian surfaces\+:
+This operator can be applied on {$\nabla$}$^{\mbox{2}}$ D instead of D to yield {$\nabla$}$^{\mbox{4}}$ D. The damping is then applied when the forward time step is taken for the horizontal dynamics along vertically-\/\-Lagrangian surfaces\-:
 
 \[ u^{n+1} = u^n + . . . + \nu_D \frac{\delta_x \nabla^{2N} D}{\Delta x} \\ \tag {2.3} \]
 
@@ -85,17 +76,17 @@ where N (equal to the namelist parameter {\ttfamily nord}) is 1 for fourth-\/ord
 
 \[ \nu_D = (d_4\Delta A_{min} )^{N+1} \\ \tag {2.5} \]
 
-in which d\textsubscript{4} is the parameter {\ttfamily d4\+\_\+bg} in the namelist, and {$\Delta$}A\textsubscript{min} is the {\itshape global} minimum grid-\/cell area. It is recommended that this parameter be set to a value between 0.\+1 and 0.\+16, with instability likely for higher or lower values. Note that divergence damping is necessary as there is no implicit damping on the divergence in FV\textsuperscript{3}. An optional second-\/order {$\nabla$}\textsuperscript{2} damping, in addition the higher-\/order divergence damping, can be applied as well; in this case the added damping is of the form {$\nu$}\textsubscript{2D}({$\delta$}\textsubscript{x}D/ {$\Delta$}x), where {$\nu$}\textsubscript{2D} = d\textsubscript{2}{$\Delta$}A\textsubscript{min}. Typically, the coefficient for d\textsubscript{2} should be much smaller—by at least an order of magnitude—than the higher-\/order coefficient, if it is used at all, since the second-\/order damping is only weakly scale-\/selective and will significantly diffuse even resolved-\/scale features.
+in which d$_{\mbox{4}}$  is the parameter {\ttfamily d4\-\_\-bg} in the namelist, and {$\Delta$}A$_{\mbox{min}}$  is the {\itshape global} minimum grid-\/cell area. It is recommended that this parameter be set to a value between 0.\-1 and 0.\-16, with instability likely for higher or lower values. Note that divergence damping is necessary as there is no implicit damping on the divergence in F\-V$^{\mbox{3}}$ . An optional second-\/order {$\nabla$}$^{\mbox{2}}$  damping, in addition the higher-\/order divergence damping, can be applied as well; in this case the added damping is of the form {$\nu$}$_{\mbox{2\-D}}$ ({$\delta$}$_{\mbox{x}}$ D/ {$\Delta$}x), where {$\nu$}$_{\mbox{2\-D}}$  = d$_{\mbox{2}}$ {$\Delta$}A$_{\mbox{min}}$ . Typically, the coefficient for d$_{\mbox{2}}$  should be much smaller—by at least an order of magnitude—than the higher-\/order coefficient, if it is used at all, since the second-\/order damping is only weakly scale-\/selective and will significantly diffuse even resolved-\/scale features.
 
-The divergence damping can also be modified to add an approximate Smagorinsky-\/type damping, in which second-\/order divergence damping can be added to the flow dependent on the amount of stretching and dilation in thepflow. In this case, the d\textsubscript{2} in the expression for {$\nu$}\textsubscript{2D} is replaced by d\textsubscript{S}{$\Delta$}t(D\textsuperscript{2} + {$\zeta$}\textsuperscript{2})\textsuperscript{1/2}, where d\textsubscript{S} is the Smagorinsky coefficient (typically set to 0.\+2 if used) and {$\zeta$} is the relative vorticity interpolated to cell corners so as to be co-\/located with the divergence. This form of the damping coefficient is more physical than the artificial damping discussed in the rest of this chapter, and will typically be very weak except in regions of very strong flow deformation.
+The divergence damping can also be modified to add an approximate Smagorinsky-\/type damping, in which second-\/order divergence damping can be added to the flow dependent on the amount of stretching and dilation in thepflow. In this case, the d$_{\mbox{2}}$  in the expression for {$\nu$}$_{\mbox{2\-D}}$  is replaced by d$_{\mbox{S}}$ {$\Delta$}t(D$^{\mbox{2}}$  + {$\zeta$}$^{\mbox{2}}$ )$^{\mbox{1/2}}$ , where d$_{\mbox{S}}$  is the Smagorinsky coefficient (typically set to 0.\-2 if used) and {$\zeta$} is the relative vorticity interpolated to cell corners so as to be co-\/located with the divergence. This form of the damping coefficient is more physical than the artificial damping discussed in the rest of this chapter, and will typically be very weak except in regions of very strong flow deformation.
 
-Divergence and flux damping (described in the next section) are both applied entirely within Lagrangian surfaces; there is no explicit diffusion applied across the surfaces. However, in regions of vertical motion the La-\/ grangian surfaces are distorted in the vertical as they follow the flow upward or downward. The amount of the distortion depends on the along-\/surface gradient of the vertical velocity; so where the distortion is largest is where there is the strongest horizontal shearing of the vertical velocity, which is also where {$\nabla$}\textsuperscript{2n} of the scalar fields should be the largest.
+Divergence and flux damping (described in the next section) are both applied entirely within Lagrangian surfaces; there is no explicit diffusion applied across the surfaces. However, in regions of vertical motion the La-\/ grangian surfaces are distorted in the vertical as they follow the flow upward or downward. The amount of the distortion depends on the along-\/surface gradient of the vertical velocity; so where the distortion is largest is where there is the strongest horizontal shearing of the vertical velocity, which is also where {$\nabla$}$^{\mbox{2n}}$  of the scalar fields should be the largest.
 
-\subsubsection*{2.\+2 Hyperdiffusion (flux, or “vorticity”) damping}
+\subsubsection*{2.\-2 Hyperdiffusion (flux, or “vorticity”) damping}
 
-Traditionally in FV\textsuperscript{3} computational noise is controlled through two means\+: the explicit divergence damping, and the implicit, nonlinear diffusion from the monotonicity constraint used in computing the fluxes. However, the implicit diffusion may be too heavily damping of marginally-\/resolved flow features, and for high-\/resolution applications it may be beneficial to use a non-\/ monotonic scheme and then add a user-\/controllable hyperdiffusion instead. This added hyperdiffusion need not be as strong as the divergence damp-\/ ing, since the non-\/monotonic advection schemes are still weakly diffusive (while no implicit diffusion is applied to the divergence), and often the hyperdiffusion coefficient d\textsubscript{f} ({\ttfamily vtdm4}) should be much less than the divergence damping coefficient d\textsubscript{4}.
+Traditionally in F\-V$^{\mbox{3}}$  computational noise is controlled through two means\-: the explicit divergence damping, and the implicit, nonlinear diffusion from the monotonicity constraint used in computing the fluxes. However, the implicit diffusion may be too heavily damping of marginally-\/resolved flow features, and for high-\/resolution applications it may be beneficial to use a non-\/ monotonic scheme and then add a user-\/controllable hyperdiffusion instead. This added hyperdiffusion need not be as strong as the divergence damp-\/ ing, since the non-\/monotonic advection schemes are still weakly diffusive (while no implicit diffusion is applied to the divergence), and often the hyperdiffusion coefficient d$_{\mbox{f}}$  ({\ttfamily vtdm4}) should be much less than the divergence damping coefficient d$_{\mbox{4}}$ .
 
-In FV\textsuperscript{3} the hyperdiffusion is primarily meant to diffuse the kinetic energy of the rotational component of the flow, similarly to how the divergence damping dissipates the kinetic energy in the divergence component of the flow. (For this reason, the hyperdiffusion is sometimes called “vorticity” damping.) The diffusion is applied to the vorticity {\itshape flux}, allowing application of diffusion to only the rotational component fo the flow without needing to explicitly compute the rotational component.\+To maintain consistent advection of the other prognostic variables—w, {$\theta$}\textsubscript{v}, and {$\delta$}p\textsuperscript{$\ast$}—the fluxes for these quantities are diffused as well, so that the potential vorticity and updraft helicity are still consistently advected as if they were scalars. (There is no way to add diffusion to the tracer mass fluxes, since higher-\/order diffusion cannot ensure monotonicity preservation without performing an additional flux limiting, adding even more implicit diffusion.)
+In F\-V$^{\mbox{3}}$  the hyperdiffusion is primarily meant to diffuse the kinetic energy of the rotational component of the flow, similarly to how the divergence damping dissipates the kinetic energy in the divergence component of the flow. (For this reason, the hyperdiffusion is sometimes called “vorticity” damping.) The diffusion is applied to the vorticity {\itshape flux}, allowing application of diffusion to only the rotational component fo the flow without needing to explicitly compute the rotational component.\-To maintain consistent advection of the other prognostic variables—w, {$\theta$}$_{\mbox{v}}$ , and {$\delta$}p$^{\mbox{$\ast$}}$ —the fluxes for these quantities are diffused as well, so that the potential vorticity and updraft helicity are still consistently advected as if they were scalars. (There is no way to add diffusion to the tracer mass fluxes, since higher-\/order diffusion cannot ensure monotonicity preservation without performing an additional flux limiting, adding even more implicit diffusion.)
 
 The hyperdiffusion is equal to the order of the divergence damping, unless eighth-\/order divergence damping is used, for which the hyperdiffusion remains sixth-\/order. The diffusion operator itself is second-\/order, but higher-\/ order diffusion is easily computed by repeatedly applying the diffusion operator, as is done for the divergence damping.
 
@@ -103,19 +94,19 @@ Vertical vorticity is a cell-\/integrated quantity on the model grid. The vortic
 
 Since the diffusion added to the vorticity fluxe is known explicitly, the loss of kinetic energy due to this explicit diffusion can be computed. The lost energy optionally can be added back as heat, after applying a horizontal smoother to the energy density field (so as not to restore the grid-\/scale noise which the damping was intended to remove). This can greatly improve the dynamical activity on marginally-\/resolved scales.
 
-\subsubsection*{2.\+3 Energy-\/, momentum-\/, and mass-\/conserving 2{$\Delta$}z filter}
+\subsubsection*{2.\-3 Energy-\/, momentum-\/, and mass-\/conserving 2{$\Delta$}z filter}
 
-Local Richardson-\/number dynamic instabilities can create instabilities, especially in higher-\/top models, if the vertical turbulence scheme in the physical parameterizations is either disabled or insufficiently-\/strong to relieve these instabilities. These instabilities can grow large enough to crash the model. To relieve these instabilities, FV\textthreesuperior{} has the option to use a local (2{$\Delta$}z), vertical mixing to release the instability. This is similar to the Richardson-\/ number based subgrid-\/scale diffusion formulations of Lilly (1962, Tellus) and of Smagorinsky (1963), although their isotropic formulations have been simplified so as to only act on vertical gradients and perform diffusion in the vertical. This filter is completely local (2{$\Delta$}z), diagnosing and acting only on adjacent grid cells, and is typically applied only in the stratosphere and above to avoid interference with physical dynamic instabilities in the free troposphere or boundary layer which are more accurately-\/simulated by a planetary boundary layer scheme or the resolved dynamics. This filter is applied at the same frequency that the physical parameterizations are up-\/ dated.
+Local Richardson-\/number dynamic instabilities can create instabilities, especially in higher-\/top models, if the vertical turbulence scheme in the physical parameterizations is either disabled or insufficiently-\/strong to relieve these instabilities. These instabilities can grow large enough to crash the model. To relieve these instabilities, F\-V has the option to use a local (2{$\Delta$}z), vertical mixing to release the instability. This is similar to the Richardson-\/ number based subgrid-\/scale diffusion formulations of Lilly (1962, Tellus) and of Smagorinsky (1963), although their isotropic formulations have been simplified so as to only act on vertical gradients and perform diffusion in the vertical. This filter is completely local (2{$\Delta$}z), diagnosing and acting only on adjacent grid cells, and is typically applied only in the stratosphere and above to avoid interference with physical dynamic instabilities in the free troposphere or boundary layer which are more accurately-\/simulated by a planetary boundary layer scheme or the resolved dynamics. This filter is applied at the same frequency that the physical parameterizations are up-\/ dated.
 
-We compute the local Richardson number on cell interfaces. Recall that k = 1 is the top layer of the domain and the index increases downward\+:
+We compute the local Richardson number on cell interfaces. Recall that k = 1 is the top layer of the domain and the index increases downward\-:
 
 \[ Ri_{k-\frac{1}{2}} = \frac{g\delta z\delta_z\theta_v}{(\theta^{k}_{v}+\theta^{k-1}_{v})((\delta_z u)^2+(\delta_z v)^2)} \\ \tag {2.6} \]
 
-If Ri $<$ 1, then mixing M is performed, scaled by Ri so that complete mixing occurs if R ≤ 0\+:
+If Ri $<$ 1, then mixing M is performed, scaled by Ri so that complete mixing occurs if R ≤ 0\-:
 
 \[ M = max(1, (1-Ri)^2) \frac{\delta p^{*k}\delta p^{*(k-1)}}{\delta p^{*k} +\delta p^{*(k-1)}} \\ \tag {2.7} \]
 
-The mixing is applied to each variable, including the winds interpolated to the A-\/grid (necessary for application of the physical paramterization tendencies) on a timescale {$\tau$} (namelist parameter {\ttfamily fv\+\_\+sg\+\_\+adj}) which should be larger than the physics timestep to avoid suppressing resolved convec-\/ tive motions. The mixing is applied to the momentum ({$\delta$}p\textsuperscript{$\ast$} u\textsubscript{a}, {$\delta$}p\textsuperscript{$\ast$} v\textsubscript{a}), total energy, air mass, and all tracer masses, so that all of these quantities are conserved\+:
+The mixing is applied to each variable, including the winds interpolated to the A-\/grid (necessary for application of the physical paramterization tendencies) on a timescale {$\tau$} (namelist parameter {\ttfamily fv\-\_\-sg\-\_\-adj}) which should be larger than the physics timestep to avoid suppressing resolved convec-\/ tive motions. The mixing is applied to the momentum ({$\delta$}p$^{\mbox{$\ast$}}$  u$_{\mbox{a}}$ , {$\delta$}p$^{\mbox{$\ast$}}$  v$_{\mbox{a}}$ ), total energy, air mass, and all tracer masses, so that all of these quantities are conserved\-:
 
 \[ \frac{\partial \phi^k}{\partial t} = - \frac{M}{\delta p^{*k} } \left(\phi^k - \phi^{k-1} \right) \frac{1}{\tau} \\ \tag {2.8} \]
 
@@ -123,50 +114,50 @@ The mixing is applied to each variable, including the winds interpolated to the 
 
 where ϕ is a generic scalar. Note that since total energy and momentum are both conserved, lost kinetic energy automatically becomes heat.
 
-This mixing is most useful for removing instabilities caused by vertically-\/ propagating waves near the top of the domain. The namelist variable {\ttfamily n\+\_\+sponge} controls the number of levels at the top of the domain to which the filter is applied.
+This mixing is most useful for removing instabilities caused by vertically-\/ propagating waves near the top of the domain. The namelist variable {\ttfamily n\-\_\-sponge} controls the number of levels at the top of the domain to which the filter is applied.
 
-\subsubsection*{2.\+4 Model-\/top sponge layer and energy-\/conserving Rayleigh damping}
+\subsubsection*{2.\-4 Model-\/top sponge layer and energy-\/conserving Rayleigh damping}
 
-Two forms of damping are applied at the top of the domain to absorb vertically-\/ propagating waves nearing the upper boundary. The first is a diffusive sponge layer, which applies second-\/order damping to the divergence and to the vertical-\/momentum flux, and optionally also to the vorticity and mass fluxes if the hyperdiffusion is enabled. (This differs from earlier versions of FV\textthreesuperior{}, which instead of adding explicit damping applied first-\/order upwind advection in the sponge layer, the strength of which is flow-\/dependent and not user-\/controllable.) The damping is computed in the same way as de-\/ scribed earlier, although typically a very strong value of d\textsubscript{2} is used to ensure the vertically-\/propagating waves are sufficiently damped. The additional {$\nabla$}\textsuperscript{2} sponge-\/layer damping is applied to the top two layers of the model, with a weaker damping also applied in the third layer if d\textsubscript{k2} $>$ 0.\+05. Since the model top is at a constant pressure, not constant height, it acts as a flexible lid, and therefore does not reflect as strongly as a rigid lid would.
+Two forms of damping are applied at the top of the domain to absorb vertically-\/ propagating waves nearing the upper boundary. The first is a diffusive sponge layer, which applies second-\/order damping to the divergence and to the vertical-\/momentum flux, and optionally also to the vorticity and mass fluxes if the hyperdiffusion is enabled. (This differs from earlier versions of F\-V, which instead of adding explicit damping applied first-\/order upwind advection in the sponge layer, the strength of which is flow-\/dependent and not user-\/controllable.) The damping is computed in the same way as de-\/ scribed earlier, although typically a very strong value of d$_{\mbox{2}}$  is used to ensure the vertically-\/propagating waves are sufficiently damped. The additional {$\nabla$}$^{\mbox{2}}$  sponge-\/layer damping is applied to the top two layers of the model, with a weaker damping also applied in the third layer if d$_{\mbox{k2}}$  $>$ 0.\-05. Since the model top is at a constant pressure, not constant height, it acts as a flexible lid, and therefore does not reflect as strongly as a rigid lid would.
 
-The second form of damping is a Rayleigh damping, which damps all three components of the winds to zero with a timescale which depends on the pressure. Given a minimum timescale {$\tau$}\textsubscript{0} and a cutoff pressure p\textsubscript{c} the damping timescale is\+:
+The second form of damping is a Rayleigh damping, which damps all three components of the winds to zero with a timescale which depends on the pressure. Given a minimum timescale {$\tau$}$_{\mbox{0}}$  and a cutoff pressure p$_{\mbox{c}}$  the damping timescale is\-:
 
 \[ \tau(p^*) = \tau_0 sin \left( \frac{\pi}{2} \frac{log(p_c / p^*)}{log(p_c / p_T} \right)^2 \\ \tag {2.10} \]
 
-The strength of the applied damping is then determined by the magnitude of the cell-\/mean 3D vector wind U\textsubscript{3D}, including the vertical velocity, divided by a scaling velocity U\textsubscript{0}. The damping is only applied if the horizontal wind speed exceeds a latitude-\/dependent threshold (currently 25cos{$\theta$}) or if the vertical velocity is larger than a given threshold. The damping is then applied, at the beginning of each large (physics) time step and before the Lagrangian dynamics is first called, by\+:
+The strength of the applied damping is then determined by the magnitude of the cell-\/mean 3\-D vector wind U$_{\mbox{3\-D}}$ , including the vertical velocity, divided by a scaling velocity U$_{\mbox{0}}$ . The damping is only applied if the horizontal wind speed exceeds a latitude-\/dependent threshold (currently 25cos{$\theta$}) or if the vertical velocity is larger than a given threshold. The damping is then applied, at the beginning of each large (physics) time step and before the Lagrangian dynamics is first called, by\-:
 
 \[ u \longleftarrow u(1 + \tau U_{3D} / U_0)^{-1} \\ \tag {2.11} \]
 
-The dissipated kinetic energy can then be restored as heat\+:
+The dissipated kinetic energy can then be restored as heat\-:
 
 \[ T \longleftarrow T + \frac{1}{2} U_{3D} * (1 - (1 + \tau U_{3D} / U_0)^{-2}) / C_v \\ \tag {2.12} \] \hypertarget{physics}{}\section{Physics-\/dynamics coupling}\label{physics}
 \subsection*{Chapter 3}
 
-\subsubsection*{3.\+1 Staggered wind interpolation}
+\subsubsection*{3.\-1 Staggered wind interpolation}
 
-The coupling to physical parameterizations and surface models is straight-\/ forward; the primary complication is interpolating between cell-\/centered, orthogonal winds used by most physics packages and the FV\textthreesuperior{} staggered non-\/ orthogonal D-\/grid. The unstaggered orthogonal wind is defined by horizontal components in longitude and latitude; the staggered non-\/orthogonal D-\/grid wind is defined by the winds tangential to the grid-\/cell interfaces by the horizontal covariant components in the cubed-\/sphere curvilinear components. A two-\/stage horizontal re-\/mapping of the wind is used when coupuling the physics packages to the dynamics. The D-\/grid winds are first transformed to locally orthogonal and unstaggered wind components at cell centers, as input to the physics. After the physics returns its tendencies, the wind ten-\/ dencies (du/dt, dv/dt) are then remapped (using high-\/order algorithm) back to the native grid for updating the prognostic winds. This procedure satisfies the “no data no harm” principle — that the interpolation/remapping procedure creates no tendency on its own if there are no external sources from physics or data assimilation.
+The coupling to physical parameterizations and surface models is straight-\/ forward; the primary complication is interpolating between cell-\/centered, orthogonal winds used by most physics packages and the F\-V staggered non-\/ orthogonal D-\/grid. The unstaggered orthogonal wind is defined by horizontal components in longitude and latitude; the staggered non-\/orthogonal D-\/grid wind is defined by the winds tangential to the grid-\/cell interfaces by the horizontal covariant components in the cubed-\/sphere curvilinear components. A two-\/stage horizontal re-\/mapping of the wind is used when coupuling the physics packages to the dynamics. The D-\/grid winds are first transformed to locally orthogonal and unstaggered wind components at cell centers, as input to the physics. After the physics returns its tendencies, the wind ten-\/ dencies (du/dt, dv/dt) are then remapped (using high-\/order algorithm) back to the native grid for updating the prognostic winds. This procedure satisfies the “no data no harm” principle — that the interpolation/remapping procedure creates no tendency on its own if there are no external sources from physics or data assimilation.
 
-\subsubsection*{3.\+2 Condensate loading and mass conservation}
+\subsubsection*{3.\-2 Condensate loading and mass conservation}
 
-The mass {$\delta$}m, and thereby also {$\delta$}p\textsuperscript{$\ast$}, in FV\textthreesuperior{} is the total mass of both the dry air and of the water categories, including the vapor and condensate phases; the precise number N of water species is dependent upon the microphysics scheme used, or may be zero. This incorporates the effect of condensate loading into the air mass without a special parameterization for loading. The dry weight (per unit area) can be given as\+:
+The mass {$\delta$}m, and thereby also {$\delta$}p$^{\mbox{$\ast$}}$ , in F\-V is the total mass of both the dry air and of the water categories, including the vapor and condensate phases; the precise number N of water species is dependent upon the microphysics scheme used, or may be zero. This incorporates the effect of condensate loading into the air mass without a special parameterization for loading. The dry weight (per unit area) can be given as\-:
 
 \[ g \delta m_d = \delta p^* \left( 1 - \sum_{m=1}^N q_m \right) = \left( \delta p^* - \sum_{m=1}^N Q_m \right) \\ \tag {3.1} \]
 
-where Q\textsubscript{m} = {$\delta$}p\textsuperscript{$\ast$} q\textsubscript{m} is the tracer mass. Dry mass should be conserved by the physical parameterizations; here we will assume this to be the case, so {$\delta$}m\textsubscript{d} should be a constant in each grid cell during the physical tendency updates. The condition for dry mass conservation is then given by
+where Q$_{\mbox{m}}$  = {$\delta$}p$^{\mbox{$\ast$}}$  q$_{\mbox{m}}$  is the tracer mass. Dry mass should be conserved by the physical parameterizations; here we will assume this to be the case, so {$\delta$}m$_{\mbox{d}}$  should be a constant in each grid cell during the physical tendency updates. The condition for dry mass conservation is then given by
 
 \[ \delta p^{*(n+1)} = \delta p^{*n} + \delta \tau \sum_{m=1}^N \frac{dQ_m}{dt} = \delta p^{*n} \Delta M \tag {3.2} \]
 
-where {$\Delta$}M = 1 + {$\delta$}{$\tau$} {$\Sigma$}\textsuperscript{N}\textsubscript{m=1} dq\textsubscript{i}/dt. Physics packages usually return the rate of change in tracer mass dQ\textsubscript{m} /dt, and so is independent of whether the solver uses total air mass or just dry air mass (as is done in many weather models). The tracer update is then done by\+:
+where {$\Delta$}M = 1 + {$\delta$}{$\tau$} {$\Sigma$}$^{\mbox{N}}$ $_{\mbox{m=1}}$  dq$_{\mbox{i}}$ /dt. Physics packages usually return the rate of change in tracer mass d\-Q$_{\mbox{m}}$  /dt, and so is independent of whether the solver uses total air mass or just dry air mass (as is done in many weather models). The tracer update is then done by\-:
 
 \[ Q^{n+1}_m = Q^n_m + \delta \tau \frac{dQ_m}{dt} \tag {3.3} \]
 
-or, using (3.\+2)
+or, using (3.\-2)
 
 \[ q^{n+1}_m = \left( Q^n_m + \delta \tau \frac{dq_m}{dt} \delta p^{*n} \right) / \left( \delta p^{*(n+1)} \right) \\ \tag {3.4} \]
 
 \[ = \left( Q^n_m + \delta \tau \frac{dq_m}{dt}\delta p^{*n} \right) / \left( \delta p^{*n} \Delta M \right) \\ \tag {3.5} \]
 
-The full mass-\/conserving update algorithm is then\+:
+The full mass-\/conserving update algorithm is then\-:
 
 \[ q^{*}_m = q^n_m + \delta \tau \frac{dq_m}{dt} \tag {3.6} \]
 
@@ -176,22 +167,22 @@ The full mass-\/conserving update algorithm is then\+:
 
 \[ \delta q^{n+1}_m = q^{*}_m / \Delta M \tag {3.9} \]
 
-Note that often the mass of non-\/water species, such as ozone or aerosols, are considered so small that they are not included in {$\delta$}m; however, since their mixing ratio is still the quotient of the tracer mass and the total air mass, if the effects of water species are included in the total air mass their mixing ratios must still be adjusted by (3.\+9). \hypertarget{grid}{}\section{Grid refinement techniques}\label{grid}
+Note that often the mass of non-\/water species, such as ozone or aerosols, are considered so small that they are not included in {$\delta$}m; however, since their mixing ratio is still the quotient of the tracer mass and the total air mass, if the effects of water species are included in the total air mass their mixing ratios must still be adjusted by (3.\-9). \hypertarget{grid}{}\section{Grid refinement techniques}\label{grid}
 \subsection*{Chapter 4}
 
-There is a need for increasingly high-\/resolution numerical models for weather and climate simulation, but also an increasing need for coupling the newly-\/ resolved scales to the large-\/ and global-\/scale circulations, for which limited-\/ area models are only of limited use. However, uniformly-\/high resolution global models are not always practical on present-\/day computers. The solution to this problem is to locally refine a global grid, allowing for enhanced resolution over the area of interest while also representing the global grid. FV\textthreesuperior{} has two variable-\/resolution methods\+: a simple Schmidt transformation for grid stretching, and two-\/way regional-\/to-\/global nesting. These methods can be combined for maximum flexibility.
+There is a need for increasingly high-\/resolution numerical models for weather and climate simulation, but also an increasing need for coupling the newly-\/ resolved scales to the large-\/ and global-\/scale circulations, for which limited-\/ area models are only of limited use. However, uniformly-\/high resolution global models are not always practical on present-\/day computers. The solution to this problem is to locally refine a global grid, allowing for enhanced resolution over the area of interest while also representing the global grid. F\-V has two variable-\/resolution methods\-: a simple Schmidt transformation for grid stretching, and two-\/way regional-\/to-\/global nesting. These methods can be combined for maximum flexibility.
 
-FV\textthreesuperior{} can also be configured as a doubly-\/periodic solver, in which the cubed-\/sphere is replaced by a Cartesian-\/coordinate doubly-\/periodic horizontal grid; otherwise the solver is unchanged. This can be useful for idealized simulations at a variety of resolutions, including very high horizontal resolutions useful for studying explicit convection.
+F\-V can also be configured as a doubly-\/periodic solver, in which the cubed-\/sphere is replaced by a Cartesian-\/coordinate doubly-\/periodic horizontal grid; otherwise the solver is unchanged. This can be useful for idealized simulations at a variety of resolutions, including very high horizontal resolutions useful for studying explicit convection.
 
-\subsubsection*{4.\+1 Grid stretching}
+\subsubsection*{4.\-1 Grid stretching}
 
-Here we follow the development of H\+L\+T16. A relatively simple variable-\/ resolution grid can be created by taking the original cubed-\/sphere grid and applying the transformation of F. Schmidt (Beitr. Atmos. Phys., 1977) to “pull” grid intersections towards a “target” point, corresponding to the center point of the high-\/resolution region. This is done in two steps\+: the grid is distorted towards the south pole to get the desired degree of refinement, and then the south pole is rotated to the target point using a solid-\/body rotation. Distorting to the south pole means that the longitudes of the points are not changed, only the latitudes, greatly simplifying the transformation.
+Here we follow the development of H\-L\-T16. A relatively simple variable-\/ resolution grid can be created by taking the original cubed-\/sphere grid and applying the transformation of F. Schmidt (Beitr. Atmos. Phys., 1977) to “pull” grid intersections towards a “target” point, corresponding to the center point of the high-\/resolution region. This is done in two steps\-: the grid is distorted towards the south pole to get the desired degree of refinement, and then the south pole is rotated to the target point using a solid-\/body rotation. Distorting to the south pole means that the longitudes of the points are not changed, only the latitudes, greatly simplifying the transformation.
 
-The transformation of the latitude {$\theta$} to {$\vartheta$} is given by\+:
+The transformation of the latitude {$\theta$} to  is given by\-:
 
 \[ sin\vartheta = \frac{D + sin\theta}{1 + Dsin\theta} \\ \tag {4.1} \]
 
-where the distortion is a function of the stretching factor c, which can be any positive number\+:
+where the distortion is a function of the stretching factor c, which can be any positive number\-:
 
 \[ D = \frac{1 - c^2}{1 + c^2} \\ \tag {4.2} \]
 
@@ -199,19 +190,19 @@ Using c = 1 causes no stretching. Note that other forms for the transformation c
 
 Although the grid has been deformed, the solver still uses the assumption that the grid cells are bounded by great-\/circle arcs, which are not strictly identical to a Schmidt transformation of the cubed-\/sphere arcs of the un-\/ stretched grid.
 
-\subsubsection*{4.\+2 Grid nesting}
+\subsubsection*{4.\-2 Grid nesting}
 
 Using grid nesting can greatly increase the flexibility of grid refinement in the model, at the cost of greater complexity in the solver. The major strength of grid nesting is its ability to use independent configurations on each grid, including different time steps and physical parameterizations, most appropriate for that particular grid. The ability to use a longer time step on the coarse grid than on the nested grid can greatly improve the efficiency of a nested-\/grid model; and choosing parameterizations independently al-\/ lows values appropriate for each resolution without needing compromise or “scale-\/aware” parameterizations.
 
-Here we follow the development of H\+L13, with additional updates necessary for the nonhydrostatic solver. Implementing two-\/way grid nesting involves two processes\+: interpolating the global grid variables to create boundary conditions for the nested-\/grid, and then updating the coarse-\/grid solution with nested-\/grid data in the region they overlap. The goal is to do so in as efficient of a manner consistent with the finite-\/volume methodology.
+Here we follow the development of H\-L13, with additional updates necessary for the nonhydrostatic solver. Implementing two-\/way grid nesting involves two processes\-: interpolating the global grid variables to create boundary conditions for the nested-\/grid, and then updating the coarse-\/grid solution with nested-\/grid data in the region they overlap. The goal is to do so in as efficient of a manner consistent with the finite-\/volume methodology.
 
-A major feature of FV\textthreesuperior{}’s nesting is to use concurrent nesting, in which the nested and coarse grids run simultaneously, akin to how coupled models run their atmosphere and ocean components at the same time on different sets of processors. This can greatly reduce the amount of load imbalance between the different processors.
+A major feature of F\-V’s nesting is to use concurrent nesting, in which the nested and coarse grids run simultaneously, akin to how coupled models run their atmosphere and ocean components at the same time on different sets of processors. This can greatly reduce the amount of load imbalance between the different processors.
 
-The entire nesting cycle is as follows, starting at the beginning of call to the solver\+:
+The entire nesting cycle is as follows, starting at the beginning of call to the solver\-:
 
 
 \begin{DoxyItemize}
-\item For each {\ttfamily p\+\_\+split} step\+:
+\item For each {\ttfamily p\-\_\-split} step\-:
 \begin{DoxyItemize}
 \item Call solver
 \item Fetch boundary condition data from coarse grid
@@ -224,473 +215,440 @@ The entire nesting cycle is as follows, starting at the beginning of call to the
 
 Note that we do not do a compile cycle every coarse-\/grid time step, unlike many regional nested-\/grid models. The cycling can be carried out multiple times per physics time step, if more frequent updates of the boundary conditions and of the two-\/way communication are considered necessary. There is also an option to perform the last two-\/way update after the physics, instead of before, which changes how the physical parameterizations interact with the nested-\/grid solution passed to the coarse grid. Performing the update before calling the physics has been found to yield better results in real-\/data forecasts.
 
-Currently, nested grids in FV\textthreesuperior{} are constrained to be a proper refinement of a subset of coarse-\/grid cells; that is, each coarse-\/grid cell in the nested-\/ grid region is subdivided into N x N nested-\/grid cells. This greatly simplifies the nested-\/grid boundary condition interpolation and the two-\/way updating. Nested grids are also static and constrained to lie within one coarse-\/grid face. However, the algorithm does not require an aligned, static grid in one cube face, and any of these conditions may be relaxed in the future.
+Currently, nested grids in F\-V are constrained to be a proper refinement of a subset of coarse-\/grid cells; that is, each coarse-\/grid cell in the nested-\/ grid region is subdivided into N x N nested-\/grid cells. This greatly simplifies the nested-\/grid boundary condition interpolation and the two-\/way updating. Nested grids are also static and constrained to lie within one coarse-\/grid face. However, the algorithm does not require an aligned, static grid in one cube face, and any of these conditions may be relaxed in the future.
 
 The nested-\/grid boundary conditions are implemented in a simple way. Coarse-\/grid data is interpolated from the coarse grid into the halo of the nested grid, thereby providing the nested-\/grid boundary conditions. Linear interpolation, although it is simple and and is not conserving, does have the advantage of not introducing new extrema in the interpolated field. The boundary conditions for staggered variables are interpolated directly from the staggered coarse grids. Boundary conditions are needed for each prognostic variable, including the tracers; also, boundary conditions are needed for the C-\/grid winds, available at each half-\/time step, and for the divergence when using fourth-\/ or higher-\/order divergence damping.
 
 Finally, boundary conditions for the layer-\/interface nonhydrostatic pressure anomalies are also needed to evaluate the pressure-\/gradient force. In-\/ stead of interpolating these interface values from the coarse grid, they are instead diagnosed and interpolated from the other boundary condition variables using the same methods as the semi-\/implicit solver.
 
-Most nested-\/grid models perform time-\/interpolation between two coarse-\/ grid states on each time step, but since the grids are integrated concurrently in FV\textthreesuperior{}, interpolation is not possible. Instead, we can extrapolate between two earlier coarse-\/grid states. If interpolated coarse-\/grid variables are available at times t and t -\/ {$\Delta$} {$\tau$}, where {$\Delta$} {$\tau$} = N {$\Delta$}t, then the extrapolation for a given variable {$\varphi$} at time t + n{$\delta$}t (n=1,...,N) is given by\+:
+Most nested-\/grid models perform time-\/interpolation between two coarse-\/ grid states on each time step, but since the grids are integrated concurrently in F\-V, interpolation is not possible. Instead, we can extrapolate between two earlier coarse-\/grid states. If interpolated coarse-\/grid variables are available at times t and t -\/ {$\Delta$} {$\tau$}, where {$\Delta$} {$\tau$} = N {$\Delta$}t, then the extrapolation for a given variable {$\varphi$} at time t + n{$\delta$}t (n=1,...,N) is given by\-:
 
 \[ \phi^{t+n\delta t} = \left( 1 + \frac{n}{N} \right) \phi^t - \frac{n}{N} \phi^{t-\Delta \tau} \\ \tag {4.3} \]
 
-The extrapolation is constrained for positive-\/definite scalars so that the value of the boundary condition at t + {$\Delta$}{$\tau$} is non-\/negative, which is done by the substitution {$\varphi$}\textsuperscript{t -\/ {$\Delta$}{$\tau$} } {$\rightarrow$} min({$\varphi$}\textsuperscript{t -\/ {$\Delta$}{$\tau$} }, 2{$\varphi$}\textsuperscript{t} ).
+The extrapolation is constrained for positive-\/definite scalars so that the value of the boundary condition at t + {$\Delta$}{$\tau$} is non-\/negative, which is done by the substitution {$\varphi$}$^{\mbox{t -\/ {$\Delta$}{$\tau$} }}$  {$\rightarrow$} min({$\varphi$}$^{\mbox{t -\/ {$\Delta$}{$\tau$} }}$ , 2{$\varphi$}$^{\mbox{t}}$  ).
 
-Two-\/way updates from the nested to the coarse grid are performed consistent with the finite-\/volume numerics. Scalars are updated to the coarse grid by performing an average of nested-\/grid cells, consistent with the values being cell-\/averages. The staggered horizontal winds are updated by averag-\/ ing the winds on the faces of nested-\/grid cells abutting the coarse-\/grid cell being updated, so that the update preserves the average of the vorticity on the nested-\/grid cells. In FV\textthreesuperior{} only the three wind components and the temperature is updated to the coarse grid; the air and tracer masses are not updated, trivially conserving their masses on the nested grid, and reducing the amount of noise created through overspecification of the solution on the coarse grid. Since the air mass determines the vertical coordinate, which will differ between the two grids, the averaged nested-\/grid data is remapped onto the coarse-\/grid’s vertical coordinate. \hypertarget{namelist}{}\section{Namelist Guide}\label{namelist}
-\subsection*{A.\+1 Entries in fv\+\_\+core\+\_\+nml}
+Two-\/way updates from the nested to the coarse grid are performed consistent with the finite-\/volume numerics. Scalars are updated to the coarse grid by performing an average of nested-\/grid cells, consistent with the values being cell-\/averages. The staggered horizontal winds are updated by averag-\/ ing the winds on the faces of nested-\/grid cells abutting the coarse-\/grid cell being updated, so that the update preserves the average of the vorticity on the nested-\/grid cells. In F\-V only the three wind components and the temperature is updated to the coarse grid; the air and tracer masses are not updated, trivially conserving their masses on the nested grid, and reducing the amount of noise created through overspecification of the solution on the coarse grid. Since the air mass determines the vertical coordinate, which will differ between the two grids, the averaged nested-\/grid data is remapped onto the coarse-\/grid’s vertical coordinate. \hypertarget{namelist}{}\section{Namelist Guide}\label{namelist}
+\subsection*{A.\-1 Entries in fv\-\_\-core\-\_\-nml}
 
-\subsubsection*{A.\+1.\+1 Required options\+:}
+\subsubsection*{A.\-1.\-1 Required options\-:}
 
-{\bfseries \mbox{[}layout\mbox{]}} Integer(2)\+: Processor layout on each tile. The number of P\+Es assigned to a domain must equal layout(1)$\ast$layout(2)$\ast$ntiles. Must be set.
+$\ast$$\ast$\mbox{[}layout\mbox{]}$\ast$$\ast$ Integer(2)\-: Processor layout on each tile. The number of P\-Es assigned to a domain must equal layout(1)$\ast$layout(2)$\ast$ntiles. Must be set.
 
-{\bfseries \mbox{[}npx\mbox{]}} Integer\+: Number of grid {\itshape corners} in the x-\/direction on one tile of the domain; so one more than the number of grid cells across a tile. On the cubed sphere this is {\itshape one} {\itshape more} {\itshape than} the number of cells across a cube face. Must be set.
+$\ast$$\ast$\mbox{[}npx\mbox{]}$\ast$$\ast$ Integer\-: Number of grid {\itshape corners} in the x-\/direction on one tile of the domain; so one more than the number of grid cells across a tile. On the cubed sphere this is {\itshape one} {\itshape more} {\itshape than} the number of cells across a cube face. Must be set.
 
-{\bfseries \mbox{[}npy\mbox{]}} Integer\+: Number of grid {\itshape corners} in the y-\/direction on one tile of the domain. This value should be identical to npx on a cubed-\/sphere grid; doubly periodic or nested grids do not have this restriction. Must be set.
+$\ast$$\ast$\mbox{[}npy\mbox{]}$\ast$$\ast$ Integer\-: Number of grid {\itshape corners} in the y-\/direction on one tile of the domain. This value should be identical to npx on a cubed-\/sphere grid; doubly periodic or nested grids do not have this restriction. Must be set.
 
-{\bfseries \mbox{[}npz\mbox{]}} Integer\+: Number of vertical levels. Each choice of npz comes with a pre-\/defined set of hybrid sigma pressure levels and model top (see fv\+\_\+eta.\+F90). Must be set.
+$\ast$$\ast$\mbox{[}npz\mbox{]}$\ast$$\ast$ Integer\-: Number of vertical levels. Each choice of npz comes with a pre-\/defined set of hybrid sigma pressure levels and model top (see fv\-\_\-eta.\-F90). Must be set.
 
-{\bfseries \mbox{[}ntiles\mbox{]}} Integer\+: Number of tiles on the domain. For the cubed sphere, this should be 6, one tile for each face of the cubed sphere; normally for most other domains (including nested grids) this should be set to 1. Must be set.
+$\ast$$\ast$\mbox{[}ntiles\mbox{]}$\ast$$\ast$ Integer\-: Number of tiles on the domain. For the cubed sphere, this should be 6, one tile for each face of the cubed sphere; normally for most other domains (including nested grids) this should be set to 1. Must be set.
 
-\subsubsection*{A.\+1.\+2 Initialization options\+:}
+\subsubsection*{A.\-1.\-2 Initialization options\-:}
 
-{\bfseries \mbox{[}add\+\_\+noise\mbox{]}} Real\+: amplitude of random thermal noise (in K) to add upon startup. Useful for perturbing initial conditions. -\/1 by default; disabled if 0 or negative.
+$\ast$$\ast$\mbox{[}add\-\_\-noise\mbox{]}$\ast$$\ast$ Real\-: amplitude of random thermal noise (in K) to add upon startup. Useful for perturbing initial conditions. -\/1 by default; disabled if 0 or negative.
 
-{\bfseries \mbox{[}adjust\+\_\+dry\+\_\+mass\mbox{]}} Logical\+: whether to adjust the global dry-\/air mass to the value set by dry\+\_\+mass. This is only done in an initialization step, particularly when using an initial condition from an external dataset, interpolated from another resolution (either horizontal or vertical), or when changing the topography, so that the global mass of the atmosphere matches some estimate of observed value. False by default. It is recommended to only set this to True when initializing the model.
+$\ast$$\ast$\mbox{[}adjust\-\_\-dry\-\_\-mass\mbox{]}$\ast$$\ast$ Logical\-: whether to adjust the global dry-\/air mass to the value set by dry\-\_\-mass. This is only done in an initialization step, particularly when using an initial condition from an external dataset, interpolated from another resolution (either horizontal or vertical), or when changing the topography, so that the global mass of the atmosphere matches some estimate of observed value. False by default. It is recommended to only set this to True when initializing the model.
 
-{\bfseries \mbox{[}breed\+\_\+vortex\+\_\+inline\mbox{]}} Logical\+: whether to bogus tropical cyclones into the model, which are specified by an external file. Options are set in fv\+\_\+nwp\+\_\+nudge\+\_\+nml. False by default.
+$\ast$$\ast$\mbox{[}breed\-\_\-vortex\-\_\-inline\mbox{]}$\ast$$\ast$ Logical\-: whether to bogus tropical cyclones into the model, which are specified by an external file. Options are set in fv\-\_\-nwp\-\_\-nudge\-\_\-nml. False by default.
 
-{\bfseries \mbox{[}dry\+\_\+mass\mbox{]}} Real\+: if adjust\+\_\+dry\+\_\+mass is true, sets the global dry air mass, measured in the globally-\/averaged surface pressure (Pascals) by adding or removing mass from the lowest layer of the atmosphere as needed. 98290. (Pa) by default.
+$\ast$$\ast$\mbox{[}dry\-\_\-mass\mbox{]}$\ast$$\ast$ Real\-: if adjust\-\_\-dry\-\_\-mass is true, sets the global dry air mass, measured in the globally-\/averaged surface pressure (Pascals) by adding or removing mass from the lowest layer of the atmosphere as needed. 98290. (Pa) by default.
 
-{\bfseries \mbox{[}external\+\_\+ic\mbox{]}} Logical\+: Whether to initialize the models state using the data in an externally specified file, given in res\+\_\+latlon\+\_\+dynamics. By default this file is assumed to be a legacy lat-\/lon FV core restart file; set either ncep\+\_\+ic or fv\+\_\+diag\+\_\+ic to true override this behavior..false. by default. Note that external\+\_\+ic = true will cause the model to re-\/initialize the dynamical fields from the input dataset regardless of whether warm\+\_\+start is set.
+$\ast$$\ast$\mbox{[}external\-\_\-ic\mbox{]}$\ast$$\ast$ Logical\-: Whether to initialize the models state using the data in an externally specified file, given in res\-\_\-latlon\-\_\-dynamics. By default this file is assumed to be a legacy lat-\/lon F\-V core restart file; set either ncep\-\_\-ic or fv\-\_\-diag\-\_\-ic to true override this behavior..false. by default. Note that external\-\_\-ic = true will cause the model to re-\/initialize the dynamical fields from the input dataset regardless of whether warm\-\_\-start is set.
 
-{\bfseries \mbox{[}full\+\_\+zs\+\_\+filter\mbox{]}} Logical\+: whether to apply the on-\/line topography filter during initialization. Only active if get\+\_\+nggps\+\_\+ic = .true. This is so topography filtering can be performed on the initial conditions output by the pre-\/processing tools, which currently do not support topography filtering for some configurations (such as the nested grid); this also allows the user to easily test changes to the topography filtering on the simulation. Note that for all other initialization methods (if external\+\_\+ic = .true.) the on-\/line topography filter will be applied automatically during the initialization of the topography. .false. by default.
+$\ast$$\ast$\mbox{[}full\-\_\-zs\-\_\-filter\mbox{]}$\ast$$\ast$ Logical\-: whether to apply the on-\/line topography filter during initialization. Only active if get\-\_\-nggps\-\_\-ic = .true. This is so topography filtering can be performed on the initial conditions output by the pre-\/processing tools, which currently do not support topography filtering for some configurations (such as the nested grid); this also allows the user to easily test changes to the topography filtering on the simulation. Note that for all other initialization methods (if external\-\_\-ic = .true.) the on-\/line topography filter will be applied automatically during the initialization of the topography. .false. by default.
 
-{\bfseries \mbox{[}mountain\mbox{]}} Logical\+: takes topography into account when initializing the model. Set this to true to apply the terrain filter (if n\+\_\+zs\+\_\+filter = 2 or 4) upon startup; also set to True when cold starting so that the topography can be initialized. Only set this to false if you wish to cold-\/start without any topography; this value is ignored for the aquaplanet test\+\_\+case = 14. True by default. It is highly recommended to not alter this value unless you know what you are doing.
+$\ast$$\ast$\mbox{[}mountain\mbox{]}$\ast$$\ast$ Logical\-: takes topography into account when initializing the model. Set this to true to apply the terrain filter (if n\-\_\-zs\-\_\-filter = 2 or 4) upon startup; also set to True when cold starting so that the topography can be initialized. Only set this to false if you wish to cold-\/start without any topography; this value is ignored for the aquaplanet test\-\_\-case = 14. True by default. It is highly recommended to not alter this value unless you know what you are doing.
 
-{\bfseries \mbox{[}na\+\_\+init\mbox{]}} Integer\+: Number of forward-\/backward dynamics steps used to initialize adiabatic solver. This is useful for spinning up the nonhydrostatic state from the hydrostatic G\+FS analyses. 0 by default. Recommended to set this to a non-\/zero value (1 or 2 is typically sufficient) when initializing from G\+FS or E\+C\+M\+WF analyses.
+$\ast$$\ast$\mbox{[}na\-\_\-init\mbox{]}$\ast$$\ast$ Integer\-: Number of forward-\/backward dynamics steps used to initialize adiabatic solver. This is useful for spinning up the nonhydrostatic state from the hydrostatic G\-F\-S analyses. 0 by default. Recommended to set this to a non-\/zero value (1 or 2 is typically sufficient) when initializing from G\-F\-S or E\-C\-M\-W\-F analyses.
 
-{\bfseries \mbox{[}ncep\+\_\+ic\mbox{]}} Logical\+: If external\+\_\+ic =.true., this variable says whether the file in res\+\_\+latlon\+\_\+dynamics is an N\+C\+EP analysis or reanalysis file. This option zeros out all tracer fields except specific humidity..false. by default.
+$\ast$$\ast$\mbox{[}ncep\-\_\-ic\mbox{]}$\ast$$\ast$ Logical\-: If external\-\_\-ic =.true., this variable says whether the file in res\-\_\-latlon\-\_\-dynamics is an N\-C\-E\-P analysis or reanalysis file. This option zeros out all tracer fields except specific humidity..false. by default.
 
-{\bfseries \mbox{[}nggps\+\_\+ic\mbox{]}} Logical\+: If external\+\_\+ic =.true., reads initial conditions from horizontally-\/interpolated output from chgres. False by default. Additional options are available through external\+\_\+ic\+\_\+nml.
+$\ast$$\ast$\mbox{[}nggps\-\_\-ic\mbox{]}$\ast$$\ast$ Logical\-: If external\-\_\-ic =.true., reads initial conditions from horizontally-\/interpolated output from chgres. False by default. Additional options are available through external\-\_\-ic\-\_\-nml.
 
-{\bfseries \mbox{[}ecmwf\+\_\+ic\mbox{]}} Logical\+: If external\+\_\+ic =.true., reads initial conditions from E\+C\+M\+WF analyses. .false. by default.
+$\ast$$\ast$\mbox{[}ecmwf\-\_\-ic\mbox{]}$\ast$$\ast$ Logical\-: If external\-\_\-ic =.true., reads initial conditions from E\-C\-M\-W\-F analyses. .false. by default.
 
-{\bfseries \mbox{[}external\+\_\+eta\mbox{]}} Logical\+: If .true., reads the interface coefficients a\textsubscript{k} and b\textsubscript{k} from either the restart file (if restarting) or from the external initial condition file (if nggps\+\_\+ic or ecwmf\+\_\+ic are .true.). This overrides the hard-\/coded levels in fv\+\_\+eta. .false. by default.
+$\ast$$\ast$\mbox{[}external\-\_\-eta\mbox{]}$\ast$$\ast$ Logical\-: If .true., reads the interface coefficients a$_{\mbox{k}}$  and b$_{\mbox{k}}$  from either the restart file (if restarting) or from the external initial condition file (if nggps\-\_\-ic or ecwmf\-\_\-ic are .true.). This overrides the hard-\/coded levels in fv\-\_\-eta. .false. by default.
 
-{\bfseries \mbox{[}nord\+\_\+zs\+\_\+filter\mbox{]}} Integer\+: order of the topography filter applied to n\+\_\+zs\+\_\+filter. Set to 2 to get a second-\/order filter, or 4 to get a fourth-\/order filter; other values do no filtering. 0 by default. This should not be set to a non-\/zero value on multiple successive simulations; the filter is applied every time the model restarts. This option is useful for testing the terrain filter, and should not be used for regular runs.
+$\ast$$\ast$\mbox{[}nord\-\_\-zs\-\_\-filter\mbox{]}$\ast$$\ast$ Integer\-: order of the topography filter applied to n\-\_\-zs\-\_\-filter. Set to 2 to get a second-\/order filter, or 4 to get a fourth-\/order filter; other values do no filtering. 0 by default. This should not be set to a non-\/zero value on multiple successive simulations; the filter is applied every time the model restarts. This option is useful for testing the terrain filter, and should not be used for regular runs.
 
-{\bfseries \mbox{[}npz\+\_\+rst\mbox{]}} Integer\+: If using a restart file with a different number of vertical levels, set npz\+\_\+rst to be the number of levels in your restart file. The model will then remap the restart file data to the vertical coordinates specified by npz. 0 by default; if 0 or equal to npz no remapping is done.
+$\ast$$\ast$\mbox{[}npz\-\_\-rst\mbox{]}$\ast$$\ast$ Integer\-: If using a restart file with a different number of vertical levels, set npz\-\_\-rst to be the number of levels in your restart file. The model will then remap the restart file data to the vertical coordinates specified by npz. 0 by default; if 0 or equal to npz no remapping is done.
 
-{\bfseries \mbox{[}nudge\mbox{]}} Logical\+: whether to use the nudging towards the state in some externally-\/supplied file (such as from reanalysis or another simulation). Further nudging options are set in fv\+\_\+nwp\+\_\+nudge\+\_\+nml. False by default.
+$\ast$$\ast$\mbox{[}nudge\mbox{]}$\ast$$\ast$ Logical\-: whether to use the nudging towards the state in some externally-\/supplied file (such as from reanalysis or another simulation). Further nudging options are set in fv\-\_\-nwp\-\_\-nudge\-\_\-nml. False by default.
 
-{\bfseries \mbox{[}nudge\+\_\+dz\mbox{]}} Logical\+: during the adiabatic initialization (na\+\_\+init $>$ 0), if set to .true. delz is nudged back to the value specified in the initial conditions, instead of nudging the temperature back to the initial value. Nudging delz is simpler (faster), doesn\textquotesingle{}t require consideration of the virtual temperature effect, and may be more stable. .false. by default.
+$\ast$$\ast$\mbox{[}nudge\-\_\-dz\mbox{]}$\ast$$\ast$ Logical\-: during the adiabatic initialization (na\-\_\-init $>$ 0), if set to .true. delz is nudged back to the value specified in the initial conditions, instead of nudging the temperature back to the initial value. Nudging delz is simpler (faster), doesn't require consideration of the virtual temperature effect, and may be more stable. .false. by default.
 
-{\bfseries \mbox{[}nudge\+\_\+ic\mbox{]}} Logical\+: same as nudge, but works in adiabatic solo\+\_\+core simulations to nudge the field to a single external analysis file. False by default.
+$\ast$$\ast$\mbox{[}nudge\-\_\-ic\mbox{]}$\ast$$\ast$ Logical\-: same as nudge, but works in adiabatic solo\-\_\-core simulations to nudge the field to a single external analysis file. False by default.
 
-{\bfseries \mbox{[}nudge\+\_\+qv\mbox{]}} Logical\+: during the adiabatic initialization (na\+\_\+init $>$ 0), if set to .true., the water vapor profile is nudged to an analytic fit to the H\+A\+L\+OE climatology. This is to improve the water vapor concentrations in G\+FS initial conditions, especially in the stratosphere, where values can be several times higher than observed. This nudging is unnecessary for other I\+Cs, especially the E\+C\+M\+WF initial conditions. .false. by default.
+$\ast$$\ast$\mbox{[}nudge\-\_\-qv\mbox{]}$\ast$$\ast$ Logical\-: during the adiabatic initialization (na\-\_\-init $>$ 0), if set to .true., the water vapor profile is nudged to an analytic fit to the H\-A\-L\-O\-E climatology. This is to improve the water vapor concentrations in G\-F\-S initial conditions, especially in the stratosphere, where values can be several times higher than observed. This nudging is unnecessary for other I\-Cs, especially the E\-C\-M\-W\-F initial conditions. .false. by default.
 
-{\bfseries \mbox{[}n\+\_\+zs\+\_\+filter\mbox{]}} Integer\+: number of times to apply a diffusive filter to the topography upon startup, if mountain is True and the model is not being cold-\/started. This is applied every time the model is warm-\/started, so if you want to smooth the topography make sure this is set to 0 after the first simulation. 0 by default. If initializing the model from cold-\/start the topography is already being filtered by an amount appropriate for the model resolution.
+$\ast$$\ast$\mbox{[}n\-\_\-zs\-\_\-filter\mbox{]}$\ast$$\ast$ Integer\-: number of times to apply a diffusive filter to the topography upon startup, if mountain is True and the model is not being cold-\/started. This is applied every time the model is warm-\/started, so if you want to smooth the topography make sure this is set to 0 after the first simulation. 0 by default. If initializing the model from cold-\/start the topography is already being filtered by an amount appropriate for the model resolution.
 
-{\bfseries \mbox{[}res\+\_\+latlon\+\_\+dynamics\mbox{]}} character(len=128) If external\+\_\+ic =.true. gives the filename of the input IC file. I\+N\+P\+U\+T/fv\+\_\+rst.\+res.\+nc by default.
+$\ast$$\ast$\mbox{[}res\-\_\-latlon\-\_\-dynamics\mbox{]}$\ast$$\ast$ character(len=128) If external\-\_\-ic =.true. gives the filename of the input I\-C file. I\-N\-P\-U\-T/fv\-\_\-rst.\-res.\-nc by default.
 
-{\bfseries \mbox{[}res\+\_\+latlon\+\_\+tracers\mbox{]}} character(len=128) If external\+\_\+ic =.true. and both ncep\+\_\+ic and fv\+\_\+diag\+\_\+ic are.\+false., this variable gives the filename of the initial conditions for the tracers, assumed to be a legacy lat-\/lon FV core restart file. I\+N\+P\+U\+T/atmos\+\_\+tracers.\+res.\+nc by default.
+$\ast$$\ast$\mbox{[}res\-\_\-latlon\-\_\-tracers\mbox{]}$\ast$$\ast$ character(len=128) If external\-\_\-ic =.true. and both ncep\-\_\-ic and fv\-\_\-diag\-\_\-ic are.\-false., this variable gives the filename of the initial conditions for the tracers, assumed to be a legacy lat-\/lon F\-V core restart file. I\-N\-P\-U\-T/atmos\-\_\-tracers.\-res.\-nc by default.
 
-{\bfseries \mbox{[}warm\+\_\+start\mbox{]}} Logical; whether to start from restart files, instead of cold-\/starting the model. True by default; if this is set to true and restart files cannot be found the model will stop.
+$\ast$$\ast$\mbox{[}warm\-\_\-start\mbox{]}$\ast$$\ast$ Logical; whether to start from restart files, instead of cold-\/starting the model. True by default; if this is set to true and restart files cannot be found the model will stop.
 
-\subsubsection*{A1.\+3 I/O and diagnostic options\+:}
+\subsubsection*{A1.\-3 I/\-O and diagnostic options\-:}
 
-{\bfseries \mbox{[}agrid\+\_\+vel\+\_\+rst\mbox{]}} Logical\+: whether to write the unstaggered latitude-\/longitude winds (u\textsubscript{a} and v\textsubscript{a}) to the restart files. This is useful for data assimilation cycling systems which do not handle staggered winds. .false. by default.
+$\ast$$\ast$\mbox{[}agrid\-\_\-vel\-\_\-rst\mbox{]}$\ast$$\ast$ Logical\-: whether to write the unstaggered latitude-\/longitude winds (u$_{\mbox{a}}$  and v$_{\mbox{a}}$ ) to the restart files. This is useful for data assimilation cycling systems which do not handle staggered winds. .false. by default.
 
-{\bfseries \mbox{[}check\+\_\+negative\mbox{]}} Logical\+: whether to print the most negative global value of microphysical tracers.
+$\ast$$\ast$\mbox{[}check\-\_\-negative\mbox{]}$\ast$$\ast$ Logical\-: whether to print the most negative global value of microphysical tracers.
 
-{\bfseries \mbox{[}fv\+\_\+debug\mbox{]}} Logical\+: whether to turn on additional diagnostics in fv\+\_\+dynamics..false. by default.
+$\ast$$\ast$\mbox{[}fv\-\_\-debug\mbox{]}$\ast$$\ast$ Logical\-: whether to turn on additional diagnostics in fv\-\_\-dynamics..false. by default.
 
-{\bfseries \mbox{[}fv\+\_\+land\mbox{]}} Logical\+: whether to create terrain deviation and land fraction for output to mg\+\_\+drag restart files, for use in mg\+\_\+drag and in the land model..false. by default;.true. is recommended when, and only when, initializing the model, since the mg\+\_\+drag files created provide a much more accurate terrain representation for the mountain gravity wave drag parameterization and for the land surface roughness than either computes internally. This has no effect on the representation of the terrain in the dynamics.
+$\ast$$\ast$\mbox{[}fv\-\_\-land\mbox{]}$\ast$$\ast$ Logical\-: whether to create terrain deviation and land fraction for output to mg\-\_\-drag restart files, for use in mg\-\_\-drag and in the land model..false. by default;.true. is recommended when, and only when, initializing the model, since the mg\-\_\-drag files created provide a much more accurate terrain representation for the mountain gravity wave drag parameterization and for the land surface roughness than either computes internally. This has no effect on the representation of the terrain in the dynamics.
 
-{\bfseries \mbox{[}io\+\_\+layout\mbox{]}} Integer(2)\+: Layout of output files on each tile. 1,1 by default, which combines all restart and history files on a tile into one file. For 0,0, every process writes out its own restart and history files. If not equal to 1,1, you will have to use mppnccombine to combine these output files prior to post-\/processing, or if you want to change the number of P\+Es. Both entries must divide the respective value in layout.
+$\ast$$\ast$\mbox{[}io\-\_\-layout\mbox{]}$\ast$$\ast$ Integer(2)\-: Layout of output files on each tile. 1,1 by default, which combines all restart and history files on a tile into one file. For 0,0, every process writes out its own restart and history files. If not equal to 1,1, you will have to use mppnccombine to combine these output files prior to post-\/processing, or if you want to change the number of P\-Es. Both entries must divide the respective value in layout.
 
-{\bfseries \mbox{[}nf\+\_\+omega\mbox{]}} Integer\+: number of times to apply second-\/order smoothing to the diagnosed omega. When 0 the filter is disabled. 1 by default.
+$\ast$$\ast$\mbox{[}nf\-\_\-omega\mbox{]}$\ast$$\ast$ Integer\-: number of times to apply second-\/order smoothing to the diagnosed omega. When 0 the filter is disabled. 1 by default.
 
-{\bfseries \mbox{[}print\+\_\+freq\mbox{]}} Integer\+: number of hours between print out of max/min and air/tracer mass diagnostics to standard output. 0 by default, which never prints out any output; set to -\/1 to see output after every dt\+\_\+atmos. Computing these diagnostics requires some computational overhead.
+$\ast$$\ast$\mbox{[}print\-\_\-freq\mbox{]}$\ast$$\ast$ Integer\-: number of hours between print out of max/min and air/tracer mass diagnostics to standard output. 0 by default, which never prints out any output; set to -\/1 to see output after every dt\-\_\-atmos. Computing these diagnostics requires some computational overhead.
 
-{\bfseries \mbox{[}range\+\_\+warn\mbox{]}} Logical\+: checks whether the values of the prognostic variables are within a reasonable range at the end of a dynamics time step, and prints a warning if not. False by default; adds computational overhead, so we only recommend using this when debugging.
+$\ast$$\ast$\mbox{[}range\-\_\-warn\mbox{]}$\ast$$\ast$ Logical\-: checks whether the values of the prognostic variables are within a reasonable range at the end of a dynamics time step, and prints a warning if not. False by default; adds computational overhead, so we only recommend using this when debugging.
 
-{\bfseries \mbox{[}write\+\_\+3d\+\_\+diags\mbox{]}} Logical\+: whether to write out three-\/dimensional dynamical diagnostic fields (those defined in fv\+\_\+diagnostics.\+F90). This is useful for runs with multiple grids if you only want very large 3D diagnostics written out for (say) a nested grid, and not for the global grid. False by default.
+$\ast$$\ast$\mbox{[}write\-\_\-3d\-\_\-diags\mbox{]}$\ast$$\ast$ Logical\-: whether to write out three-\/dimensional dynamical diagnostic fields (those defined in fv\-\_\-diagnostics.\-F90). This is useful for runs with multiple grids if you only want very large 3\-D diagnostics written out for (say) a nested grid, and not for the global grid. False by default.
 
-\subsubsection*{A.\+1.\+4 Options controlling tracers and interactions with physics}
+\subsubsection*{A.\-1.\-4 Options controlling tracers and interactions with physics}
 
-{\bfseries \mbox{[}adiabatic\mbox{]}} Logical\+: whether to skip any physics. If true, the physics is not called at all and there is no virtual temperature effect. False by default; this option has no effect if not running solo\+\_\+core.
+$\ast$$\ast$\mbox{[}adiabatic\mbox{]}$\ast$$\ast$ Logical\-: whether to skip any physics. If true, the physics is not called at all and there is no virtual temperature effect. False by default; this option has no effect if not running solo\-\_\-core.
 
-{\bfseries \mbox{[}do\+\_\+\+Held\+\_\+\+Suarez\mbox{]}} Logical\+: whether to use Held-\/\+Suarez forcing. Requires adiabatic to be false. False by default; this option has no effect if not running solo\+\_\+core.
+$\ast$$\ast$\mbox{[}do\-\_\-\-Held\-\_\-\-Suarez\mbox{]}$\ast$$\ast$ Logical\-: whether to use Held-\/\-Suarez forcing. Requires adiabatic to be false. False by default; this option has no effect if not running solo\-\_\-core.
 
-{\bfseries \mbox{[}do\+\_\+uni\+\_\+zfull\mbox{]}} Logical\+: whether to compute z\+\_\+full (the height of each model layer, as opposed to z\+\_\+half, the height of each model interface) as the midpoint of the layer, as is done for the nonhydrostatic solver, instead of the height of the location where p the mean pressure in the layer. This option is not available for fv\+G\+FS or the solo\+\_\+core. .false. by default.
+$\ast$$\ast$\mbox{[}do\-\_\-uni\-\_\-zfull\mbox{]}$\ast$$\ast$ Logical\-: whether to compute z\-\_\-full (the height of each model layer, as opposed to z\-\_\-half, the height of each model interface) as the midpoint of the layer, as is done for the nonhydrostatic solver, instead of the height of the location where p the mean pressure in the layer. This option is not available for fv\-G\-F\-S or the solo\-\_\-core. .false. by default.
 
-{\bfseries \mbox{[}dnats\mbox{]}} Integer\+: The number of tracers which are not to be advected by the dynamical core, but still passed into the dynamical core; the last dnats+pnats tracers in field\+\_\+table are not advected. 0 by default.
+$\ast$$\ast$\mbox{[}dnats\mbox{]}$\ast$$\ast$ Integer\-: The number of tracers which are not to be advected by the dynamical core, but still passed into the dynamical core; the last dnats+pnats tracers in field\-\_\-table are not advected. 0 by default.
 
-{\bfseries \mbox{[}dwind\+\_\+2d\mbox{]}} Logical\+: whether to use a simpler \& faster algorithm for interpolating the A-\/grid (cell-\/centered) wind tendencies computed from the physics to the D-\/grid. Typically, the A-\/grid wind tendencies are first converted in 3D cartesian coordinates and then interpolated before converting back to 2D local coordinates. When this option enabled, a much simpler but less accurate 2D interpolation is used. False by default.
+$\ast$$\ast$\mbox{[}dwind\-\_\-2d\mbox{]}$\ast$$\ast$ Logical\-: whether to use a simpler \& faster algorithm for interpolating the A-\/grid (cell-\/centered) wind tendencies computed from the physics to the D-\/grid. Typically, the A-\/grid wind tendencies are first converted in 3\-D cartesian coordinates and then interpolated before converting back to 2\-D local coordinates. When this option enabled, a much simpler but less accurate 2\-D interpolation is used. False by default.
 
-{\bfseries \mbox{[}fill\mbox{]}} Logical\+: Fills in negative tracer values by taking positive tracers from the cells above and below. This option is useful when the physical parameterizations produced negatives. False by default.
+$\ast$$\ast$\mbox{[}fill\mbox{]}$\ast$$\ast$ Logical\-: Fills in negative tracer values by taking positive tracers from the cells above and below. This option is useful when the physical parameterizations produced negatives. False by default.
 
-{\bfseries \mbox{[}inline\+\_\+q\mbox{]}} Logical\+: whether to compute tracer transport in-\/line with the rest of the dynamics instead of sub-\/cycling, so that tracer transport is done at the same time and on the same time step as is {\ttfamily p} and potential temperature. False by default; if true, q\+\_\+split and z\+\_\+tracer are ignored.
+$\ast$$\ast$\mbox{[}inline\-\_\-q\mbox{]}$\ast$$\ast$ Logical\-: whether to compute tracer transport in-\/line with the rest of the dynamics instead of sub-\/cycling, so that tracer transport is done at the same time and on the same time step as is {\ttfamily p} and potential temperature. False by default; if true, q\-\_\-split and z\-\_\-tracer are ignored.
 
-{\bfseries \mbox{[}ncnst\mbox{]}} Integer\+: Number of tracer species advected by fv\+\_\+tracer in the dynamical core. Typically this is set automatically by reading in values from field\+\_\+table, but ncnst can be set to a smaller value so only the first ncnst tracers listed in field\+\_\+table are not advected. 0 by default, which will use the value from field\+\_\+table.
+$\ast$$\ast$\mbox{[}ncnst\mbox{]}$\ast$$\ast$ Integer\-: Number of tracer species advected by fv\-\_\-tracer in the dynamical core. Typically this is set automatically by reading in values from field\-\_\-table, but ncnst can be set to a smaller value so only the first ncnst tracers listed in field\-\_\-table are not advected. 0 by default, which will use the value from field\-\_\-table.
 
-{\bfseries \mbox{[}nwat\mbox{]}} Integer\+: Number of water species to be included in condensate and water vapor loading. The masses of the first nwat tracer species will be added to the dry air mass, so that {\ttfamily p} is the mass of dry air, water vapor, and the included condensate species. The value used depends on the microphysics in the physics package you are using. For G\+FS physics with only a single condensate species, set to 2. For schemes with prognostic cloud water and cloud ice, such as G\+F\+DL A\+M2/\+A\+M3/\+A\+M4 Rotsteyn-\/\+Klein or Morrison-\/\+Gettlean microphysics, set to 3. For warm-\/rain (Kessler) microphysics set to 4 (with an inactive ice tracer), which only handles three species but uses 4 to avoid interference with the R-\/K physics. For schemes such as W\+S\+M5 or Ferrier that have prognostic rain and snow but not hail, set to 5 (not yet implemented). For six-\/category schemes that also have prognostic hail or graupel, such as the G\+F\+DL, Thompson, or W\+S\+M6 microphysics, set to 6. A value of 0 turns off condensate loading. 3 by default.
+$\ast$$\ast$\mbox{[}nwat\mbox{]}$\ast$$\ast$ Integer\-: Number of water species to be included in condensate and water vapor loading. The masses of the first nwat tracer species will be added to the dry air mass, so that {\ttfamily p} is the mass of dry air, water vapor, and the included condensate species. The value used depends on the microphysics in the physics package you are using. For G\-F\-S physics with only a single condensate species, set to 2. For schemes with prognostic cloud water and cloud ice, such as G\-F\-D\-L A\-M2/\-A\-M3/\-A\-M4 Rotsteyn-\/\-Klein or Morrison-\/\-Gettlean microphysics, set to 3. For warm-\/rain (Kessler) microphysics set to 4 (with an inactive ice tracer), which only handles three species but uses 4 to avoid interference with the R-\/\-K physics. For schemes such as W\-S\-M5 or Ferrier that have prognostic rain and snow but not hail, set to 5 (not yet implemented). For six-\/category schemes that also have prognostic hail or graupel, such as the G\-F\-D\-L, Thompson, or W\-S\-M6 microphysics, set to 6. A value of 0 turns off condensate loading. 3 by default.
 
-{\bfseries \mbox{[}phys\+\_\+hydrostatic\mbox{]}} Logical\+: Option to enable hydrostatic application of heating from the physics in a nonhydrostatic simulation\+: heating is applied in hydrostatic balance, causing the entire atmospheric column to expand instantaneously. If false, heating from the physics is applied simply as a temperature tendency. True by default; ignored if hydrostatic =.true.
+$\ast$$\ast$\mbox{[}phys\-\_\-hydrostatic\mbox{]}$\ast$$\ast$ Logical\-: Option to enable hydrostatic application of heating from the physics in a nonhydrostatic simulation\-: heating is applied in hydrostatic balance, causing the entire atmospheric column to expand instantaneously. If false, heating from the physics is applied simply as a temperature tendency. True by default; ignored if hydrostatic =.true.
 
-{\bfseries \mbox{[}pnats\mbox{]}} Integer\+: The number of tracers not to advect by the dynamical core. Unlike dnats, these tracers are not seen by the dynamical core. The last pnats entries in field\+\_\+table are not advected. 0 by default.
+$\ast$$\ast$\mbox{[}pnats\mbox{]}$\ast$$\ast$ Integer\-: The number of tracers not to advect by the dynamical core. Unlike dnats, these tracers are not seen by the dynamical core. The last pnats entries in field\-\_\-table are not advected. 0 by default.
 
-{\bfseries \mbox{[}tau\+\_\+h2o\mbox{]}} Real\+: time-\/scale (days) for simple methane chemistry to act as a source of water in the stratosphere. Can be useful if your stratosphere dries out too quickly; consider a value between 60 and 120 days if this is the case. 0. by default, which disables the methane chemistry. Values less than zero apply the chemistry above 100 mb; else applied above 30 mb. Requires adiabatic to be false.
+$\ast$$\ast$\mbox{[}tau\-\_\-h2o\mbox{]}$\ast$$\ast$ Real\-: time-\/scale (days) for simple methane chemistry to act as a source of water in the stratosphere. Can be useful if your stratosphere dries out too quickly; consider a value between 60 and 120 days if this is the case. 0. by default, which disables the methane chemistry. Values less than zero apply the chemistry above 100 mb; else applied above 30 mb. Requires adiabatic to be false.
 
-{\bfseries \mbox{[}use\+\_\+hydro\+\_\+pressure\mbox{]}} Logical\+: whether to compute hydrostatic pressure for input to the physics. Currently only enabled for the fv\+G\+FS model. Ignored in hydrostatic simulations. False by default.
+$\ast$$\ast$\mbox{[}use\-\_\-hydro\-\_\-pressure\mbox{]}$\ast$$\ast$ Logical\-: whether to compute hydrostatic pressure for input to the physics. Currently only enabled for the fv\-G\-F\-S model. Ignored in hydrostatic simulations. False by default.
 
-{\bfseries \mbox{[}z\+\_\+tracer\mbox{]}} Logical\+: whether to transport sub-\/cycled tracers layer-\/by-\/layer, each with its own computed sub-\/cycling time step (if q\+\_\+split = 0). This may improve efficiency for very large numbers of tracers. False by default; currently not implemented.
+$\ast$$\ast$\mbox{[}z\-\_\-tracer\mbox{]}$\ast$$\ast$ Logical\-: whether to transport sub-\/cycled tracers layer-\/by-\/layer, each with its own computed sub-\/cycling time step (if q\-\_\-split = 0). This may improve efficiency for very large numbers of tracers. False by default; currently not implemented.
 
-\subsubsection*{A.\+1.\+5 Timestep options}
+\subsubsection*{A.\-1.\-5 Timestep options}
 
-{\bfseries \mbox{[}k\+\_\+split\mbox{]}} Integer\+: number of vertical remappings per dt\+\_\+atmos (physics time step). 1 by default.
+$\ast$$\ast$\mbox{[}k\-\_\-split\mbox{]}$\ast$$\ast$ Integer\-: number of vertical remappings per dt\-\_\-atmos (physics time step). 1 by default.
 
-{\bfseries \mbox{[}n\+\_\+split\mbox{]}} Integer\+: number of small dynamics (acoustic) time steps between vertical remapping. 0 by default, in which case the model produces a good first guess by examining the resolution, dt\+\_\+atmos, and k\+\_\+split.
+$\ast$$\ast$\mbox{[}n\-\_\-split\mbox{]}$\ast$$\ast$ Integer\-: number of small dynamics (acoustic) time steps between vertical remapping. 0 by default, in which case the model produces a good first guess by examining the resolution, dt\-\_\-atmos, and k\-\_\-split.
 
-{\bfseries \mbox{[}umax\mbox{]}} Real\+: for the doubly-\/periodic grid (grid\+\_\+type = 4) an estimate of the maximum wave speed (m/s), used to determine the value of n\+\_\+split when n\+\_\+split = 0. 350 by default.
+$\ast$$\ast$\mbox{[}umax\mbox{]}$\ast$$\ast$ Real\-: for the doubly-\/periodic grid (grid\-\_\-type = 4) an estimate of the maximum wave speed (m/s), used to determine the value of n\-\_\-split when n\-\_\-split = 0. 350 by default.
 
-{\bfseries \mbox{[}q\+\_\+split\mbox{]}\mbox{]}} Integer\+: number of time steps for sub-\/cycled tracer advection. 0 by default (recommended), in which case the model determines the number of time steps from the global maximum wind speed at each call to the tracer advection.
+$\ast$$\ast$\mbox{[}q\-\_\-split\mbox{]}\mbox{]}$\ast$$\ast$ Integer\-: number of time steps for sub-\/cycled tracer advection. 0 by default (recommended), in which case the model determines the number of time steps from the global maximum wind speed at each call to the tracer advection.
 
-\subsubsection*{A.\+1.\+6 Grid options}
+\subsubsection*{A.\-1.\-6 Grid options}
 
-{\bfseries \mbox{[}deglat\mbox{]}} Real\+: Latitude (in degrees) used to compute the uniform f-\/plane Coriolis parameter for doubly-\/periodic simulations (grid\+\_\+type = 4). 15. by default.
+$\ast$$\ast$\mbox{[}deglat\mbox{]}$\ast$$\ast$ Real\-: Latitude (in degrees) used to compute the uniform f-\/plane Coriolis parameter for doubly-\/periodic simulations (grid\-\_\-type = 4). 15. by default.
 
-{\bfseries \mbox{[}do\+\_\+schmidt\mbox{]}} Logical\+: Whether to enable grid stretching and rotation using stretch\+\_\+fac, target\+\_\+lat, and target\+\_\+lon..false. by default.
+$\ast$$\ast$\mbox{[}do\-\_\-schmidt\mbox{]}$\ast$$\ast$ Logical\-: Whether to enable grid stretching and rotation using stretch\-\_\-fac, target\-\_\-lat, and target\-\_\-lon..false. by default.
 
-{\bfseries \mbox{[}dx\+\_\+const\mbox{]}} Real\+: on a doubly-\/periodic grid (grid\+\_\+type = 4) specifies the (uniform) grid-\/cell-\/width in the x-\/direction, in meters. 1000 by default.
+$\ast$$\ast$\mbox{[}dx\-\_\-const\mbox{]}$\ast$$\ast$ Real\-: on a doubly-\/periodic grid (grid\-\_\-type = 4) specifies the (uniform) grid-\/cell-\/width in the x-\/direction, in meters. 1000 by default.
 
-{\bfseries \mbox{[}dy\+\_\+const\mbox{]}} Real\+: on a doubly-\/periodic grid (grid\+\_\+type = 4) specifies the (uniform) grid-\/cell-\/width in the y-\/direction, in meters. 1000 by default.
+$\ast$$\ast$\mbox{[}dy\-\_\-const\mbox{]}$\ast$$\ast$ Real\-: on a doubly-\/periodic grid (grid\-\_\-type = 4) specifies the (uniform) grid-\/cell-\/width in the y-\/direction, in meters. 1000 by default.
 
-{\bfseries \mbox{[}grid\+\_\+type\mbox{]}} Integer\+: which type of grid to use. If 0, the equidistant gnomonic cubed-\/sphere will be used. If 4, a doubly-\/periodic f-\/plane cartesian grid will be used. If -\/1, the grid is read from I\+N\+P\+U\+T/grid\+\_\+spec.\+nc. Values 2, 3, 5, 6, and 7 are not supported and will likely not run. 0 by default.
+$\ast$$\ast$\mbox{[}grid\-\_\-type\mbox{]}$\ast$$\ast$ Integer\-: which type of grid to use. If 0, the equidistant gnomonic cubed-\/sphere will be used. If 4, a doubly-\/periodic f-\/plane cartesian grid will be used. If -\/1, the grid is read from I\-N\-P\-U\-T/grid\-\_\-spec.\-nc. Values 2, 3, 5, 6, and 7 are not supported and will likely not run. 0 by default.
 
-{\bfseries \mbox{[}hybrid\+\_\+z\mbox{]}} Logical\+: whether to use a hybrid-\/height coordinate, instead of the usual sigma-\/p coordinate. False by default. (Not currently maintained.)
+$\ast$$\ast$\mbox{[}hybrid\-\_\-z\mbox{]}$\ast$$\ast$ Logical\-: whether to use a hybrid-\/height coordinate, instead of the usual sigma-\/p coordinate. False by default. (Not currently maintained.)
 
-{\bfseries \mbox{[}make\+\_\+hybrid\+\_\+z\mbox{]}} Logical\+: Converts the vertical coordinate to a hybrid-\/height coordinate, instead of the usual sigma-\/p coordinate. Requires hybrid\+\_\+z = True. False by default.
+$\ast$$\ast$\mbox{[}make\-\_\-hybrid\-\_\-z\mbox{]}$\ast$$\ast$ Logical\-: Converts the vertical coordinate to a hybrid-\/height coordinate, instead of the usual sigma-\/p coordinate. Requires hybrid\-\_\-z = True. False by default.
 
-{\bfseries \mbox{[}p\+\_\+ref\mbox{]}} Real\+: surface pressure used to construct a horizontally-\/uniform reference vertical pressure profile, used in some simple physics packages in the solo\+\_\+core and in the Rayleigh damping. {\itshape This should not be con-\/ fused with the actual, horizontally-\/varying pressure levels used for all other dynamical calculations.} 1.\+e5 by default. {\itshape Changing this value is strongly discouraged.}
+$\ast$$\ast$\mbox{[}p\-\_\-ref\mbox{]}$\ast$$\ast$ Real\-: surface pressure used to construct a horizontally-\/uniform reference vertical pressure profile, used in some simple physics packages in the solo\-\_\-core and in the Rayleigh damping. {\itshape This should not be con-\/ fused with the actual, horizontally-\/varying pressure levels used for all other dynamical calculations.} 1.\-e5 by default. {\itshape Changing this value is strongly discouraged.}
 
-{\bfseries \mbox{[}shift\+\_\+fac\mbox{]}} Real\+: westward zonal rotation (or shift) of cubed-\/sphere grid from its natural orientation with cube face centers at 0, 90, 180, and 270 degrees longitude. The shift, in degrees, is 180/shift\+\_\+fac. This shift does not move the poles. By default this is set to 18, shifting the grid westward 180/18=10 degrees, so that the edges of the cube do not run through the mountains of Japan; all standard C\+M2.\+x, A\+M3, C\+M3, and Hi\+R\+AM simulations use this orientation of the grid. Requires do\+\_\+schmidt =.false.
+$\ast$$\ast$\mbox{[}shift\-\_\-fac\mbox{]}$\ast$$\ast$ Real\-: westward zonal rotation (or shift) of cubed-\/sphere grid from its natural orientation with cube face centers at 0, 90, 180, and 270 degrees longitude. The shift, in degrees, is 180/shift\-\_\-fac. This shift does not move the poles. By default this is set to 18, shifting the grid westward 180/18=10 degrees, so that the edges of the cube do not run through the mountains of Japan; all standard C\-M2.\-x, A\-M3, C\-M3, and Hi\-R\-A\-M simulations use this orientation of the grid. Requires do\-\_\-schmidt =.false.
 
-{\bfseries \mbox{[}stretch\+\_\+fac\mbox{]}} Real\+: stretching factor for the Schmidt transformation. This is the factor by which tile 6 of the cubed sphere will be shrunk, with the grid size shrinking accordingly. 1 by default, which performs no grid stretching. Requires do\+\_\+schmidt =.true. The model will crash if stretch\+\_\+fac is set to zero. Values of up to 40 have been found useful and stable for short-\/term cloud-\/scale integrations.
+$\ast$$\ast$\mbox{[}stretch\-\_\-fac\mbox{]}$\ast$$\ast$ Real\-: stretching factor for the Schmidt transformation. This is the factor by which tile 6 of the cubed sphere will be shrunk, with the grid size shrinking accordingly. 1 by default, which performs no grid stretching. Requires do\-\_\-schmidt =.true. The model will crash if stretch\-\_\-fac is set to zero. Values of up to 40 have been found useful and stable for short-\/term cloud-\/scale integrations.
 
-{\bfseries \mbox{[}target\+\_\+lat\mbox{]}} Real\+: latitude (in degrees) to which the center of tile 6 will be rotated; if stretching is done with stretch\+\_\+fac the center of the high-\/resolution part of the grid will be at this latitude. -\/90 by default, which does no grid rotation (the Schmidt transformation rotates the south pole to the appropriate target). Requires do\+\_\+schmidt =.true.
+$\ast$$\ast$\mbox{[}target\-\_\-lat\mbox{]}$\ast$$\ast$ Real\-: latitude (in degrees) to which the center of tile 6 will be rotated; if stretching is done with stretch\-\_\-fac the center of the high-\/resolution part of the grid will be at this latitude. -\/90 by default, which does no grid rotation (the Schmidt transformation rotates the south pole to the appropriate target). Requires do\-\_\-schmidt =.true.
 
-{\bfseries \mbox{[}target\+\_\+lon\mbox{]}} Real\+: longitude to which the center of tile 6 will be rotated. 0 by default. Requires do\+\_\+schmidt =.true.
+$\ast$$\ast$\mbox{[}target\-\_\-lon\mbox{]}$\ast$$\ast$ Real\-: longitude to which the center of tile 6 will be rotated. 0 by default. Requires do\-\_\-schmidt =.true.
 
-{\bfseries \mbox{[}nested\mbox{]}} Logical\+: whether this is a nested grid. False by default.
+$\ast$$\ast$\mbox{[}nested\mbox{]}$\ast$$\ast$ Logical\-: whether this is a nested grid. False by default.
 
-{\bfseries \mbox{[}twowaynest\mbox{]}} Logical\+: whether to use two-\/way nesting, the process by which the nested-\/grid solution can feed back onto the coarse-\/grid solution. False by default.
+$\ast$$\ast$\mbox{[}twowaynest\mbox{]}$\ast$$\ast$ Logical\-: whether to use two-\/way nesting, the process by which the nested-\/grid solution can feed back onto the coarse-\/grid solution. False by default.
 
-{\bfseries \mbox{[}parent\+\_\+grid\+\_\+num\mbox{]}} Integer\+: Number of the parent to this nested grid. The coarsest grid in a simulation is numbered 1; further nested grids are numbered sequentially. Required to be a positive value if nested = True. Unless you are nesting inside of nested grids or running multiple (coarse) grids that themselves do not interact, this should be set to 1. -\/1 by default, indicating that this grid does not have a parent grid.
+$\ast$$\ast$\mbox{[}parent\-\_\-grid\-\_\-num\mbox{]}$\ast$$\ast$ Integer\-: Number of the parent to this nested grid. The coarsest grid in a simulation is numbered 1; further nested grids are numbered sequentially. Required to be a positive value if nested = True. Unless you are nesting inside of nested grids or running multiple (coarse) grids that themselves do not interact, this should be set to 1. -\/1 by default, indicating that this grid does not have a parent grid.
 
-{\bfseries \mbox{[}parent\+\_\+tile\mbox{]}} Integer\+: number of the tile (ie. face) in which this nested grid is found in its parent. Required to be a positive value if nested = true. If the parent grid is not a cubed sphere, or itself is a nested grid, this should be set to 1. If the parent grid has been rotated (using do\+\_\+schmidt) with the intent of centering the nested grid at target\+\_\+lat and target\+\_\+lon, then parent\+\_\+tile should be set to 6. 1 by default.
+$\ast$$\ast$\mbox{[}parent\-\_\-tile\mbox{]}$\ast$$\ast$ Integer\-: number of the tile (ie. face) in which this nested grid is found in its parent. Required to be a positive value if nested = true. If the parent grid is not a cubed sphere, or itself is a nested grid, this should be set to 1. If the parent grid has been rotated (using do\-\_\-schmidt) with the intent of centering the nested grid at target\-\_\-lat and target\-\_\-lon, then parent\-\_\-tile should be set to 6. 1 by default.
 
-{\bfseries \mbox{[}refinement\mbox{]}} Integer\+: refinement ratio of the nested grid. This is the number of times that each coarse-\/grid cell face will be divided into smaller segments on the nested grid. Required to be a positive integer if nested = true. Nested grids are aligned with the coarse grid, so non-\/integer refinements are not permitted. 3 by default.
+$\ast$$\ast$\mbox{[}refinement\mbox{]}$\ast$$\ast$ Integer\-: refinement ratio of the nested grid. This is the number of times that each coarse-\/grid cell face will be divided into smaller segments on the nested grid. Required to be a positive integer if nested = true. Nested grids are aligned with the coarse grid, so non-\/integer refinements are not permitted. 3 by default.
 
-{\bfseries \mbox{[}nestupdate\mbox{]}} Integer\+: type of nested-\/grid update to use; details are given in model/fv\+\_\+nesting.\+F90. 0 by default.
+$\ast$$\ast$\mbox{[}nestupdate\mbox{]}$\ast$$\ast$ Integer\-: type of nested-\/grid update to use; details are given in model/fv\-\_\-nesting.\-F90. 0 by default.
 
-\subsubsection*{A.\+1.\+7 Solver options}
+\subsubsection*{A.\-1.\-7 Solver options}
 
-{\bfseries \mbox{[}a2b\+\_\+ord\mbox{]}} Integer\+: order of interpolation used by the pressure gradient force to interpolate cell-\/centered (A-\/grid) values to the grid corners. 4 by default (recommended), which uses fourth-\/order interpolation; otherwise second-\/order interpolation is used.
+$\ast$$\ast$\mbox{[}a2b\-\_\-ord\mbox{]}$\ast$$\ast$ Integer\-: order of interpolation used by the pressure gradient force to interpolate cell-\/centered (A-\/grid) values to the grid corners. 4 by default (recommended), which uses fourth-\/order interpolation; otherwise second-\/order interpolation is used.
 
-{\bfseries \mbox{[}beta\mbox{]}} Real\+: Parameter specifying fraction of time-\/off-\/centering for backwards evaluation of the pressure gradient force. 0.\+0 by default, which produces a fully backwards evaluationthe pressure gradient force is entirely evaluated using the updated (time {\ttfamily n+1} dynamical fields. A value of 0.\+5 will equally weight the P\+GF determined at times {\ttfamily n} and {\ttfamily n+1}, but may not be stable; values larger than 0.\+45 are not recommended. A value of 0.\+4 is recommended for most hydrostatic simulations, which allows an improved representation of inertia-\/gravity waves in the tropics. In non-\/hydrostatic simulations using the semi-\/implicit solver (a\+\_\+imp $>$ 0.\+5) the values of a\+\_\+imp and beta should add to 1, so that the time-\/centering is consistent between the P\+GF and the nonhydrostatic solver. Proper range is 0 to 0.\+45.
+$\ast$$\ast$\mbox{[}beta\mbox{]}$\ast$$\ast$ Real\-: Parameter specifying fraction of time-\/off-\/centering for backwards evaluation of the pressure gradient force. 0.\-0 by default, which produces a fully backwards evaluationthe pressure gradient force is entirely evaluated using the updated (time {\ttfamily n+1} dynamical fields. A value of 0.\-5 will equally weight the P\-G\-F determined at times {\ttfamily n} and {\ttfamily n+1}, but may not be stable; values larger than 0.\-45 are not recommended. A value of 0.\-4 is recommended for most hydrostatic simulations, which allows an improved representation of inertia-\/gravity waves in the tropics. In non-\/hydrostatic simulations using the semi-\/implicit solver (a\-\_\-imp $>$ 0.\-5) the values of a\-\_\-imp and beta should add to 1, so that the time-\/centering is consistent between the P\-G\-F and the nonhydrostatic solver. Proper range is 0 to 0.\-45.
 
-{\bfseries \mbox{[}c2l\+\_\+ord\mbox{]}} Integer\+: order of interpolation from the solvers native D-\/grid winds to latitude-\/longitude A-\/grid winds, which are used as input to the physics routines and for writing to history files. 4 by default (recommended); fourth-\/order interpolation is used unless c2l\+\_\+ord = 2.
+$\ast$$\ast$\mbox{[}c2l\-\_\-ord\mbox{]}$\ast$$\ast$ Integer\-: order of interpolation from the solvers native D-\/grid winds to latitude-\/longitude A-\/grid winds, which are used as input to the physics routines and for writing to history files. 4 by default (recommended); fourth-\/order interpolation is used unless c2l\-\_\-ord = 2.
 
-{\bfseries \mbox{[}consv\+\_\+am\mbox{]}} Logical\+: whether to enable Angular momentum fixer. False by default.
+$\ast$$\ast$\mbox{[}consv\-\_\-am\mbox{]}$\ast$$\ast$ Logical\-: whether to enable Angular momentum fixer. False by default.
 
-{\bfseries \mbox{[}consv\+\_\+te\mbox{]}} Real\+: fraction of total energy lost during the adiabatic integration between calls of the physics, to be added back globally as heat; essentially the strength of the energy fixer in the physics. Note that this is a global energy fixer and cannot add back energy locally. The default algorithm increments the potential temperature so the pressure gradients are unchanged. 0 by default. Proper range is 0 to 1. 1 will restore the energy completely to its original value before entering the physics; a value of 0.\+7 {\itshape roughly} causes the energy fixer to compensate for the amount of energy changed by the physics in G\+F\+DL Hi\+R\+AM or A\+M3.
+$\ast$$\ast$\mbox{[}consv\-\_\-te\mbox{]}$\ast$$\ast$ Real\-: fraction of total energy lost during the adiabatic integration between calls of the physics, to be added back globally as heat; essentially the strength of the energy fixer in the physics. Note that this is a global energy fixer and cannot add back energy locally. The default algorithm increments the potential temperature so the pressure gradients are unchanged. 0 by default. Proper range is 0 to 1. 1 will restore the energy completely to its original value before entering the physics; a value of 0.\-7 {\itshape roughly} causes the energy fixer to compensate for the amount of energy changed by the physics in G\-F\-D\-L Hi\-R\-A\-M or A\-M3.
 
-{\bfseries \mbox{[}convert\+\_\+ke\mbox{]}} Logical\+: If true, adds energy dissipated through mechanical damping to heat throughout the {\itshape entire} depth of the domain; if false (default) this is only done in the sponge layer at the top of the domain. This option is only enabled if d\+\_\+con $>$ 1.\+e-\/5.
+$\ast$$\ast$\mbox{[}convert\-\_\-ke\mbox{]}$\ast$$\ast$ Logical\-: If true, adds energy dissipated through mechanical damping to heat throughout the {\itshape entire} depth of the domain; if false (default) this is only done in the sponge layer at the top of the domain. This option is only enabled if d\-\_\-con $>$ 1.\-e-\/5.
 
-{\bfseries \mbox{[}d\+\_\+con\mbox{]}} Real\+: Fraction of kinetic energy lost to explicit damping to be converted to heat. Acts as a dissipative heating mechanism in the dynamical core. 0. by default. Proper range is 0 to 1. Note that this is a local, physically correct, energy fixer.
+$\ast$$\ast$\mbox{[}d\-\_\-con\mbox{]}$\ast$$\ast$ Real\-: Fraction of kinetic energy lost to explicit damping to be converted to heat. Acts as a dissipative heating mechanism in the dynamical core. 0. by default. Proper range is 0 to 1. Note that this is a local, physically correct, energy fixer.
 
-{\bfseries \mbox{[}delt\+\_\+max\mbox{]}} Real\+: maximum allowed magnitude of the dissipative heating rate, K s\$$^\wedge$\{-\/1\}\$; larger magnitudes are clipped to this amount. This can help avoid instability that can occur due to strong heating when d\+\_\+con \$$>$ 0\$. A value of 0.\+008 (a rate equivalent to about 800 K/day) is sufficient to stabilize the model at 3-\/km resolution. Set to 1 by default, which effectively disables this limitation.
+$\ast$$\ast$\mbox{[}delt\-\_\-max\mbox{]}$\ast$$\ast$ Real\-: maximum allowed magnitude of the dissipative heating rate, K s\$$^\wedge$\{-\/1\}\$; larger magnitudes are clipped to this amount. This can help avoid instability that can occur due to strong heating when d\-\_\-con \$$>$ 0\$. A value of 0.\-008 (a rate equivalent to about 800 K/day) is sufficient to stabilize the model at 3-\/km resolution. Set to 1 by default, which effectively disables this limitation.
 
-{\bfseries \mbox{[}fill\+\_\+dp\mbox{]}} Logical\+: like fill except for {\ttfamily p}, the hydrostatic pressure thickness. When the filling occurs a diagnostic message is printed out, which is helpful for diagnosing where the problem may be occurring. Typically if the pressure filling is needed a crash is inevitable, and thus this option is often better for debugging than as a safety valve. False by default.
+$\ast$$\ast$\mbox{[}fill\-\_\-dp\mbox{]}$\ast$$\ast$ Logical\-: like fill except for {\ttfamily p}, the hydrostatic pressure thickness. When the filling occurs a diagnostic message is printed out, which is helpful for diagnosing where the problem may be occurring. Typically if the pressure filling is needed a crash is inevitable, and thus this option is often better for debugging than as a safety valve. False by default.
 
-{\bfseries \mbox{[}fv\+\_\+sg\+\_\+adj\mbox{]}} Integer\+: timescale (in seconds) at which to remove two-\/delta-\/z instability when the local (between two adjacent levels) Richardson number is less than 1. This is achieved by local mixing, which conserves mass, momentum, and total energy. Values of 0 or smaller disable this feature. If n\+\_\+sponge \$$<$ 0\$ then the mixing is applied only to the top n\+\_\+sponge layers of the domain. Set to -\/1 (inactive) by default. Proper range is 0 to 3600.
+$\ast$$\ast$\mbox{[}fv\-\_\-sg\-\_\-adj\mbox{]}$\ast$$\ast$ Integer\-: timescale (in seconds) at which to remove two-\/delta-\/z instability when the local (between two adjacent levels) Richardson number is less than 1. This is achieved by local mixing, which conserves mass, momentum, and total energy. Values of 0 or smaller disable this feature. If n\-\_\-sponge \$$<$ 0\$ then the mixing is applied only to the top n\-\_\-sponge layers of the domain. Set to -\/1 (inactive) by default. Proper range is 0 to 3600.
 
-{\bfseries \mbox{[}halo\+\_\+update\+\_\+type\mbox{]}} Integer\+: which scheme to use for halo updates in multiprocessor simulations. If set to 1 non-\/blocking updates are used, which can improve simulation efficiency on some systems. Otherwise, blocking halo updates are performed. 1 by default.
+$\ast$$\ast$\mbox{[}halo\-\_\-update\-\_\-type\mbox{]}$\ast$$\ast$ Integer\-: which scheme to use for halo updates in multiprocessor simulations. If set to 1 non-\/blocking updates are used, which can improve simulation efficiency on some systems. Otherwise, blocking halo updates are performed. 1 by default.
 
-{\bfseries \mbox{[}hord\+\_\+mt\mbox{]}} Integer\+: horizontal advection scheme for momentum fluxes. A complete list of kord options is given in the table below. 9 by default, which uses the third-\/order piecewise-\/parabolic method with the monotonicity constraint of Huynh, which is less diffusive than other constraints. For hydrostatic simulation, 8 (the L04 monotonicity constraint) is recommended; for nonhydrostatic simulation, the completely unlimited (\`{}`linear'\textquotesingle{} or non-\/monotone) P\+PM scheme is recommended. If no monotonicity constraint is applied, enabling the flux damping (do\+\_\+vort\+\_\+damp = .true.) is highly recommended to control grid-\/scale noise. It is also recommended that hord\+\_\+mt, hord\+\_\+vt, hord\+\_\+tm, and hord\+\_\+dp use the same value, to ensure consistenttransport of all dynamical fields, unless a positivity constraint on mass advection (hord\+\_\+dp) is desired.
+$\ast$$\ast$\mbox{[}hord\-\_\-mt\mbox{]}$\ast$$\ast$ Integer\-: horizontal advection scheme for momentum fluxes. A complete list of kord options is given in the table below. 9 by default, which uses the third-\/order piecewise-\/parabolic method with the monotonicity constraint of Huynh, which is less diffusive than other constraints. For hydrostatic simulation, 8 (the L04 monotonicity constraint) is recommended; for nonhydrostatic simulation, the completely unlimited (``linear'' or non-\/monotone) P\-P\-M scheme is recommended. If no monotonicity constraint is applied, enabling the flux damping (do\-\_\-vort\-\_\-damp = .true.) is highly recommended to control grid-\/scale noise. It is also recommended that hord\-\_\-mt, hord\-\_\-vt, hord\-\_\-tm, and hord\-\_\-dp use the same value, to ensure consistenttransport of all dynamical fields, unless a positivity constraint on mass advection (hord\-\_\-dp) is desired.
 
-{\bfseries \mbox{[}hord\+\_\+vt\mbox{]}} Integer\+: horizontal advection scheme for absolute vorticity and for vertical velocity in nonhydrostatic simulations. 9 by default.
+$\ast$$\ast$\mbox{[}hord\-\_\-vt\mbox{]}$\ast$$\ast$ Integer\-: horizontal advection scheme for absolute vorticity and for vertical velocity in nonhydrostatic simulations. 9 by default.
 
-{\bfseries \mbox{[}hord\+\_\+tm\mbox{]}} Integer\+: horizontal advection scheme for potential temperature and layer thickness in nonhydrostatic simulations. 9 by default.
+$\ast$$\ast$\mbox{[}hord\-\_\-tm\mbox{]}$\ast$$\ast$ Integer\-: horizontal advection scheme for potential temperature and layer thickness in nonhydrostatic simulations. 9 by default.
 
-{\bfseries \mbox{[}hord\+\_\+dp\mbox{]}} Integer\+: horizontal advection scheme for mass. A positivity constraint may be warranted for hord\+\_\+dp but not strictly necessary. 9 by default.
+$\ast$$\ast$\mbox{[}hord\-\_\-dp\mbox{]}$\ast$$\ast$ Integer\-: horizontal advection scheme for mass. A positivity constraint may be warranted for hord\-\_\-dp but not strictly necessary. 9 by default.
 
-{\bfseries \mbox{[}hord\+\_\+tr\mbox{]}} Integer\+: horizontal advection scheme for tracers. 12 by default. This value can differ from the other hord options since tracers are sub-\/cycled (if inline\+\_\+q == False) and require positive-\/definite advection to control the appearance of non-\/physical negative masses. 8 (fastest) or 10 (least diffusive) are typically recommended.
+$\ast$$\ast$\mbox{[}hord\-\_\-tr\mbox{]}$\ast$$\ast$ Integer\-: horizontal advection scheme for tracers. 12 by default. This value can differ from the other hord options since tracers are sub-\/cycled (if inline\-\_\-q == False) and require positive-\/definite advection to control the appearance of non-\/physical negative masses. 8 (fastest) or 10 (least diffusive) are typically recommended.
 
-\tabulinesep=1mm
-\begin{longtabu} spread 0pt [c]{*{2}{|X[-1]}|}
+\begin{TabularC}{2}
 \hline
-\rowcolor{\tableheadbgcolor}\textbf{ hord  }&\textbf{ Advection Method   }\\\cline{1-2}
-\endfirsthead
+\rowcolor{lightgray}\PBS\centering {\bf hord }&{\bf Advection Method  }\\\cline{1-2}
+\PBS\centering 5 &Fastest unlimited fifth-\/order scheme with built-\/in 2{$\Delta$}x filter; not recommended for hord\-\_\-tr. This is also the most accurate and least diffusive F\-V scheme available within F\-V if monotonicity preservation is not a high priority. \\\cline{1-2}
+\PBS\centering 6 &{\itshape Developmental} P\-P\-M scheme with an intermediate-\/strength mono-\/ tonicity constraint. More diffusive than 5. \\\cline{1-2}
+\PBS\centering 7 &6, applying a 2{$\Delta$}x filter and a positivity constraint \\\cline{1-2}
+\PBS\centering 8 &P\-P\-M with the constraint of Lin 2004 \\\cline{1-2}
+\PBS\centering 9 &P\-P\-M with the Hunyh constraint \\\cline{1-2}
+\PBS\centering 10 &9, with a 2{$\Delta$}x filter, and the Huynh constraint applied only if a certain condition is met; otherwise unlimited \\\cline{1-2}
+\end{TabularC}
+$\ast$$\ast$\mbox{[}kord\-\_\-mt\mbox{]}$\ast$$\ast$ Integer\-: vertical remapping scheme for the winds. 8 by default; 9 is recommended as the safest option, although 10, and 11 can also be useful. See table below for a complete list of kord options.
+
+$\ast$$\ast$\mbox{[}kord\-\_\-tm\mbox{]}$\ast$$\ast$ Integer\-: vertical remapping scheme for temperature. If positive (not recommended), then vertical remapping is performed on total energy instead of temperature (see remap\-\_\-t below). -\/8 by default.
+
+$\ast$$\ast$\mbox{[}kord\-\_\-tr\mbox{]}$\ast$$\ast$ Integer\-: vertical remapping scheme for tracers. 8 by default. 9 or 11 recommended. It is often recommended to use the same value for kord\-\_\-tr as for kord\-\_\-tm.
+
+$\ast$$\ast$\mbox{[}kord\-\_\-wz\mbox{]}$\ast$$\ast$ Integer\-: vertical remapping scheme for vertical velocity in nonhydrostatic simulations. 8 by default; 9 recommended. It is also recommended to use the same value for kord\-\_\-wz as for kord\-\_\-mt.
+
+\begin{TabularC}{2}
 \hline
-\endfoot
+\rowcolor{lightgray}\PBS\centering {\bf kord }&{\bf Vertical remapping reconstruction method  }\\\cline{1-2}
+\PBS\centering 4 &Monotone P\-P\-M \\\cline{1-2}
+\PBS\centering 6 &P\-P\-M \\\cline{1-2}
+\PBS\centering 7 &P\-P\-M with Hyunh’s second constraint (see L04) \\\cline{1-2}
+\PBS\centering 9 &Monotonic cubic spline with 2{$\Delta$}z oscillations removed \\\cline{1-2}
+\PBS\centering 10 &Selectively monotonic cubic spline, where local extrema are retained, with 2{$\Delta$}z oscillations removed \\\cline{1-2}
+\PBS\centering 11 &Non-\/monotonic (linear) cubic spline with 2{$\Delta$}z oscillations removed; if an invalid value for kord is given, this scheme is used \\\cline{1-2}
+\PBS\centering 13 &Monotonic cubic spline with 2{$\Delta$}z oscillations removed \\\cline{1-2}
+\PBS\centering 16 &Non-\/monotonic cubic spline with a strong 2{$\Delta$}z filter (similar to hord = 6). \\\cline{1-2}
+\end{TabularC}
+$\ast$$\ast$\mbox{[}no\-\_\-dycore\mbox{]}$\ast$$\ast$ Logical\-: disables execution of the dynamical core, only running the initialization, diagnostic, and I/\-O routines, and any physics that may be enabled. Essentially turns the model into a column physics model. False by default.
+
+$\ast$$\ast$\mbox{[}remap\-\_\-t\mbox{]}$\ast$$\ast$ Logical\-: whether the vertical remapping is performed on (virtual) temperature instead of (virtual) potential temperature. Since typically potential temperature increases exponentially from layer to layer near the top boundary, the cubic-\/spline interpolation in the vertical remapping will have difficulty with the exponential profile. Temperature does not have this problem and will often yield a more accurate result. True by default.
+
+$\ast$$\ast$\mbox{[}reproduce\-\_\-sum\mbox{]}$\ast$$\ast$ Logical\-: uses an exactly-\/reproducible global sum operation performed when computing the global energy for consv\-\_\-te. This is used because the F\-M\-S routine mpp\-\_\-sum() is not bit-\/wise reproducible due to its handling of floating point arithmetic, and so can return different answers for (say) different processor layouts. True by default.
+
+\subsubsection*{A.\-1.\-7 Nonhydrostatic options}
+
+$\ast$$\ast$\mbox{[}a\-\_\-imp\mbox{]}$\ast$$\ast$ Real\-: Controls behavior of the non-\/hydrostatic solver. Values $>$ 0.\-5 enable the semi-\/implicit solver, in which the value of a\-\_\-imp controls the time-\/off-\/centering\-: use a\-\_\-imp = 1.\-0 for a fully backward time-\/stepping. For consistency, the sum of beta and a\-\_\-imp should be 1 when the semi-\/implicit solver is used. The semi-\/implicit algorithm is substantially more efficient except at very high (km-\/scale) resolutions with an acoustic time step of a few seconds or less. 0.\-75 by default. Proper values are 0, or between 0.\-5 and 1 Only used if hydrostatic =.false.
+
+$\ast$$\ast$\mbox{[}hydrostatic\mbox{]}$\ast$$\ast$ Logical\-: whether to use the hydrostatic or nonhydrostatic solver. True by default.
+
+$\ast$$\ast$\mbox{[}make\-\_\-nh\mbox{]}$\ast$$\ast$ Logical\-: Whether to re-\/initialize the nonhydrostatic state, by re-\/computing dz from hydrostatic balance and setting w to 0. False by default.
+
+$\ast$$\ast$\mbox{[}p\-\_\-fac\mbox{]}$\ast$$\ast$ Real\-: Safety factor for minimum nonhydrostatic pressures, which will be limited so the full pressure is no less than p\-\_\-fac times the hydrostatic pressure. This is only of concern in mid-\/top or high-\/top models with very low pressures near the model top, and has no effect in most simulations. The pressure limiting activates only when model is in danger of blowup due to unphysical negative total pressures. 0.\-05 by default. Only used if hydrostatic =.false. and the semi-\/implicit solver is used. Proper range is 0 to 0.\-25.
+
+$\ast$$\ast$\mbox{[}use\-\_\-logp\mbox{]}$\ast$$\ast$ Logical\-: Enables a variant of the Lin pressure-\/gradient force algorithm, which uses the logarithm of pressure instead of the Exner function (as in Lin 1997). This yields more accurate results for regions that are nearly isothermal. Ignored if hydrostatic = true. False by default.
+
+\subsubsection*{A.\-1.\-9 Damping options}
+
+$\ast$$\ast$\mbox{[}d2\-\_\-bg\mbox{]}$\ast$$\ast$ Real\-: coefficient for background second-\/order divergence damping. This option remains active even if nord is nonzero. 0.\-0 by default. Proper range is 0 to 0.\-02.
+
+$\ast$$\ast$\mbox{[}d2\-\_\-bg\-\_\-k1\mbox{]}$\ast$$\ast$ Real\-: strength of second-\/order diffusion in the top sponge layer. 0.\-16 by default. This value, and d2\-\_\-bg\-\_\-k2, will be changed appropriately in the model (depending on the height of model top), so the actual damping may be very reduced. See atmos\-\_\-cubed\-\_\-sphere/model/dyn\-\_\-core.\-F90 for details. Recommended range is 0. to 0.\-2. Note that since diffusion is converted to heat if d\-\_\-con $>$ 0 larger amounts of sponge-\/layer diffusion may be {\itshape less} stable.
+
+$\ast$$\ast$\mbox{[}d2\-\_\-bg\-\_\-k2\mbox{]}$\ast$$\ast$ Real\-: strength of second-\/order diffusion in the second sponge layer from the model top. 0.\-02 by default. This value should be lower than d2\-\_\-bg\-\_\-k1.
+
+$\ast$$\ast$\mbox{[}d4\-\_\-bg\mbox{]}$\ast$$\ast$ Real\-: Dimensionless coefficient for background higher-\/order divergence damping. 0.\-0 by default. If no second-\/order divergence damping is used, then values between 0.\-1 and 0.\-16 are recommended. Requires nord $>$ 0. Note that the scaling for d4\-\_\-bg differs from that of d2\-\_\-bg; nord $>$= 1 and d4\-\_\-bg = 0.\-16 will be less diffusive than nord = 0 and d2\-\_\-bg = 0.\-02.
+
+$\ast$$\ast$\mbox{[}dddmp\mbox{]}$\ast$$\ast$ Real\-: Dimensionless coefficient for the second-\/order Smagorinsky-\/type divergence damping. 0.\-0 by default. 0.\-2 (the Smagorinsky constant) is recommended if I\-Cs are noisy.
+
+$\ast$$\ast$\mbox{[}d\-\_\-ext\mbox{]}$\ast$$\ast$ Real\-: coefficient for external (barotropic) mode damping. 0.\-02 by default. Proper range is 0 to 0.\-02. A value of 0.\-01 or 0.\-02 may help improve the models maximum stable time step in low-\/resolution (2-\/degree or poorer) simulations; otherwise a value of 0 is recommended.
+
+$\ast$$\ast$\mbox{[}do\-\_\-vort\-\_\-damp\mbox{]}$\ast$$\ast$ Logical\-: whether to apply flux damping (of strength governed by vtdm4) to the fluxes of vorticity, air mass, and nonhydrostatic vertical velocity (there is no dynamically correct way to add explicit diffusion to the tracer fluxes). The form is the same as is used for the divergence damping, including the same order (from nord) damping, unless nord = 0, in which case this damping is fourth-\/order, or if nord = 3, in which case this damping is sixth-\/order (instead of eighth-\/order). We recommend enabling this damping when the linear or non-\/monotonic horizontal advection schemes are enabled, but is unnecessary and not recommended when using monotonic advection. False by default.
+
+$\ast$$\ast$\mbox{[}n\-\_\-sponge\mbox{]}$\ast$$\ast$ Integer\-: controls the number of layers at the upper boundary on which the 2{$\Delta$}x filter is applied. {\itshape This does not control the sponge layer.} 0 by default.
+
+$\ast$$\ast$\mbox{[}nord\mbox{]}$\ast$$\ast$ Integer\-: order of divergence damping\-: 0 for second-\/order; 1 for fourth-\/order (default); 2 for sixth-\/order; 3 for eighth-\/order. Sixth-\/order may yield a better solution for low resolutions (one degree or coarser) by virtue of it being more scale-\/selective and will not damp moderately-\/well-\/resolved disturbances as much as does lower-\/order damping.
+
+$\ast$$\ast$\mbox{[}nord\-\_\-tr\mbox{]}$\ast$$\ast$ Integer\-: Order of tracer damping; values mean the same as for nord. 0 by default.
+
+$\ast$$\ast$\mbox{[}rf\-\_\-cutoff\mbox{]}$\ast$$\ast$ Real\-: pressure below which no Rayleigh damping is applied if tau $>$ 0.
+
+$\ast$$\ast$\mbox{[}rf\-\_\-fast\mbox{]}$\ast$$\ast$ Logical\-: option controlling whether to apply Rayleigh damping (for tau $>$ 0) on the dynamic/acoustic timestep rather than on the physics timestep. This can help stabilize the model by applying the damping more weakly more frequently, so the instantaneous amount of damping (and thereby heat added) is reduced. .false. by default, which applies the Rayleigh drag every physics timestep.
+
+$\ast$$\ast$\mbox{[}tau\mbox{]}$\ast$$\ast$ Real\-: time scale (in days) for Rayleigh friction applied to horizontal and vertical winds; lost kinetic energy is converted to heat, except on nested grids. 0.\-0 by default, which disables damping. Larger values yield less damping. For models with tops at 1mb or lower values between 10 and 30 are useful for preventing overly-\/strong polar night jets; for higher-\/top hydrostatic models values between 5 and 15 should be considered; and for non-\/hydrostatic models values of 10 or less should be considered, with smaller values for higher-\/resolution.
+
+$\ast$$\ast$\mbox{[}vtdm4\mbox{]}$\ast$$\ast$ Real\-: coefficient for background other-\/variable damping. The value of vtdm4 should be less than that of d4\-\_\-bg. A good first guess for vtdm4 is about one-\/third the value of d4\-\_\-bg. 0.\-0 by default. Requires do\-\_\-vort\-\_\-damp to be .true. Disabled for values less than 1.\-e-\/3. Other-\/variable damping should not be used if a monotonic horizontal advection scheme is used.
+
+\subsection*{A.\-2 Entries in coupler\-\_\-nml}
+
+$\ast$$\ast$\mbox{[}months, days, hours, minutes, seconds\mbox{]}$\ast$$\ast$ Integer\-: length of the model integration in the corresponding units. All are 0 by default, which initializes the model and then immediately writes out the restart files and halts.
+
+$\ast$$\ast$\mbox{[}dt\-\_\-atmos\mbox{]}$\ast$$\ast$ Integer\-: time step for the largest atmosphere model loop, corresponding to the frequency at which the top level routine in the dynamics is called, and the physics timestep. Must be set.
+
+$\ast$$\ast$\mbox{[}current\-\_\-date\mbox{]}$\ast$$\ast$ Integer(6)\-: initialization date (in the chosen calendar) for the model, in year, month, day, hour, minute, and second. (0,0,0,0,0,0) by default, a value that is useful for control integrations of coupled models.
+
+$\ast$$\ast$\mbox{[}calendar\mbox{]}$\ast$$\ast$ Character(17)\-: calendar selection; J\-U\-L\-I\-A\-N is typically recommended, although the other values (T\-H\-I\-R\-T\-Y\-\_\-\-D\-A\-Y\-\_\-\-M\-O\-N\-T\-H\-S, N\-O\-L\-E\-A\-P, N\-O\-\_\-\-C\-A\-L\-E\-N\-D\-A\-R) have particular uses in idealized models. Must be set.
+
+$\ast$$\ast$\mbox{[}force\-\_\-date\-\_\-from\-\_\-namelist\mbox{]}$\ast$$\ast$ Logical\-: if .true., will read the initialization date from the namelist variable current\-\_\-date, rather than taking the value from a restart file. If the model is being cold-\/started (such as what is typically but not necessarily done if external\-\_\-ic = .true.) then the initialization date must be specified in current\-\_\-date, otherwise the model will stop. .false. by default.
+
+$\ast$$\ast$\mbox{[}atmos\-\_\-nthreads\mbox{]}$\ast$$\ast$ Integer\-: number of threads for Open\-M\-P multi-\/threading. 1 by default.
+
+$\ast$$\ast$\mbox{[}use\-\_\-hyper\-\_\-thread\mbox{]}$\ast$$\ast$ Logical\-: indicates that some of the threads in atmos\-\_\-nthreads may be hyperthreads. .false. by default.
+
+$\ast$$\ast$\mbox{[}ncores\-\_\-per\-\_\-node\mbox{]}$\ast$$\ast$ Integer\-: number of processor codes per physical compute node. Used when setting up hyperthreading to determine number of virtual vs. hardware threads. 0 by default.
+
+$\ast$$\ast$\mbox{[}debug\-\_\-affinity\mbox{]}$\ast$$\ast$ Logical\-: if .true. prints out a message describing cpu affinity characteristics while initializing Open\-M\-P. .false. by default.
+
+$\ast$$\ast$\mbox{[}restart\-\_\-days, restart\-\_\-secs\mbox{]}$\ast$$\ast$ Integer\-: frequency at which to write out \char`\"{}intermediate\char`\"{} restart files, which are useful for checkpointing in the middle of a long run, or to be able to diagnose problems during the model integration. Both are 0 by default, in which case intermediate restarts are not written out.
+
+\subsection*{A.\-3 Entries in external\-\_\-ic\-\_\-nml}
+
+$\ast$$\ast$\mbox{[}filtered\-\_\-terrain\mbox{]}$\ast$$\ast$ Logical\-: whether to use the terrain filtered by the preprocessing tools rather than the raw terrain. .true. by default. Only active if nggps\-\_\-ic = .true. or ecmwf\-\_\-ic = .true.
+
+$\ast$$\ast$\mbox{[}levp\mbox{]}$\ast$$\ast$ Integer\-: number of levels in the input (remapped) initial conditions. 64 by default. Only active if nggps\-\_\-ic = .true.
+
+$\ast$$\ast$\mbox{[}checker\-\_\-tr\mbox{]}$\ast$$\ast$ Logical\-: whether to enable the ``checkerboard'' tracer test. .false. by default. Only active if nggps\-\_\-ic = .true.
+
+$\ast$$\ast$\mbox{[}nt\-\_\-checker\mbox{]}$\ast$$\ast$ Integer\-: number of tracers (at the end of the list of tracers defined in field\-\_\-table) to initialize with an idealized ``checkerboard'' pattern, with values of either 0 or 1. This is intended to test the monotonicity or positivity constraint in the advection scheme. 0 by default. Only active if nggps\-\_\-ic = .true.
+
+\subsection*{A.\-4 Entries in surf\-\_\-map\-\_\-nml}
+
+$\ast$$\ast$\mbox{[}surf\-\_\-file\mbox{]}$\ast$$\ast$ Character(len=128)\-: File containing topography data. This file must be in Net\-C\-D\-F format. I\-N\-P\-U\-T/topo1min.\-nc by default. (Previous versions of the model have used 5 minute U\-S\-G\-S data, which is not recommended.)
+
+$\ast$$\ast$\mbox{[}nlon\mbox{]}$\ast$$\ast$ Integer\-: Size of the longitude dimension in topography data; not used.
+
+$\ast$$\ast$\mbox{[}nlat\mbox{]}$\ast$$\ast$ Integer\-: Size of the latitude dimension in topography data; not used.
+
+$\ast$$\ast$\mbox{[}zero\-\_\-ocean\mbox{]}$\ast$$\ast$ Logical\-: whether to prevent the smoothing from extending topography out into the ocean. True by default.
+
+$\ast$$\ast$\mbox{[}zs\-\_\-filter\mbox{]}$\ast$$\ast$ Logical\-: whether to apply smoothing to the topography. True by default.
+
+\subsection*{A.\-5 Entries in fv\-\_\-grid\-\_\-nml}
+
+$\ast$$\ast$\mbox{[}grid\-\_\-name\mbox{]}$\ast$$\ast$ Character(len=80)\-: Name of the grid either being read in (if grid\-\_\-spec = -\/1) or being created. This is only used for writing out a binary file in the directory from which the model is run. Gnomonic by default.
+
+$\ast$$\ast$\mbox{[}grid\-\_\-file\mbox{]}$\ast$$\ast$ Character(len=120)\-: If grid\-\_\-type = -\/1 the name of the grid\-\_\-spec file to read in. I\-N\-P\-U\-T/grid\-\_\-spec.\-nc by default; other values will not work.
+
+\subsection*{A.\-6 Entries in test\-\_\-case\-\_\-nml}
+
+$\ast$$\ast$\mbox{[}test\-\_\-case\mbox{]}$\ast$$\ast$ Integer\-: number of the idealized test case to run. A number of nest cases are defined in tools/test\-\_\-cases.\-F90, of which numbers 19 are intended for the shallow-\/water model. Requires warm\-\_\-start =.false. 11 by default; this creates a resting atmosphere with a very basic thermodynamic profile, with topography. If you wish to initialize an Aquaplanet simulation (no topography) set to 14.
+
+$\ast$$\ast$\mbox{[}alpha\mbox{]}$\ast$$\ast$ Real\-: In certain shallow-\/water test cases specifies the angle (in fractions of a rotation, so 0.\-25 is a 45-\/degree rotation) through which the basic state is rotated. 0 by default.
+
+\subsection*{A.\-7 Entries in nest\-\_\-nml}
+
+$\ast$$\ast$\mbox{[}ngrids\mbox{]}$\ast$$\ast$ Integer\-: number of grids in this simulation. 1 by default. (The variable ntiles has the same effect, but its use is not recommended as it can be confused with the six tiles of the cubed sphere, which in this case form only one grid.)
+
+$\ast$$\ast$\mbox{[}nest\-\_\-pes\mbox{]}$\ast$$\ast$ Integer(100)\-: array carrying number of P\-Es assigned to each grid, in order. Must be set if ngrids $>$ 1.
+
+$\ast$$\ast$\mbox{[}p\-\_\-split\mbox{]}$\ast$$\ast$ Integer\-: number of times to sub-\/cycle dynamics, performing nested-\/grid B\-C interpolation and (if twowaynest ==.true.) two-\/way updating at the end of each set of dynamics calls. If p\-\_\-split $>$ 1 the user should decrease k\-\_\-split appropriately so the remapping and dynamics time steps remain the same. 1 by default.
+
+$\ast$$\ast$\mbox{[}imfdeep\mbox{]}$\ast$$\ast$ These are options for a variety of convection schemes\-: for example I\-I\-R\-C imfdeep = 1 is old S\-A\-S, imfdeep = 2 is scaleaware S\-A\-S, 3 is either R\-A\-S or C\-S, etc. The best reference is to look for the options in G\-F\-S physics driver.\-F90
+
+$\ast$$\ast$\mbox{[}do\-\_\-deep\mbox{]}$\ast$$\ast$ The correct options to disable the convection schemes are do deep = .F. and shal cnv =.F.
+
+\subsection*{A.\-8 Entries in nggps\-\_\-diag\-\_\-nml}
+
+$\ast$$\ast$\mbox{[}fdiag\mbox{]}$\ast$$\ast$ Real(1028)\-: Array listing the diagnostic output times (in hours) for the G\-F\-S physics. This can either be a list of times after initialization, or an interval if only the first entry is nonzero. All 0 by default, which will result in no outputs.
+
+\subsection*{A.\-9 Entries in atmos\-\_\-model\-\_\-nml (for fv\-G\-F\-S)}
+
+F\-V\&sup3 $\ast$$\ast$\mbox{[}blocksize\mbox{]}$\ast$$\ast$ Integer\-: Number of columns in each ``block'' sent to the physics. Open\-M\-P threading is done over the number of blocks. For best performance this number should divide the number of grid cells per processor ( (npx-\/1)$\ast$(npy-\/1) /(layout\-\_\-x)$\ast$(layout\-\_\-y) ) and be small enough so the data can best fit into cache?values around 32 appear to be optimal on Gaea. 1 by default
+
+$\ast$$\ast$\mbox{[}chksum\-\_\-debug\mbox{]}$\ast$$\ast$ Logical\-: whether to compute checksums for all variables passed into the G\-F\-S physics, before and after each physics timestep. This is very useful for reproducibility checking. .false. by default.
+
+$\ast$$\ast$\mbox{[}dycore\-\_\-only\mbox{]}$\ast$$\ast$ Logical\-: whether only the dynamical core (and not the G\-F\-S physics) is executed when running the model, essentially running the model as a solo dynamical core. .false. by default.
+
+\subsection*{A.\-10 Entries in fms\-\_\-nml}
+
+$\ast$$\ast$\mbox{[}domains\-\_\-stack\-\_\-size\mbox{]}$\ast$$\ast$ Integer\-: size (in bytes) of memory array reserved for domains. For large grids or reduced processor counts this can be large ($>$10 M); if it is not large enough the model will stop and print a recommended value of the stack size. Default is 0., reverting to the default set in M\-P\-P (which is probably not large enough for modern applications). \hypertarget{variables}{}\section{Variables and notation}\label{variables}
+\begin{TabularC}{2}
 \hline
-\rowcolor{\tableheadbgcolor}\textbf{ hord  }&\textbf{ Advection Method   }\\\cline{1-2}
-\endhead
-5  &Fastest unlimited fifth-\/order scheme with built-\/in 2{$\Delta$}x filter; not recommended for hord\+\_\+tr. This is also the most accurate and least diffusive FV scheme available within FV\textthreesuperior{} if monotonicity preservation is not a high priority.   \\\cline{1-2}
-6  &{\itshape Developmental} P\+PM scheme with an intermediate-\/strength mono-\/ tonicity constraint. More diffusive than 5.   \\\cline{1-2}
-7  &6, applying a 2{$\Delta$}x filter and a positivity constraint   \\\cline{1-2}
-8  &P\+PM with the constraint of Lin 2004   \\\cline{1-2}
-9  &P\+PM with the Hunyh constraint   \\\cline{1-2}
-10  &9, with a 2{$\Delta$}x filter, and the Huynh constraint applied only if a certain condition is met; otherwise unlimited   \\\cline{1-2}
-\end{longtabu}
-
-
-{\bfseries \mbox{[}kord\+\_\+mt\mbox{]}} Integer\+: vertical remapping scheme for the winds. 8 by default; 9 is recommended as the safest option, although 10, and 11 can also be useful. See table below for a complete list of kord options.
-
-{\bfseries \mbox{[}kord\+\_\+tm\mbox{]}} Integer\+: vertical remapping scheme for temperature. If positive (not recommended), then vertical remapping is performed on total energy instead of temperature (see remap\+\_\+t below). -\/8 by default.
-
-{\bfseries \mbox{[}kord\+\_\+tr\mbox{]}} Integer\+: vertical remapping scheme for tracers. 8 by default. 9 or 11 recommended. It is often recommended to use the same value for kord\+\_\+tr as for kord\+\_\+tm.
-
-{\bfseries \mbox{[}kord\+\_\+wz\mbox{]}} Integer\+: vertical remapping scheme for vertical velocity in nonhydrostatic simulations. 8 by default; 9 recommended. It is also recommended to use the same value for kord\+\_\+wz as for kord\+\_\+mt.
-
-\tabulinesep=1mm
-\begin{longtabu} spread 0pt [c]{*{2}{|X[-1]}|}
-\hline
-\rowcolor{\tableheadbgcolor}\textbf{ kord  }&\textbf{ Vertical remapping reconstruction meth   }\\\cline{1-2}
-\endfirsthead
-\hline
-\endfoot
-\hline
-\rowcolor{\tableheadbgcolor}\textbf{ kord  }&\textbf{ Vertical remapping reconstruction meth   }\\\cline{1-2}
-\endhead
-4  &Monotone P\+PM   \\\cline{1-2}
-6  &P\+PM   \\\cline{1-2}
-7  &P\+PM with Hyunh’s second constraint (see L04)   \\\cline{1-2}
-9  &Monotonic cubic spline with 2{$\Delta$}z oscillations removed   \\\cline{1-2}
-10  &Selectively monotonic cubic spline, where local extrema are retained, with 2{$\Delta$}z oscillations removed   \\\cline{1-2}
-11  &Non-\/monotonic (linear) cubic spline with 2{$\Delta$}z oscillations removed; if an invalid value for kord is given, this scheme is used   \\\cline{1-2}
-13  &Monotonic cubic spline with 2{$\Delta$}z oscillations removed   \\\cline{1-2}
-16  &Non-\/monotonic cubic spline with a strong 2{$\Delta$}z filter (similar to hord = 6).   \\\cline{1-2}
-\end{longtabu}
-
-
-{\bfseries \mbox{[}no\+\_\+dycore\mbox{]}} Logical\+: disables execution of the dynamical core, only running the initialization, diagnostic, and I/O routines, and any physics that may be enabled. Essentially turns the model into a column physics model. False by default.
-
-{\bfseries \mbox{[}remap\+\_\+t\mbox{]}} Logical\+: whether the vertical remapping is performed on (virtual) temperature instead of (virtual) potential temperature. Since typically potential temperature increases exponentially from layer to layer near the top boundary, the cubic-\/spline interpolation in the vertical remapping will have difficulty with the exponential profile. Temperature does not have this problem and will often yield a more accurate result. True by default.
-
-{\bfseries \mbox{[}reproduce\+\_\+sum\mbox{]}} Logical\+: uses an exactly-\/reproducible global sum operation performed when computing the global energy for consv\+\_\+te. This is used because the F\+MS routine mpp\+\_\+sum() is not bit-\/wise reproducible due to its handling of floating point arithmetic, and so can return different answers for (say) different processor layouts. True by default.
-
-\subsubsection*{A.\+1.\+7 Nonhydrostatic options}
-
-{\bfseries \mbox{[}a\+\_\+imp\mbox{]}} Real\+: Controls behavior of the non-\/hydrostatic solver. Values $>$ 0.\+5 enable the semi-\/implicit solver, in which the value of a\+\_\+imp controls the time-\/off-\/centering\+: use a\+\_\+imp = 1.\+0 for a fully backward time-\/stepping. For consistency, the sum of beta and a\+\_\+imp should be 1 when the semi-\/implicit solver is used. The semi-\/implicit algorithm is substantially more efficient except at very high (km-\/scale) resolutions with an acoustic time step of a few seconds or less. 0.\+75 by default. Proper values are 0, or between 0.\+5 and 1 Only used if hydrostatic =.false.
-
-{\bfseries \mbox{[}hydrostatic\mbox{]}} Logical\+: whether to use the hydrostatic or nonhydrostatic solver. True by default.
-
-{\bfseries \mbox{[}make\+\_\+nh\mbox{]}} Logical\+: Whether to re-\/initialize the nonhydrostatic state, by re-\/computing dz from hydrostatic balance and setting w to 0. False by default.
-
-{\bfseries \mbox{[}p\+\_\+fac\mbox{]}} Real\+: Safety factor for minimum nonhydrostatic pressures, which will be limited so the full pressure is no less than p\+\_\+fac times the hydrostatic pressure. This is only of concern in mid-\/top or high-\/top models with very low pressures near the model top, and has no effect in most simulations. The pressure limiting activates only when model is in danger of blowup due to unphysical negative total pressures. 0.\+05 by default. Only used if hydrostatic =.false. and the semi-\/implicit solver is used. Proper range is 0 to 0.\+25.
-
-{\bfseries \mbox{[}use\+\_\+logp\mbox{]}} Logical\+: Enables a variant of the Lin pressure-\/gradient force algorithm, which uses the logarithm of pressure instead of the Exner function (as in Lin 1997). This yields more accurate results for regions that are nearly isothermal. Ignored if hydrostatic = true. False by default.
-
-\subsubsection*{A.\+1.\+9 Damping options}
-
-{\bfseries \mbox{[}d2\+\_\+bg\mbox{]}} Real\+: coefficient for background second-\/order divergence damping. This option remains active even if nord is nonzero. 0.\+0 by default. Proper range is 0 to 0.\+02.
-
-{\bfseries \mbox{[}d2\+\_\+bg\+\_\+k1\mbox{]}} Real\+: strength of second-\/order diffusion in the top sponge layer. 0.\+16 by default. This value, and d2\+\_\+bg\+\_\+k2, will be changed appropriately in the model (depending on the height of model top), so the actual damping may be very reduced. See atmos\+\_\+cubed\+\_\+sphere/model/dyn\+\_\+core.\+F90 for details. Recommended range is 0. to 0.\+2. Note that since diffusion is converted to heat if d\+\_\+con $>$ 0 larger amounts of sponge-\/layer diffusion may be {\itshape less} stable.
-
-{\bfseries \mbox{[}d2\+\_\+bg\+\_\+k2\mbox{]}} Real\+: strength of second-\/order diffusion in the second sponge layer from the model top. 0.\+02 by default. This value should be lower than d2\+\_\+bg\+\_\+k1.
-
-{\bfseries \mbox{[}d4\+\_\+bg\mbox{]}} Real\+: Dimensionless coefficient for background higher-\/order divergence damping. 0.\+0 by default. If no second-\/order divergence damping is used, then values between 0.\+1 and 0.\+16 are recommended. Requires nord $>$ 0. Note that the scaling for d4\+\_\+bg differs from that of d2\+\_\+bg; nord $>$= 1 and d4\+\_\+bg = 0.\+16 will be less diffusive than nord = 0 and d2\+\_\+bg = 0.\+02.
-
-{\bfseries \mbox{[}dddmp\mbox{]}} Real\+: Dimensionless coefficient for the second-\/order Smagorinsky-\/type divergence damping. 0.\+0 by default. 0.\+2 (the Smagorinsky constant) is recommended if I\+Cs are noisy.
-
-{\bfseries \mbox{[}d\+\_\+ext\mbox{]}} Real\+: coefficient for external (barotropic) mode damping. 0.\+02 by default. Proper range is 0 to 0.\+02. A value of 0.\+01 or 0.\+02 may help improve the models maximum stable time step in low-\/resolution (2-\/degree or poorer) simulations; otherwise a value of 0 is recommended.
-
-{\bfseries \mbox{[}do\+\_\+vort\+\_\+damp\mbox{]}} Logical\+: whether to apply flux damping (of strength governed by vtdm4) to the fluxes of vorticity, air mass, and nonhydrostatic vertical velocity (there is no dynamically correct way to add explicit diffusion to the tracer fluxes). The form is the same as is used for the divergence damping, including the same order (from nord) damping, unless nord = 0, in which case this damping is fourth-\/order, or if nord = 3, in which case this damping is sixth-\/order (instead of eighth-\/order). We recommend enabling this damping when the linear or non-\/monotonic horizontal advection schemes are enabled, but is unnecessary and not recommended when using monotonic advection. False by default.
-
-{\bfseries \mbox{[}n\+\_\+sponge\mbox{]}} Integer\+: controls the number of layers at the upper boundary on which the 2{$\Delta$}x filter is applied. {\itshape This does not control the sponge layer.} 0 by default.
-
-{\bfseries \mbox{[}nord\mbox{]}} Integer\+: order of divergence damping\+: 0 for second-\/order; 1 for fourth-\/order (default); 2 for sixth-\/order; 3 for eighth-\/order. Sixth-\/order may yield a better solution for low resolutions (one degree or coarser) by virtue of it being more scale-\/selective and will not damp moderately-\/well-\/resolved disturbances as much as does lower-\/order damping.
-
-{\bfseries \mbox{[}nord\+\_\+tr\mbox{]}} Integer\+: Order of tracer damping; values mean the same as for nord. 0 by default.
-
-{\bfseries \mbox{[}rf\+\_\+cutoff\mbox{]}} Real\+: pressure below which no Rayleigh damping is applied if tau $>$ 0.
-
-{\bfseries \mbox{[}rf\+\_\+fast\mbox{]}} Logical\+: option controlling whether to apply Rayleigh damping (for tau $>$ 0) on the dynamic/acoustic timestep rather than on the physics timestep. This can help stabilize the model by applying the damping more weakly more frequently, so the instantaneous amount of damping (and thereby heat added) is reduced. .false. by default, which applies the Rayleigh drag every physics timestep.
-
-{\bfseries \mbox{[}tau\mbox{]}} Real\+: time scale (in days) for Rayleigh friction applied to horizontal and vertical winds; lost kinetic energy is converted to heat, except on nested grids. 0.\+0 by default, which disables damping. Larger values yield less damping. For models with tops at 1mb or lower values between 10 and 30 are useful for preventing overly-\/strong polar night jets; for higher-\/top hydrostatic models values between 5 and 15 should be considered; and for non-\/hydrostatic models values of 10 or less should be considered, with smaller values for higher-\/resolution.
-
-{\bfseries \mbox{[}vtdm4\mbox{]}} Real\+: coefficient for background other-\/variable damping. The value of vtdm4 should be less than that of d4\+\_\+bg. A good first guess for vtdm4 is about one-\/third the value of d4\+\_\+bg. 0.\+0 by default. Requires do\+\_\+vort\+\_\+damp to be .true. Disabled for values less than 1.\+e-\/3. Other-\/variable damping should not be used if a monotonic horizontal advection scheme is used.
-
-\subsection*{A.\+2 Entries in coupler\+\_\+nml}
-
-{\bfseries \mbox{[}months, days, hours, minutes, seconds\mbox{]}} Integer\+: length of the model integration in the corresponding units. All are 0 by default, which initializes the model and then immediately writes out the restart files and halts.
-
-{\bfseries \mbox{[}dt\+\_\+atmos\mbox{]}} Integer\+: time step for the largest atmosphere model loop, corresponding to the frequency at which the top level routine in the dynamics is called, and the physics timestep. Must be set.
-
-{\bfseries \mbox{[}current\+\_\+date\mbox{]}} Integer(6)\+: initialization date (in the chosen calendar) for the model, in year, month, day, hour, minute, and second. (0,0,0,0,0,0) by default, a value that is useful for control integrations of coupled models.
-
-{\bfseries \mbox{[}calendar\mbox{]}} Character(17)\+: calendar selection; J\+U\+L\+I\+AN is typically recommended, although the other values (T\+H\+I\+R\+T\+Y\+\_\+\+D\+A\+Y\+\_\+\+M\+O\+N\+T\+HS, N\+O\+L\+E\+AP, N\+O\+\_\+\+C\+A\+L\+E\+N\+D\+AR) have particular uses in idealized models. Must be set.
-
-{\bfseries \mbox{[}force\+\_\+date\+\_\+from\+\_\+namelist\mbox{]}} Logical\+: if .true., will read the initialization date from the namelist variable current\+\_\+date, rather than taking the value from a restart file. If the model is being cold-\/started (such as what is typically but not necessarily done if external\+\_\+ic = .true.) then the initialization date must be specified in current\+\_\+date, otherwise the model will stop. .false. by default.
-
-{\bfseries \mbox{[}atmos\+\_\+nthreads\mbox{]}} Integer\+: number of threads for Open\+MP multi-\/threading. 1 by default.
-
-{\bfseries \mbox{[}use\+\_\+hyper\+\_\+thread\mbox{]}} Logical\+: indicates that some of the threads in atmos\+\_\+nthreads may be hyperthreads. .false. by default.
-
-{\bfseries \mbox{[}ncores\+\_\+per\+\_\+node\mbox{]}} Integer\+: number of processor codes per physical compute node. Used when setting up hyperthreading to determine number of virtual vs. hardware threads. 0 by default.
-
-{\bfseries \mbox{[}debug\+\_\+affinity\mbox{]}} Logical\+: if .true. prints out a message describing cpu affinity characteristics while initializing Open\+MP. .false. by default.
-
-{\bfseries \mbox{[}restart\+\_\+days, restart\+\_\+secs\mbox{]}} Integer\+: frequency at which to write out \char`\"{}intermediate\char`\"{} restart files, which are useful for checkpointing in the middle of a long run, or to be able to diagnose problems during the model integration. Both are 0 by default, in which case intermediate restarts are not written out.
-
-\subsection*{A.\+3 Entries in external\+\_\+ic\+\_\+nml}
-
-{\bfseries \mbox{[}filtered\+\_\+terrain\mbox{]}} Logical\+: whether to use the terrain filtered by the preprocessing tools rather than the raw terrain. .true. by default. Only active if nggps\+\_\+ic = .true. or ecmwf\+\_\+ic = .true.
-
-{\bfseries \mbox{[}levp\mbox{]}} Integer\+: number of levels in the input (remapped) initial conditions. 64 by default. Only active if nggps\+\_\+ic = .true.
-
-{\bfseries \mbox{[}checker\+\_\+tr\mbox{]}} Logical\+: whether to enable the \`{}`checkerboard'\textquotesingle{} tracer test. .false. by default. Only active if nggps\+\_\+ic = .true.
-
-{\bfseries \mbox{[}nt\+\_\+checker\mbox{]}} Integer\+: number of tracers (at the end of the list of tracers defined in field\+\_\+table) to initialize with an idealized \`{}`checkerboard'\textquotesingle{} pattern, with values of either 0 or 1. This is intended to test the monotonicity or positivity constraint in the advection scheme. 0 by default. Only active if nggps\+\_\+ic = .true.
-
-\subsection*{A.\+4 Entries in surf\+\_\+map\+\_\+nml}
-
-{\bfseries \mbox{[}surf\+\_\+file\mbox{]}} Character(len=128)\+: File containing topography data. This file must be in Net\+C\+DF format. I\+N\+P\+U\+T/topo1min.\+nc by default. (Previous versions of the model have used 5 minute U\+S\+GS data, which is not recommended.)
-
-{\bfseries \mbox{[}nlon\mbox{]}} Integer\+: Size of the longitude dimension in topography data; not used.
-
-{\bfseries \mbox{[}nlat\mbox{]}} Integer\+: Size of the latitude dimension in topography data; not used.
-
-{\bfseries \mbox{[}zero\+\_\+ocean\mbox{]}} Logical\+: whether to prevent the smoothing from extending topography out into the ocean. True by default.
-
-{\bfseries \mbox{[}zs\+\_\+filter\mbox{]}} Logical\+: whether to apply smoothing to the topography. True by default.
-
-\subsection*{A.\+5 Entries in fv\+\_\+grid\+\_\+nml}
-
-{\bfseries \mbox{[}grid\+\_\+name\mbox{]}} Character(len=80)\+: Name of the grid either being read in (if grid\+\_\+spec = -\/1) or being created. This is only used for writing out a binary file in the directory from which the model is run. Gnomonic by default.
-
-{\bfseries \mbox{[}grid\+\_\+file\mbox{]}} Character(len=120)\+: If grid\+\_\+type = -\/1 the name of the grid\+\_\+spec file to read in. I\+N\+P\+U\+T/grid\+\_\+spec.\+nc by default; other values will not work.
-
-\subsection*{A.\+6 Entries in test\+\_\+case\+\_\+nml}
-
-{\bfseries \mbox{[}test\+\_\+case\mbox{]}} Integer\+: number of the idealized test case to run. A number of nest cases are defined in tools/test\+\_\+cases.\+F90, of which numbers 19 are intended for the shallow-\/water model. Requires warm\+\_\+start =.false. 11 by default; this creates a resting atmosphere with a very basic thermodynamic profile, with topography. If you wish to initialize an Aquaplanet simulation (no topography) set to 14.
-
-{\bfseries \mbox{[}alpha\mbox{]}} Real\+: In certain shallow-\/water test cases specifies the angle (in fractions of a rotation, so 0.\+25 is a 45-\/degree rotation) through which the basic state is rotated. 0 by default.
-
-\subsection*{A.\+7 Entries in nest\+\_\+nml}
-
-{\bfseries \mbox{[}ngrids\mbox{]}} Integer\+: number of grids in this simulation. 1 by default. (The variable ntiles has the same effect, but its use is not recommended as it can be confused with the six tiles of the cubed sphere, which in this case form only one grid.)
-
-{\bfseries \mbox{[}nest\+\_\+pes\mbox{]}} Integer(100)\+: array carrying number of P\+Es assigned to each grid, in order. Must be set if ngrids $>$ 1.
-
-{\bfseries \mbox{[}p\+\_\+split\mbox{]}} Integer\+: number of times to sub-\/cycle dynamics, performing nested-\/grid BC interpolation and (if twowaynest ==.true.) two-\/way updating at the end of each set of dynamics calls. If p\+\_\+split $>$ 1 the user should decrease k\+\_\+split appropriately so the remapping and dynamics time steps remain the same. 1 by default.
-
-{\bfseries \mbox{[}imfdeep\mbox{]}} These are options for a variety of convection schemes\+: for example I\+I\+RC imfdeep = 1 is old S\+AS, imfdeep = 2 is scaleaware S\+AS, 3 is either R\+AS or CS, etc. The best reference is to look for the options in G\+FS physics driver.\+F90 ~\newline
- {\bfseries \mbox{[}do\+\_\+deep\mbox{]}} The correct options to disable the convection schemes are do deep = .F. and shal cnv =.F.
-
-\subsection*{A.\+8 Entries in nggps\+\_\+diag\+\_\+nml}
-
-{\bfseries \mbox{[}fdiag\mbox{]}} Real(1028)\+: Array listing the diagnostic output times (in hours) for the G\+FS physics. This can either be a list of times after initialization, or an interval if only the first entry is nonzero. All 0 by default, which will result in no outputs.
-
-\subsection*{A.\+9 Entries in atmos\+\_\+model\+\_\+nml (for fv\+G\+FS)}
-
-FV\&sup3 {\bfseries \mbox{[}blocksize\mbox{]}} Integer\+: Number of columns in each \`{}`block'\textquotesingle{} sent to the physics. Open\+MP threading is done over the number of blocks. For best performance this number should divide the number of grid cells per processor ( (npx-\/1)$\ast$(npy-\/1) /(layout\+\_\+x)$\ast$(layout\+\_\+y) ) and be small enough so the data can best fit into cache?values around 32 appear to be optimal on Gaea. 1 by default
-
-{\bfseries \mbox{[}chksum\+\_\+debug\mbox{]}} Logical\+: whether to compute checksums for all variables passed into the G\+FS physics, before and after each physics timestep. This is very useful for reproducibility checking. .false. by default.
-
-{\bfseries \mbox{[}dycore\+\_\+only\mbox{]}} Logical\+: whether only the dynamical core (and not the G\+FS physics) is executed when running the model, essentially running the model as a solo dynamical core. .false. by default.
-
-\subsection*{A.\+10 Entries in fms\+\_\+nml}
-
-{\bfseries \mbox{[}domains\+\_\+stack\+\_\+size\mbox{]}} Integer\+: size (in bytes) of memory array reserved for domains. For large grids or reduced processor counts this can be large ($>$10 M); if it is not large enough the model will stop and print a recommended value of the stack size. Default is 0., reverting to the default set in M\+PP (which is probably not large enough for modern applications). \hypertarget{variables}{}\section{Variables and notation}\label{variables}
-\tabulinesep=1mm
-\begin{longtabu} spread 0pt [c]{*{2}{|X[-1]}|}
-\hline
-\rowcolor{\tableheadbgcolor}\textbf{ Variables  }&\textbf{ Notation   }\\\cline{1-2}
-\endfirsthead
-\hline
-\endfoot
-\hline
-\rowcolor{\tableheadbgcolor}\textbf{ Variables  }&\textbf{ Notation   }\\\cline{1-2}
-\endhead
-{\ttfamily u,v}  &($\ast$) D-\/grid winds   \\\cline{1-2}
-{\ttfamily w}  &($\ast$) Explicit vertical velocity   \\\cline{1-2}
-{$\delta$} p\textsuperscript{$\ast$}  &($\ast$) Layer hydrostatic pressure thickness, proportional to mass   \\\cline{1-2}
-{$\Theta$} \textsubscript{v}  &($\ast$) Virtual potential temperature   \\\cline{1-2}
-{$\delta$} \textsubscript{z}  &($\ast$) Layer geometric depth   \\\cline{1-2}
-{$\rho$}  &Total (air and all water species) mass density, equal to -\/{$\delta$}p\textsuperscript{$\ast$}/g{$\delta$}z   \\\cline{1-2}
-Q\textsubscript{i}  &($\ast$) Density of tracer i (also written Q as a generic tracer density)   \\\cline{1-2}
-q\textsubscript{i}  &Mixing ratio of tracer i, defined with respect to total air mass; equal to Q\textsubscript{i}/{$\delta$}p\textsuperscript{$\ast$}   \\\cline{1-2}
-q\textsubscript{v}  &Mixing ratio of water vapor   \\\cline{1-2}
-p  &Total cell-\/mean pressure   \\\cline{1-2}
-p\textsuperscript{$\ast$}  &Cell-\/mean hydrostatic pressure   \\\cline{1-2}
-p\textquotesingle{}  &Cell-\/mean nonhydrostatic pressure component, equal to p -\/ p\textsuperscript{$\ast$}   \\\cline{1-2}
-{$\Delta$}A, {$\Delta$}x, {$\Delta$}y  &D-\/grid cell areas and cell face lengths   \\\cline{1-2}
-{$\Delta$}A\textsubscript{c}, {$\Delta$}x\textsubscript{c}, {$\Delta$}y\textsubscript{c}  &Dual-\/grid cell areas and cell face lengths   \\\cline{1-2}
-{$\Delta$}t  &Lagrangian dynamics (or acoustic) time step   \\\cline{1-2}
-{$\Delta$}T  &Vertical remapping interval   \\\cline{1-2}
-{$\Delta$}{$\tau$}  &Physics time step   \\\cline{1-2}
-c\textsubscript{pd}  &Specific heat of dry air at constant pressure   \\\cline{1-2}
-R\textsubscript{d}  &Gas constant for dry air   \\\cline{1-2}
-c\textsubscript{p}  &Variable specific heat of moist air   \\\cline{1-2}
-{$\kappa$}  &R/c\textsubscript{p}, where R is the (variable) gas constant of moist air   \\\cline{1-2}
-i, j, k  &Spatial grid-\/cell indices for the local x-\/, y-\/, and z-\/directions, respectively, given as subscripts   \\\cline{1-2}
-n  &time index   \\\cline{1-2}
-m  &tracer index, given as a subscript   \\\cline{1-2}
-n  &time index, given as a superscript\+: t\textsuperscript{n} = n{$\Delta$}t   \\\cline{1-2}
-\end{longtabu}
-
-
-Here, a ($\ast$) indicates a prognostic variable. All variables are cell-\/means (or face-\/means for horizontal winds) unless otherwise noted. The differencing notation used in this document follows that of L\+R96, L\+R97, and L04, in which the operator {$\delta$}\textsubscript{x} {$\varphi$} is defined as a centered-\/difference operator\+:
+\rowcolor{lightgray}{\bf Variables }&{\bf Notation  }\\\cline{1-2}
+{\ttfamily u,v} &($\ast$) D-\/grid winds \\\cline{1-2}
+{\ttfamily w} &($\ast$) Explicit vertical velocity \\\cline{1-2}
+{$\delta$} p$^{\mbox{$\ast$}}$  &($\ast$) Layer hydrostatic pressure thickness, proportional to mass \\\cline{1-2}
+{$\Theta$} $_{\mbox{v}}$  &($\ast$) Virtual potential temperature \\\cline{1-2}
+{$\delta$} $_{\mbox{z}}$  &($\ast$) Layer geometric depth \\\cline{1-2}
+{$\rho$} &Total (air and all water species) mass density, equal to -\/{$\delta$}p$^{\mbox{$\ast$}}$ /g{$\delta$}z \\\cline{1-2}
+Q$_{\mbox{i}}$  &($\ast$) Density of tracer i (also written Q as a generic tracer density) \\\cline{1-2}
+q$_{\mbox{i}}$  &Mixing ratio of tracer i, defined with respect to total air mass; equal to Q$_{\mbox{i}}$ /{$\delta$}p$^{\mbox{$\ast$}}$  \\\cline{1-2}
+q$_{\mbox{v}}$  &Mixing ratio of water vapor \\\cline{1-2}
+p &Total cell-\/mean pressure \\\cline{1-2}
+p$^{\mbox{$\ast$}}$  &Cell-\/mean hydrostatic pressure \\\cline{1-2}
+p' &Cell-\/mean nonhydrostatic pressure component, equal to p -\/ p$^{\mbox{$\ast$}}$  \\\cline{1-2}
+{$\Delta$}A, {$\Delta$}x, {$\Delta$}y &D-\/grid cell areas and cell face lengths \\\cline{1-2}
+{$\Delta$}A$_{\mbox{c}}$ , {$\Delta$}x$_{\mbox{c}}$ , {$\Delta$}y$_{\mbox{c}}$  &Dual-\/grid cell areas and cell face lengths \\\cline{1-2}
+{$\Delta$}t &Lagrangian dynamics (or acoustic) time step \\\cline{1-2}
+{$\Delta$}T &Vertical remapping interval \\\cline{1-2}
+{$\Delta$}{$\tau$} &Physics time step \\\cline{1-2}
+c$_{\mbox{pd}}$  &Specific heat of dry air at constant pressure \\\cline{1-2}
+R$_{\mbox{d}}$  &Gas constant for dry air \\\cline{1-2}
+c$_{\mbox{p}}$  &Variable specific heat of moist air \\\cline{1-2}
+{$\kappa$} &R/c$_{\mbox{p}}$ , where R is the (variable) gas constant of moist air \\\cline{1-2}
+i, j, k &Spatial grid-\/cell indices for the local x-\/, y-\/, and z-\/directions, respectively, given as subscripts \\\cline{1-2}
+n &time index \\\cline{1-2}
+m &tracer index, given as a subscript \\\cline{1-2}
+n &time index, given as a superscript\-: t$^{\mbox{n}}$  = n{$\Delta$}t \\\cline{1-2}
+\end{TabularC}
+Here, a ($\ast$) indicates a prognostic variable. All variables are cell-\/means (or face-\/means for horizontal winds) unless otherwise noted. The differencing notation used in this document follows that of L\-R96, L\-R97, and L04, in which the operator {$\delta$}$_{\mbox{x}}$  {$\varphi$} is defined as a centered-\/difference operator\-:
 
 \[ (\delta_x \phi)_{i+1/2} = \phi_{i+1} - \phi_i \tag {B.1} \]
 
-The indices on dependent variables are suppressed unless explicitly needed.) This definition differs from the similar operators of in the literature in-\/ tended to be second-\/order discretizations of a derivative; to do this with our definition of {$\delta$}\textsubscript{x} a 1/{$\Delta$}\textsubscript{x} term would be needed to complete the discrete deriva-\/ tive. 
+The indices on dependent variables are suppressed unless explicitly needed.) This definition differs from the similar operators of in the literature in-\/ tended to be second-\/order discretizations of a derivative; to do this with our definition of {$\delta$}$_{\mbox{x}}$  a 1/{$\Delta$}$_{\mbox{x}}$  term would be needed to complete the discrete deriva-\/ tive. 
 
 
 
-\subsection*{B.\+1 Important Relations}
+\subsection*{B.\-1 Important Relations}
 
-Cell-\/mean pressure\+: \[ p^* = \frac{\delta p^*}{\delta \log p^*} \; \mathrm{(hydrostatic)} \\. \tag {B.2} \]
+Cell-\/mean pressure\-: \[ p^* = \frac{\delta p^*}{\delta \log p^*} \; \mathrm{(hydrostatic)} \\. \tag {B.2} \]
 
 \[ p = \rho R_d T_v = - \frac{R_d}{g} \frac{\delta p^* T_v}{\delta z} \mathrm{(nonhydrostatic)} \tag {B.3} \]
 
-Conversion from temperature {\itshape T} to virtual potential temperature {$\Theta$}\textsubscript{v} \+:
+Conversion from temperature {\itshape T} to virtual potential temperature {$\Theta$}$_{\mbox{v}}$  \-:
 
 \[ T_v = T \left ( 1 + \epsilon q_v \right ) \tag {B.4} \]
 
-\[ \Theta_v = T_v / p^\kappa \tag {B.5} \] where {$\varepsilon$} = 1 + R\textsubscript{v}/R\textsubscript{d} and {$\kappa$} = R/c\textsubscript{p}. Note that we do {\itshape not} include the arbitrary constant factor p\textsubscript{0}\textsuperscript{{$\kappa$}} in our definition of potential temperature; our form is the equivalent to setting p\textsubscript{0} = 1\+Pa but simpler and more computationally efficient. \hypertarget{references}{}\section{References}\label{references}
-{\bfseries \mbox{[}C\+W84\mbox{]}} Collella, P, and P. R. Woodward, April 2004\+: The Piecewise Parabolic Method (P\+PM) for Gas-\/\+Dynamical Simulations. {\itshape Journal of Computational Physics}, {\bfseries 54}, 174--201.
+\[ \Theta_v = T_v / p^\kappa \tag {B.5} \] where {$\varepsilon$} = 1 + R$_{\mbox{v}}$ /\-R$_{\mbox{d}}$  and {$\kappa$} = R/c$_{\mbox{p}}$ . Note that we do {\itshape not} include the arbitrary constant factor p$_{\mbox{0}}$ $^{\mbox{{$\kappa$}}}$  in our definition of potential temperature; our form is the equivalent to setting p$_{\mbox{0}}$  = 1\-Pa but simpler and more computationally efficient. \hypertarget{references}{}\section{References}\label{references}
+$\ast$$\ast$\mbox{[}C\-W84\mbox{]}$\ast$$\ast$ Collella, P, and P. R. Woodward, April 2004\-: The Piecewise Parabolic Method (P\-P\-M) for Gas-\/\-Dynamical Simulations. {\itshape Journal of Computational Physics}, {\bfseries 54}, 174--201.
 
-{\bfseries \mbox{[}L94\mbox{]}} Lin, Shian-\/\+Jiann, et al., July 1994\+: A Class of the van Leer-\/type Transport Schemes and Its Application to the Moisture Transport in a General Circulation Model. {\itshape Monthly Weather Review}, {\bfseries 122\+:7}, 1575--1593.
+$\ast$$\ast$\mbox{[}L94\mbox{]}$\ast$$\ast$ Lin, Shian-\/\-Jiann, et al., July 1994\-: A Class of the van Leer-\/type Transport Schemes and Its Application to the Moisture Transport in a General Circulation Model. {\itshape Monthly Weather Review}, {\bfseries 122\-:7}, 1575--1593.
 
-{\bfseries \mbox{[}L\+R96\mbox{]}} Lin, Shian-\/\+Jiann, and R B Rood, September 1996\+: Multidimensional Flux-\/\+Form Semi-\/\+Lagrangian Transport Schemes. {\itshape Monthly Weather Review}, {\bfseries 124\+:9}, 2046--2070.
+$\ast$$\ast$\mbox{[}L\-R96\mbox{]}$\ast$$\ast$ Lin, Shian-\/\-Jiann, and R B Rood, September 1996\-: Multidimensional Flux-\/\-Form Semi-\/\-Lagrangian Transport Schemes. {\itshape Monthly Weather Review}, {\bfseries 124\-:9}, 2046--2070.
 
-{\bfseries \mbox{[}L\+R97\mbox{]}} Lin, Shian-\/\+Jiann, and R B Rood, October 1997\+: An explicit flux-\/form semi-\/lagrangian shallow-\/water model on the sphere. {\itshape Quarterly Journal of the Royal Meteorological Society}, {\bfseries 123\+:544}, 2477--2498.
+$\ast$$\ast$\mbox{[}L\-R97\mbox{]}$\ast$$\ast$ Lin, Shian-\/\-Jiann, and R B Rood, October 1997\-: An explicit flux-\/form semi-\/lagrangian shallow-\/water model on the sphere. {\itshape Quarterly Journal of the Royal Meteorological Society}, {\bfseries 123\-:544}, 2477--2498.
 
-{\bfseries \mbox{[}L97\mbox{]}} Lin, Shian-\/\+Jiann, July 1997\+: A finite-\/volume integration method for computing pressure gradient force in general vertical coordinates. {\itshape Quarterly Journal of the Royal Meteorological Society}, {\bfseries 123\+:542}, 1749--1762.
+$\ast$$\ast$\mbox{[}L97\mbox{]}$\ast$$\ast$ Lin, Shian-\/\-Jiann, July 1997\-: A finite-\/volume integration method for computing pressure gradient force in general vertical coordinates. {\itshape Quarterly Journal of the Royal Meteorological Society}, {\bfseries 123\-:542}, 1749--1762.
 
-{\bfseries \mbox{[}L04\mbox{]}} Lin, Shian-\/\+Jiann, 2004\+: A \char`\"{}vertically Lagrangian\char`\"{} finite-\/volume dynamical core for global models. {\itshape Monthly Weather Review}, {\bfseries 132\+:10}, 2293--2307.
+$\ast$$\ast$\mbox{[}L04\mbox{]}$\ast$$\ast$ Lin, Shian-\/\-Jiann, 2004\-: A \char`\"{}vertically Lagrangian\char`\"{} finite-\/volume dynamical core for global models. {\itshape Monthly Weather Review}, {\bfseries 132\-:10}, 2293--2307.
 
-{\bfseries \mbox{[}P\+L07\mbox{]}} Putman, W M., and Shian-\/\+Jiann Lin, 2007\+: Finite-\/volume transport on various cubed-\/sphere grids. {\itshape Journal of Computational Physics}, {\bfseries 227\+:1}, 55--78.
+$\ast$$\ast$\mbox{[}P\-L07\mbox{]}$\ast$$\ast$ Putman, W M., and Shian-\/\-Jiann Lin, 2007\-: Finite-\/volume transport on various cubed-\/sphere grids. {\itshape Journal of Computational Physics}, {\bfseries 227\-:1}, 55--78.
 
-{\bfseries \mbox{[}H\+L13\mbox{]}} Harris, Lucas M., and Shian-\/\+Jiann Lin, January 2013\+: A two-\/way nested global-\/regional dynamical core on the cubed-\/sphere grid. {\itshape Monthly Weather Review}, {\bfseries 141\+:1}.
+$\ast$$\ast$\mbox{[}H\-L13\mbox{]}$\ast$$\ast$ Harris, Lucas M., and Shian-\/\-Jiann Lin, January 2013\-: A two-\/way nested global-\/regional dynamical core on the cubed-\/sphere grid. {\itshape Monthly Weather Review}, {\bfseries 141\-:1}.
 
-{\bfseries \mbox{[}H\+L\+T16\mbox{]}} Harris, L.\+M., S.-\/J. Lin, and C.-\/Y. Tu, 2016\+: High-\/\+Resolution Climate Simulations Using G\+F\+DL Hi\+R\+AM with a Stretched Global Grid. {\itshape Journal of Climate}, {\bfseries 29\+:11}, 4293--4314. \hypertarget{revisionHistory}{}\section{Revision History}\label{revisionHistory}
-\tabulinesep=1mm
-\begin{longtabu} spread 0pt [c]{*{4}{|X[-1]}|}
+$\ast$$\ast$\mbox{[}H\-L\-T16\mbox{]}$\ast$$\ast$ Harris, L.\-M., S.-\/\-J. Lin, and C.-\/\-Y. Tu, 2016\-: High-\/\-Resolution Climate Simulations Using G\-F\-D\-L Hi\-R\-A\-M with a Stretched Global Grid. {\itshape Journal of Climate}, {\bfseries 29\-:11}, 4293--4314. \hypertarget{revisionHistory}{}\section{Revision History}\label{revisionHistory}
+\begin{TabularC}{4}
 \hline
-\rowcolor{\tableheadbgcolor}\textbf{ Version  }&\textbf{ Date  }&\textbf{ Page affected  }&\textbf{ Description   }\\\cline{1-4}
-\endfirsthead
-\hline
-\endfoot
-\hline
-\rowcolor{\tableheadbgcolor}\textbf{ Version  }&\textbf{ Date  }&\textbf{ Page affected  }&\textbf{ Description   }\\\cline{1-4}
-\endhead
-{\bfseries v2.\+0beta}  &{\itshape 14 Nov 2017}  &all  &Release candidate to E\+MC — lmh   \\\cline{1-4}
-{\bfseries v2.\+0beta.\+01}  &{\itshape 16 Jan 2018}  &At {\bfseries ”\+Entries in nest nml”} section changed two items\+:  &{\bfseries imfdeep}, {\bfseries do deep}   \\\cline{1-4}
-\end{longtabu}
+\rowcolor{lightgray}\PBS\raggedleft {\bf Version }&\PBS\centering {\bf Date }&{\bf Page affected }&{\bf Description  }\\\cline{1-4}
+\PBS\raggedleft {\bfseries v2.\-0beta} &\PBS\centering {\itshape 14 Nov 2017} &all &Release candidate to E\-M\-C — lmh \\\cline{1-4}
+\PBS\raggedleft {\bfseries v2.\-0beta.\-01} &\PBS\centering {\itshape 16 Jan 2018} &At $\ast$$\ast$”\-Entries in nest nml”$\ast$$\ast$ section changed two items\-: &{\bfseries imfdeep}, {\bfseries do deep} \\\cline{1-4}
+\end{TabularC}
