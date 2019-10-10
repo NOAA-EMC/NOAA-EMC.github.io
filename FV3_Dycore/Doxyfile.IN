@@ -32,7 +32,7 @@ DOXYFILE_ENCODING      = UTF-8
 # title of most generated pages and in a few other places.
 # The default value is: My Project.
 
-PROJECT_NAME           = "FV3 DYCORE"
+PROJECT_NAME           = "FV3DYCORE DOCUMENTATION"
 
 # The PROJECT_NUMBER tag can be used to enter a project or revision number. This
 # could be handy for archiving the generated documentation or if some version
@@ -266,7 +266,7 @@ OPTIMIZE_OUTPUT_JAVA   = NO
 # sources. Doxygen will then generate output that is tailored for Fortran.
 # The default value is: NO.
 
-OPTIMIZE_FOR_FORTRAN   = NO
+OPTIMIZE_FOR_FORTRAN   = YES
 
 # Set the OPTIMIZE_OUTPUT_VHDL tag to YES if your project consists of VHDL
 # sources. Doxygen will then generate output that is tailored for VHDL.
@@ -426,13 +426,13 @@ LOOKUP_CACHE_SIZE      = 0
 # normally produced when WARNINGS is set to YES.
 # The default value is: NO.
 
-EXTRACT_ALL            = NO
+EXTRACT_ALL            = YES
 
 # If the EXTRACT_PRIVATE tag is set to YES, all private members of a class will
 # be included in the documentation.
 # The default value is: NO.
 
-EXTRACT_PRIVATE        = NO
+EXTRACT_PRIVATE        = YES
 
 # If the EXTRACT_PACKAGE tag is set to YES, all members with package or internal
 # scope will be included in the documentation.
@@ -775,7 +775,50 @@ WARN_LOGFILE           =
 # spaces. See also FILE_PATTERNS and EXTENSION_MAPPING
 # Note: If this tag is empty the current directory is searched.
 
-INPUT                  = 
+INPUT                  = txt \
+		       = md \
+			../model/a2b_edge.F90 \
+			../model/boundary.F90 \
+			../model/dyn_core.F90 \
+			../model/fv_arrays.F90 \
+			../model/fv_cmp.F90 \
+			../model/fv_control.F90 \
+			../model/fv_dynamics.F90 \
+			../model/fv_fill.F90 \
+			../model/fv_grid_utils.F90 \
+			../model/fv_mapz.F90 \
+			../model/fv_nesting.F90 \
+			../model/fv_regional_bc.F90 \
+			../model/fv_sg.F90 \
+			../model/fv_tracer2d.F90 \
+			../model/fv_update_phys.F90 \
+			../model/multi_gases.F90 \
+			../model/nh_core.F90 \
+			../model/nh_utils.F90 \
+			../model/sw_core.F90 \
+			../model/tp_core.F90 \
+			../tools/external_ic.F90 \
+			../tools/external_sst.F90 \
+			../tools/fv_diagnostics.F90 \
+			../tools/fv_eta.F90 \
+			../tools/fv_grid_tools.F90 \
+			../tools/fv_iau_mod.F90 \
+			../tools/fv_io.F90 \
+			../tools/fv_mp_mod.F90 \
+			../tools/fv_nudge.F90 \
+			../tools/fv_restart.F90 \
+			../tools/fv_surf_map.F90 \
+			../tools/fv_timing.F90 \
+			../tools/fv_treat_da_inc.F90 \
+			../tools/init_hydro.F90 \
+			../tools/sim_nc_mod.F90 \
+			../tools/sorted_index.F90 \
+			../tools/test_cases.F90 \			
+			../driver/fvGFS/atmosphere.F90 \
+			../driver/fvGFS/DYCORE_typedefs.F90 \
+			../driver/fvGFS/fv_nggps_diag.F90 \
+
+
 
 # This tag can be used to specify the character encoding of the source files
 # that doxygen parses. Internally doxygen uses the UTF-8 encoding. Doxygen uses
@@ -849,7 +892,7 @@ FILE_PATTERNS          = *.c \
 # be searched for input files as well.
 # The default value is: NO.
 
-RECURSIVE              = NO
+RECURSIVE              = YES
 
 # The EXCLUDE tag can be used to specify files and/or directories that should be
 # excluded from the INPUT source files. This way you can easily exclude a
@@ -1522,7 +1565,7 @@ MATHJAX_FORMAT         = HTML-CSS
 # The default value is: http://cdn.mathjax.org/mathjax/latest.
 # This tag requires that the tag USE_MATHJAX is set to YES.
 
-MATHJAX_RELPATH        = https://cdn.mathjax.org/mathjax/latest
+MATHJAX_RELPATH        = https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2
 
 # The MATHJAX_EXTENSIONS tag can be used to specify one or more MathJax
 # extension names that should be enabled during MathJax rendering. For example
