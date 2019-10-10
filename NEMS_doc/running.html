@@ -33,7 +33,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">NEMS
-   &#160;<span id="projectnumber">master@7bd61225cb</span>
+   &#160;<span id="projectnumber">master@fb387d39b5</span>
    </div>
    <div id="projectbrief">This is a living document and may be updated at any time.</div>
   </td>
@@ -129,11 +129,11 @@ $(document).ready(function(){initNavTree('running.html','');});
 <p>This section explains how to run the system in its simplest form. Later sections discuss how to check the status of the execution, rerun a failed job, or resume a workflow (such as after logging out).</p>
 <h3>Initial Execution</h3>
 <p>The first step is to start the workflow: </p><pre class="fragment">./NEMS/NEMSCompsetRun [options] [run-mode] compset-specification
-</pre><p>Options will be discussed later. The <code>run-mode</code> determines whether the system will create a new baseline, or execute and verify against the old baseline. To generate a new baseline: </p><pre class="fragment">./NEMS/NEMSCompsetRun [options] --make-baseline compset-specification
-</pre><p>Without that <code>--make-baseline</code> flag, the system will run in the default mode: execute the tests and verify against the baseline.</p>
+</pre><p>Options will be discussed later. The <code>run-mode</code> determines whether the system will create a new baseline, or execute and verify against the old baseline. To generate a new baseline: </p><pre class="fragment">./NEMS/NEMSCompsetRun [options] --baseline compset-specification
+</pre><p>Without that <code>--baseline</code> flag, the system will run in the default mode: execute the tests and verify against the baseline.</p>
 <p>The compset specification can be done in the following ways. These select either specific compsets or groups of compsets. We will discuss how compset groups work, in the next section.</p>
 <ul>
-<li><code>--make-baseline</code> &ndash; run all tests that are part of the baseline</li>
+<li><code>--baseline</code> &ndash; run all tests that are part of the baseline</li>
 <li><code>-f</code> &ndash; run all known tests</li>
 <li><code>-s</code> &ndash; run tests in the "standard" group</li>
 <li><code>--compset (compset-name)</code> &ndash; run the specified compset</li>
