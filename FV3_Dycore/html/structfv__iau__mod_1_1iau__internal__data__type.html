@@ -20,17 +20,12 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
     jax: ["input/TeX","output/HTML-CSS"],
 });
-</script><script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js"></script>
+</script><script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -42,23 +37,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">FV3DYCORE DOCUMENTATION
    </div>
-   <div id="projectbrief">This is a living document and may be updated at any time.</div>
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -70,6 +49,16 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -125,7 +114,10 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a891ea56d404a70616d629be467f53f2a"><td class="memItemLeft" align="right" valign="top">real, dimension(:,:,:,:), allocatable&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfv__iau__mod_1_1iau__internal__data__type.html#a891ea56d404a70616d629be467f53f2a">tracer_inc</a></td></tr>
 <tr class="separator:a891ea56d404a70616d629be467f53f2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Data Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="fv__iau__mod_8F90_source.html#l00080">80</a> of file <a class="el" href="fv__iau__mod_8F90_source.html">fv_iau_mod.F90</a>.</p>
+</div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="ada9bf234b0fa3681403c4ca5bc9411e3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ada9bf234b0fa3681403c4ca5bc9411e3">&#9670;&nbsp;</a></span>delp_inc</h2>
 
@@ -145,6 +137,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__iau__mod_8F90_source.html#l00084">84</a> of file <a class="el" href="fv__iau__mod_8F90_source.html">fv_iau_mod.F90</a>.</p>
 
 </div>
 </div>
@@ -168,6 +162,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__iau__mod_8F90_source.html#l00085">85</a> of file <a class="el" href="fv__iau__mod_8F90_source.html">fv_iau_mod.F90</a>.</p>
+
 </div>
 </div>
 <a id="a515361138aa772aba2c0471c5c7c3be7"></a>
@@ -189,6 +185,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__iau__mod_8F90_source.html#l00083">83</a> of file <a class="el" href="fv__iau__mod_8F90_source.html">fv_iau_mod.F90</a>.</p>
 
 </div>
 </div>
@@ -212,6 +210,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__iau__mod_8F90_source.html#l00086">86</a> of file <a class="el" href="fv__iau__mod_8F90_source.html">fv_iau_mod.F90</a>.</p>
+
 </div>
 </div>
 <a id="ae53005a7a5bfd2b26151297ccad01589"></a>
@@ -233,6 +233,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__iau__mod_8F90_source.html#l00081">81</a> of file <a class="el" href="fv__iau__mod_8F90_source.html">fv_iau_mod.F90</a>.</p>
 
 </div>
 </div>
@@ -256,10 +258,12 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__iau__mod_8F90_source.html#l00082">82</a> of file <a class="el" href="fv__iau__mod_8F90_source.html">fv_iau_mod.F90</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this type was generated from the following file:<ul>
-<li>/Users/valbona/GFDL_atmos_cubed_sphere/tools/<a class="el" href="fv__iau__mod_8_f90.html">fv_iau_mod.F90</a></li>
+<li>/Users/valbona/GFDL_atmos_cubed_sphere/tools/<a class="el" href="fv__iau__mod_8F90_source.html">fv_iau_mod.F90</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -267,7 +271,7 @@ Private Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacefv__iau__mod.html">fv_iau_mod</a></li><li class="navelem"><a class="el" href="structfv__iau__mod_1_1iau__internal__data__type.html">iau_internal_data_type</a></li>
-    <li class="footer">Generated by
+    <li class="footer">Generated on Tue Oct 15 2019 19:35:36 for FV3DYCORE DOCUMENTATION by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
   </ul>

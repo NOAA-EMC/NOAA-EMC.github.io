@@ -1,4 +1,4 @@
 var modules =
 [
-    [ "Parameters_List", "group___parameters___list.html", "group___parameters___list" ]
+    [ "Parameters_List", "group__Parameters__List.html", "group__Parameters__List" ]
 ];

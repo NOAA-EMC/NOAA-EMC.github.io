@@ -20,17 +20,12 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
     jax: ["input/TeX","output/HTML-CSS"],
 });
-</script><script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js"></script>
+</script><script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -42,23 +37,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">FV3DYCORE DOCUMENTATION
    </div>
-   <div id="projectbrief">This is a living document and may be updated at any time.</div>
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -70,6 +49,16 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -252,7 +241,10 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a32f9a169b6f3e0c138d9e069d6916083"><td class="memItemLeft" align="right" valign="top">integer, dimension(4)&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfv__arrays__mod_1_1fv__atmos__type.html#a32f9a169b6f3e0c138d9e069d6916083">atmos_axes</a></td></tr>
 <tr class="separator:a32f9a169b6f3e0c138d9e069d6916083"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Data Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01166">1166</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+</div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="a95b1ec35498953d190b394d9390b6a02"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a95b1ec35498953d190b394d9390b6a02">&#9670;&nbsp;</a></span>_allocatable</h2>
 
@@ -264,6 +256,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01197">1197</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -305,6 +299,8 @@ Public Attributes</h2></td></tr>
 <p>temperature (K)</p>
 <p>D grid meridional wind (m/s) </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01197">1197</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="aef6fdeb7a3c7c74773f35929a200f4e5"></a>
@@ -318,6 +314,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01242">1242</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -333,6 +331,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01168">1168</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a32f9a169b6f3e0c138d9e069d6916083"></a>
@@ -346,6 +346,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01313">1313</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -361,6 +363,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01261">1261</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a153c4671e9a6268efd9b3f1a4bae7f3c"></a>
@@ -374,6 +378,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01243">1243</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -389,6 +395,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01251">1251</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a6051004a5665381f98403598f0d841cb"></a>
@@ -402,6 +410,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01252">1252</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -417,6 +427,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01200">1200</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a6589bbace2c4d70b1828ad30c8f0f694"></a>
@@ -430,6 +442,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01208">1208</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -445,6 +459,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01230">1230</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="ade8a5697c963d272c6d9deff35fb15f2"></a>
@@ -458,6 +474,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01265">1265</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -473,6 +491,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01169">1169</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a690b87301c4d59a583cb3b291c6d2701"></a>
@@ -486,6 +506,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01254">1254</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -501,6 +523,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01305">1305</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="ab4acfb059f86162ac82b1a11612f1610"></a>
@@ -514,6 +538,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01305">1305</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -529,6 +555,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01176">1176</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="adc565026ec8a2ef0abafa0445987e923"></a>
@@ -542,6 +570,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01311">1311</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -557,6 +587,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01170">1170</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a1ee11bc6f17076db85d576290051fcbf"></a>
@@ -570,6 +602,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01293">1293</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -585,6 +619,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01300">1300</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a737df1e4018be0a63337665e13f8f5ab"></a>
@@ -598,6 +634,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01245">1245</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -613,6 +651,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01305">1305</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a9bfc2bd70bc1dccfe305077daf0cab2c"></a>
@@ -626,6 +666,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01248">1248</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -641,6 +683,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01249">1249</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a80c75e3c3ef687cdfed8ab388c243dc2"></a>
@@ -654,6 +698,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01305">1305</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -669,6 +715,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01257">1257</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a0de20030b672c84ef5f1eec9360ccf61"></a>
@@ -682,6 +730,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01308">1308</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -697,6 +747,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01257">1257</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a0e54dd727ebba5a1c57fcf0d93c9cf36"></a>
@@ -710,6 +762,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01257">1257</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -725,6 +779,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01257">1257</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a2db29836bd7cb9adb49d819e9c7ae0ce"></a>
@@ -738,6 +794,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01257">1257</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -753,6 +811,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01236">1236</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="abbfb5137f18bb1972cd59786a17e28e9"></a>
@@ -766,6 +826,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01227">1227</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -781,6 +843,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01179">1179</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a0da51913e73fce5f1efc7b50c8113320"></a>
@@ -794,6 +858,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01218">1218</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -809,6 +875,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01259">1259</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a438aadd63c30fec4db3ad811ecb3f81a"></a>
@@ -822,6 +890,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01220">1220</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -837,6 +907,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01235">1235</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a0882342b11ac2963886233f84c1ca2ec"></a>
@@ -850,6 +922,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01219">1219</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -865,6 +939,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01221">1221</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="acef8b954c66485555f89a158def2f797"></a>
@@ -878,6 +954,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01217">1217</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -893,6 +971,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01199">1199</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="abaf34c4bb266c7a9964772bfdf12ced3"></a>
@@ -906,6 +986,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01291">1291</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -921,6 +1003,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01201">1201</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="af01023dfdd6a3df5043e2d49e4acd413"></a>
@@ -934,6 +1018,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01210">1210</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -949,6 +1035,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01202">1202</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a685f2987cb3a2f50f28a8ed8b58ce6e6"></a>
@@ -962,6 +1050,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01263">1263</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -977,6 +1067,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01305">1305</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="ad7f9725ebc9ed275affe742ae6384720"></a>
@@ -990,6 +1082,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01174">1174</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -1005,6 +1099,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01226">1226</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="acb55bff833b0e9724ee32485d24abeab"></a>
@@ -1018,6 +1114,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01305">1305</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -1033,6 +1131,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01174">1174</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="ae49eef6008ea3ff710d90c56eacfe6a6"></a>
@@ -1046,6 +1146,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01174">1174</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -1061,6 +1163,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01174">1174</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="aaff3c348215efb0095c2e8c196efe1a7"></a>
@@ -1074,6 +1178,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01174">1174</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -1089,6 +1195,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01305">1305</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a0b442abb8ea87c4c65eda345a9ed2fb4"></a>
@@ -1102,6 +1210,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01228">1228</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -1117,6 +1227,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01197">1197</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a1288d4ab5a553904266d404d407a9e98"></a>
@@ -1130,6 +1242,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01224">1224</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -1145,6 +1259,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01237">1237</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a672b688e0f1b1130caddd31d788d5af8"></a>
@@ -1158,6 +1274,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01239">1239</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -1173,6 +1291,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01198">1198</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="ac2fc282291dfbf37c96e5de7100070d4"></a>
@@ -1186,6 +1306,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01225">1225</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -1201,6 +1323,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01238">1238</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a9f23c2d267763af4486c22466937733c"></a>
@@ -1214,6 +1338,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01240">1240</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -1229,6 +1355,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01207">1207</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a751b4cbe5e6b4662ea5802e39ceebf18"></a>
@@ -1243,10 +1371,12 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01209">1209</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this type was generated from the following file:<ul>
-<li>/Users/valbona/GFDL_atmos_cubed_sphere/model/<a class="el" href="fv__arrays_8_f90.html">fv_arrays.F90</a></li>
+<li>/Users/valbona/GFDL_atmos_cubed_sphere/model/<a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -1254,7 +1384,7 @@ Public Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacefv__arrays__mod.html">fv_arrays_mod</a></li><li class="navelem"><a class="el" href="structfv__arrays__mod_1_1fv__atmos__type.html">fv_atmos_type</a></li>
-    <li class="footer">Generated by
+    <li class="footer">Generated on Tue Oct 15 2019 19:35:35 for FV3DYCORE DOCUMENTATION by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
   </ul>

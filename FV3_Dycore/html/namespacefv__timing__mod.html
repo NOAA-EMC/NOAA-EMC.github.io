@@ -20,17 +20,12 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
     jax: ["input/TeX","output/HTML-CSS"],
 });
-</script><script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js"></script>
+</script><script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -42,23 +37,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">FV3DYCORE DOCUMENTATION
    </div>
-   <div id="projectbrief">This is a living document and may be updated at any time.</div>
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -70,6 +49,16 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -184,6 +173,8 @@ Variables</h2></td></tr>
 
 <p>The subroutine 'timing_clear' resets a timer. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__timing_8F90_source.html#l00240">240</a> of file <a class="el" href="fv__timing_8F90_source.html">fv_timing.F90</a>.</p>
+
 </div>
 </div>
 <a id="a9e0e76eea1b67592c8ec6edd35d2f9f9"></a>
@@ -202,6 +193,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The subroutine 'timing_init' initializes timers. </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__timing_8F90_source.html#l00079">79</a> of file <a class="el" href="fv__timing_8F90_source.html">fv_timing.F90</a>.</p>
 
 </div>
 </div>
@@ -223,6 +216,8 @@ Variables</h2></td></tr>
 
 <p>The subroutine 'timing_off' stops a timer. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__timing_8F90_source.html#l00180">180</a> of file <a class="el" href="fv__timing_8F90_source.html">fv_timing.F90</a>.</p>
+
 </div>
 </div>
 <a id="a85fb4c4c6b3d9604bb682356ab3e7a82"></a>
@@ -243,6 +238,8 @@ Variables</h2></td></tr>
 
 <p>The subroutine 'timing_on' starts a timer. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__timing_8F90_source.html#l00116">116</a> of file <a class="el" href="fv__timing_8F90_source.html">fv_timing.F90</a>.</p>
+
 </div>
 </div>
 <a id="aa878226a27afbc94a821f2f475653d7d"></a>
@@ -262,6 +259,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The subroutine 'timing_prt' prints all timers. </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__timing_8F90_source.html#l00249">249</a> of file <a class="el" href="fv__timing_8F90_source.html">fv_timing.F90</a>.</p>
 
 </div>
 </div>
@@ -291,6 +290,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__timing_8F90_source.html#l00295">295</a> of file <a class="el" href="fv__timing_8F90_source.html">fv_timing.F90</a>.</p>
+
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
@@ -314,6 +315,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__timing_8F90_source.html#l00068">68</a> of file <a class="el" href="fv__timing_8F90_source.html">fv_timing.F90</a>.</p>
+
 </div>
 </div>
 <a id="a31560d7c7691483d291cebc1466fbbef"></a>
@@ -335,6 +338,8 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__timing_8F90_source.html#l00052">52</a> of file <a class="el" href="fv__timing_8F90_source.html">fv_timing.F90</a>.</p>
 
 </div>
 </div>
@@ -358,6 +363,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__timing_8F90_source.html#l00059">59</a> of file <a class="el" href="fv__timing_8F90_source.html">fv_timing.F90</a>.</p>
+
 </div>
 </div>
 <a id="aef40c4c1d0162a76cde3d6461a46d91b"></a>
@@ -379,6 +386,8 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__timing_8F90_source.html#l00068">68</a> of file <a class="el" href="fv__timing_8F90_source.html">fv_timing.F90</a>.</p>
 
 </div>
 </div>
@@ -402,6 +411,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__timing_8F90_source.html#l00073">73</a> of file <a class="el" href="fv__timing_8F90_source.html">fv_timing.F90</a>.</p>
+
 </div>
 </div>
 <a id="a8f78bb855cc4e52f3308ab25fa4498a5"></a>
@@ -423,6 +434,8 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__timing_8F90_source.html#l00049">49</a> of file <a class="el" href="fv__timing_8F90_source.html">fv_timing.F90</a>.</p>
 
 </div>
 </div>
@@ -446,6 +459,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__timing_8F90_source.html#l00061">61</a> of file <a class="el" href="fv__timing_8F90_source.html">fv_timing.F90</a>.</p>
+
 </div>
 </div>
 <a id="aaeddb0efd1e02edd882b6f325ad57047"></a>
@@ -467,6 +482,8 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__timing_8F90_source.html#l00054">54</a> of file <a class="el" href="fv__timing_8F90_source.html">fv_timing.F90</a>.</p>
 
 </div>
 </div>
@@ -490,6 +507,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__timing_8F90_source.html#l00060">60</a> of file <a class="el" href="fv__timing_8F90_source.html">fv_timing.F90</a>.</p>
+
 </div>
 </div>
 <a id="ab8d555b44911d2782f74f538a6eaa432"></a>
@@ -511,6 +530,8 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__timing_8F90_source.html#l00070">70</a> of file <a class="el" href="fv__timing_8F90_source.html">fv_timing.F90</a>.</p>
 
 </div>
 </div>
@@ -534,6 +555,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__timing_8F90_source.html#l00071">71</a> of file <a class="el" href="fv__timing_8F90_source.html">fv_timing.F90</a>.</p>
+
 </div>
 </div>
 </div><!-- contents -->
@@ -542,7 +565,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacefv__timing__mod.html">fv_timing_mod</a></li>
-    <li class="footer">Generated by
+    <li class="footer">Generated on Tue Oct 15 2019 19:35:36 for FV3DYCORE DOCUMENTATION by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
   </ul>

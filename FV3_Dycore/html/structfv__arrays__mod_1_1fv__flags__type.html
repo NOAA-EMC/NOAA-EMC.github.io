@@ -20,17 +20,12 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
     jax: ["input/TeX","output/HTML-CSS"],
 });
-</script><script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js"></script>
+</script><script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -42,23 +37,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">FV3DYCORE DOCUMENTATION
    </div>
-   <div id="projectbrief">This is a living document and may be updated at any time.</div>
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -70,6 +49,16 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -298,7 +287,7 @@ Public Attributes</h2></td></tr>
 <tr class="memdesc:abd877505252f024667e166f6bedb0e7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">number of hours between print out of max/min and air/tracer mass diagnostics to standard output. 0 by default, which never prints out any output; set to -1 to see output after every dt_at-mos. Computing these diagnostics requires some computational overhead  <a href="#abd877505252f024667e166f6bedb0e7e">More...</a><br /></td></tr>
 <tr class="separator:abd877505252f024667e166f6bedb0e7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1cb6e1fb7a4269f6ee15957997f5f310"><td class="memItemLeft" align="right" valign="top">logical&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfv__arrays__mod_1_1fv__flags__type.html#a1cb6e1fb7a4269f6ee15957997f5f310">write_3d_diags</a> = .true.</td></tr>
-<tr class="memdesc:a1cb6e1fb7a4269f6ee15957997f5f310"><td class="mdescLeft">&#160;</td><td class="mdescRight">whether to write out three-dimensional dynamical diagnostic fields (those defined in <a class="el" href="fv__diagnostics_8_f90.html">fv_diagnostics.F90</a>). This is useful for runs with multiple grids if you only want very large 3D diagnostics written out for (say) a nested grid, and not for the global grid. False by default.  <a href="#a1cb6e1fb7a4269f6ee15957997f5f310">More...</a><br /></td></tr>
+<tr class="memdesc:a1cb6e1fb7a4269f6ee15957997f5f310"><td class="mdescLeft">&#160;</td><td class="mdescRight">whether to write out three-dimensional dynamical diagnostic fields (those defined in <a class="el" href="fv__diagnostics_8F90.html">fv_diagnostics.F90</a>). This is useful for runs with multiple grids if you only want very large 3D diagnostics written out for (say) a nested grid, and not for the global grid. False by default.  <a href="#a1cb6e1fb7a4269f6ee15957997f5f310">More...</a><br /></td></tr>
 <tr class="separator:a1cb6e1fb7a4269f6ee15957997f5f310"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaa16c08170125d003288233052c8afb1"><td class="memItemLeft" align="right" valign="top">integer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfv__arrays__mod_1_1fv__flags__type.html#aaa16c08170125d003288233052c8afb1">npx</a></td></tr>
 <tr class="memdesc:aaa16c08170125d003288233052c8afb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of grid corners in the x-direction on one tile of the domain; so one more than the number of grid cells across a tile. On the cubed sphere this is one more than the number of cells across a cube face. Must be set.  <a href="#aaa16c08170125d003288233052c8afb1">More...</a><br /></td></tr>
@@ -307,7 +296,7 @@ Public Attributes</h2></td></tr>
 <tr class="memdesc:a98afcbae0a03aa53ad61562cb671b12e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of grid corners in the y-direction on one tile of the domain. This value should be identical to npx on a cubed-sphere grid; doubly periodic or nested grids do not have this restriction. Must be set.  <a href="#a98afcbae0a03aa53ad61562cb671b12e">More...</a><br /></td></tr>
 <tr class="separator:a98afcbae0a03aa53ad61562cb671b12e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7cb0e06006a898845d3a6b1d92c7def6"><td class="memItemLeft" align="right" valign="top">integer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfv__arrays__mod_1_1fv__flags__type.html#a7cb0e06006a898845d3a6b1d92c7def6">npz</a></td></tr>
-<tr class="memdesc:a7cb0e06006a898845d3a6b1d92c7def6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of vertical levels. Each choice of npz comes with a pre-defined set of hybrid sigma-pressure levels and model top (see <a class="el" href="fv__eta_8_f90.html">fv_eta.F90</a>). Must be set.  <a href="#a7cb0e06006a898845d3a6b1d92c7def6">More...</a><br /></td></tr>
+<tr class="memdesc:a7cb0e06006a898845d3a6b1d92c7def6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of vertical levels. Each choice of npz comes with a pre-defined set of hybrid sigma-pressure levels and model top (see <a class="el" href="fv__eta_8F90.html">fv_eta.F90</a>). Must be set.  <a href="#a7cb0e06006a898845d3a6b1d92c7def6">More...</a><br /></td></tr>
 <tr class="separator:a7cb0e06006a898845d3a6b1d92c7def6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a49de58ed8a38556bb4fe86c5601a4f64"><td class="memItemLeft" align="right" valign="top">integer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfv__arrays__mod_1_1fv__flags__type.html#a49de58ed8a38556bb4fe86c5601a4f64">npz_rst</a> = 0</td></tr>
 <tr class="memdesc:a49de58ed8a38556bb4fe86c5601a4f64"><td class="mdescLeft">&#160;</td><td class="mdescRight">If using a restart file with a different number of vertical levels, set npz_rst to be the number of levels in your restart file. The model will then remap the restart file data to the vertical coordinates specified by npz. 0 by default; if 0 or equal to npz no remapping is done.  <a href="#a49de58ed8a38556bb4fe86c5601a4f64">More...</a><br /></td></tr>
@@ -542,7 +531,10 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a4042ed7bbea950c7af4a3efb709218e4"><td class="memItemLeft" align="right" valign="top">logical&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfv__arrays__mod_1_1fv__flags__type.html#a4042ed7bbea950c7af4a3efb709218e4">adj_mass_vmr</a> = .false.</td></tr>
 <tr class="separator:a4042ed7bbea950c7af4a3efb709218e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Data Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00245">245</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+</div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="a0a9a9ada154a790c93d1f76bee1b7063"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0a9a9ada154a790c93d1f76bee1b7063">&#9670;&nbsp;</a></span>a2b_ord</h2>
 
@@ -556,6 +548,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Order of interpolation used by the pressure gradient force to interpolate cell-centered (A-grid) values to the grid corners. The default value is 4 (recommended), which uses fourth-order interpolation; otherwise second-order interpolation is used. </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00977">977</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -574,6 +568,8 @@ Public Attributes</h2></td></tr>
 <p>Controls behavior of the non-hydrostatic solver. Values &gt; 0.5 enable the semi-implicit solver, in which the value of 'a_imp' controls the time-off-centering: use a_imp = 1.0 for a fully backward time stepping. For consistency, the sum of 'beta' and 'a_imp' should be 1 when the semi-implicit solver is used. The semi-implicit algorithm is substantially more efficient except at very high (km-scale) resolutions with an acoustic time step of a few seconds or less. Proper values are 0, or between 0.5 <br />
  and 1. The default value is 0.75. Only used if 'hydrostatic' = .false. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00589">589</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="ab60e81c0576720da7727e7fefc3c4ddd"></a>
@@ -589,6 +585,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Amplitude of random thermal noise (in K) to add upon startup. Useful for perturbing initial conditions. -1 by default; disabled if 0 or negative. </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00973">973</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -606,6 +604,8 @@ Public Attributes</h2></td></tr>
 
 <p>Run without physics (full or idealized). </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00531">531</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a4042ed7bbea950c7af4a3efb709218e4"></a>
@@ -619,6 +619,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01013">1013</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -636,6 +638,8 @@ Public Attributes</h2></td></tr>
 
 <p>Whether to adjust the global dry-air mass to the value set by dry_mass. This is only done in an initialization step, particularly when using an initial condition from an external dataset, interpolated from another resolution (either horizontal or vertical), or when changing the topography, so that the global mass of the atmosphere matches some estimate of observed value. False by default. It is recommended to only set this to .true. when initializing the model. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00819">819</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="ad92b88b93aa90000c07053c042c1d310"></a>
@@ -651,6 +655,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Whether to write the unstaggered latitude-longitude winds (ua and va) to the restart files. This is useful for data assimilation cycling systems which do not handle staggered winds. The default is .false. </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00894">894</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -668,6 +674,8 @@ Public Attributes</h2></td></tr>
 
 <p>Default setting for interval (hours) between external regional BC data files. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01007">1007</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a63b5db0b645857933a373aa3cf2a5926"></a>
@@ -683,6 +691,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Parameter specifying fraction of time-off-centering for backwards evaluation of the pressure gradient force. The default is 0.0, which produces a fully backwards evaluation of the pressure gradient force that is entirely evaluated using the updated (time n+1) dynamical fields. A value of 0.5 will equally weight the PGF determined at times n and n+1, but may not be stable; values larger than 0.45 are not recommended. A value of 0.4 is recommended for most hydrostatic simulations, which allows an improved representation of inertia-gravity waves in the tropics. In non-hydrostatic simulations using the semi-implicit solver (a_imp &gt; 0.5) the values of 'a_imp' and 'beta' should add to 1, so that the time-centering is consistent between the PGF and the nonhydrostatic solver. The proper range is 0 to 0.45. </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00446">446</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -700,6 +710,8 @@ Public Attributes</h2></td></tr>
 
 <p>Whether to bogus tropical cyclones into the model, which are specified by an external file. Options are set in fv_nwp_nudge_nml. False by default. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00782">782</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a18295dfd8de10252dc53c6aa6113c5b1"></a>
@@ -715,6 +727,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Order of interpolation from the solvers native D-grid winds to latitude-longitude A-grid winds, which are used as input to the physics routines and for writing to history files. The default value is 4 (recommended); fourth-order interpolation is used unless c2l_ord = 2. </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00982">982</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -732,6 +746,8 @@ Public Attributes</h2></td></tr>
 
 <p>Whether to print the most negative global value of microphysical tracers. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00804">804</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="abcebc94566be36845e4285c6a024751d"></a>
@@ -747,6 +763,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Whether to enable Angular momentum fixer. The default is .false. </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00416">416</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -764,6 +782,8 @@ Public Attributes</h2></td></tr>
 
 <p>Fraction of total energy lost during the adiabatic integration between calls of the physics, to be added back globally as heat; essentially the strength of the energy fixer in the physics. Note that this is a global energy fixer and cannot add back energy locally. The default algorithm increments the potential temperature so the pressure gradients are unchanged. The default value is 0. Proper range is 0 to 1. 1 will restore the energy completely to its original value before entering the physics; a value of 0.7 roughly causes the energy fixer to compensate for the amount of energy changed by the physics in GFDL HiRAM or AM3. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00751">751</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a5facb1d2f072eb7a3c2d20b3b03bb068"></a>
@@ -779,6 +799,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>If .true., adds energy dissipated through mechanical damping to heat throughout the entire depth of the domain; if .false. (default) this is only done in the sponge layer at the top of the domain. This option is only enabled if d_con &gt; 1.e-5. </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00426">426</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -796,6 +818,8 @@ Public Attributes</h2></td></tr>
 
 <p>Coefficient for background second-order divergence damping. This option remains active even if nord is nonzero. The default value is 0.0. The proper range is 0 to 0.02. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00346">346</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a737de90ac392b70940b9279692e09107"></a>
@@ -811,6 +835,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Strength of second-order diffusion in the top sponge layer. Value must be specified. This value, and d2_bg_k2, will be changed appropriately in the model (depending on the height of model top), so the actual damping may be very reduced. See atmos_cubed_sphere/model/dyncore.F90 for details. Recommended range is 0. to 0.2. Note that since diffusion is converted to heat if d_con &gt; 0 larger amounts of sponge-layer diffusion may be less stable. </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00364">364</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -828,6 +854,8 @@ Public Attributes</h2></td></tr>
 
 <p>Strength of second-order diffusion in the second sponge layer from the model top. This value must be specified, and should be less than 'd2_bg_k1'. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00373">373</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a22e01e2b95246dc8477bab2b3b162399"></a>
@@ -843,6 +871,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>d2_divg max value (k=1) </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00377">377</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -860,6 +890,8 @@ Public Attributes</h2></td></tr>
 
 <p>d2_divg max value (k=2) </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00378">378</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a400c02695fa4bfa1d2e4aaf21059638a"></a>
@@ -875,6 +907,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Dimensionless coefficient for background higher-order divergence damping. 0.0 by default. If no second-order divergence damping is used, then values between 0.1 and 0.16 are recommended. Requires 'nord' &gt; 0. Note that the scaling for 'd4_bg' differs from that of 'd2_bg'; 'nord' &gt;= 1 and 'd4_bg' = 0.16 will be less diffusive than 'nord' = 0 and 'd2_bg' = 0.02. </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00350">350</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -892,6 +926,8 @@ Public Attributes</h2></td></tr>
 
 <p>Fraction of kinetic energy lost to explicit damping to be converted to heat. Acts as a dissipative heating mechanism in the dynamical core. The default is 0. Proper range is 0 to 1. Note that this is a local, physically correct, energy fixer. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00743">743</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a95caa816eb573eaf9bd1a8b388e87e30"></a>
@@ -907,6 +943,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Coefficient for external (barotropic) mode damping. Proper range is 0 to 0.02. A value of 0.01 or 0.02 may help improve the models maximum stable time step in low-resolution (2-degree or lower) simulations; otherwise a value of 0 is recommended. The default value is 0.02. </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00502">502</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -924,6 +962,8 @@ Public Attributes</h2></td></tr>
 
 <p>damp_k value (k=1) </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00379">379</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="ad632b60850fd35d3d6a63123d8535802"></a>
@@ -939,6 +979,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>damp_k value (k=2) </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00380">380</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -956,6 +998,8 @@ Public Attributes</h2></td></tr>
 
 <p>Dimensionless coefficient for the second-order Smagorinsky-type divergence damping. The default is value is 0.0. 0.2 (the Smagorinsky constant) is recommended if ICs are noisy. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00342">342</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a2ec7d7cffa2d1b29a11b25d9b1410af4"></a>
@@ -972,6 +1016,8 @@ Public Attributes</h2></td></tr>
 
 <p>Latitude (in degrees) used to compute the uniform f-plane Coriolis parameter for doubly-periodic simulations (grid_type = 4). The default value is 15. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00997">997</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a241a60bdb1c3513da1bbe1964d689347"></a>
@@ -985,6 +1031,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01002">1002</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -1000,6 +1048,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01002">1002</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="aa71d52d628975cba5995e1e17069c776"></a>
@@ -1013,6 +1063,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01002">1002</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -1030,6 +1082,8 @@ Public Attributes</h2></td></tr>
 
 <p>boundaries of latlon patch </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01002">1002</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a33f224dad417bcc25d11e2fdce4f2a53"></a>
@@ -1045,6 +1099,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Maximum allowed magnitude of the dissipative heating rate, K s−1; larger magnitudes are clipped to this amount. This can help avoid instability that can occur due to strong heating when d_con &gt; 0. A value of 0.008 (a rate equivalent to about 800 K/day) is sufficient to stabilize the model at 3-km resolution. Set to 1. by default, which effectively disables this limitation. </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00736">736</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -1062,6 +1118,8 @@ Public Attributes</h2></td></tr>
 
 <p>The number of tracers which are not to be advected by the dynamical core, but still passed into the dynamical core; the last dnats+pnats tracers in field_table are not advected. 0 by default. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00679">679</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a9cfcad9b998983b7a1e1d89ea1c76022"></a>
@@ -1075,6 +1133,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00420">420</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -1092,6 +1152,8 @@ Public Attributes</h2></td></tr>
 
 <p>Whether to use Held-Suarez forcing. Requires adiabatic to be false. The default is .false.; this option has no effect if not running solo_core. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00807">807</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="ad305f75672841755e41c89f48a78377f"></a>
@@ -1106,6 +1168,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00810">810</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a600463f131f3b1df30dcf333938c7a39"></a>
@@ -1119,6 +1183,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00419">419</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -1136,6 +1202,8 @@ Public Attributes</h2></td></tr>
 
 <p>Whether to enable grid stretching and rotation using stretch_fac, target_lat, and target_lon. The default value is .false. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00546">546</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="aa0cf5ca404f9d2be70ab5e49e0dc202c"></a>
@@ -1151,6 +1219,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>save dissipation estimate </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00918">918</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -1168,6 +1238,8 @@ Public Attributes</h2></td></tr>
 
 <p>Whether to compute z_full (the height of each modellayer, as opposed to z_half, the height of each model interface) as the midpoint of the layer, as is done for the nonhydrostatic solver, instead of the height of the location where p = p the mean pressure in the layer. This option is not available for fvGFS or the solo_core. The default is .false. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00946">946</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a06034f559635e41927ab1fc2de52c821"></a>
@@ -1183,6 +1255,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Whether to apply flux damping (of strength governed by 'vtdm4') to the fluxes of vorticity, air mass, and nonhydrostatic vertical velocity (there is no dynamically correct way to add explicit diffusion to the tracer fluxes). The form is the same as is used for the divergence damping, including the same order (from 'nord') damping, unless 'nord' = 0, in which case this damping is fourth-order, or if 'nord' = 3,in which case this damping is sixth-order (instead of eighth-order). We recommend enabling this damping when the linear or non-monotonic horizontal advection schemes are enabled, but is unnecessary and not recommended when using monotonic advection. The default is .false. </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00432">432</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -1200,6 +1274,8 @@ Public Attributes</h2></td></tr>
 
 <p>If adjust_dry_mass is .true., sets the global dry air mass, measured in the globally-averaged surface pressure (Pascals) by adding or removing mass from the lowest layer of the atmosphere as needed. The default value is 98290. (Pa). </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00720">720</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a9474d862f9632b749ecc646cc0480e85"></a>
@@ -1215,6 +1291,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Whether to use a simpler &amp; faster algorithm for interpolating the A-grid (cell-centered) wind tendencies computed from the physics to the D-grid. Typically, the A-grid wind tendencies are first converted in 3D cartesian coordinates and then interpolated before converting back to 2D local coordinates. When this option enabled, a much simpler but less accurate 2D interpolation is used. False by default. </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00774">774</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -1232,6 +1310,8 @@ Public Attributes</h2></td></tr>
 
 <p>Specifies the (uniform) grid-cell-width in the x-direction on a doubly-periodic grid (grid_type = 4) in meters. The default value is 1000. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00989">989</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="af64867f4de73d082ab57aab0a919e78e"></a>
@@ -1247,6 +1327,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Specifies the (uniform) grid-cell-width in the y-direction on a doubly-periodic grid (grid_type = 4) in meters. The default value is 1000. </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00993">993</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -1264,6 +1346,8 @@ Public Attributes</h2></td></tr>
 
 <p>If external_ic = .true., reads initial conditions from ECMWF analyses. The default is .false. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00889">889</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a5b7f59a6a09f6aef71d0c7fe841dfdf7"></a>
@@ -1279,6 +1363,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>If .true., reads the interface coefficients ak and bk from either the restart file (if restarting) or from the external initial condition file (if nggps_ic or ecwmf_ic are .true.). This overrides the hard-coded levels in fv_eta. The default is .false. </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00911">911</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -1296,6 +1382,8 @@ Public Attributes</h2></td></tr>
 
 <p>Whether to initialize the models state using the data in an externally specified file, given in res_latlon_dynamics. By default this file is assumed to be a legacy lat-lon FV core restart file; set either ncep_ic or fv_diag_ic to .true.to override this behavior. The default is .false. Note that external_ic = .true. will cause the model to re-initialize the dynamical fields from the input dataset regardless of whether warm_start is set. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00903">903</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a1fc8fecf8287bd8afbc67f8b07bace74"></a>
@@ -1311,6 +1399,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>factor multiplying n_split up tp forecast hour fhouri </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00605">605</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -1328,6 +1418,8 @@ Public Attributes</h2></td></tr>
 
 <p>forecast hour up to which the number of small dynamics (acoustic) time steps are nint(n_split*fac_n_spl) </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00606">606</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="abc28981ee78d98024ddf466784f575b6"></a>
@@ -1343,6 +1435,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Fills in negative tracer values by taking positive tracers from the cells above and below. This option is useful when the physical parameterizations produced negatives. The default is .false. </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00792">792</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -1360,6 +1454,8 @@ Public Attributes</h2></td></tr>
 
 <p>Like 'fill' except for p, the hydrostatic pressure thickness. When the filling occurs a diagnostic message is printed out, which is helpful for diagnosing where the problem may be occurring. Typically, a crash is inevitable if the pressure filling is needed; thus, this option is often better for debugging than as a safety valve. The default is .false. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00795">795</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="ad68d757243a380398edfa7ed880d039f"></a>
@@ -1374,6 +1470,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00803">803</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="aa08a96d7def8d7f16a3f9b76948c6006"></a>
@@ -1387,6 +1485,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00773">773</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -1404,6 +1504,8 @@ Public Attributes</h2></td></tr>
 
 <p>Whether to apply the on-line topography filter during initialization. Only active if get_nggps_ic = .true. This is so topography filtering can be performed on the initial conditions output by the pre-processing tools, which currently do not support topography filter- ing for some configurations (such as the nested grid); this also allows the user to easily test changes to the topography filtering on the simulation. Note that for all other initialization methods (if external_ic = .true.) the on-line topography filter will be applied automatically during the initialization of the topography. The default value is .false. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00399">399</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="aa4430a562824fe3ce7ea0834babe2c0b"></a>
@@ -1420,6 +1522,8 @@ Public Attributes</h2></td></tr>
 
 <p>Whether to turn on additional diagnostics in fv_dynamics. The default is .false. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00827">827</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="abfbf7d7bd8fd7655bdae79c3c8a28729"></a>
@@ -1433,6 +1537,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00901">901</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -1450,6 +1556,8 @@ Public Attributes</h2></td></tr>
 
 <p>Whether to create terrain deviation and land fraction for output to mg_drag restart files, for use in mg_drag and in the land model. The default is .false; .true. is recommended when, and only when, initializing the model, since the mg_drag files created provide a much more accurate terrain representation for the mountain gravity wave drag parameterization and for the land surface roughness than either computes internally. This has no effect on the representation of the terrain in the dynamics. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00861">861</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a9c0bc226ee0b31ea4e9454e4d5ddd518"></a>
@@ -1465,6 +1573,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Timescale (in seconds) at which to remove two-delta-z instability when the local (between two adjacent levels) Richardson number is less than 1. This is achieved by local mixing, which conserves mass, momentum, and total energy. Values of 0 or smaller disable this feature. If n_sponge &lt; 0 then the mixing is applied only to the top n_sponge layers of the domain. Set to -1 (inactive) by default. The proper range is 0 to 3600. </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00692">692</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -1482,6 +1592,8 @@ Public Attributes</h2></td></tr>
 
 <p>if .T., compute geopotential inside of GFS physics </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00892">892</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a5ae6853512fe75e5f08388470d4f0da6"></a>
@@ -1496,6 +1608,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00262">262</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a3db69164bedf77520133bab7a563ad64"></a>
@@ -1509,6 +1623,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00261">261</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -1526,6 +1642,8 @@ Public Attributes</h2></td></tr>
 
 <p>Convenience pointers. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01010">1010</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="aee15326da7e817a68d9591e7dca01325"></a>
@@ -1541,6 +1659,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>-1: read from file; 0: ED Gnomonic 0: the "true" equal-distance Gnomonic grid 1: the traditional equal-distance Gnomonic grid 2: the equal-angular Gnomonic grid 3: the lat-lon grid &ndash; to be implemented 4: double periodic boundary condition on Cartesian grid 5: channel flow on Cartesian grid </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00263">263</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -1558,6 +1678,8 @@ Public Attributes</h2></td></tr>
 
 <p>Horizontal advection scheme for mass. A positivity constraint may be warranted for hord_dp but not strictly necessary. 9 by default. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00308">308</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="ab166cc8b6c93e0c863180aeb50b5aea9"></a>
@@ -1574,6 +1696,8 @@ Public Attributes</h2></td></tr>
 
 <p>Horizontal advection scheme for momentum fluxes. A complete list of kord options is given in the corresponding table in Appendix A of the FV3 technical document. The default value is 9, which uses the third-order piecewise-parabolic method with the monotonicity constraint of Huynh, which is less diffusive than other constraints. For hydrostatic simulation, 8 (the L04 monotonicity constraint) is recommended; for nonhydrostatic simulation, the completely unlimited (“linear” or non-monotone) PPM scheme is recommended. If no monotonicity constraint is applied, enabling the flux damping (do_vort_damp = .true.) is highly recommended to control grid-scale noise. It is also recommended that hord_mt, hord_vt, hord_tm, and hord_dp use the same value, to ensure consistent transport of all dynamical fields, unless a positivity constraint on mass advection (hord_dp) is desired. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00273">273</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="aec43383385030681d8c19c8e906adc1e"></a>
@@ -1589,6 +1713,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Horizontal advection scheme for potential temperature and layer thickness in nonhydrostatic simulations. 9 by default. </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00305">305</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -1607,6 +1733,8 @@ Public Attributes</h2></td></tr>
 <p>Tracer transport options: </p>
 <p>Horizontal advection scheme for tracers. The default is 12. This value can differ from the other hord options since tracers are subcycled (if inline_q == .false.) and require positive-definite advection to control the appearance of non-physical negative masses. 8 (fastest) or 10 (least diffusive) are typically recommended. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00317">317</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="adfb527dd9d1387bc79c721bc9810c410"></a>
@@ -1624,6 +1752,8 @@ Public Attributes</h2></td></tr>
 <p>Vorticity &amp; w transport options: </p>
 <p>Horizontal advection scheme for absolute vorticity and for vertical velocity in nonhydrostatic simulations. 9 by default. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00300">300</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="aaa7ad25f7078c86a27efa0fd14977092"></a>
@@ -1639,6 +1769,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Whether to use a hybrid-height coordinate, instead of the usual sigma-p coordinate. The default value is .false. (Not currently maintained.) </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00953">953</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -1656,6 +1788,8 @@ Public Attributes</h2></td></tr>
 
 <p>Whether to use the hydrostatic or nonhydrostatic solver. The default is .true. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00933">933</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a7630553d7bb9549c7092f49184a409cd"></a>
@@ -1671,6 +1805,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Whether to compute tracer transport in-line with the rest of the dynamics instead of sub-cycling, so that tracer transport is done at the same time and on the same time step as is p and potential temperature. False by default; if true, q_split and z_tracer are ignored. </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00527">527</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -1688,6 +1824,8 @@ Public Attributes</h2></td></tr>
 
 <p>Number of vertical remappings per dt_atmos (physics timestep). 1 by default. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00610">610</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a166399db4aa8c0330f95f0f7df26cc13"></a>
@@ -1703,6 +1841,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>background KE production (m^2/s^3) over a small step Use this to conserve total energy if consv_te=0 </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00748">748</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -1720,6 +1860,8 @@ Public Attributes</h2></td></tr>
 
 <p>Vertical remapping scheme for the winds. 8 by default; 9 is recommended as the safest option, although 10, and 11 can also be useful. See corresponding table in Appendix A of the FV3 technical document for a complete list of kord options. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00290">290</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a97fa1725f727c163a6a90457a32c717c"></a>
@@ -1735,6 +1877,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Vertical remapping scheme for temperature. If positive (not recommended), then vertical remapping is performed on total energy instead of temperature (see 'remap_t'). The default value is -8. </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00312">312</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -1752,6 +1896,8 @@ Public Attributes</h2></td></tr>
 
 <p>The vertical remapping scheme for tracers. The default is 8. 9 or 11 recommended. It is often recommended to use the same value for 'kord_tr' as for 'kord_tm'. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00324">324</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a956b1eda2db234dc8646d547c3197c81"></a>
@@ -1767,6 +1913,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Vertical remapping scheme for vertical velocity in nonhydrostatic simulations. 8 by default; 9 recommended. It is also recommended to use the same value for 'kord_wz' as for 'kord_mt'. </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00295">295</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -1784,6 +1932,8 @@ Public Attributes</h2></td></tr>
 
 <p>linear scheme limiting factor, 1: hord = 5, 3: hord = 6 </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00331">331</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a2cd3cf16f02e720572e7c87e3a6956d6"></a>
@@ -1799,6 +1949,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Number of time splits for Riemann solver. </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00609">609</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -1816,6 +1968,8 @@ Public Attributes</h2></td></tr>
 
 <p>Converts the vertical coordinate to a hybrid-height coordinate, instead of the usual sigma-p coordinate. Requires hybrid_z = .true. The default value is .false. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00961">961</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="af9e0c974a9870aa7032b2a9b96b42793"></a>
@@ -1831,6 +1985,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Whether to re-initialize the nonhydrostatic state, by recomputing dz from hydrostatic balance and setting w to 0. The default is false. </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00957">957</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -1848,6 +2004,8 @@ Public Attributes</h2></td></tr>
 
 <p>Run with moist physics. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00806">806</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="ab0200da2e7fbf552254b20195d89808b"></a>
@@ -1863,6 +2021,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Takes topography into account when initializing the model. Set this to .true. to apply the terrain filter (if n_zs_filter = 2 or 4) upon startup; also set to True when cold starting so that the topography can be initialized. Only set this to .false. if you wish to cold-start without any topography; this value is ignored for the aquaplanet test_case = 14. The default is .true. It is highly recommended TO NOT ALTER this value unless you know what you are doing. </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00830">830</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -1880,6 +2040,8 @@ Public Attributes</h2></td></tr>
 
 <p>The number of small dynamics (acoustic) time steps between vertical remapping. 0 by default, in which case the model produces a good first guess by examining the resolution, dt_atmos, and k_split. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00600">600</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a3aa416f1e3aa62eed9afe2a1eaabf673"></a>
@@ -1895,6 +2057,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Controls the number of layers at the upper boundary on which the 2Dx filter is applied. This does not control the sponge layer. The default value is 0. </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00499">499</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -1913,6 +2077,8 @@ Public Attributes</h2></td></tr>
 <p>Additional (after the fact) terrain filter (to further smooth the terrain after cold start) </p>
 <p>Number of times to apply a diffusive filter to the topography upon startup, if mountain is True and the model is not being cold-started. This is applied every time the model is warm-started, so if you want to smooth the topography make sure this is set to 0 after the first simulation. If initializing the model from cold-start the topography is already being filtered by an amount appropriate for the model resolution. 0 by default. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00383">383</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="acac30a38b5ffe8adef26e581a215157e"></a>
@@ -1929,6 +2095,8 @@ Public Attributes</h2></td></tr>
 
 <p>Number of forward-backward dynamics steps used to initialize adiabatic solver. This is useful for spinning up the nonhydrostatic state from the hydrostatic GFS analyses. 0 by default. Recommended to set this to a non-zero value (1 or 2 is typically sufficient) when initializing from GFS or ECMWF analyses. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00700">700</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="afbe96b343538a9871a35409abfdb09d3"></a>
@@ -1944,6 +2112,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>If external_ic = .true., this variable says whether the file in res_latlon_dynamics is an NCEP analysis or reanalysis file. This option zeros out all tracer fields except specific humidity. The default is .false. </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00880">880</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -1962,6 +2132,8 @@ Public Attributes</h2></td></tr>
 <p>Number of tracer species advected by fv_tracer in the dynamical core. <br />
  Typically this is set automatically by reading in values from field_table, but ncnst can be set to a smaller value so only the first ncnst tracers listed in field_table are not advected. 0 by default, which will use the value from field_table. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00668">668</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="aeff1e1f69391e36b56e0927e5d6bc170"></a>
@@ -1975,6 +2147,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00688">688</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -1992,6 +2166,8 @@ Public Attributes</h2></td></tr>
 
 <p>Number of times to apply second-order smoothing to the diagnosed omega. When 0 the filter is disabled. 1 by default. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00689">689</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a55364a34def550dcbeee0f6da94186ef"></a>
@@ -2007,6 +2183,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>If external_ic = .true., reads initial conditions from horizontally-interpolated output from chgres. The default is .false. Additional options are available through external_ic_nml. </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00885">885</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -2024,6 +2202,8 @@ Public Attributes</h2></td></tr>
 
 <p>Disables execution of the dynamical core, only running the initialization, diagnostic, and I/O routines, and any physics that may be enabled. Essentially turns the model into a column physics model. The default is .false. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00421">421</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a2d1ec9358d2350da3427de40c7e9dc0b"></a>
@@ -2037,6 +2217,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00805">805</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -2054,6 +2236,8 @@ Public Attributes</h2></td></tr>
 
 <p>Order of divergence damping: 0 for second-order; 1 for fourth-order (default); 2 for sixth-order; 3 for eighth-order. Sixth-order may yield a better solution for low resolutions (one degree or coarser) by virtue of it being more scale-selective and will not damp moderately well-resolved disturbances as much as does lower-order damping. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00333">333</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a78c41b066c189e7e6fa24eebc9b525f2"></a>
@@ -2069,6 +2253,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Order of tracer damping; values mean the same as for 'nord'. The default value is 0. </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00339">339</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -2087,6 +2273,8 @@ Public Attributes</h2></td></tr>
 <p>Order of the topography filter applied to n_zs_filter. Set to 2 to get a second-order filter, or 4 to get a fourth-order filter; other values do no filtering. 0 by default. This should not be set to a non-zero value on multiple successive simulations; the filter is applied every time the model restarts. This option is useful for testing the terrain filter, and SHOULD NOT BE USED FOR REGULAR RUNS. <br />
  use del-2 (2) OR del-4 (4) </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00391">391</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="aaa16c08170125d003288233052c8afb1"></a>
@@ -2102,6 +2290,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Number of grid corners in the x-direction on one tile of the domain; so one more than the number of grid cells across a tile. On the cubed sphere this is one more than the number of cells across a cube face. Must be set. </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00651">651</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -2119,6 +2309,8 @@ Public Attributes</h2></td></tr>
 
 <p>Number of grid corners in the y-direction on one tile of the domain. This value should be identical to npx on a cubed-sphere grid; doubly periodic or nested grids do not have this restriction. Must be set. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00655">655</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a7cb0e06006a898845d3a6b1d92c7def6"></a>
@@ -2133,7 +2325,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Number of vertical levels. Each choice of npz comes with a pre-defined set of hybrid sigma-pressure levels and model top (see <a class="el" href="fv__eta_8_f90.html">fv_eta.F90</a>). Must be set. </p>
+<p>Number of vertical levels. Each choice of npz comes with a pre-defined set of hybrid sigma-pressure levels and model top (see <a class="el" href="fv__eta_8F90.html">fv_eta.F90</a>). Must be set. </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00659">659</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -2151,6 +2345,8 @@ Public Attributes</h2></td></tr>
 
 <p>If using a restart file with a different number of vertical levels, set npz_rst to be the number of levels in your restart file. The model will then remap the restart file data to the vertical coordinates specified by npz. 0 by default; if 0 or equal to npz no remapping is done. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00663">663</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a968a2c7340ea986e3418793dcafb3810"></a>
@@ -2165,6 +2361,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00726">726</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a567ce430887199ba62b515cef02229cb"></a>
@@ -2178,6 +2376,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00725">725</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -2195,6 +2395,8 @@ Public Attributes</h2></td></tr>
 
 <p>Number of tiles on the domain. For the cubed sphere, this should be 6, one tile for each face of the cubed sphere; normally for most other domains (including nested grids) this should be set to 1. Must be set. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00683">683</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a2071b6839462ecbe65b18ec014b7891c"></a>
@@ -2210,6 +2412,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Whether to use the nudging towards the state in some externally-supplied file (such as from reanalysis or another simulation). Further nudging options are set in fv_nwp_nudge_nml. The default is .false. </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00872">872</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -2227,6 +2431,8 @@ Public Attributes</h2></td></tr>
 
 <p>During the adiabatic initialization (na_init &gt; 0), if set to .true., delz is nudged back to the value specified in the initial conditions, instead of nudging the temperature back to the initial value. Nudging delz is simpler (faster), doesn’t require consideration of the virtual temperature effect, and may be more stable. .false.by default. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00707">707</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="abfb0cfc0c4c35db9eace0aec7f7b0986"></a>
@@ -2242,6 +2448,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Same as nudge, but works in adiabatic solo_core simulations to nudge the field to a single external analysis file. The default is .false. </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00876">876</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -2259,6 +2467,8 @@ Public Attributes</h2></td></tr>
 
 <p>During the adiabatic initialization (na_init &gt; 0), if set to .true., the water vapor profile is nudged to an analytic fit to the HALOE climatology. This is to improve the water vapor concentrations in GFS initial conditions, especially in the stratosphere, where values can be several times higher than observed. This nudging is unnecessary for other ICs, especially the ECMWF initial conditions. The default is .false. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00965">965</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a42c93d1b25fbe7725462deeaa69f89a6"></a>
@@ -2274,6 +2484,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Number of water species to be included in condensate and water vapor loading. The masses of the first nwat tracer species will be added to the dry air mass, so that p is the mass of dry air, water vapor, and the included condensate species. The value used depends on the microphysics in the physics package you are using. For GFS physics with only a single condensate species, set to 2. For schemes with prognostic cloud water and cloud ice, such as GFDL AM2/AM3/AM4 Rotsteyn-Klein or Morrison-Gettlean microphysics, set to 3. For warm-rain (Kessler) microphysics set to 4 (with an inactive ice tracer), which only handles three species but uses 4 to avoid interference with the R-K physics. For schemes such as WSM5 or Ferrier that have prognostic rain and snow but not hail, set to 5 (not yet implemented). For six-category schemes that also have prognostic hail or graupel, such as the GFDL, Thompson, or WSM6 microphysics, set to 6. A value of 0 turns off condensate loading. The default value is 3. </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00507">507</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -2291,6 +2503,8 @@ Public Attributes</h2></td></tr>
 
 <p>parameter to revert damping parameters back to values defined in a previous revision old_values: d2_bg_k1 = 6. d2_bg_k2 = 4. d2_divg_max_k1 = 0.02 d2_divg_max_k2 = 0.01 damp_k_k1 = 0. damp_k_k2 = 0. current_values: d2_bg_k1 = 4. d2_bg_k2 = 2. d2_divg_max_k1 = 0.15 d2_divg_max_k2 = 0.08 damp_k_k1 = 0.2 damp_k_k2 = 0.12 </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00837">837</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="ac29dc9f75f651c3777e252afcbbe5529"></a>
@@ -2306,6 +2520,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Safety factor for minimum nonhydrostatic pressures, which will be limited so the full pressure is no less than p_fac times the hydrostatic pressure. This is only of concern in mid-top or high-top models with very low pressures near the model top, and has no effect in most simulations. The pressure limiting activates only when model is in danger of blowup due to unphysical negative total pressures. Only used if 'hydrostatic' = .false.and the semi-implicit solver is used. The proper range is 0 to 0.25. The default value is 0.05. </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00579">579</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -2323,6 +2539,8 @@ Public Attributes</h2></td></tr>
 
 <p>Surface pressure used to construct a horizontally-uniform reference vertical pressure profile, used in some simple physics packages in the solo_core and in the Rayleigh damping. This should not be confused with the actual, horizontally-varying pressure levels used for all other dynamical calculations. The default value is 1.e5. CHANGING THIS VALUE IS STRONGLY DISCOURAGED. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00713">713</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a6f95cb94dff3cd48001b488390cfe582"></a>
@@ -2338,6 +2556,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Option to enable hydrostatic application of heating from the physics in a nonhydrostatic simulation: heating is applied in hydrostatic balance, causing the entire atmospheric column to expand instantaneously. If .false., heating from the physics is applied simply as a temperature tendency. The default value is .true.; ignored if hydrostatic = .true. </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00936">936</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -2355,6 +2575,8 @@ Public Attributes</h2></td></tr>
 
 <p>The number of tracers not to advect by the dynamical core. Unlike dnats, these tracers are not seen by the dynamical core. The last pnats entries in field_table are not advected. The default value is 0. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00674">674</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="abd877505252f024667e166f6bedb0e7e"></a>
@@ -2370,6 +2592,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>number of hours between print out of max/min and air/tracer mass diagnostics to standard output. 0 by default, which never prints out any output; set to -1 to see output after every dt_at-mos. Computing these diagnostics requires some computational overhead </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00638">638</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -2387,6 +2611,8 @@ Public Attributes</h2></td></tr>
 
 <p>number of time steps for sub-cycled tracer advection. The default value is 0 (recommended), in which case the model determines the number of time steps from the global maximum wind speed at each call to the tracer advection. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00633">633</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a1aad6b4b7d136e69a2ceadbf8ce7a72e"></a>
@@ -2402,6 +2628,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Checks whether the values of the prognostic variables are within a reasonable range at the end of a dynamics time step, and prints a warning if not. The default is .false.; adds computational, overhead so we only recommend using this when debugging. </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00786">786</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -2419,6 +2647,8 @@ Public Attributes</h2></td></tr>
 
 <p>read in analysis increment and add to restart </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00916">916</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a1ce5860dce6be701f06ad37631322dca"></a>
@@ -2432,6 +2662,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00811">811</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -2449,6 +2681,8 @@ Public Attributes</h2></td></tr>
 
 <p>Default setting for the regional domain. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l01005">1005</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a78ac3950ee46ddf7487ff9abe7599b70"></a>
@@ -2464,6 +2698,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Whether the vertical remapping is performed on (virtual) temperature instead of (virtual) potential temperature. Since typically potential temperature increases exponentially from layer to layer near the top boundary, the cubic-spline interpolation in the vertical remapping will have difficulty with the exponential profile. Temperature does not have this problem and will often yield a more accurate result. The default is .true. </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00848">848</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -2481,6 +2717,8 @@ Public Attributes</h2></td></tr>
 
 <p>uses an exactly-reproducible global sum operation performed when computing the global energy for consv_te. This is used because the FMS routine mpp_sum() is not bit-wise reproducible due to its handling of floating-point arithmetic, and so can return different answers for (say) different processor layouts. The default is .true. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00812">812</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a46c8b4d374ce3fafe4c962d714e23fea"></a>
@@ -2496,6 +2734,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>If external_ic =.true.gives the filename of the input IC file. The default is 'INPUT/fv_rst.res.nc'. </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00921">921</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -2513,6 +2753,8 @@ Public Attributes</h2></td></tr>
 
 <p>If external_ic =.true.and both ncep_ic and fv_diag_ic are.false., this variable gives the filename of the initial conditions for the tracers, assumed to be a legacy lat-lon FV core restart file. The default is 'INPUT/atmos_tracers.res.nc'. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00923">923</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="ac04a40d72a3f3e54af07ec092498c80a"></a>
@@ -2526,6 +2768,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00578">578</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -2543,6 +2787,8 @@ Public Attributes</h2></td></tr>
 
 <p>Pressure below which no Rayleigh damping is applied if tau &gt; 0. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00771">771</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a1c474ace44c4f507b091496eabf667bd"></a>
@@ -2558,6 +2804,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Option controlling whether to apply Rayleigh damping (for tau &gt; 0) on the dynamic/acoustic timestep rather than on the physics timestep. This can help stabilize the model by applying the damping more weakly more frequently, so the instantaneous amount of damping (and thereby heat added) is reduced. The default is .false., which applies the Rayleigh drag every physics timestep. </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00409">409</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -2575,6 +2823,8 @@ Public Attributes</h2></td></tr>
 
 <p>diff_z = scale_z**2 * 0.25 </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00328">328</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="ae661493f3d099801d7487cfae6902c89"></a>
@@ -2590,6 +2840,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Westward zonal rotation (or shift) of cubed-sphere grid from its natural orientation with cube face centers at 0, 90, 180, and 270 degrees longitude. The shift, in degrees, is 180/shift_fac. This shift does not move the poles. By default this is set to 18, shifting the grid westward 180/18=10 degrees, so that the edges of the cube do not run through the mountains of Japan; all standard CM2.x, AM3, CM3, and HiRAM simulations use this orientation of the grid. Requires do_schmidt = .false. </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00536">536</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -2607,6 +2859,8 @@ Public Attributes</h2></td></tr>
 
 <p>Filter dissipation estimate "skeb_npass" times. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00919">919</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a89f77eb07284c379078aa4dd37ec57fe"></a>
@@ -2620,6 +2874,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00829">829</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -2637,6 +2893,8 @@ Public Attributes</h2></td></tr>
 
 <p>Stretching factor for the Schmidt transformation. This is the factor by which tile 6 of the cubed sphere will be shrunk, with the grid size shrinking accordingly. The default value is 1, which performs no grid stretching. Requires do_schmidt =.true. THE MODEL WILL CRASH IF stretch_fac IS SET TO ZERO. Values of up to 40 have been found useful and stable for short-term cloud-scale integrations. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00549">549</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="aae83d2547ecc1f3f201f5ca43ce1ee01"></a>
@@ -2653,6 +2911,8 @@ Public Attributes</h2></td></tr>
 
 <p>Latitude (in degrees) to which the center of tile 6 will be rotated; if stretching is done with stretch_fac the center of the high-resolution part of the grid will be at this latitude. -90 by default, which does no grid rotation (the Schmidt transformation rotates the south pole to the appropriate target). Requires do_schmidt = .true. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00558">558</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a75dab9007778e7059a391cfd1a11a6e3"></a>
@@ -2668,6 +2928,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Longitude to which the center of tile 6 will be rotated. 0 by default. Requires do_schmidt = .true. </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00565">565</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -2686,6 +2948,8 @@ Public Attributes</h2></td></tr>
 <p>Time scale (in days) for Rayleigh friction applied to horizontal and vertical winds; lost kinetic energy is converted to heat, except on nested grids. The default value is 0.0, which disables damping. Larger values yield less damping. For models with tops at 1 mb or lower values between 10 and 30 are useful for preventing overly-strong polar night jets; for higher-top hydrostatic models values between 5 and 15 should be considered; and for non-hydrostatic models values of 10 or less should be <br />
  considered, with smaller values for higher-resolution. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00762">762</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="af9fe4497904cedded7039fb1444c80f3"></a>
@@ -2701,6 +2965,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Time-scale (days) for simple methane chemistry to act as a source of water in the stratosphere. Can be useful if the stratosphere dries out too quickly; consider a value between 60 and 120 days if this is the case. The default value is 0., which disables the methane chemistry. Values less than zero apply the chemistry above 100 mb; else applied above 30 mb. Requires 'adiabatic' to be .false. </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00727">727</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -2718,6 +2984,8 @@ Public Attributes</h2></td></tr>
 
 <p>Coefficient for del-2 tracer damping. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00363">363</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="acb17c1ce352a3f01c6f98f7ec37c15cc"></a>
@@ -2733,6 +3001,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Whether to compute hydrostatic pressure for input to the physics. Currently only enabled for the fvGFS model. Ignored in hydrostatic simulations. The default is .false. </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00942">942</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -2750,6 +3020,8 @@ Public Attributes</h2></td></tr>
 
 <p>Enables a variant of the Lin pressure-gradient force algorithm, which uses the logarithm of pressure instead of the Exner function (as in <b>[lin1997explicit]</b>). This yields more accurate results for regions that are nearly isothermal. Ignored if 'hydrostatic' = .true. The default is .false. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00613">613</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a7ef4fa9739e6f84e06a89be8a7ed1739"></a>
@@ -2763,6 +3035,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00900">900</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -2778,6 +3052,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00899">899</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a464a6eb5ffb4492e2ea207efc9c041ed"></a>
@@ -2791,6 +3067,8 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00444">444</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -2808,6 +3086,8 @@ Public Attributes</h2></td></tr>
 
 <p>Coefficient for background other-variable damping. The value of 'vtdm4' should be less than that of 'd4_bg'. A good first guess for 'vtdm4' is about one-third the value of d4_bg. Requires 'do_vort_damp' to be .true. Disabled for values less than 1.e-3. Other- variable damping should not be used if a monotonic horizontal advection scheme is used. The default value is 0.0. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00356">356</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a7966e3f1383bae981b26a75ce43ec46b"></a>
@@ -2823,6 +3103,8 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>max w (m/s) threshold for hydostatiic adjustment </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00329">329</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -2840,6 +3122,8 @@ Public Attributes</h2></td></tr>
 
 <p>Whether to start from restart files, instead of cold-starting the model. True by default; if this is set to .true. and restart files cannot be found the model will stop. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00523">523</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a1cb6e1fb7a4269f6ee15957997f5f310"></a>
@@ -2854,7 +3138,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>whether to write out three-dimensional dynamical diagnostic fields (those defined in <a class="el" href="fv__diagnostics_8_f90.html">fv_diagnostics.F90</a>). This is useful for runs with multiple grids if you only want very large 3D diagnostics written out for (say) a nested grid, and not for the global grid. False by default. </p>
+<p>whether to write out three-dimensional dynamical diagnostic fields (those defined in <a class="el" href="fv__diagnostics_8F90.html">fv_diagnostics.F90</a>). This is useful for runs with multiple grids if you only want very large 3D diagnostics written out for (say) a nested grid, and not for the global grid. False by default. </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00643">643</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
 
 </div>
 </div>
@@ -2872,6 +3158,8 @@ Public Attributes</h2></td></tr>
 
 <p>min ratio of dz_nonhydrostatic/dz_hydrostatic </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00330">330</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <a id="a323755a242c37f393d939ac5626bb209"></a>
@@ -2888,10 +3176,12 @@ Public Attributes</h2></td></tr>
 
 <p>Whether to transport sub-cycled tracers layer-by-layer, each with its own computed sub-cycling time step (if q_split = 0). This may improve efficiency for very large numbers of tracers. The default value is .false.; currently not implemented. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__arrays_8F90_source.html#l00856">856</a> of file <a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this type was generated from the following file:<ul>
-<li>/Users/valbona/GFDL_atmos_cubed_sphere/model/<a class="el" href="fv__arrays_8_f90.html">fv_arrays.F90</a></li>
+<li>/Users/valbona/GFDL_atmos_cubed_sphere/model/<a class="el" href="fv__arrays_8F90_source.html">fv_arrays.F90</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -2899,7 +3189,7 @@ Public Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacefv__arrays__mod.html">fv_arrays_mod</a></li><li class="navelem"><a class="el" href="structfv__arrays__mod_1_1fv__flags__type.html">fv_flags_type</a></li>
-    <li class="footer">Generated by
+    <li class="footer">Generated on Tue Oct 15 2019 19:35:35 for FV3DYCORE DOCUMENTATION by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
   </ul>

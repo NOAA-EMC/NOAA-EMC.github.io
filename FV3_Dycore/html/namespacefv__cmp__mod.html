@@ -20,17 +20,12 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
     jax: ["input/TeX","output/HTML-CSS"],
 });
-</script><script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js"></script>
+</script><script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -42,23 +37,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">FV3DYCORE DOCUMENTATION
    </div>
-   <div id="projectbrief">This is a living document and may be updated at any time.</div>
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -70,6 +49,16 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -401,6 +390,8 @@ Variables</h2></td></tr>
 <p>The subroutine 'fv_sat_adj' performs the fast processes in the GFDL microphysics. </p>
 <p>This is designed for single-moment 6-class cloud microphysics schemes. It handles the heat release due to in situ phase changes. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__cmp_8F90_source.html#l00130">130</a> of file <a class="el" href="fv__cmp_8F90_source.html">fv_cmp.F90</a>.</p>
+
 </div>
 </div>
 <a id="a328511270fbc27b0b736bab8ac486967"></a>
@@ -438,6 +429,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>the function 'wqs1' computes the saturated specific humidity for table iii </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__cmp_8F90_source.html#l00903">903</a> of file <a class="el" href="fv__cmp_8F90_source.html">fv_cmp.F90</a>.</p>
 
 </div>
 </div>
@@ -483,6 +476,8 @@ Variables</h2></td></tr>
 
 <p>The function 'iqs2' computes the gradient of saturated specific humidity for table iii. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__cmp_8F90_source.html#l00997">997</a> of file <a class="el" href="fv__cmp_8F90_source.html">fv_cmp.F90</a>.</p>
+
 </div>
 </div>
 <a id="a5ce7347205d43a859b0316a584642f4d"></a>
@@ -502,6 +497,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The subroutine 'qs_init' initializes lookup tables for the saturation mixing ratio. </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__cmp_8F90_source.html#l01029">1029</a> of file <a class="el" href="fv__cmp_8F90_source.html">fv_cmp.F90</a>.</p>
 
 </div>
 </div>
@@ -529,6 +526,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__cmp_8F90_source.html#l01071">1071</a> of file <a class="el" href="fv__cmp_8F90_source.html">fv_cmp.F90</a>.</p>
+
 </div>
 </div>
 <a id="a27624ed32cc760d05eb6faa1f748970e"></a>
@@ -555,6 +554,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__cmp_8F90_source.html#l01165">1165</a> of file <a class="el" href="fv__cmp_8F90_source.html">fv_cmp.F90</a>.</p>
+
 </div>
 </div>
 <a id="a416061516bcffc2cab55e9a801b6d1c2"></a>
@@ -580,6 +581,8 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__cmp_8F90_source.html#l01133">1133</a> of file <a class="el" href="fv__cmp_8F90_source.html">fv_cmp.F90</a>.</p>
 
 </div>
 </div>
@@ -618,6 +621,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>the function 'wqs1' computes the saturated specific humidity for table ii </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__cmp_8F90_source.html#l00877">877</a> of file <a class="el" href="fv__cmp_8F90_source.html">fv_cmp.F90</a>.</p>
 
 </div>
 </div>
@@ -662,6 +667,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The function 'wqs2'computes the gradient of saturated specific humidity for table ii. </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__cmp_8F90_source.html#l00929">929</a> of file <a class="el" href="fv__cmp_8F90_source.html">fv_cmp.F90</a>.</p>
 
 </div>
 </div>
@@ -725,6 +732,8 @@ Variables</h2></td></tr>
 
 <p>The function wqs2_vect computes the gradient of saturated specific humidity for table ii. It is the same as "wqs2", but written as vector function. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__cmp_8F90_source.html#l00961">961</a> of file <a class="el" href="fv__cmp_8F90_source.html">fv_cmp.F90</a>.</p>
+
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
@@ -750,6 +759,8 @@ Variables</h2></td></tr>
 
 <p>gfdl: heat capacity of ice at - 15 deg c </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__cmp_8F90_source.html#l00090">90</a> of file <a class="el" href="fv__cmp_8F90_source.html">fv_cmp.F90</a>.</p>
+
 </div>
 </div>
 <a id="ae3486a6a9602d9d6d55f4935aa0ffb0b"></a>
@@ -773,6 +784,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>gfdl: heat capacity of liquid at 15 deg c </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__cmp_8F90_source.html#l00091">91</a> of file <a class="el" href="fv__cmp_8F90_source.html">fv_cmp.F90</a>.</p>
 
 </div>
 </div>
@@ -798,6 +811,8 @@ Variables</h2></td></tr>
 
 <p>1846.0, heat capacity of water vapor at constant pressure </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__cmp_8F90_source.html#l00075">75</a> of file <a class="el" href="fv__cmp_8F90_source.html">fv_cmp.F90</a>.</p>
+
 </div>
 </div>
 <a id="a6b7e31c99aaa43c3c88e5f148a0ada8c"></a>
@@ -821,6 +836,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>717.55, heat capacity of dry air at constant volume </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__cmp_8F90_source.html#l00076">76</a> of file <a class="el" href="fv__cmp_8F90_source.html">fv_cmp.F90</a>.</p>
 
 </div>
 </div>
@@ -846,6 +863,8 @@ Variables</h2></td></tr>
 
 <p>1384.5, heat capacity of water vapor at constant volume </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__cmp_8F90_source.html#l00077">77</a> of file <a class="el" href="fv__cmp_8F90_source.html">fv_cmp.F90</a>.</p>
+
 </div>
 </div>
 <a id="ac3f9f88a1d49ff1e327bbb8005f9228a"></a>
@@ -869,6 +888,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>the same as dc_vap, except that cp_vap can be cp_vap or cv_vap </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__cmp_8F90_source.html#l00110">110</a> of file <a class="el" href="fv__cmp_8F90_source.html">fv_cmp.F90</a>.</p>
 
 </div>
 </div>
@@ -895,6 +916,8 @@ Variables</h2></td></tr>
 <li>126, isobaric heating / cooling </li>
 </ul>
 
+<p class="definition">Definition at line <a class="el" href="fv__cmp_8F90_source.html#l00105">105</a> of file <a class="el" href="fv__cmp_8F90_source.html">fv_cmp.F90</a>.</p>
+
 </div>
 </div>
 <a id="afe0a80520aff4b3aa44554dcbc54ccda"></a>
@@ -918,6 +941,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>2213.5, isobaric heating / colling </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__cmp_8F90_source.html#l00094">94</a> of file <a class="el" href="fv__cmp_8F90_source.html">fv_cmp.F90</a>.</p>
 
 </div>
 </div>
@@ -944,6 +969,8 @@ Variables</h2></td></tr>
 <li>2339.5, isobaric heating / cooling </li>
 </ul>
 
+<p class="definition">Definition at line <a class="el" href="fv__cmp_8F90_source.html#l00093">93</a> of file <a class="el" href="fv__cmp_8F90_source.html">fv_cmp.F90</a>.</p>
+
 </div>
 </div>
 <a id="a39a88a1e472449c87b0c18c5be0682a2"></a>
@@ -966,6 +993,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__cmp_8F90_source.html#l00113">113</a> of file <a class="el" href="fv__cmp_8F90_source.html">fv_cmp.F90</a>.</p>
+
 </div>
 </div>
 <a id="ae014434a6d863ca10c5961edfd866425"></a>
@@ -987,6 +1016,8 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__cmp_8F90_source.html#l00113">113</a> of file <a class="el" href="fv__cmp_8F90_source.html">fv_cmp.F90</a>.</p>
 
 </div>
 </div>
@@ -1012,6 +1043,8 @@ Variables</h2></td></tr>
 
 <p>ifs: saturation vapor pressure at 0 deg c </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__cmp_8F90_source.html#l00103">103</a> of file <a class="el" href="fv__cmp_8F90_source.html">fv_cmp.F90</a>.</p>
+
 </div>
 </div>
 <a id="aad5bf68c9e846169feaa2355a29ec7ae"></a>
@@ -1035,6 +1068,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>used in bigg mechanism </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__cmp_8F90_source.html#l00108">108</a> of file <a class="el" href="fv__cmp_8F90_source.html">fv_cmp.F90</a>.</p>
 
 </div>
 </div>
@@ -1061,6 +1096,8 @@ Variables</h2></td></tr>
 <li>2.7105966e5, fusion latent heat coefficient at 0 deg k </li>
 </ul>
 
+<p class="definition">Definition at line <a class="el" href="fv__cmp_8F90_source.html#l00100">100</a> of file <a class="el" href="fv__cmp_8F90_source.html">fv_cmp.F90</a>.</p>
+
 </div>
 </div>
 <a id="a9248700d4484999739228f7448428746"></a>
@@ -1084,6 +1121,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>2.86799816e6, sublimation latent heat coefficient at 0 deg k </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__cmp_8F90_source.html#l00106">106</a> of file <a class="el" href="fv__cmp_8F90_source.html">fv_cmp.F90</a>.</p>
 
 </div>
 </div>
@@ -1109,6 +1148,8 @@ Variables</h2></td></tr>
 
 <p>3.13905782e6, evaporation latent heat coefficient at 0 deg k </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__cmp_8F90_source.html#l00099">99</a> of file <a class="el" href="fv__cmp_8F90_source.html">fv_cmp.F90</a>.</p>
+
 </div>
 </div>
 <a id="a7bcead849f7cab25637af6d3b1db833a"></a>
@@ -1133,6 +1174,8 @@ Variables</h2></td></tr>
 
 <p>the same as lv0, except that cp_vap can be cp_vap or cv_vap </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__cmp_8F90_source.html#l00111">111</a> of file <a class="el" href="fv__cmp_8F90_source.html">fv_cmp.F90</a>.</p>
+
 </div>
 </div>
 <a id="af9c43700533ec209e98ed9aaea7220ad"></a>
@@ -1154,6 +1197,8 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__cmp_8F90_source.html#l00115">115</a> of file <a class="el" href="fv__cmp_8F90_source.html">fv_cmp.F90</a>.</p>
 
 </div>
 </div>
@@ -1179,6 +1224,8 @@ Variables</h2></td></tr>
 
 <p>homogeneous freezing temperature </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__cmp_8F90_source.html#l00097">97</a> of file <a class="el" href="fv__cmp_8F90_source.html">fv_cmp.F90</a>.</p>
+
 </div>
 </div>
 <a id="a7a34f8d4c0eefd0e66de45d280bb0ba4"></a>
@@ -1200,6 +1247,8 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__cmp_8F90_source.html#l00113">113</a> of file <a class="el" href="fv__cmp_8F90_source.html">fv_cmp.F90</a>.</p>
 
 </div>
 </div>
@@ -1223,6 +1272,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__cmp_8F90_source.html#l00113">113</a> of file <a class="el" href="fv__cmp_8F90_source.html">fv_cmp.F90</a>.</p>
+
 </div>
 </div>
 <a id="a308d1b16faf8b0f7c53fb4ace71f326e"></a>
@@ -1244,6 +1295,8 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__cmp_8F90_source.html#l00113">113</a> of file <a class="el" href="fv__cmp_8F90_source.html">fv_cmp.F90</a>.</p>
 
 </div>
 </div>
@@ -1269,6 +1322,8 @@ Variables</h2></td></tr>
 
 <p>freezing temperature </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__cmp_8F90_source.html#l00096">96</a> of file <a class="el" href="fv__cmp_8F90_source.html">fv_cmp.F90</a>.</p>
+
 </div>
 </div>
 </div><!-- contents -->
@@ -1277,7 +1332,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacefv__cmp__mod.html">fv_cmp_mod</a></li>
-    <li class="footer">Generated by
+    <li class="footer">Generated on Tue Oct 15 2019 19:35:35 for FV3DYCORE DOCUMENTATION by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
   </ul>

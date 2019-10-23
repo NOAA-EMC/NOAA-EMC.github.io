@@ -20,17 +20,12 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
     jax: ["input/TeX","output/HTML-CSS"],
 });
-</script><script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js"></script>
+</script><script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -42,23 +37,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">FV3DYCORE DOCUMENTATION
    </div>
-   <div id="projectbrief">This is a living document and may be updated at any time.</div>
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -70,6 +49,16 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -395,6 +384,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l04093">4093</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
+
 </div>
 </div>
 <a id="ab908b9bfb62dab6cd8ba5341099041ae"></a>
@@ -503,6 +494,8 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l03640">3640</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
+
 </div>
 </div>
 <a id="a610855b6569014001c5c9f78c8581b50"></a>
@@ -587,6 +580,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l03712">3712</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
+
 </div>
 </div>
 <a id="a472336d75d0422fadf83870447b8b7a1"></a>
@@ -652,6 +647,8 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l03762">3762</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
 
 </div>
 </div>
@@ -774,6 +771,8 @@ Variables</h2></td></tr>
 <p>The subroutine 'dbzcalc' computes equivalent reflectivity factor (in dBZ) at each model grid point. </p>
 <p>In calculating Ze, the RIP algorithm makes assumptions consistent with those made in an early version (ca. 1996) of the bulk mixed-phase microphysical scheme in the MM5 model (i.e., the scheme known as "Resiner-2"). More information on the derivation of simulated reflectivity in RIP can be found in Stoelinga (2005, unpublished write-up). Contact Mark Stoelinga (<a href="#" onclick="location.href='mai'+'lto:'+'sto'+'el'+'ing'+'@a'+'tmo'+'s.'+'was'+'hi'+'ngt'+'on'+'.ed'+'u'; return false;">stoel<span style="display: none;">.nosp@m.</span>ing@<span style="display: none;">.nosp@m.</span>atmos<span style="display: none;">.nosp@m.</span>.was<span style="display: none;">.nosp@m.</span>hingt<span style="display: none;">.nosp@m.</span>on.e<span style="display: none;">.nosp@m.</span>du</a>) for a copy. </p><dl class="section date"><dt>Date</dt><dd>22 September, 2016 - modified for use with GFDL cloud microphysics parameters. </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l04789">4789</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
+
 </div>
 </div>
 <a id="a9c8e7fb4d3ef11e4abd6349789fbf28c"></a>
@@ -890,6 +889,8 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l04594">4594</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
+
 </div>
 </div>
 <a id="a6f0646bd762a9150bf0636f22f70cfbc"></a>
@@ -929,6 +930,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l01091">1091</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
 
 </div>
 </div>
@@ -988,6 +991,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l00201">201</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
+
 </div>
 </div>
 <a id="afa241b674a05a46503861a4d26c9ba81"></a>
@@ -1005,6 +1010,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l05121">5121</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
 
 </div>
 </div>
@@ -1099,6 +1106,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l03111">3111</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
 
 </div>
 </div>
@@ -1197,6 +1206,8 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l03496">3496</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
 
 </div>
 </div>
@@ -1308,6 +1319,8 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l03443">3443</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
+
 </div>
 </div>
 <a id="ace9737f2ccd61d13453ff9c5d2ee0243"></a>
@@ -1414,6 +1427,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l03077">3077</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
+
 </div>
 </div>
 <a id="aec5d8b938b5c6c212ddbd1fc57b8ec17"></a>
@@ -1496,6 +1511,8 @@ Variables</h2></td></tr>
 <dl class="section author"><dt>Author</dt><dd>George H. Bryan Mesoscale and Microscale Meteorology Division National Center for Atmospheric Research Boulder, Colorado, USA <a href="#" onclick="location.href='mai'+'lto:'+'gbr'+'ya'+'n@u'+'ca'+'r.e'+'du'; return false;">gbrya<span style="display: none;">.nosp@m.</span>n@uc<span style="display: none;">.nosp@m.</span>ar.ed<span style="display: none;">.nosp@m.</span>u</a></dd></dl>
 <p>: Last modified 10 October 2008 </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l05140">5140</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
+
 </div>
 </div>
 <a id="aa433db31ad332206029a7365b007ba14"></a>
@@ -1532,6 +1549,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l05593">5593</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
+
 </div>
 </div>
 <a id="ab6961d77cefdf63e272ce2397c2cd13d"></a>
@@ -1567,6 +1586,8 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l05578">5578</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
 
 </div>
 </div>
@@ -1711,6 +1732,8 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l03921">3921</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
 
 </div>
 </div>
@@ -1860,6 +1883,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l04011">4011</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
+
 </div>
 </div>
 <a id="a483ff3562b111042cf6ae2d8f1874410"></a>
@@ -1938,6 +1963,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l01023">1023</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
+
 </div>
 </div>
 <a id="a9693cb095338e3001f569fb82c40e338"></a>
@@ -2007,6 +2034,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l03844">3844</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
 
 </div>
 </div>
@@ -2091,6 +2120,8 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l03885">3885</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
 
 </div>
 </div>
@@ -2234,6 +2265,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l05031">5031</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
+
 </div>
 </div>
 <a id="a8c84d3194849e9e0f04fda229b66e562"></a>
@@ -2364,6 +2397,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l04978">4978</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
+
 </div>
 </div>
 <a id="afe461976226b554c0ad59ea8e42a85cc"></a>
@@ -2421,6 +2456,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l04962">4962</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
 
 </div>
 </div>
@@ -2497,6 +2534,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l05102">5102</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
 
 </div>
 </div>
@@ -2699,6 +2738,8 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l04702">4702</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
+
 </div>
 </div>
 <a id="a1440b8390a2e8aaa1e109cba46276699"></a>
@@ -2777,6 +2818,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l03417">3417</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
+
 </div>
 </div>
 <a id="a2694f86ad7b4d5d39d84d0e7e2c5db1e"></a>
@@ -2822,6 +2865,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l04327">4327</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
 
 </div>
 </div>
@@ -2886,6 +2931,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l03592">3592</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
 
 </div>
 </div>
@@ -2981,6 +3028,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l03543">3543</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
+
 </div>
 </div>
 <a id="a75e68bc179274c1183b50c3e30744951"></a>
@@ -3075,6 +3124,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l03294">3294</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
+
 </div>
 </div>
 <a id="a1fad494d94b2fd086c4003778d3f9f63"></a>
@@ -3144,6 +3195,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l03210">3210</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
 
 </div>
 </div>
@@ -3226,6 +3279,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l03248">3248</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
 
 </div>
 </div>
@@ -3326,6 +3381,8 @@ Variables</h2></td></tr>
 <p>The subroutine 'pv_entropy' computes potential vorticity. </p>
 <dl class="section author"><dt>Author</dt><dd>Shian-Jiann Lin </dd></dl>
 
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l04246">4246</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
+
 </div>
 </div>
 <a id="a8f268b1516b96d939365ec00d890f50e"></a>
@@ -3414,6 +3471,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l03153">3153</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
+
 </div>
 </div>
 <a id="a00017df493f244643b46606e69dbdede"></a>
@@ -3459,6 +3518,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l04438">4438</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
 
 </div>
 </div>
@@ -3604,6 +3665,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l04177">4177</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
+
 </div>
 </div>
 <a id="ab09acb046e5dfb2e8989b79dffaef90b"></a>
@@ -3700,6 +3763,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l03043">3043</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
+
 </div>
 </div>
 <a id="a241554c0b6e2a59d63b56afdc01e9fd6"></a>
@@ -3770,6 +3835,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l03395">3395</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
+
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
@@ -3793,6 +3860,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l00172">172</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
+
 </div>
 </div>
 <a id="ad47b1fcfcd29f3dc6009a3a52208a573"></a>
@@ -3806,6 +3875,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l00166">166</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
 
 </div>
 </div>
@@ -3829,6 +3900,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l00159">159</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
+
 </div>
 </div>
 <a id="a6163da8e2b1f43bc8bd4a34782803687"></a>
@@ -3842,6 +3915,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l00162">162</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
 
 </div>
 </div>
@@ -3865,6 +3940,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l00173">173</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
+
 </div>
 </div>
 <a id="af189fa9869405f3888a1f2134dd03f3f"></a>
@@ -3886,6 +3963,8 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l00172">172</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
 
 </div>
 </div>
@@ -3909,6 +3988,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l00167">167</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
+
 </div>
 </div>
 <a id="a78074a36a0582f24298d249ee246b208"></a>
@@ -3930,6 +4011,8 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l00174">174</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
 
 </div>
 </div>
@@ -3953,6 +4036,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l00192">192</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
+
 </div>
 </div>
 <a id="a338a3f41be9414e9ec7ab618e5c451f7"></a>
@@ -3974,6 +4059,8 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l00172">172</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
 
 </div>
 </div>
@@ -3997,6 +4084,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l00171">171</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
+
 </div>
 </div>
 <a id="a279b4f0374bf7714fae5b351ce11f023"></a>
@@ -4019,6 +4108,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l00161">161</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
+
 </div>
 </div>
 <a id="a85945ffd2684b529ef36fb377f2780df"></a>
@@ -4040,6 +4131,8 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l00156">156</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
 
 </div>
 </div>
@@ -4065,6 +4158,8 @@ Variables</h2></td></tr>
 
 <p>for variables with many missing values </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l00157">157</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
+
 </div>
 </div>
 <a id="a8751fd73bba3e1f6cd852633004b7753"></a>
@@ -4089,6 +4184,8 @@ Variables</h2></td></tr>
 
 <p>for variables where we look for smallest values </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l00158">158</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
+
 </div>
 </div>
 <a id="a3f48dc8f540ea0ac0363168cffaf752c"></a>
@@ -4110,6 +4207,8 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l00169">169</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
 
 </div>
 </div>
@@ -4133,6 +4232,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l00174">174</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
+
 </div>
 </div>
 <a id="a1d88b3620cc9d26f5c198af4e052445b"></a>
@@ -4154,6 +4255,8 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l00191">191</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
 
 </div>
 </div>
@@ -4177,6 +4280,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l00160">160</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
+
 </div>
 </div>
 <a id="a8117f5640cc7dedfae666efcc3c9649e"></a>
@@ -4190,6 +4295,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l00170">170</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
 
 </div>
 </div>
@@ -4213,6 +4320,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l00175">175</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
+
 </div>
 </div>
 <a id="ab6c6b381b572220bf58a162677af1fe0"></a>
@@ -4226,6 +4335,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l00182">182</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
 
 </div>
 </div>
@@ -4249,6 +4360,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l00176">176</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
+
 </div>
 </div>
 <a id="a732b3c99ea8fce56be8203d5f7c4967e"></a>
@@ -4270,6 +4383,8 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l00173">173</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
 
 </div>
 </div>
@@ -4293,6 +4408,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l00173">173</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
+
 </div>
 </div>
 <a id="a60dad9285aa4277546ef49434b1d9362"></a>
@@ -4315,6 +4432,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l00172">172</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
+
 </div>
 </div>
 <a id="a3ef2fb09ea5556e51585d53e17aeb2ac"></a>
@@ -4328,6 +4447,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l00181">181</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
 
 </div>
 </div>
@@ -4351,6 +4472,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l00180">180</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
+
 </div>
 </div>
 <a id="af9092a94358dfd8005aebdb1df3977ed"></a>
@@ -4372,6 +4495,8 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l00179">179</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
 
 </div>
 </div>
@@ -4395,6 +4520,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__diagnostics_8F90_source.html#l00180">180</a> of file <a class="el" href="fv__diagnostics_8F90_source.html">fv_diagnostics.F90</a>.</p>
+
 </div>
 </div>
 </div><!-- contents -->
@@ -4403,7 +4530,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacefv__diagnostics__mod.html">fv_diagnostics_mod</a></li>
-    <li class="footer">Generated by
+    <li class="footer">Generated on Tue Oct 15 2019 19:35:35 for FV3DYCORE DOCUMENTATION by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
   </ul>

@@ -20,17 +20,12 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
     jax: ["input/TeX","output/HTML-CSS"],
 });
-</script><script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js"></script>
+</script><script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -42,23 +37,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">FV3DYCORE DOCUMENTATION
    </div>
-   <div id="projectbrief">This is a living document and may be updated at any time.</div>
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -70,6 +49,16 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -308,6 +297,8 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="fv__surf__map_8F90_source.html#l00860">860</a> of file <a class="el" href="fv__surf__map_8F90_source.html">fv_surf_map.F90</a>.</p>
+
 </div>
 </div>
 <a id="a9258298f2e2e6289ec6359c717f38f54"></a>
@@ -425,6 +416,8 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p class="definition">Definition at line <a class="el" href="fv__surf__map_8F90_source.html#l00962">962</a> of file <a class="el" href="fv__surf__map_8F90_source.html">fv_surf_map.F90</a>.</p>
 
 </div>
 </div>
@@ -586,6 +579,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__surf__map_8F90_source.html#l00514">514</a> of file <a class="el" href="fv__surf__map_8F90_source.html">fv_surf_map.F90</a>.</p>
+
 </div>
 </div>
 <a id="ab249e49f64014dc3fdc86ae5ab3de14e"></a>
@@ -613,6 +608,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The subroutine 'handle_err' returns an error when it cannot find or correctly read in an external file. </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__surf__map_8F90_source.html#l01534">1534</a> of file <a class="el" href="fv__surf__map_8F90_source.html">fv_surf_map.F90</a>.</p>
 
 </div>
 </div>
@@ -673,6 +670,8 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__surf__map_8F90_source.html#l01490">1490</a> of file <a class="el" href="fv__surf__map_8F90_source.html">fv_surf_map.F90</a>.</p>
 
 </div>
 </div>
@@ -834,6 +833,8 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="fv__surf__map_8F90_source.html#l01198">1198</a> of file <a class="el" href="fv__surf__map_8F90_source.html">fv_surf_map.F90</a>.</p>
+
 </div>
 </div>
 <a id="ad3d4957033aa67f913b716448e95993f"></a>
@@ -860,6 +861,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The subroutine 'read_namelis' reads the namelist file, writes the namelist to log file, and initializes constants. </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__surf__map_8F90_source.html#l01597">1597</a> of file <a class="el" href="fv__surf__map_8F90_source.html">fv_surf_map.F90</a>.</p>
 
 </div>
 </div>
@@ -908,6 +911,8 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__surf__map_8F90_source.html#l01545">1545</a> of file <a class="el" href="fv__surf__map_8F90_source.html">fv_surf_map.F90</a>.</p>
 
 </div>
 </div>
@@ -1044,6 +1049,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__surf__map_8F90_source.html#l00135">135</a> of file <a class="el" href="fv__surf__map_8F90_source.html">fv_surf_map.F90</a>.</p>
 
 </div>
 </div>
@@ -1202,6 +1209,8 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="fv__surf__map_8F90_source.html#l00578">578</a> of file <a class="el" href="fv__surf__map_8F90_source.html">fv_surf_map.F90</a>.</p>
+
 </div>
 </div>
 <a id="aa10adedb30604d0ab2744b1126584eb6"></a>
@@ -1246,6 +1255,8 @@ Variables</h2></td></tr>
 
 <p>The sugroutine 'zonal_mean' replaces 'p' with its zonal mean. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__surf__map_8F90_source.html#l01629">1629</a> of file <a class="el" href="fv__surf__map_8F90_source.html">fv_surf_map.F90</a>.</p>
+
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
@@ -1271,6 +1282,8 @@ Variables</h2></td></tr>
 
 <p>Dimensionless coeff for del-2 diffusion (-1 gives resolution-determined value) </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__surf__map_8F90_source.html#l00105">105</a> of file <a class="el" href="fv__surf__map_8F90_source.html">fv_surf_map.F90</a>.</p>
+
 </div>
 </div>
 <a id="a533dee578c658a1a4e6533b71d4c89bc"></a>
@@ -1295,6 +1308,8 @@ Variables</h2></td></tr>
 
 <p>Dimensionless coeff for del-4 diffusion (with FCT) </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__surf__map_8F90_source.html#l00104">104</a> of file <a class="el" href="fv__surf__map_8F90_source.html">fv_surf_map.F90</a>.</p>
+
 </div>
 </div>
 <a id="a770c3993e55f1b6b79cbe9fbbd5485e1"></a>
@@ -1316,6 +1331,8 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__surf__map_8F90_source.html#l00119">119</a> of file <a class="el" href="fv__surf__map_8F90_source.html">fv_surf_map.F90</a>.</p>
 
 </div>
 </div>
@@ -1339,6 +1356,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__surf__map_8F90_source.html#l00118">118</a> of file <a class="el" href="fv__surf__map_8F90_source.html">fv_surf_map.F90</a>.</p>
+
 </div>
 </div>
 <a id="a1dcad6b1f9095cdd68ab7fbbbae8c609"></a>
@@ -1360,6 +1379,8 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__surf__map_8F90_source.html#l00120">120</a> of file <a class="el" href="fv__surf__map_8F90_source.html">fv_surf_map.F90</a>.</p>
 
 </div>
 </div>
@@ -1385,6 +1406,8 @@ Variables</h2></td></tr>
 
 <p>max allowable terrain slope: 1 &ndash;&gt; 45 deg 0.15 for C768 or lower; 0.25 C1536; 0.3 for C3072 </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__surf__map_8F90_source.html#l00107">107</a> of file <a class="el" href="fv__surf__map_8F90_source.html">fv_surf_map.F90</a>.</p>
+
 </div>
 </div>
 <a id="acaf2dd3583e09efc6410823963d1dcc5"></a>
@@ -1406,6 +1429,8 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__surf__map_8F90_source.html#l00110">110</a> of file <a class="el" href="fv__surf__map_8F90_source.html">fv_surf_map.F90</a>.</p>
 
 </div>
 </div>
@@ -1429,6 +1454,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__surf__map_8F90_source.html#l00109">109</a> of file <a class="el" href="fv__surf__map_8F90_source.html">fv_surf_map.F90</a>.</p>
+
 </div>
 </div>
 <a id="ab6c0587435e49a2dfc4980e976ea49a1"></a>
@@ -1450,6 +1477,8 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__surf__map_8F90_source.html#l00111">111</a> of file <a class="el" href="fv__surf__map_8F90_source.html">fv_surf_map.F90</a>.</p>
 
 </div>
 </div>
@@ -1473,6 +1502,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__surf__map_8F90_source.html#l00116">116</a> of file <a class="el" href="fv__surf__map_8F90_source.html">fv_surf_map.F90</a>.</p>
+
 </div>
 </div>
 <a id="a7fdae69a68724b43026ac21d8a40a60f"></a>
@@ -1494,6 +1525,8 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__surf__map_8F90_source.html#l00103">103</a> of file <a class="el" href="fv__surf__map_8F90_source.html">fv_surf_map.F90</a>.</p>
 
 </div>
 </div>
@@ -1517,6 +1550,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__surf__map_8F90_source.html#l00102">102</a> of file <a class="el" href="fv__surf__map_8F90_source.html">fv_surf_map.F90</a>.</p>
+
 </div>
 </div>
 <a id="a89960949339245bd7440d1735b7b6fa2"></a>
@@ -1530,6 +1565,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__surf__map_8F90_source.html#l00125">125</a> of file <a class="el" href="fv__surf__map_8F90_source.html">fv_surf_map.F90</a>.</p>
 
 </div>
 </div>
@@ -1555,6 +1592,8 @@ Variables</h2></td></tr>
 
 <p>overshoot factor for the mountain peak </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__surf__map_8F90_source.html#l00106">106</a> of file <a class="el" href="fv__surf__map_8F90_source.html">fv_surf_map.F90</a>.</p>
+
 </div>
 </div>
 <a id="a1f6c2740389c832c7b613cd7f0d5a407"></a>
@@ -1568,6 +1607,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__surf__map_8F90_source.html#l00125">125</a> of file <a class="el" href="fv__surf__map_8F90_source.html">fv_surf_map.F90</a>.</p>
 
 </div>
 </div>
@@ -1591,6 +1632,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__surf__map_8F90_source.html#l00114">114</a> of file <a class="el" href="fv__surf__map_8F90_source.html">fv_surf_map.F90</a>.</p>
+
 </div>
 </div>
 <a id="aa49583bb8f72e949a0f8e60cbae0f533"></a>
@@ -1612,6 +1655,8 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__surf__map_8F90_source.html#l00115">115</a> of file <a class="el" href="fv__surf__map_8F90_source.html">fv_surf_map.F90</a>.</p>
 
 </div>
 </div>
@@ -1635,6 +1680,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__surf__map_8F90_source.html#l00101">101</a> of file <a class="el" href="fv__surf__map_8F90_source.html">fv_surf_map.F90</a>.</p>
+
 </div>
 </div>
 <a id="a536f543b0d6bb2e2fbb3d98468ef8094"></a>
@@ -1657,6 +1704,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__surf__map_8F90_source.html#l00100">100</a> of file <a class="el" href="fv__surf__map_8F90_source.html">fv_surf_map.F90</a>.</p>
+
 </div>
 </div>
 <a id="a39c1cec935bdd6e01b87eb1ec5187941"></a>
@@ -1671,6 +1720,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__surf__map_8F90_source.html#l00125">125</a> of file <a class="el" href="fv__surf__map_8F90_source.html">fv_surf_map.F90</a>.</p>
+
 </div>
 </div>
 </div><!-- contents -->
@@ -1679,7 +1730,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacefv__surf__map__mod.html">fv_surf_map_mod</a></li>
-    <li class="footer">Generated by
+    <li class="footer">Generated on Tue Oct 15 2019 19:35:36 for FV3DYCORE DOCUMENTATION by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
   </ul>

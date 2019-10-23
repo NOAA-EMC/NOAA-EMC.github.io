@@ -24,10 +24,11 @@ for the JavaScript code in this file
 var NAVTREE =
 [
   [ "FV3DYCORE DOCUMENTATION", "index.html", [
+    [ "THE GFDL FINITE-VOLUME CUBED-SPHERE DYNAMICAL CORE", "FV3.html", "FV3" ],
     [ "A BRIEF GUIDE TO ADVECTION OPERATORS IN FV³", "advection.html", null ],
-    [ "THE GFDL FINITE-VOLUME CUBED-SPHERE DYNAMICAL CORE", "_f_v3.html", "_f_v3" ],
-    [ "USEFUL LINKS", "link.html", null ],
     [ "A BRIF OVERVIEW OF THE  FV³ dynamical core", "overview.html", null ],
+    [ "USEFUL LINKS", "link.html", null ],
+    [ "Modules", "modules.html", "modules" ],
     [ "Modules", "namespaces.html", [
       [ "Modules List", "namespaces.html", "namespaces_dup" ],
       [ "Module Members", "namespacemembers.html", [
@@ -58,16 +59,16 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_d_y_c_o_r_e__typedefs_8_f90.html",
-"fv__cmp_8_f90.html#a1aff52f3ef1654b16d21ca8deade4099",
-"fv__diagnostics_8_f90.html#a9693cb095338e3001f569fb82c40e338",
-"fv__nesting_8_f90.html#a6fa54ea0bd54ce56d23b864d37c5b596",
-"fv__nudge_8_f90.html#a9171eb4f9d03ed8a5648ba241620df1c",
-"fv__timing_8_f90.html#a85fb4c4c6b3d9604bb682356ab3e7a82",
-"sim__nc__mod_8_f90.html#a6ba00a9ac634a7f1aa7a8aa588cc6423",
-"structfv__arrays__mod_1_1fv__diag__type.html#ad6f97fc73d6b6fe4abf3a11c7add0780",
-"structfv__arrays__mod_1_1fv__grid__type.html#a5be0a23653758af18d87f2bde5c07fcf",
-"sw__core_8_f90.html#a5833b05bf829b877a0a42472cc037a44"
+"DYCORE__typedefs_8F90.html",
+"fv__arrays_8F90.html#a9e487a715273ca3c6572693756bcec1b",
+"fv__diagnostics_8F90.html#a83dc5abf00b52139d1570683edfb34d4",
+"fv__mapz_8F90.html#aefa9aa99fd17c4042bf8dab0df746acc",
+"fv__nudge_8F90.html#a732a8eaade4984925290ea5b5372a8fe",
+"fv__surf__map_8F90.html#a5b5120e4bc2fb8f5d845312f38736dde",
+"namespacetest__cases__mod.html",
+"structfv__arrays__mod_1_1fv__diag__type.html#a8d5e190524ed5c0d1bed425ddefb6d9d",
+"structfv__arrays__mod_1_1fv__grid__type.html#a0a50635625e1283ae8921ef1606b770d",
+"structfv__iau__mod_1_1iau__state__type.html#a04f738f0d6fbb3e64e44fc94421bf48d"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

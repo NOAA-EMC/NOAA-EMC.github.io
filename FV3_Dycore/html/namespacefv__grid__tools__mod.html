@@ -20,17 +20,12 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
-<script type="text/javascript">
-/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-  $(document).ready(function() { init_search(); });
-/* @license-end */
-</script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     extensions: ["tex2jax.js"],
     jax: ["input/TeX","output/HTML-CSS"],
 });
-</script><script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js"></script>
+</script><script type="text/javascript" async src="http://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -42,23 +37,7 @@
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">FV3DYCORE DOCUMENTATION
    </div>
-   <div id="projectbrief">This is a living document and may be updated at any time.</div>
   </td>
-   <td>        <div id="MSearchBox" class="MSearchBoxInactive">
-        <span class="left">
-          <img id="MSearchSelect" src="search/mag_sel.png"
-               onmouseover="return searchBox.OnSearchSelectShow()"
-               onmouseout="return searchBox.OnSearchSelectHide()"
-               alt=""/>
-          <input type="text" id="MSearchField" value="Search" accesskey="S"
-               onfocus="searchBox.OnSearchFieldFocus(true)" 
-               onblur="searchBox.OnSearchFieldFocus(false)" 
-               onkeyup="searchBox.OnSearchFieldChange(event)"/>
-          </span><span class="right">
-            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
-          </span>
-        </div>
-</td>
  </tr>
  </tbody>
 </table>
@@ -70,6 +49,16 @@
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 /* @license-end */
 </script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
 </div><!-- top -->
 <div id="side-nav" class="ui-resizable side-nav-resizable">
   <div id="nav-tree">
@@ -218,6 +207,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__grid__tools_8F90_source.html#l01923">1923</a> of file <a class="el" href="fv__grid__tools_8F90_source.html">fv_grid_tools.F90</a>.</p>
+
 </div>
 </div>
 <a id="a10a93c9990552a34305992324f69fe7e"></a>
@@ -281,6 +272,8 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="fv__grid__tools_8F90_source.html#l02262">2262</a> of file <a class="el" href="fv__grid__tools_8F90_source.html">fv_grid_tools.F90</a>.</p>
+
 </div>
 </div>
 <a id="a68a0672ee24b3916c6890eff5c8a174c"></a>
@@ -337,6 +330,8 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p class="definition">Definition at line <a class="el" href="fv__grid__tools_8F90_source.html#l02020">2020</a> of file <a class="el" href="fv__grid__tools_8F90_source.html">fv_grid_tools.F90</a>.</p>
 
 </div>
 </div>
@@ -422,6 +417,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__grid__tools_8F90_source.html#l00307">307</a> of file <a class="el" href="fv__grid__tools_8F90_source.html">fv_grid_tools.F90</a>.</p>
+
 </div>
 </div>
 <a id="afc50b41fc30c3e0f7990440cc6a8b896"></a>
@@ -503,6 +500,8 @@ Variables</h2></td></tr>
 <p>The subroutine 'grid_area' gets the surface area on a grid in lat/lon or xyz coordinates. </p>
 <p>Determined by 'ndims' argument: 2=lat/lon, 3=xyz) The area is returned in m^2 on a unit sphere. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__grid__tools_8F90_source.html#l02046">2046</a> of file <a class="el" href="fv__grid__tools_8F90_source.html">fv_grid_tools.F90</a>.</p>
+
 </div>
 </div>
 <a id="ad44c07c95a2f28e62399da37867817a4"></a>
@@ -575,6 +574,8 @@ Variables</h2></td></tr>
 
 <p>The subroutine 'init_grid' reads the grid from the input file and sets up grid descriptors. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__grid__tools_8F90_source.html#l00530">530</a> of file <a class="el" href="fv__grid__tools_8F90_source.html">fv_grid_tools.F90</a>.</p>
+
 </div>
 </div>
 <a id="af7a3501736417ecd39ca2f011e36304b"></a>
@@ -637,6 +638,8 @@ Variables</h2></td></tr>
 
 <p>The subroutine 'mirror_grid' mirrors the grid across the 0-longitude line. </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__grid__tools_8F90_source.html#l02290">2290</a> of file <a class="el" href="fv__grid__tools_8F90_source.html">fv_grid_tools.F90</a>.</p>
+
 </div>
 </div>
 <a id="a0cd79c60df097353dc6306eafbf5c4b5"></a>
@@ -692,6 +695,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The subroutine 'read_grid' reads the grid from the mosaic grid file. </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__grid__tools_8F90_source.html#l00175">175</a> of file <a class="el" href="fv__grid__tools_8F90_source.html">fv_grid_tools.F90</a>.</p>
 
 </div>
 </div>
@@ -789,6 +794,8 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 
+<p class="definition">Definition at line <a class="el" href="fv__grid__tools_8F90_source.html#l01956">1956</a> of file <a class="el" href="fv__grid__tools_8F90_source.html">fv_grid_tools.F90</a>.</p>
+
 </div>
 </div>
 <a id="a3b343a8e46f50390dadd2b6fddabf244"></a>
@@ -841,6 +848,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__grid__tools_8F90_source.html#l01941">1941</a> of file <a class="el" href="fv__grid__tools_8F90_source.html">fv_grid_tools.F90</a>.</p>
+
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
@@ -864,6 +873,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__grid__tools_8F90_source.html#l00163">163</a> of file <a class="el" href="fv__grid__tools_8F90_source.html">fv_grid_tools.F90</a>.</p>
+
 </div>
 </div>
 <a id="a05413bb63130f63c7356403130c339bd"></a>
@@ -886,6 +897,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__grid__tools_8F90_source.html#l00165">165</a> of file <a class="el" href="fv__grid__tools_8F90_source.html">fv_grid_tools.F90</a>.</p>
+
 </div>
 </div>
 <a id="acb906ec796b589b9fb688bbbe1bee3c8"></a>
@@ -899,6 +912,8 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__grid__tools_8F90_source.html#l00161">161</a> of file <a class="el" href="fv__grid__tools_8F90_source.html">fv_grid_tools.F90</a>.</p>
 
 </div>
 </div>
@@ -922,6 +937,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__grid__tools_8F90_source.html#l00157">157</a> of file <a class="el" href="fv__grid__tools_8F90_source.html">fv_grid_tools.F90</a>.</p>
+
 </div>
 </div>
 <a id="a8b3bcc75f621d290a7cfa0b736983e3f"></a>
@@ -937,6 +954,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>convert to degrees </p>
+
+<p class="definition">Definition at line <a class="el" href="fv__grid__tools_8F90_source.html#l00159">159</a> of file <a class="el" href="fv__grid__tools_8F90_source.html">fv_grid_tools.F90</a>.</p>
 
 </div>
 </div>
@@ -962,6 +981,8 @@ Variables</h2></td></tr>
 
 <p>convert to radians </p>
 
+<p class="definition">Definition at line <a class="el" href="fv__grid__tools_8F90_source.html#l00160">160</a> of file <a class="el" href="fv__grid__tools_8F90_source.html">fv_grid_tools.F90</a>.</p>
+
 </div>
 </div>
 <a id="ab05dbcee57bb7bce7cb38d1b50f8aa69"></a>
@@ -984,6 +1005,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="fv__grid__tools_8F90_source.html#l00166">166</a> of file <a class="el" href="fv__grid__tools_8F90_source.html">fv_grid_tools.F90</a>.</p>
+
 </div>
 </div>
 </div><!-- contents -->
@@ -992,7 +1015,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacefv__grid__tools__mod.html">fv_grid_tools_mod</a></li>
-    <li class="footer">Generated by
+    <li class="footer">Generated on Tue Oct 15 2019 19:35:36 for FV3DYCORE DOCUMENTATION by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
   </ul>
