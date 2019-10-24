@@ -82,5 +82,5 @@ var searchData=
   ['atod',['atod',['../namespacetest__cases__mod.html#a100a065323a0186529544823efd13358',1,'test_cases_mod']]],
   ['axis_5fname',['axis_name',['../namespacefv__nggps__diags__mod.html#a9b3c6afd1c1d787a6025594b51ffbe41',1,'fv_nggps_diags_mod']]],
   ['axis_5fname_5fvert',['axis_name_vert',['../namespacefv__nggps__diags__mod.html#aa890948022803ec69a3d017f66653db6',1,'fv_nggps_diags_mod']]],
-  ['a_20brif_20overview_20of_20the_20_20fv_26sup3_3b_20dynamical_20core',['A BRIF OVERVIEW OF THE  FV&amp;sup3; dynamical core',['../overview.html',1,'']]]
+  ['a_20brif_20overview_20of_20the_20_20fv_26sup3_3b_20dynamical_20core',['A BRIF OVERVIEW OF THE  FV&amp;sup3; DYNAMICAL CORE',['../overview.html',1,'']]]
 ];

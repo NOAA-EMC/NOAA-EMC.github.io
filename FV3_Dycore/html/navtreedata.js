@@ -23,10 +23,10 @@ for the JavaScript code in this file
 */
 var NAVTREE =
 [
-  [ "FV3DYCORE DOCUMENTATION", "index.html", [
+  [ "FV3DYCORE", "index.html", [
     [ "THE GFDL FINITE-VOLUME CUBED-SPHERE DYNAMICAL CORE", "FV3.html", "FV3" ],
     [ "A BRIEF GUIDE TO ADVECTION OPERATORS IN FV³", "advection.html", null ],
-    [ "A BRIF OVERVIEW OF THE  FV³ dynamical core", "overview.html", null ],
+    [ "A BRIF OVERVIEW OF THE  FV³ DYNAMICAL CORE", "overview.html", null ],
     [ "USEFUL LINKS", "link.html", null ],
     [ "Modules", "modules.html", "modules" ],
     [ "Modules", "namespaces.html", [
