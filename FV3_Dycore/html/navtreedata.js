@@ -25,9 +25,8 @@ var NAVTREE =
 [
   [ "FV3DYCORE", "index.html", [
     [ "THE GFDL FINITE-VOLUME CUBED-SPHERE DYNAMICAL CORE", "FV3.html", "FV3" ],
-    [ "A BRIEF GUIDE TO ADVECTION OPERATORS IN FV³", "advection.html", null ],
-    [ "A BRIF OVERVIEW OF THE  FV³ DYNAMICAL CORE", "overview.html", null ],
-    [ "USEFUL LINKS", "link.html", null ],
+    [ "A  Brief Guide to Advection Operators in FV³", "advection.html", null ],
+    [ "Useful Links", "link.html", null ],
     [ "Modules", "modules.html", "modules" ],
     [ "Modules", "namespaces.html", [
       [ "Modules List", "namespaces.html", "namespaces_dup" ],
@@ -66,9 +65,9 @@ var NAVTREEINDEX =
 "fv__nudge_8F90.html#a732a8eaade4984925290ea5b5372a8fe",
 "fv__surf__map_8F90.html#a5b5120e4bc2fb8f5d845312f38736dde",
 "namespacetest__cases__mod.html",
-"structfv__arrays__mod_1_1fv__diag__type.html#a8d5e190524ed5c0d1bed425ddefb6d9d",
-"structfv__arrays__mod_1_1fv__grid__type.html#a0a50635625e1283ae8921ef1606b770d",
-"structfv__iau__mod_1_1iau__state__type.html#a04f738f0d6fbb3e64e44fc94421bf48d"
+"structfv__arrays__mod_1_1fv__diag__type.html#a908e471cd6497efe99427ed197573511",
+"structfv__arrays__mod_1_1fv__grid__type.html#a0bcbdca269b5eb7ccafac2510dc19ca3",
+"structfv__iau__mod_1_1iau__state__type.html#a0af7b395dcb45a752acdf6f3ebad71fa"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

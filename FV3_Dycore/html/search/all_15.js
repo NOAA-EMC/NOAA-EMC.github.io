@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['useful_20links',['USEFUL LINKS',['../link.html',1,'']]],
+  ['useful_20links',['Useful Links',['../link.html',1,'']]],
   ['u',['u',['../structfv__arrays__mod_1_1fv__atmos__type.html#a5ff3358578eee5de976eb794574fe5c3',1,'fv_arrays_mod::fv_atmos_type']]],
   ['u_5fbc',['u_bc',['../structfv__arrays__mod_1_1fv__nest__type.html#a6ab27401f6878ac25e0ae135a0421591',1,'fv_arrays_mod::fv_nest_type::u_bc()'],['../structfv__regional__mod_1_1fv__regional__bc__variables.html#a2e60aa07c8367405d53a19873475cf95',1,'fv_regional_mod::fv_regional_bc_variables::u_bc()']]],
   ['u_5fbot',['u_bot',['../structdycore__typedefs_1_1dycore__coupling__type.html#a0f1e2c519ff3fb826527fc759f4dcf62',1,'dycore_typedefs::dycore_coupling_type']]],

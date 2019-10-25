@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['useful_20links',['USEFUL LINKS',['../link.html',1,'']]]
+  ['useful_20links',['Useful Links',['../link.html',1,'']]]
 ];

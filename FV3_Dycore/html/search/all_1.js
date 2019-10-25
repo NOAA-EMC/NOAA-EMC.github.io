@@ -23,7 +23,7 @@ var searchData=
   ['adj_5fmass_5fvmr',['adj_mass_vmr',['../structfv__arrays__mod_1_1fv__flags__type.html#a4042ed7bbea950c7af4a3efb709218e4',1,'fv_arrays_mod::fv_flags_type::adj_mass_vmr()'],['../namespacefv__control__mod.html#ab60d2685b73f5240ec7042fa03eed5a5',1,'fv_control_mod::adj_mass_vmr()']]],
   ['adjust_5fdry_5fmass',['adjust_dry_mass',['../structfv__arrays__mod_1_1fv__flags__type.html#a85c6e8042f8613458bc65a948aaa0125',1,'fv_arrays_mod::fv_flags_type::adjust_dry_mass()'],['../namespacefv__control__mod.html#a165574794aaa021231e7c00d7d200419',1,'fv_control_mod::adjust_dry_mass()']]],
   ['adv_5fpe',['adv_pe',['../namespacedyn__core__mod.html#a69d9914e89faeebfc49e822b23cf252d',1,'dyn_core_mod']]],
-  ['a_20brief_20guide_20to_20advection_20operators_20in_20fv_26sup3_3b',['A BRIEF GUIDE TO ADVECTION OPERATORS IN FV&amp;sup3;',['../advection.html',1,'']]],
+  ['a_20_20brief_20guide_20to_20advection_20operators_20in_20fv_26sup3_3b',['A  Brief Guide to Advection Operators in FV&amp;sup3;',['../advection.html',1,'']]],
   ['advectionoperators_2emd',['AdvectionOperators.md',['../AdvectionOperators_8md.html',1,'']]],
   ['after_5ftwoway_5fnest_5fupdate',['after_twoway_nest_update',['../namespacefv__nesting__mod.html#a6fa54ea0bd54ce56d23b864d37c5b596',1,'fv_nesting_mod']]],
   ['agrav',['agrav',['../namespacefv__dynamics__mod.html#a4503b9b3f35f05d3a6dc3535ec7017e9',1,'fv_dynamics_mod']]],
@@ -81,6 +81,5 @@ var searchData=
   ['atoc',['atoc',['../namespacetest__cases__mod.html#a935b3dcf79703f05fca13713ee73ab4b',1,'test_cases_mod']]],
   ['atod',['atod',['../namespacetest__cases__mod.html#a100a065323a0186529544823efd13358',1,'test_cases_mod']]],
   ['axis_5fname',['axis_name',['../namespacefv__nggps__diags__mod.html#a9b3c6afd1c1d787a6025594b51ffbe41',1,'fv_nggps_diags_mod']]],
-  ['axis_5fname_5fvert',['axis_name_vert',['../namespacefv__nggps__diags__mod.html#aa890948022803ec69a3d017f66653db6',1,'fv_nggps_diags_mod']]],
-  ['a_20brif_20overview_20of_20the_20_20fv_26sup3_3b_20dynamical_20core',['A BRIF OVERVIEW OF THE  FV&amp;sup3; DYNAMICAL CORE',['../overview.html',1,'']]]
+  ['axis_5fname_5fvert',['axis_name_vert',['../namespacefv__nggps__diags__mod.html#aa890948022803ec69a3d017f66653db6',1,'fv_nggps_diags_mod']]]
 ];
