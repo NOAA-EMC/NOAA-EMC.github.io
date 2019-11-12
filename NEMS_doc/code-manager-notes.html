@@ -33,7 +33,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">NEMS
-   &#160;<span id="projectnumber">master@fb387d39b5</span>
+   &#160;<span id="projectnumber">master@eee10ef0fe</span>
    </div>
    <div id="projectbrief">This is a living document and may be updated at any time.</div>
   </td>
@@ -140,7 +140,7 @@ emc.nemspara@gaea&gt; mkdir -p /lustre/f1/pdata/ncep_shared/emc.nemspara/RT/trun
 emc.nemspara@gaea&gt; cd /lustre/f1/pdata/ncep_shared/emc.nemspara/RT/trunk-YYYYMMDDHH
 emc.nemspara@gaea&gt; rsync -arv jetscp.rdhpcs.noaa.gov:/lfs3/projects/hfv3gfs/emc.nemspara/wcoss-NEMSfv3gfs-YYYYMMDDHH/. .
 </pre><p>Potentially, a relay through HPSS or Theia would work as well. Jet is used because it is generally the most reliable transfer method. From WCOSS, jetscp is frequently faster than Theia or HPSS because the dedicated network line between WCOSS and Theia/HPSS is often clogged. Transfers from WCOSS to Jet go through a different route.</p>
-<h2>Critical NEMS Crontabs </h2>
+<h2>Critical NEMS Crontabs: </h2>
 <p>There are eight crontabs for NEMS: four for nemspara, and four for a personal account with git and website access. These can be found in the NEMS repository under <code>tests/nightly/cron/</code>. Note that all WCOSS cron jobs are launched from one part of WCOSS to all others via ssh. Presently, this is done from WCOSS Phase 1. It could be moved to any other part of WCOSS that has CRON.</p>
 <p>The cron jobs fall under six categories. Example lines are shown in this list.</p>
 <ol type="1">
