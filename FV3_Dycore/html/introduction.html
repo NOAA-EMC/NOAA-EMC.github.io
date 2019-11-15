@@ -32,6 +32,7 @@
 });
 </script><script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="ccpp_dox_extra_style.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -121,7 +122,8 @@ $(document).ready(function(){initNavTree('introduction.html','');});
 <div class="image">
 <img src="../image/FV3flowchart.png" alt=" "/>
 </div>
-<p> <b>Figure 1.1:</b> <em>FV3 structure, including subroutines and time-stepping. Blue represents external API routines, called once per physics time step; orange routines are called once per remapping time step; green routines once per acoustic time step.</em></p>
+<p> <br />
+ <b>Figure 1.1:</b> <em>FV3 structure, including subroutines and time-stepping. Blue represents external API routines, called once per physics time step; orange routines are called once per remapping time step; green routines once per acoustic time step.</em></p>
 <p>This loop is typically performed once per call to the solver, although it is possible to improve the model’s stability by executing the loop (and thereby the vertical remapping) multiple times per solver call.</p>
 <p>The Lagrangian dynamics is the second level of time-stepping in FV&sup3;. This is the integration of the dynamics along the Lagrangian surfaces, across which there is no mass transport. Since the time step of the Lagrangian dynamics is limited by horizontal sound-wave processes, this is called the “acoustic” time step loop. (Note that the typical assumption that the advec- tive wind speed is much slower than the sound wave speed is often violated near the poles, since the speed of the polar night jets can exceed two-thirds of the speed of sound.) The Lagrangian dynamics has two parts: the C-grid winds are advanced a half-time step, using simplified (but similarly con- structed) core routines, which are then used to provide the advective fluxes to advance the D-grid prognostic fields a full time step. The integration procedure is similar for both grids: the along-surface flux terms (mass, heat, vertical momentum, and vorticity, and the kinetic energy gradient terms) are evaluated forward-in-time, and the pressure-gradient force and elastic terms are then evaluated backwards-in-time, to achieve enhanced stability. </p>
 </div></div><!-- contents -->
@@ -129,7 +131,7 @@ $(document).ready(function(){initNavTree('introduction.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Oct 25 2019 19:42:45 for FV3DYCORE by
+    <li class="footer">Generated on Thu Nov 14 2019 22:40:44 for FV3DYCORE by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
   </ul>
