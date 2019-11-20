@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.10"/>
-<title>NEMS: CICE Grid gx3</title>
+<title>NEMS: Front Range Grid (Regional)</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -73,7 +73,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('_g_r_i_d__c_i_c_e_gx3.html','');});
+$(document).ready(function(){initNavTree('g_r_i_d__front__range__regional.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -92,40 +92,44 @@ $(document).ready(function(){initNavTree('_g_r_i_d__c_i_c_e_gx3.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">CICE Grid gx3 </div>  </div>
+<div class="title">Front Range Grid (Regional) </div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><h2>Description </h2>
-<p>This pge describes a CICE 3 degree global lat-lon POP grid (gx3). The gx3 grid is a regular spherical grid in both hemispheres.</p>
+<p>The regional Front Range grid is a Lambert Conformal projection over the Front Range in Colorado, USA.</p>
 <table class="doxtable">
 <tr>
 <th align="left">Long Name </th><th align="left">Name </th><th align="left">Value  </th></tr>
 <tr>
-<td align="left">Number of longitudinal points </td><td align="left">N<sub>i</sub> </td><td align="left">100 </td></tr>
+<td align="left">Number of longitudinal points </td><td align="left">N<sub>i</sub> </td><td align="left">268 </td></tr>
 <tr>
-<td align="left">Number of latitudinal points </td><td align="left">N<sub>j</sub> </td><td align="left">116 </td></tr>
+<td align="left">Number of latitudinal points </td><td align="left">N<sub>j</sub> </td><td align="left">260 </td></tr>
 <tr>
-<td align="left">Minimum longitude </td><td align="left">&#160; </td><td align="left">0.0 </td></tr>
+<td align="left">Northernmost latitude </td><td align="left"><code>L&lt;sub&gt;a1&lt;/sub&gt;</code> </td><td align="left">40.9416 N </td></tr>
 <tr>
-<td align="left">Maximum longitude </td><td align="left">&#160; </td><td align="left">360.0 </td></tr>
+<td align="left">Easternmost longitude </td><td align="left">Lo<sub>1</sub> </td><td align="left">106.6576 W </td></tr>
 <tr>
-<td align="left">Minimum latitude </td><td align="left">&#160; </td><td align="left">-78.007 </td></tr>
+<td align="left">Southernmost latitude </td><td align="left">La<sub>2</sub> </td><td align="left">38.5997 N </td></tr>
 <tr>
-<td align="left">Maximum latitude </td><td align="left">&#160; </td><td align="left">89.90 </td></tr>
+<td align="left">Westernmost longitude </td><td align="left">Lo<sub>2</sub> </td><td align="left">103.5234 W </td></tr>
+<tr>
+<td align="left">Longitudinal increment </td><td align="left">D<sub>i</sub> </td><td align="left">1 KM </td></tr>
 </table>
-<h2>Longitude Plot </h2>
+<h2>Regional Location (Google Earth) </h2>
 <div class="image">
-<img src="GRID_CICE_gx3-lon.gif" alt="GRID_CICE_gx3-lon.gif"/>
+<img src="GRID_Front_Range_Regional-frontrange_google_earth.jpg" alt="GRID_Front_Range_Regional-frontrange_google_earth.jpg"/>
 </div>
-<h2>Latitude Plot </h2>
+<h2>Grid Cell Plot (NCL) </h2>
 <div class="image">
-<img src="GRID_CICE_gx3-lat.gif" alt="GRID_CICE_gx3-lat.gif"/>
+<img src="GRID_Front_Range_Regional-frontrange_regional.png" alt="GRID_Front_Range_Regional-frontrange_regional.png"/>
 </div>
-<h2>Mask Plot </h2>
-<p>Not yet available</p>
-<h2>Data Decomposition </h2>
-<p>The CICE grid is decomposed into regular 2-dimensional blocks. These blocks are then distributed to the PETs. The size of the blocks is a compile time setting, while the distribution of the blocks is a run time namelist setting. The CICE model threads over blocks. The optimum decomposition is dependent on a number of things including the cost of halo updates and the location of sea ice. The user has quite a bit of flexibility in setting the CICE decompositon. </p>
-</div></div><!-- contents -->
+ <div class="image">
+<img src="GRID_Front_Range_Regional-frontrange_conus.png" alt="GRID_Front_Range_Regional-frontrange_conus.png"/>
+</div>
+ <div class="image">
+<img src="GRID_Front_Range_Regional-frontrange_global.png" alt="GRID_Front_Range_Regional-frontrange_global.png"/>
+</div>
+ </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.10"/>
-<title>NEMS: Ionosphere-Plasmasphere Electrodynamics (IPE) Grid</title>
+<title>NEMS: HYbrid Coordinate Ocean Model (HYCOM) Grid POP glbx1v6</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -73,7 +73,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('_g_r_i_d__i_p_e.html','');});
+$(document).ready(function(){initNavTree('g_r_i_d__h_y_c_o_m__p_o_p_glbx1v6.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -92,33 +92,50 @@ $(document).ready(function(){initNavTree('_g_r_i_d__i_p_e.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Ionosphere-Plasmasphere Electrodynamics (IPE) Grid </div>  </div>
+<div class="title">HYbrid Coordinate Ocean Model (HYCOM) Grid POP glbx1v6 </div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><h2>Description </h2>
-<p>Only a portion of the IPE grid (that overlaps with the <a class="el" href="_g_r_i_d_wam.html">Whole Atmosphere Model (WAM)</a> grid up to ~700 km) needs to be represented for coupling to WAM.</p>
+<p>HYCOM runs on a 1.125 degree global lat-lon POP grid (glbx1v6). The <code>glbx1v6</code> grid is a regular spherical grid in both hemispheres. Longitude runs from -116.95999° to 319.59000° with 1.125 degree spacing; and latitude runs from -79.22000° to 89.71000°.</p>
 <table class="doxtable">
 <tr>
 <th align="left">Long Name </th><th align="left">Name </th><th align="left">Value  </th></tr>
 <tr>
-<td align="left">Maximum number of gridpoints along a single flux tube* </td><td align="left"><code>MaxFluxTube</code> </td><td align="left">1115 </td></tr>
+<td align="left">Number of longitudinal points </td><td align="left">N<sub>i</sub> </td><td align="left">320 </td></tr>
 <tr>
-<td align="left">Number of flux tubes in magnetic latitude </td><td align="left"><code>NLP</code> </td><td align="left">170 </td></tr>
+<td align="left">Number of latitudinal points </td><td align="left">N<sub>j</sub> </td><td align="left">384 </td></tr>
 <tr>
-<td align="left">Number of flux tubes in magnetic longitude </td><td align="left"><code>NMP</code> </td><td align="left">80 </td></tr>
+<td align="left">Minimum longitude </td><td align="left">&#160; </td><td align="left">-116.95999 </td></tr>
+<tr>
+<td align="left">Maximum longitude </td><td align="left">&#160; </td><td align="left">319.59000 </td></tr>
+<tr>
+<td align="left">Minimum latitude </td><td align="left">&#160; </td><td align="left">-79.22000 </td></tr>
+<tr>
+<td align="left">Maximum latitude </td><td align="left">&#160; </td><td align="left">89.31000 </td></tr>
 </table>
-<ul>
-<li>Actual number of grid points along a single flux tube can vary from 11 to 1115 depending on the length of the flux tube.</li>
-</ul>
+<h2>Longitude Plot </h2>
+<div class="image">
+<img src="GRID_HYCOM_POP_glbx1v6-hycom_GLBx_lon.png" alt="GRID_HYCOM_POP_glbx1v6-hycom_GLBx_lon.png"/>
+</div>
+<h2>Latitude Plot </h2>
+<div class="image">
+<img src="GRID_HYCOM_POP_glbx1v6-hycom_GLBx_lat.png" alt="GRID_HYCOM_POP_glbx1v6-hycom_GLBx_lat.png"/>
+</div>
+<h2>Mask Plot </h2>
+<div class="image">
+<img src="GRID_HYCOM_POP_glbx1v6-hycom_GLBx_msk.png" alt="GRID_HYCOM_POP_glbx1v6-hycom_GLBx_msk.png"/>
+</div>
 <h2>Data Decomposition </h2>
-<p>All the grid points along a flux tube are contained on the same processor (equivalent to a vertical column for GSM). Domain decomposition is done in both latitude and longitude directions. Several field lines may be on the same processor. The model usually runs on 80 processors for the coupling to GSM, although the standalone IPE can run with flexible number of processors speficied at run time.</p>
-<h2>Reference </h2>
-<p>The entire IPE 3D grid file on Zeus:</p>
-<ul>
-<li>/scratch1/portfolios/NCEPDEV/swpc/noscrub/Naomi.Maruyama/grid/apex/GIP_apex_coords_global_lowres_new20120705</li>
-</ul>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000029">Todo:</a></b></dt><dd>Remove reference to IPE 3D grid file on non-existent Zeus machine, or move it to an accessible location. </dd></dl>
-</div></div><!-- contents -->
+<p>The grid and data decomposition is done in the following manner:</p>
+<ol type="1">
+<li>The latitudes are regularly decomposed into jqr=5 bands, leading to 76 and 77 latitude wide bands.</li>
+<li>Each latitude band is decomposed into blocks along the longitude. The actual size of each block, and the number of blocks is flexible within some limits in order to allow for load balancing. The limits are set by iqr=8, the maximum number of blocks in each band, and idm=77, the maximum number of longitudes per block.</li>
+<li>Every PET (persistent execution thread, i.e. MPI rank) is associated with exactly one lat-lon block. Here each blocks contains ocean and must be associated with a PET. There are 40 blocks and 40 PETs.</li>
+</ol>
+<div class="image">
+<img src="GRID_HYCOM_POP_glbx1v6-depth_POP1v6_01.040.png" alt="GRID_HYCOM_POP_glbx1v6-depth_POP1v6_01.040.png"/>
+</div>
+ </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

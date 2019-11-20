@@ -102,14 +102,14 @@ $(document).ready(function(){initNavTree('milestone__d_r_e_v93202.html','');});
 </ul>
 <p>Subversion Revision: r93202</p>
 <h2>Description </h2>
-<p>This milestone is a version of the atmosphere-ocean-ice coupled UGCS-Seasonal application with the addition of external land surface (LIS/Noah 3.3) and hydrology (WRF-Hydro) components. The land surface and hydrology components are one-way coupled, receiving their import states from the NEMS Mediator. LIS/Noah 3.3 runs on a global T574 domain and WRF-Hydro runs on a <a class="el" href="_g_r_i_d__front__range__regional.html">small regional grid</a>. The ATM-OCN-ICE components are initialized with April 1, 2015 CFSR-based initial conditions. No spin-up run has been completed for the land surface and hydrology components, so both LIS and WRF-Hydro are initialized with cold start conditions.</p>
+<p>This milestone is a version of the atmosphere-ocean-ice coupled UGCS-Seasonal application with the addition of external land surface (LIS/Noah 3.3) and hydrology (WRF-Hydro) components. The land surface and hydrology components are one-way coupled, receiving their import states from the NEMS Mediator. LIS/Noah 3.3 runs on a global T574 domain and WRF-Hydro runs on a <a class="el" href="g_r_i_d__front__range__regional.html">small regional grid</a>. The ATM-OCN-ICE components are initialized with April 1, 2015 CFSR-based initial conditions. No spin-up run has been completed for the land surface and hydrology components, so both LIS and WRF-Hydro are initialized with cold start conditions.</p>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000027">Todo:</a></b></dt><dd>reference grids</dd></dl>
 <p>This is a follow-on to the <a class="el" href="milestone__d_r_e_v70089.html">Reg-Hydro 0.2 release</a> with the following changes:</p>
 <ul>
 <li>The separate atmosphere layer (NEMS/src/atmos) originally in NEMS has been removed and GSM is using its own NUOPC cap. This was accomplished by branching off of the ATM-refactor branch.</li>
 <li>A complete set of coupling fields are sent from the Mediator to LIS and WRF-Hydro. Previously, only a subset of fields were transferred to validate grid interpolation.</li>
 <li>GSM is in semi-Lagrangian mode on the T574 grid. The previous milestone used the Eulerian dycore on the T126 grid.</li>
-<li>CICE and MOM use <a class="el" href="_g_r_i_d_mom5_0p5deg_tripole.html">0.5 degree tripolar grids</a>. The previous milestone used 1 degree tripolar grids.</li>
+<li>CICE and MOM use <a class="el" href="g_r_i_d_mom5_0p5deg_tripole.html">0.5 degree tripolar grids</a>. The previous milestone used 1 degree tripolar grids.</li>
 <li>LIS is running on the reduced T574 grid with coldstart initial values. The previous milestone ran on the T126 grid. New configuration options have been added to the LIS cap including: the ability to write NUOPC state restart files, log optimizations, compilation with debugging.</li>
 <li>WRF-Hydro continues to run on the Front Range regional domain with coldstart initial values. New configuration options have been added to the WRF-Hydro cap including: the ability to write NUOPC state restart files, log optimizations, and compilation with debugging</li>
 </ul>

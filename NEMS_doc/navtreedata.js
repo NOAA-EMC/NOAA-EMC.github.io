@@ -2,7 +2,7 @@ var NAVTREE =
 [
   [ "NEMS", "index.html", [
     [ "Users Guide and Reference", "documentation.html", "documentation" ],
-    [ "NEMS: Old to New Structure How To", "_how_to_old_to_new.html", "_how_to_old_to_new" ],
+    [ "NEMS: Old to New Structure How To", "how_to_old_to_new.html", "how_to_old_to_new" ],
     [ "Milestone Revisions", "milestones.html", "milestones" ],
     [ "Grids", "grids.html", "grids" ],
     [ "Relevant Links", "links.html", null ],
@@ -14,7 +14,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_g_r_i_d__c_i_c_e_gx3.html"
+"g_r_i_d__c_i_c_e_gx3.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

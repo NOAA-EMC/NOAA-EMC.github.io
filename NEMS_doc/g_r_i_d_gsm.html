@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.10"/>
-<title>NEMS: Front Range Grid (Regional)</title>
+<title>NEMS: Global Spectral Model (GSM) Grid</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -73,7 +73,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('_g_r_i_d__front__range__regional.html','');});
+$(document).ready(function(){initNavTree('g_r_i_d_gsm.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -92,44 +92,41 @@ $(document).ready(function(){initNavTree('_g_r_i_d__front__range__regional.html'
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Front Range Grid (Regional) </div>  </div>
+<div class="title">Global Spectral Model (GSM) Grid </div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><h2>Description </h2>
-<p>The regional Front Range grid is a Lambert Conformal projection over the Front Range in Colorado, USA.</p>
+<p>The global Gaussian T126 grid was chosen for the initial atmosphere-ocean coupled system. A reduced Gaussian grid with shuffled latitudes is used internally in the GSM. As of DREV43400, the full grid is used in the coupler, although this may change in the future. The reference for the table below is [1].</p>
+<p>The latitudes in a Gaussian grid are nearly but not quite equally spaced. The sines of the Gaussian grid latitudes are the zeroes of the Legendre polynomial of order 190 and are used for Gaussian quadrature. Note that the starting longitude is 0.0E and ending longitude is 359.0625E at the equator. In the reduced grid, the ending longitudes change as you go toward the poles.</p>
 <table class="doxtable">
 <tr>
-<th align="left">Long Name </th><th align="left">Name </th><th align="left">Value  </th></tr>
+<th align="left">Long Name </th><th align="left">Nameg </th><th align="left">Value  </th></tr>
 <tr>
-<td align="left">Number of longitudinal points </td><td align="left">N<sub>i</sub> </td><td align="left">268 </td></tr>
+<td align="left">Number of longitudinal points </td><td align="left">N<sub>i</sub> </td><td align="left">384 </td></tr>
 <tr>
-<td align="left">Number of latitudinal points </td><td align="left">N<sub>j</sub> </td><td align="left">260 </td></tr>
+<td align="left">Number of latitudinal points </td><td align="left">N<sub>j</sub> </td><td align="left">190 </td></tr>
 <tr>
-<td align="left">Northernmost latitude </td><td align="left"><code>L&lt;sub&gt;a1&lt;/sub&gt;</code> </td><td align="left">40.9416 N </td></tr>
+<td align="left">Northernmost latitude </td><td align="left">La<sub>1</sub> </td><td align="left">89.277N </td></tr>
 <tr>
-<td align="left">Easternmost longitude </td><td align="left">Lo<sub>1</sub> </td><td align="left">106.6576 W </td></tr>
+<td align="left">Easternmost longitude </td><td align="left">Lo<sub>1</sub> </td><td align="left">0.000E </td></tr>
 <tr>
-<td align="left">Southernmost latitude </td><td align="left">La<sub>2</sub> </td><td align="left">38.5997 N </td></tr>
+<td align="left">Southernmost latitude </td><td align="left">La<sub>2</sub> </td><td align="left">89.277S </td></tr>
 <tr>
-<td align="left">Westernmost longitude </td><td align="left">Lo<sub>2</sub> </td><td align="left">103.5234 W </td></tr>
+<td align="left">Westernmost longitude </td><td align="left">Lo<sub>2</sub> </td><td align="left">359.0625E = 0.9375W </td></tr>
 <tr>
-<td align="left">Longitudinal increment </td><td align="left">D<sub>i</sub> </td><td align="left">1 KM </td></tr>
+<td align="left">Longitudinal increment </td><td align="left">D<sub>i</sub> </td><td align="left">.9375 &amp;deg </td></tr>
+<tr>
+<td align="left">Number of latitude circles, pole to equator </td><td align="left">N </td><td align="left">95 </td></tr>
 </table>
-<h2>Regional Location (Google Earth) </h2>
-<div class="image">
-<img src="GRID_Front_Range_Regional-frontrange_google_earth.jpg" alt="GRID_Front_Range_Regional-frontrange_google_earth.jpg"/>
-</div>
-<h2>Grid Cell Plot (NCL) </h2>
-<div class="image">
-<img src="GRID_Front_Range_Regional-frontrange_regional.png" alt="GRID_Front_Range_Regional-frontrange_regional.png"/>
-</div>
- <div class="image">
-<img src="GRID_Front_Range_Regional-frontrange_conus.png" alt="GRID_Front_Range_Regional-frontrange_conus.png"/>
-</div>
- <div class="image">
-<img src="GRID_Front_Range_Regional-frontrange_global.png" alt="GRID_Front_Range_Regional-frontrange_global.png"/>
-</div>
- </div></div><!-- contents -->
+<h2>Data Decomposition </h2>
+<p>The data decomposition is based on a "shuffled" row-only distribution for better load balance. The algorithm works as follows:</p>
+<ul>
+<li>Sort the rows in the descending order of the number of points per row. The rows with the most number of points will be the first. (See example for the <a class="el" href="g_r_i_d_wam.html">WAM grid</a>.)</li>
+<li>Card deal the rows in the above sorted order to each processors, one at a time. For instance, if four processors are used, processor #1 will get rows 47, 43, 39, 35, 60, ... and processor #2 will get rows 46, 42, 38, 48, 59, etc...)</li>
+</ul>
+<p>Reference</p>
+<p>1 <a href="http://www.nco.ncep.noaa.gov/pmb/docs/on388/tableb.html">Master List of NCEP Storage Grids, GRIB Edition 1 (FM92)</a>, grid is number 126. </p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

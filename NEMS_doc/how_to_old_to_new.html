@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.10"/>
-<title>NEMS: Modular Ocean Model 5 (MOM5) Tripole Grid (1 deg)</title>
+<title>NEMS: NEMS: Old to New Structure How To</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -73,7 +73,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('_g_r_i_d_mom5_1deg_tripole.html','');});
+$(document).ready(function(){initNavTree('how_to_old_to_new.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -92,53 +92,44 @@ $(document).ready(function(){initNavTree('_g_r_i_d_mom5_1deg_tripole.html','');}
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Modular Ocean Model 5 (MOM5) Tripole Grid (1 deg) </div>  </div>
+<div class="title">NEMS: Old to New Structure How To </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h2>Description </h2>
-<p>This page describes a MOM5 grid that is a tripolar at 1 degree resolution. The Murray (1996) tripolar grid is a regular spherical grid south of 65N and bipolar north of 65N. Longitude runs from -279.5 to 79.5 degrees with exact 1 degree spacing; and laittude runs from -81.5 (edge of antarctic land) to -89.5 degrees with uniform 1 degree spacing outside the tropical region where gaussian spacing is used so the equitorial region has a higher resolution.</p>
-<table class="doxtable">
-<tr>
-<th align="left">Long Name </th><th align="left">Name </th><th align="left">Value  </th></tr>
-<tr>
-<td align="left">Number of longitudinal points </td><td align="left">N<sub>i</sub> </td><td align="left">360 </td></tr>
-<tr>
-<td align="left">Number of latitudinal points </td><td align="left">N<sub>j</sub> </td><td align="left">200 </td></tr>
-<tr>
-<td align="left">Minimum longitude </td><td align="left">&#160; </td><td align="left">-279.5 </td></tr>
-<tr>
-<td align="left">Maximum longitude </td><td align="left">&#160; </td><td align="left">79.5 </td></tr>
-<tr>
-<td align="left">Minimum latitude </td><td align="left">&#160; </td><td align="left">-81.5 </td></tr>
-<tr>
-<td align="left">Maximum latitude </td><td align="left">&#160; </td><td align="left">89.5 </td></tr>
-</table>
-<h2>Longitude Plot </h2>
-<div class="image">
-<img src="GRID_mom5_1deg_tripole-ocnlon.gif" alt="GRID_mom5_1deg_tripole-ocnlon.gif"/>
-</div>
-<h2>Latitude Plot </h2>
-<div class="image">
-<img src="GRID_mom5_1deg_tripole-ocnlat.gif" alt="GRID_mom5_1deg_tripole-ocnlat.gif"/>
-</div>
-<h2>Mask Plot </h2>
-<div class="image">
-<img src="GRID_mom5_1deg_tripole-ocnmask.gif" alt="GRID_mom5_1deg_tripole-ocnmask.gif"/>
-</div>
-<h2>Data Decomposition </h2>
-<p>The grid and data decomposition is done regularly on a preferred 6x4 processor layout. The 360 longitudinal values is regularly decomposed into 6 ranges and the 200 latitudinal values is regularly decomposed into 5 ranges.</p>
+<div class="textblock"><p><em>Purpose:</em> This document will walk through the steps of how to go from the old NEMS App folder and svn structure, using the original NEMSAppBuilder and NEMSCompsetRun to the <a class="el" href="structure.html">new NEMS App folder and svn structure</a>, the updated NEMSAppBuilder and the regression test run system. As an example, we will be taking the WW3TestBed, an app in the the old structure which is a two component system of GSM before it had a cap and WW3, and creating an app with the new app structure, build and run systems with WW3 and GSM, including upgrading GSM to its trunk.</p>
+<p><em>Assumptions:</em> This tutorial assumes you have an app working with the original/old appBuilder and NEMSCompsetRun. A separate tutorial for adding a new component into the new system will be provided.</p>
+<p><em>Starting Point:</em> We are starting out with the WW3TestBed App. To get a better idea of the starting point: </p><pre class="fragment">$ svn co -r 83803 https://svnemc.ncep.noaa.gov/projects/nems/apps/WW3TestBed/trunk WW3TestBedr83803
+$ cd WW3TestBedr83803
+$ svn propget svn:externals 
+# for snapshot revisions strictly version all constituent components
+#NEMS                 -r 72098 https://svnemc.ncep.noaa.gov/projects/nems/branches/NUOPC/development
+#NEMS/src/atmos/GSM   -r 71778 https://svnemc.ncep.noaa.gov/projects/gsm/branches/NUOPC/gsm67963branch
+#NEMS/src/atmos/nmm   -r 71873 https://svnemc.ncep.noaa.gov/projects/nems/external_comps/NMM
+#WW3                  -r 72006 https://svnemc.ncep.noaa.gov/projects/ww3/branches/esmf2/model
+# for development switch to head revisions
+#NEMS                 https://svnemc.ncep.noaa.gov/projects/nems/branches/NUOPC/development
+#NEMS/src/atmos/GSM   https://svnemc.ncep.noaa.gov/projects/gsm/branches/NUOPC/gsm67963branch
+#NEMS/src/atmos/nmm   https://svnemc.ncep.noaa.gov/projects/nems/external_comps/NMM
+#WW3                  https://svnemc.ncep.noaa.gov/projects/ww3/branches/esmf2/model
+# Test bed for example of running NEMS in WW3
+NEMS                -r 83802 https://svnemc.ncep.noaa.gov/projects/nems/branches/UGCS-Seasonal/twoWayWW3_from_r80562
+NEMS/src/atmos/gsm  -r 80525 https://svnemc.ncep.noaa.gov/projects/gsm/trunk
+NEMS/src/atmos/nmm  -r 80429 https://svnemc.ncep.noaa.gov/projects/nmmb/trunk
+NEMS/src/chem       -r 80344 https://svnemc.ncep.noaa.gov/projects/nceplibs/chem/trunk
+WW3                 -r 82617 https://svnemc.ncep.noaa.gov/projects/ww3/branches/esmf2/model
+$ ls 
+NEMS  WW3  ww3TestBed.appBuilder  ww3TestBed.compsetRun
+</pre><p>Note, here we have 4 externals, NEMS, GSM, NMM, CHEM, and WW3 and all compsets are in the NEMS/compset directory.</p>
+<p>To build and run: </p><pre class="fragment">./NEMS/NEMSAppBuilder
+./NEMS/NEMSCompsetRun -compset NEMS/compsets/cfsr%20150401_1day_leapfrog_gsm%slg%T126_ww3%t188
+</pre><p>This runs a two way coupled GSM&lt;-&gt;WW3 system on a T126 grid, similar to what is documented in <a class="el" href="milestone__d_r_e_v84205.html">DREV84205: Wave 0.1 Two-Way Wave-Atmosphere Coupling</a></p>
+<p>Stages of this tutorial:</p>
 <ul>
-<li><a class="el" href="_g_r_i_d_mom5_lonlat.html">MOM5 1 degree global tripolar grid coordinate values</a></li>
+<li><a class="el" href="how_to_old_to_new_folder.html">Step 1. Setting up new folder Structure</a></li>
+<li><a class="el" href="how_to_old_to_new_app_builder.html">Step 2. Updating AppBuilder</a></li>
+<li><a class="el" href="how_to_old_to_new_comp_branch.html">Step 3. Updating Component Branches</a></li>
+<li><a class="el" href="how_to_old_to_new_compsets.html">Step 4. Transition to new Compsets</a></li>
+<li><a class="el" href="how_to_old_to_new_build_run.html">Step 5. Build, Run and Document</a> </li>
 </ul>
-<p>For example, on the first processor, longitude range is [-279.5, -220.5], latitude range is [-81.5, -32.5]; on the second processor, longitude range is [-219.5, -160.5], latitude range is [-81.5, -32.5]; and finally on the last processor, longitude range is [20.5, 79.5], latitude range is [40.5, 89.5].</p>
-<h2>References </h2>
-<ol type="1">
-<li>Murray, R. J., 1996: Explicit generation of orthogonal grids for ocean models. Journal Computational Physics, 126, 251&ndash;273</li>
-<li><a href="http://nomads.gfdl.noaa.gov/CM2.X/documentation/ocean_grid_doc.html">http://nomads.gfdl.noaa.gov/CM2.X/documentation/ocean_grid_doc.html</a></li>
-<li>Section 4.2 <a href="http://data1.gfdl.noaa.gov/~arl/pubrel/r/mom4p1/src/mom4p1/doc/guide4p0.pdf">http://data1.gfdl.noaa.gov/~arl/pubrel/r/mom4p1/src/mom4p1/doc/guide4p0.pdf</a></li>
-<li>GridSpec file describing the grid on Zeus: /home/Fei.Liu/noscrub/global_box1/INPUT/grid_spec.nc</li>
-</ol>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000030">Todo:</a></b></dt><dd>The referenced GridSpec file on Zeus is gone because the NOAA Zeus cluster was retired. Either remove reference #4 or find the file </dd></dl>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
