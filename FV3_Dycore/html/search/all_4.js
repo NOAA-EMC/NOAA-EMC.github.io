@@ -76,7 +76,7 @@ var searchData=
   ['delz_5finc',['delz_inc',['../structfv__iau__mod_1_1iau__internal__data__type.html#a98f0a840a25adcc48aaef5658045d0e7',1,'fv_iau_mod::iau_internal_data_type::delz_inc()'],['../structfv__iau__mod_1_1iau__external__data__type.html#af520a7af929ab51c9f94793238378470',1,'fv_iau_mod::iau_external_data_type::delz_inc()']]],
   ['des',['des',['../namespacefv__sg__mod.html#a3d64c11d4c5914570d3d22b46f4c9d96',1,'fv_sg_mod']]],
   ['des2',['des2',['../namespacefv__cmp__mod.html#a39a88a1e472449c87b0c18c5be0682a2',1,'fv_cmp_mod']]],
-  ['desc',['desc',['../structdycore__typedefs_1_1dycore__diag__type.html#ad80ebe3be46ad81d5899d42175361dce',1,'dycore_typedefs::dycore_diag_type']]],
+  ['desc',['desc',['../structdycore__typedefs_1_1dycore__diag__type.html#ad80ebe3be46ad81d5899d42175361dce',1,'dycore_typedefs::dycore_diag_type::desc()'],['../Desc.html',1,'(Global Namespace)']]],
   ['desw',['desw',['../namespacefv__cmp__mod.html#ae014434a6d863ca10c5961edfd866425',1,'fv_cmp_mod']]],
   ['diag_5fcreate',['diag_create',['../namespacedycore__typedefs.html#a6a4ce247c95b0a8791caf9ce5c4f28b0',1,'dycore_typedefs']]],
   ['diag_5fzero',['diag_zero',['../namespacedycore__typedefs.html#a9b0e3a5b8a1e2e40e721055f51c3a437',1,'dycore_typedefs']]],

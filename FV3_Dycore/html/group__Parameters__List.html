@@ -397,21 +397,17 @@ Functions/Subroutines</h2></td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">ngrids</td><td>Integer: number of grids in this simulation. 1 by default. (The variable ntiles has the same effect, but its use is not recommended as it can be confused with the six tiles of the cubed sphere, which in this case form only one grid.)</td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">nest_pes</td><td>Integer(100): array carrying number of PEs assigned to each grid, in order. Must be set if ngrids &gt; 1.</td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">p_split</td><td>Integer: number of times to sub-cycle dynamics, performing nested-grid BC interpolation and (if twowaynest ==.true.) two-way updating at the end of each set of dynamics calls. If p_split &gt; 1 the user should decrease k_split appropriately so the remapping and dynamics time steps remain the same. 1 by default.</td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">imfdeep</td><td>These are options for a variety of convection schemes: for example IIRC imfdeep = 1 is old SAS, imfdeep = 2 is scaleaware SAS, 3 is either RAS or CS, etc. The best reference is to look for the options in GFS physics driver.F90 <br />
- </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">do_deep</td><td>The correct options to disable the convection schemes are do deep = .F. and shal cnv =.F. <br />
- <h2>A.8 Entries in nggps_diag_nml</h2>
-</td></tr>
   </table>
   </dd>
 </dl>
+<h2>A.8 Entries in nggps_diag_nml</h2>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">fdiag</td><td>Real(1028): Array listing the diagnostic output times (in hours) for the GFS physics. This can either be a list of times after initialization, or an interval if only the first entry is nonzero. All 0 by default, which will result in no outputs.</td></tr>
   </table>
   </dd>
 </dl>
-<h2>A.9 Entries in atmos_model_nml (for fvGFS)FV&amp;sup3</h2>
+<h2>A.9 Entries in atmos_model_nml (for UFS)</h2>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">blocksize</td><td>Integer: Number of columns in each `&lsquo;block&rsquo;' sent to the physics. OpenMP threading is done over the number of blocks. For best performance this number should divide the number of grid cells per processor ( (npx-1)*(npy-1) /(layout_x)*(layout_y) ) and be small enough so the data can best fit into cache?values around 32 appear to be optimal on Gaea. 1 by default</td></tr>
@@ -468,7 +464,7 @@ Functions/Subroutines</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="fv__control_8F90_source.html#l01407">1407</a> of file <a class="el" href="fv__control_8F90_source.html">fv_control.F90</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fv__control_8F90_source.html#l01403">1403</a> of file <a class="el" href="fv__control_8F90_source.html">fv_control.F90</a>.</p>
 
 </div>
 </div>
@@ -498,7 +494,7 @@ Functions/Subroutines</h2></td></tr>
 
 <p>The subroutine 'setup_pointers' associates the MODULE flag pointers with the ARRAY flag variables for the grid active on THIS pe so the flags can be read in from the namelist. </p>
 
-<p class="definition">Definition at line <a class="el" href="fv__control_8F90_source.html#l01531">1531</a> of file <a class="el" href="fv__control_8F90_source.html">fv_control.F90</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fv__control_8F90_source.html#l01527">1527</a> of file <a class="el" href="fv__control_8F90_source.html">fv_control.F90</a>.</p>
 
 </div>
 </div>
@@ -507,7 +503,7 @@ Functions/Subroutines</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Thu Nov 14 2019 22:40:44 for FV3DYCORE by
+    <li class="footer">Generated on Wed Dec 11 2019 15:12:42 for FV3DYCORE by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
   </ul>

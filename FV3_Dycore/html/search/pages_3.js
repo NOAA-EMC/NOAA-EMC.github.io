@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['physics_2ddynamics_20coupling',['Physics-dynamics coupling',['../physics.html',1,'FV3']]],
-  ['preface',['Preface',['../preface.html',1,'FV3']]]
+  ['grid_20refinement_20techniques',['Grid refinement techniques',['../grid.html',1,'Desc']]]
 ];

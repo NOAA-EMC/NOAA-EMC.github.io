@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['the_20gfdl_20finite_2dvolume_20cubed_2dsphere_20dynamical_20core',['THE GFDL FINITE-VOLUME CUBED-SPHERE DYNAMICAL CORE',['../FV3.html',1,'']]],
   ['t11',['t11',['../namespacesw__core__mod.html#a7be5deda022e38acf1f9d7ec6bfd49e1',1,'sw_core_mod::t11()'],['../namespacetp__core__mod.html#aaad141ba3705e5defdbaa59ece28c51f',1,'tp_core_mod::t11()']]],
   ['t12',['t12',['../namespacesw__core__mod.html#aae2738361377149fdb4bc680ababd8c8',1,'sw_core_mod::t12()'],['../namespacetp__core__mod.html#a5f8e8b3c382dd0f93a01a0968b4d290c',1,'tp_core_mod::t12()']]],
   ['t13',['t13',['../namespacesw__core__mod.html#ae3b60da43af913086dbd123f1f66a649',1,'sw_core_mod::t13()'],['../namespacetp__core__mod.html#a84fa887f4b8538ed2c628be08aeea165',1,'tp_core_mod::t13()']]],
