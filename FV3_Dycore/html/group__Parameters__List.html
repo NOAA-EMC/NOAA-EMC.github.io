@@ -423,6 +423,16 @@ Functions/Subroutines</h2></td></tr>
   </table>
   </dd>
 </dl>
+<h2>A.11</h2>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">regional</td><td>Logical: Controls whether this is a regional domain (and thereby needs external BC inputs</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">bc_update_interval</td><td>Integer: Default setting for interval (hours) between external regional BC data files.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">read_increment</td><td>Logical: Read in analysis increment and add to restart following are namelist parameters for Stochastic Energy Baskscatter dissipation estimate. This is useful as part of a data-assimilation cycling system or to use native restarts from the six-tile first guess, after which the analysis increment can be applied.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">do_sat_adj</td><td>Logical: The same as fast_sat_adj = .false. has fast saturation adjustments</td></tr>
+  </table>
+  </dd>
+</dl>
 <h2 class="groupheader">Function/Subroutine Documentation</h2>
 <a id="ga1b8adec29d73938d0ce672126c20f323"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga1b8adec29d73938d0ce672126c20f323">&#9670;&nbsp;</a></span>init_nesting()</h2>
@@ -464,7 +474,7 @@ Functions/Subroutines</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="fv__control_8F90_source.html#l01403">1403</a> of file <a class="el" href="fv__control_8F90_source.html">fv_control.F90</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fv__control_8F90_source.html#l01416">1416</a> of file <a class="el" href="fv__control_8F90_source.html">fv_control.F90</a>.</p>
 
 </div>
 </div>
@@ -494,7 +504,7 @@ Functions/Subroutines</h2></td></tr>
 
 <p>The subroutine 'setup_pointers' associates the MODULE flag pointers with the ARRAY flag variables for the grid active on THIS pe so the flags can be read in from the namelist. </p>
 
-<p class="definition">Definition at line <a class="el" href="fv__control_8F90_source.html#l01527">1527</a> of file <a class="el" href="fv__control_8F90_source.html">fv_control.F90</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fv__control_8F90_source.html#l01540">1540</a> of file <a class="el" href="fv__control_8F90_source.html">fv_control.F90</a>.</p>
 
 </div>
 </div>
@@ -503,7 +513,7 @@ Functions/Subroutines</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Dec 13 2019 19:53:55 for FV3DYCORE by
+    <li class="footer">Generated on Wed Jan 22 2020 17:46:05 for FV3DYCORE by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.14 </li>
   </ul>
