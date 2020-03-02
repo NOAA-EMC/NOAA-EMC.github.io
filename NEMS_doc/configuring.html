@@ -31,7 +31,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">NEMS
-   &#160;<span id="projectnumber">release/public-v1@b7b75858c7</span>
+   &#160;<span id="projectnumber">release/public-v1@63d8808829</span>
    </div>
    <div id="projectbrief">This is a living document and may be updated at any time.</div>
   </td>
@@ -114,7 +114,12 @@ xxx_petlist_bounds: lower upper
 <li>The <code>RUN</code> method of model component <code>xxx</code> is called by specifying just <code>xxx</code> on a line. The supported values of <code>xxx</code> are the same as for the model specification above. A specific RUN phase can be provided by adding the phase label to the same line, following the model string.</li>
 <li>A connector going from component <code>xxx</code> to component <code>yyy</code> is specified by a line like this: <code>xxx -&gt; yyy</code>. An additional argument on the same line can be used to specify connection options for all of the field handled by the connector. The format and supported values of the connection options is documented in the NUOPC reference manual.</li>
 </ul>
-<p>Here is an example of a run sequence specification with two time scales: </p>
+<p>A very simple run sequence is running only the atmospheric uncoupled model. The run sequence looks like: </p>
+<pre class="fragment"># Run Sequence #
+runSeq::
+    ATM
+::
+</pre><p>A more complex example is when components are exchanging information at two time scales: </p>
 <pre class="fragment"># Run Sequence #
 runSeq::
     @7200.0
