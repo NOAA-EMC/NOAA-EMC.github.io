@@ -1,8 +1,7 @@
 var NAVTREE =
 [
   [ "NEMS", "index.html", [
-    [ "Users Guide and Reference", "documentation.html", "documentation" ],
-    [ "Relevant Links", "links.html", null ]
+    [ "Users Guide and Reference", "documentation.html", "documentation" ]
   ] ]
 ];
 

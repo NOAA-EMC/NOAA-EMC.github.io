@@ -31,7 +31,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">NEMS
-   &#160;<span id="projectnumber">release/public-v1@63d8808829</span>
+   &#160;<span id="projectnumber">release/public-v1@2be0da78d6</span>
    </div>
    <div id="projectbrief">This is a living document and may be updated at any time.</div>
   </td>
@@ -93,7 +93,7 @@ $(document).ready(function(){initNavTree('architecture.html','');});
 <div class="title">Architecture </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>The NEMS architecture is based on an ESMF component hierarchy with the application driver <code>MAIN_NEMS</code> at the top, calling into the <code>NEMS_COMP</code> component which in turn drives the <code>EARTH_COMP</code> component. The <code>EARTH_COMP</code> drives the <code>ATM</code> and other components. The architecture allows for multiple <code>EARTH_COMP</code> instances.</p>
+<div class="textblock"><p>The NEMS architecture is based on an ESMF component hierarchy with the application driver <code>MAIN_NEMS</code> at the top, calling into the <code>NEMS_COMP</code> component, which in turn drives the <code>EARTH_COMP</code> component. The <code>EARTH_COMP</code> drives the <code>ATM</code> and other components. The architecture allows for multiple <code>EARTH_COMP</code> instances.</p>
 <p>NEMS includes atmosphere, ocean, ice, wave, land, aerosol/chemistry, and hydrologic models, with coupling interface and utilities based on the <a href="https://www.earthsystemcog.org/projects/esmf/">Earth System Modeling Framework (ESMF)</a>. The NEMS applications also utilize intreopereability conventions introduced by the <a href="https://www.earthsystemcog.org/projects/nuopc/">National Unified Operational Prediction Capability (NUOPC)</a>.</p>
 <p>Key architecture features are:</p>
 <ul>

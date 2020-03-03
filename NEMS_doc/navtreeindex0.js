@@ -6,7 +6,6 @@ var NAVTREEINDEX0 =
 "documentation.html":[0],
 "index.html":[],
 "introduction.html":[0,0],
-"links.html":[1],
 "mediator.html":[0,3],
 "pages.html":[]
 };
