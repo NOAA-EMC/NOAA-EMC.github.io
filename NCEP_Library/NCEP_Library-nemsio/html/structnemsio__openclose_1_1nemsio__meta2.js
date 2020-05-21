@@ -1,0 +1,27 @@
+var structnemsio__openclose_1_1nemsio__meta2 =
+[
+    [ "dimx", "structnemsio__openclose_1_1nemsio__meta2.html#a59f9356e9c8fb6b38aedfcfb33369eba", null ],
+    [ "dimy", "structnemsio__openclose_1_1nemsio__meta2.html#a73069fc9418cf2a6f08a4ccd96e71dec", null ],
+    [ "dimz", "structnemsio__openclose_1_1nemsio__meta2.html#a22e2ae0a3789366fb3b6d6fb618c2a44", null ],
+    [ "extrameta", "structnemsio__openclose_1_1nemsio__meta2.html#ad5c06f000b68826ff407d849cd6f0456", null ],
+    [ "idate", "structnemsio__openclose_1_1nemsio__meta2.html#a0eda42474bce834a4f988fc04f5117f3", null ],
+    [ "idrt", "structnemsio__openclose_1_1nemsio__meta2.html#a6aa36ebfe2afed1a32ea41ae56577e22", null ],
+    [ "idsl", "structnemsio__openclose_1_1nemsio__meta2.html#a6be262ea59e2242f3016ec9b352c91e0", null ],
+    [ "idvc", "structnemsio__openclose_1_1nemsio__meta2.html#aeb1bbf1398d4d3481e26424396cdcdea", null ],
+    [ "idvm", "structnemsio__openclose_1_1nemsio__meta2.html#af422d234f57837885d903a7eea589e1b", null ],
+    [ "jcap", "structnemsio__openclose_1_1nemsio__meta2.html#a00cf6aea69f29dedff1f551d8c5de82a", null ],
+    [ "ncldt", "structnemsio__openclose_1_1nemsio__meta2.html#a52ee4db0a678b8fb52caa4c9764af257", null ],
+    [ "nfday", "structnemsio__openclose_1_1nemsio__meta2.html#a1a2a8071252921bba0cb9db43b83973a", null ],
+    [ "nfhour", "structnemsio__openclose_1_1nemsio__meta2.html#a7453a3d08a3f2b681b49980e2b4e6ac9", null ],
+    [ "nfminute", "structnemsio__openclose_1_1nemsio__meta2.html#a01a4cfbcea5d34b6687dfa5747db62e1", null ],
+    [ "nframe", "structnemsio__openclose_1_1nemsio__meta2.html#a5ce6b74672fe37e223c6324433a078c8", null ],
+    [ "nfsecondd", "structnemsio__openclose_1_1nemsio__meta2.html#ab6042e65501484f405cda05e52886344", null ],
+    [ "nfsecondn", "structnemsio__openclose_1_1nemsio__meta2.html#a17c02c0ec00966cd537628ea868072be", null ],
+    [ "nrec", "structnemsio__openclose_1_1nemsio__meta2.html#a4617e3e1f72c9d3fe12e188f136e0525", null ],
+    [ "nsoil", "structnemsio__openclose_1_1nemsio__meta2.html#a491e880649f66fc967da091079abfb7c", null ],
+    [ "ntrac", "structnemsio__openclose_1_1nemsio__meta2.html#ac6577188771e2510362a4e5582b0ea63", null ],
+    [ "rlat_max", "structnemsio__openclose_1_1nemsio__meta2.html#aab4d1caaf822ae3789beaa4e2636c719", null ],
+    [ "rlat_min", "structnemsio__openclose_1_1nemsio__meta2.html#aca126b3d70c643955468a7abf260de1d", null ],
+    [ "rlon_max", "structnemsio__openclose_1_1nemsio__meta2.html#a4a8ee46531c8265680f8b0ce34cf2cb8", null ],
+    [ "rlon_min", "structnemsio__openclose_1_1nemsio__meta2.html#a58b7ec881b1991c03c54f8431f936008", null ]
+];
