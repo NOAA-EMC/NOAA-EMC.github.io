@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.18"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>NCEPLIBS-w3nco: W3NCO</title>
+<title>NCEPLIBS-w3nco: README</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -102,55 +102,44 @@ $(document).ready(function(){initNavTree('md__Users_valbona_NCEP_Library_all-2w3
 
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">W3NCO </div>  </div>
+<div class="title">README </div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>This library contains Fortran 90 decoder/encoder routines for GRIB edition 1.</p>
-<p>Code manager: Boi Vuong</p>
-<h2>Prerequisites</h2>
+<p><em>Code manager: Boi Vuong</em></p>
+<h1>Prerequisites</h1>
 <p>Compilers: GNU | Intel | Clang | AppleClang</p>
-<h3>Installing</h3>
-<div class="fragment"><div class="line">Download W3NCO Code from GitHub.com</div>
-<div class="line">git clone -b w3nco_v2.2.0 https://github.com/NOAA-EMC/NCEPLIBS-w3nco.git</div>
-<div class="line">cd NCEPLIBS-w3nco</div>
-</div><!-- fragment --><h3>Create a directory where to build W3NCO library</h3>
-<div class="fragment"><div class="line">mkdir build</div>
-<div class="line">cd build</div>
-</div><!-- fragment --><h3>Load the following modules</h3>
-<div class="fragment"><div class="line">module load intel/18.0.1.163</div>
-<div class="line">module load impi/18.0.1</div>
-<div class="line">module load cmake/3.16.2</div>
-<div class="line"> </div>
-<div class="line">If the chosen compiler is not the default compiler on the system,</div>
-<div class="line">set the environment variables: export CC=..., export CXX=..., </div>
-<div class="line">export FC=..., before invoking cmake.</div>
-<div class="line"> </div>
-<div class="line">Note: Windows systems is not supported at this time.</div>
-<div class="line"> </div>
-<div class="line">export CC=icc</div>
-<div class="line">export CXX=icpc</div>
-<div class="line">export FC=ifort</div>
-</div><!-- fragment --><h3>Run cmake</h3>
-<div class="fragment"><div class="line">cmake .. -DCMAKE_INSTALL_PREFIX=path_to_install</div>
-<div class="line"> </div>
-<div class="line">make</div>
-<div class="line">make install</div>
-<div class="line"> </div>
-<div class="line">If -DCMAKE_INSTALL_PREFIX= is omitted, the libraries will be installed in directory </div>
-<div class="line">install underneath the build directory.</div>
-</div><!-- fragment --><h2>Version</h2>
+<h1>Installing</h1>
+<p>Download W3NCO Code from GitHub.com </p><pre class="fragment">git clone -b w3nco_v2.2.0 https://github.com/NOAA-EMC/NCEPLIBS-w3nco.git
+cd NCEPLIBS-w3nco
+</pre><h1>Create a directory where to build W3NCO library</h1>
+<pre class="fragment">mkdir build
+cd build
+</pre><h1>Load the following modules</h1>
+<pre class="fragment">module load intel/18.0.1.163
+module load impi/18.0.1
+module load cmake/3.16.2
+</pre><p>If the chosen compiler is not the default compiler on the system, set the environment variables: export CC=..., export CXX=..., export FC=..., before invoking cmake.</p>
+<p>Note: Windows systems is not supported at this time. </p><pre class="fragment">export CC=icc
+export CXX=icpc
+export FC=ifort
+</pre><h1>Run cmake</h1>
+<pre class="fragment">cmake .. -DCMAKE_INSTALL_PREFIX=path_to_install
+
+make
+make install
+</pre><p>If -DCMAKE_INSTALL_PREFIX= is omitted, the libraries will be installed in directory install underneath the build directory.</p>
+<h3>Version</h3>
 <p>2.2.0</p>
-<h2>Authors</h2>
-<ul>
-<li>**<a href="#" onclick="location.href='mai'+'lto:'+'NCE'+'P.'+'Lis'+'t.'+'EMC'+'.n'+'cep'+'li'+'bs.'+'De'+'vel'+'op'+'ers'+'@n'+'oaa'+'.g'+'ov'; return false;">NCEP/EMC</a>** </li>
-</ul>
+<h3>Authors</h3>
+<h3><a href="#" onclick="location.href='mai'+'lto:'+'NCE'+'P.'+'Lis'+'t.'+'EMC'+'.n'+'cep'+'li'+'bs.'+'De'+'vel'+'op'+'ers'+'@n'+'oaa'+'.g'+'ov'; return false;">NCEP/EMC</a></h3>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Jun 9 2020 18:52:10 for NCEPLIBS-w3nco by
+    <li class="footer">Generated on Wed Jun 10 2020 12:56:49 for NCEPLIBS-w3nco by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18 </li>
   </ul>

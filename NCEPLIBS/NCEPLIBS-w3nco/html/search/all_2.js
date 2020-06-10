@@ -9,9 +9,7 @@ var searchData=
   ['c_5fsum_21',['c_sum',['../structtime__data.html#a9d09f40096f4dcf3be22cc1ec88e7f9b',1,'time_data']]],
   ['c_5fwall_22',['c_wall',['../structtime__data.html#ab54df1ac7ce2f174a091b226497cc3f8',1,'time_data']]],
   ['cmakelists_2epf_23',['CMakeLists.pf',['../tests_2CMakeLists_8pf.html',1,'(Global Namespace)'],['../src_2CMakeLists_8pf.html',1,'(Global Namespace)']]],
-  ['cmakelists_2etxt_24',['CMakeLists.txt',['../CMakeLists_8txt.html',1,'']]],
-  ['collect_5finfo_2esh_25',['Collect_info.sh',['../Collect__info_8sh.html',1,'']]],
-  ['cpu_5fcomm_26',['cpu_comm',['../summary_8c.html#a9f59baa0114b00d5aa7a2816956e72cd',1,'summary.c']]],
-  ['cputim_27',['cputim',['../summary_8c.html#a85f50c91b93171e345aa393946e62aa9',1,'summary.c']]],
-  ['cmakelists_28',['CMakeLists',['../md__Users_valbona_NCEP_Library_all-2w3nco_CMakeLists.html',1,'']]]
+  ['collect_5finfo_2esh_24',['Collect_info.sh',['../Collect__info_8sh.html',1,'']]],
+  ['cpu_5fcomm_25',['cpu_comm',['../summary_8c.html#a9f59baa0114b00d5aa7a2816956e72cd',1,'summary.c']]],
+  ['cputim_26',['cputim',['../summary_8c.html#a85f50c91b93171e345aa393946e62aa9',1,'summary.c']]]
 ];

@@ -25,9 +25,8 @@
 var NAVTREE =
 [
   [ "NCEPLIBS-w3nco", "index.html", [
-    [ "W3NCO", "md__Users_valbona_NCEP_Library_all-2w3nco_README.html", null ],
+    [ "README", "md__Users_valbona_NCEP_Library_all-2w3nco_README.html", null ],
     [ "LICENSE", "md__Users_valbona_NCEP_Library_all-2w3nco_LICENSE.html", null ],
-    [ "CMakeLists", "md__Users_valbona_NCEP_Library_all-2w3nco_CMakeLists.html", null ],
     [ "Data Types List", "annotated.html", [
       [ "Data Types List", "annotated.html", "annotated_dup" ],
       [ "Data Types", "classes.html", null ],
@@ -50,8 +49,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "Analyse__args_8sh.html",
-"sbytec_8f.html#aa252e1e9e9f8808f95473792d319231b",
-"w3fi63_8f.html#a573937997ce1f78d799c52ba6812d503"
+"sbytec_8f_source.html",
+"w3fi63_8f.html#a5e07fb32acda017ce2b31674761eddb0"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

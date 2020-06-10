@@ -25,7 +25,7 @@
 var NAVTREE =
 [
   [ "NCEPLIBS-NEMSIO", "index.html", [
-    [ "README for NEMSIO", "readme.html", null ],
+    [ "README", "md__Users_valbona_NCEP_Library_all-1nemsio_Readme.html", null ],
     [ "CMakeLists", "cmake.html", null ],
     [ "LICENSE", "md__Users_valbona_NCEP_Library_all-1nemsio_LICENSE.html", null ],
     [ "Modules", "namespaces.html", [
@@ -58,7 +58,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "Analyse__args_8sh.html",
-"nemsio__openclose_8f90.html#a63dbc999e1ead4d84896d71a0a4ff267",
+"nemsio__openclose_8f90.html#a61d1d7066ddf49e0583c12b7e162fe63",
 "structnemsio__module__mpi_1_1nemsio__meta1.html#a37c7216d73c72d9548b5918ff1377c69"
 ];
 

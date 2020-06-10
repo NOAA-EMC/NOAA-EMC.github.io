@@ -1,5 +1,6 @@
 var NAVTREEINDEX1 =
 {
+"nemsio__openclose_8f90.html#a61d1d7066ddf49e0583c12b7e162fe63":[5,0,1,3,17],
 "nemsio__openclose_8f90.html#a63dbc999e1ead4d84896d71a0a4ff267":[5,0,1,3,49],
 "nemsio__openclose_8f90.html#a6458e3e69863d816fcc9d65aac29e85e":[5,0,1,3,56],
 "nemsio__openclose_8f90.html#a65c68fb6d28d7863de0ca0c4ba703c83":[5,0,1,3,61],
@@ -115,7 +116,6 @@ var NAVTREEINDEX1 =
 "read__nemsio_8f.html":[5,0,2,4],
 "read__nemsio_8f.html#a8ec2266d83cd6c0b762cbcbc92c0af3d":[5,0,2,4,0],
 "read__nemsio_8f_source.html":[5,0,2,4],
-"readme.html":[0],
 "readme2.html":[5,0,2,5],
 "readme2_source.html":[5,0,2,5],
 "run__cray_8sh.html":[5,0,2,6],
