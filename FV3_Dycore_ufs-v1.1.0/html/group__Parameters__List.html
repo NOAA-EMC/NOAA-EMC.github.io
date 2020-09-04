@@ -150,6 +150,7 @@ Functions/Subroutines</h2></td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">nudge_ic</td><td>Logical: same as nudge, but works in adiabatic solo_core simulations to nudge the field to a single external analysis file. False by default.</td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">nudge_qv</td><td>Logical: during the adiabatic initialization (na_init &gt; 0), if set to .true., the water vapor profile is nudged to an analytic fit to the HALOE climatology. This is to improve the water vapor concentrations in GFS initial conditions, especially in the stratosphere, where values can be several times higher than observed. This nudging is unnecessary for other ICs, especially the ECMWF initial conditions. .false. by default.</td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">n_zs_filter</td><td>Integer: number of times to apply a diffusive filter to the topography upon startup, if mountain is True and the model is not being cold-started. This is applied every time the model is warm-started, so if you want to smooth the topography make sure this is set to 0 after the first simulation. 0 by default. If initializing the model from cold-start the topography is already being filtered by an amount appropriate for the model resolution.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">read_increment</td><td>Logical: Read in analysis increment and add to restart following are namelist parameters for Stochastic Energy Baskscatter dissipation estimate. This is useful as part of a data-assimilation cycling system or to use native restarts from the six-tile first guess, after which the analysis increment can be applied.</td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">res_latlon_dynamics</td><td>character(len=128) If external_ic =.true. gives the filename of the input IC file. INPUT/fv_rst.res.nc by default.</td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">res_latlon_tracers</td><td>character(len=128) If external_ic =.true. and both ncep_ic and fv_diag_ic are.false., this variable gives the filename of the initial conditions for the tracers, assumed to be a legacy lat-lon FV core restart file. INPUT/atmos_tracers.res.nc by default.</td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">warm_start</td><td>Logical: whether to start from restart files, instead of cold-starting the model. True by default; if this is set to true and restart files cannot be found the model will stop.</td></tr>
@@ -160,6 +161,7 @@ Functions/Subroutines</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">agrid_vel_rst</td><td>Logical: whether to write the unstaggered latitude-longitude winds (u<sub>a</sub> and v<sub>a</sub>) to the restart files. This is useful for data assimilation cycling systems which do not handle staggered winds. .false. by default.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">bc_update_interval</td><td>Integer: Default setting for interval (hours) between external regional BC data files.</td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">check_negative</td><td>Logical: whether to print the most negative global value of microphysical tracers.</td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">fv_debug</td><td>Logical: whether to turn on additional diagnostics in fv_dynamics..false. by default.</td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">fv_land</td><td>Logical: whether to create terrain deviation and land fraction for output to mg_drag restart files, for use in mg_drag and in the land model..false. by default;.true. is recommended when, and only when, initializing the model, since the mg_drag files created provide a much more accurate terrain representation for the mountain gravity wave drag parameterization and for the land surface roughness than either computes internally. This has no effect on the representation of the terrain in the dynamics.</td></tr>
@@ -177,6 +179,7 @@ Functions/Subroutines</h2></td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">adiabatic</td><td>Logical: whether to skip any physics. If true, the physics is not called at all and there is no virtual temperature effect. False by default; this option has no effect if not running solo_core.</td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">do_Held_Suarez</td><td>Logical: whether to use Held-Suarez forcing. Requires adiabatic to be false. False by default; this option has no effect if not running solo_core.</td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">do_uni_zfull</td><td>Logical: whether to compute z_full (the height of each model layer, as opposed to z_half, the height of each model interface) as the midpoint of the layer, as is done for the nonhydrostatic solver, instead of the height of the location where <span style="text-decoration:overline">p</span> the mean pressure in the layer. This option is not available for fvGFS or the solo_core. .false. by default.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">do_sat_adj</td><td>Logical: The same as fast_sat_adj = .false. has fast saturation adjustments</td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">dnats</td><td>Integer: The number of tracers which are not to be advected by the dynamical core, but still passed into the dynamical core; the last dnats+pnats tracers in field_table are not advected. 0 by default.</td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">dwind_2d</td><td>Logical: whether to use a simpler &amp; faster algorithm for interpolating the A-grid (cell-centered) wind tendencies computed from the physics to the D-grid. Typically, the A-grid wind tendencies are first converted in 3D cartesian coordinates and then interpolated before converting back to 2D local coordinates. When this option enabled, a much simpler but less accurate 2D interpolation is used. False by default.</td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">fill</td><td>Logical: Fills in negative tracer values by taking positive tracers from the cells above and below. This option is useful when the physical parameterizations produced negatives. False by default.</td></tr>
@@ -223,6 +226,7 @@ Functions/Subroutines</h2></td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">parent_tile</td><td>Integer: number of the tile (ie. face) in which this nested grid is found in its parent. Required to be a positive value if nested = true. If the parent grid is not a cubed sphere, or itself is a nested grid, this should be set to 1. If the parent grid has been rotated (using do_schmidt) with the intent of centering the nested grid at target_lat and target_lon, then parent_tile should be set to 6. 1 by default.</td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">refinement</td><td>Integer: refinement ratio of the nested grid. This is the number of times that each coarse-grid cell face will be divided into smaller segments on the nested grid. Required to be a positive integer if nested = true. Nested grids are aligned with the coarse grid, so non-integer refinements are not permitted. 3 by default.</td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">nestupdate</td><td>Integer: type of nested-grid update to use; details are given in <a class="el" href="fv__nesting_8F90.html">model/fv_nesting.F90</a>. 0 by default.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">regional</td><td>Logical: Controls whether this is a regional domain (and thereby needs external BC inputs)</td></tr>
   </table>
   </dd>
 </dl>
@@ -386,16 +390,6 @@ Functions/Subroutines</h2></td></tr>
   </table>
   </dd>
 </dl>
-<h2>A.8</h2>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">regional</td><td>Logical: Controls whether this is a regional domain (and thereby needs external BC inputs</td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">bc_update_interval</td><td>Integer: Default setting for interval (hours) between external regional BC data files.</td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">read_increment</td><td>Logical: Read in analysis increment and add to restart following are namelist parameters for Stochastic Energy Baskscatter dissipation estimate. This is useful as part of a data-assimilation cycling system or to use native restarts from the six-tile first guess, after which the analysis increment can be applied.</td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">do_sat_adj</td><td>Logical: The same as fast_sat_adj = .false. has fast saturation adjustments</td></tr>
-  </table>
-  </dd>
-</dl>
 <h2 class="groupheader">Function/Subroutine Documentation</h2>
 <a id="ga1b8adec29d73938d0ce672126c20f323"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga1b8adec29d73938d0ce672126c20f323">&#9670;&nbsp;</a></span>init_nesting()</h2>
@@ -437,7 +431,7 @@ Functions/Subroutines</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="fv__control_8F90_source.html#l01383">1383</a> of file <a class="el" href="fv__control_8F90_source.html">fv_control.F90</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fv__control_8F90_source.html#l01380">1380</a> of file <a class="el" href="fv__control_8F90_source.html">fv_control.F90</a>.</p>
 
 </div>
 </div>
@@ -467,7 +461,7 @@ Functions/Subroutines</h2></td></tr>
 
 <p>The subroutine 'setup_pointers' associates the MODULE flag pointers with the ARRAY flag variables for the grid active on THIS pe so the flags can be read in from the namelist. </p>
 
-<p class="definition">Definition at line <a class="el" href="fv__control_8F90_source.html#l01507">1507</a> of file <a class="el" href="fv__control_8F90_source.html">fv_control.F90</a>.</p>
+<p class="definition">Definition at line <a class="el" href="fv__control_8F90_source.html#l01504">1504</a> of file <a class="el" href="fv__control_8F90_source.html">fv_control.F90</a>.</p>
 
 </div>
 </div>
@@ -476,7 +470,7 @@ Functions/Subroutines</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Thu Sep 3 2020 16:39:00 for FV3DYCORE by
+    <li class="footer">Generated on Fri Sep 4 2020 09:51:50 for FV3DYCORE by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
   </ul>
