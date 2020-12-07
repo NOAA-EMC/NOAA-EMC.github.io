@@ -35,7 +35,6 @@
    <div id="projectname">NEMS
    &#160;<span id="projectnumber">Version 2.0.0</span>
    </div>
-   <div id="projectbrief">This is a living document and may be updated at any time.</div>
   </td>
    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -96,11 +95,11 @@ $(document).ready(function(){initNavTree('architecture.html','');});
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>The NEMS architecture is based on an ESMF component hierarchy with the application driver <code>MAIN_NEMS</code> at the top, calling into the <code>NEMS_COMP</code> component, which in turn drives the <code>EARTH_COMP</code> component. The <code>EARTH_COMP</code> drives the <code>ATM</code> and other components. The architecture allows for multiple <code>EARTH_COMP</code> instances.</p>
-<p>NEMS includes atmosphere, ocean, ice, wave, land, aerosol/chemistry, and hydrologic models, with coupling interface and utilities based on the <a href="https://www.earthsystemcog.org/projects/esmf/">Earth System Modeling Framework (ESMF)</a>. The NEMS applications also utilize intreopereability conventions introduced by the <a href="https://www.earthsystemcog.org/projects/nuopc/">National Unified Operational Prediction Capability (NUOPC)</a>.</p>
+<p>NEMS includes atmosphere, ocean, ice, wave, land, aerosol/chemistry, and hydrologic models, with coupling interface and utilities based on the <a href="https://www.earthsystemmodeling.org">Earth System Modeling Framework (ESMF)</a>. The NEMS applications also utilize intreopereability conventions introduced by the <a href="https://www.earthsystemmodeling.org/nuopc/">National Unified Operational Prediction Capability (NUOPC)</a>.</p>
 <p>Key architecture features are:</p>
 <ul>
 <li>Data exchanges between major model components go through a central (NEMS) mediator component. There may be additional specialized mediators (e.g. for the 3D interactions associated with space weather coupling).</li>
-<li>The NEMS mediator component is an integral part of the NEMS software. The mediator source code is managed alongside the NEMS source code, is integrated into the NEMS make system and is built when the NEMS executable is built.</li>
+<li>The NEMS mediator component is an integral part of the NEMS software. The mediator source code is managed alongside the NEMS source code and is built when the NEMS executable is built.</li>
 <li>Component models are treated by NEMS as external dependencies. Their source code is managed outside of NEMS, typically in the proximity of the organization maintaining the official version of the model. Each model maintains its own separate make system with a NUOPC compliant build option. NEMS requires that the pre-built models are available when the NEMS executable is being built.</li>
 <li>All of the components driven by they EARTH_COMP are NUOPC-compliant components.</li>
 <li>All of the components driven by they EARTH_COMP can be configured to run on a specific set of PETs (MPI processes), supporting concurrent or sequential component execution.</li>
