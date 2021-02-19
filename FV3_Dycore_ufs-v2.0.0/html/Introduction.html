@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1. Introduction &#8212; UFS Weather Model Users Guide  documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="2. Code Overview" href="CodeOverview.html" />
+    <link rel="prev" title="Welcome to the UFS Weather Model User’s Guide" href="index.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="CodeOverview.html" title="2. Code Overview"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to the UFS Weather Model User’s Guide"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">UFS Weather Model Users Guide  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><span class="section-number">1. </span>Introduction</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="introduction">
+<span id="id1"></span><h1><span class="section-number">1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<p>The Unified Forecast System (<a class="reference internal" href="Glossary.html#term-UFS"><span class="xref std std-term">UFS</span></a>) <a class="reference internal" href="Glossary.html#term-Weather-Model"><span class="xref std std-term">Weather Model</span></a> (WM) is a prognostic model that can be
+used for short- and medium-range research and operational forecasts, as exemplified by
+its use in the operational Global Forecast System (GFS) of the National Oceanic and
+Atmospheric Administration (NOAA). The UFS WM v2.0 is the latest public release of this
+software and represents a snapshot of a continuously evolving system undergoing open
+development. More information about the UFS can be found in its portal at <a class="reference external" href="https://ufscommunity.org/">https://ufscommunity.org/</a>.</p>
+<p>Key architectural elements of the UFS WM, along with links to external detailed documentation
+for those elements, are listed below:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://noaa-emc.github.io/FV3_Dycore_ufs-v2.0.0/html/index.html">The Finite-Volume Cubed-Sphere (FV3) dynamical core</a>.</p></li>
+<li><p><a class="reference external" href="https://www.gfdl.noaa.gov/fms/">The Flexible Modeling System</a> (<a class="reference internal" href="Glossary.html#term-FMS"><span class="xref std std-term">FMS</span></a>), a software infrastructure used for functions such as
+parallelization.</p></li>
+<li><p><a class="reference external" href="https://dtcenter.org/community-code/common-community-physics-package-ccpp">The Common-Community Physics Package</a> (<a class="reference internal" href="Glossary.html#term-CCPP"><span class="xref std std-term">CCPP</span></a>), a library of
+physical parameterizations and the framework to use it with the model. <a class="reference internal" href="Glossary.html#term-Parameterization-or-physics-scheme"><span class="xref std std-term">Parameterization or physics scheme</span></a> is defined here.</p></li>
+<li><p><a class="reference external" href="https://stochastic-physics.readthedocs.io/en/ufs-v2.0.0/">The stochastic physics capability</a>, including the Stochastic Kinetic Backscatter Scheme (SKEBS),
+the Stochastically Perturbed Parameterization Tendencies (SPPT) scheme, the perturbed boundary
+layer humidity (SHUM) scheme, and the cellular automata method.</p></li>
+<li><p><a class="reference external" href="https://noaa-emc.github.io/NEMS_doc_ufs-v2.0.0/index.html">The NOAA Environmental Modeling System</a> (<a class="reference internal" href="Glossary.html#term-NEMS"><span class="xref std std-term">NEMS</span></a>) model driver used to create the main program.</p></li>
+<li><dl class="simple">
+<dt>The libraries needed to build the system, such as:</dt><dd><ul>
+<li><p><a class="reference external" href="https://github.com/NOAA-EMC/NCEPLIBS/wiki">National Centers for Environmental Prediction (NCEP) Libraries</a></p></li>
+<li><p><a class="reference external" href="https://www.earthsystemcog.org/projects/esmf/">Earth System Modeling Framework (ESMF)</a></p></li>
+<li><p><a class="reference external" href="https://github.com/NOAA-EMC/NCEPLIBS-external/wiki">External libraries</a></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>The build system used to compile the code and generate the executable.</p></li>
+<li><p>The regression tests used to maintain software integrity as innovations are added.</p></li>
+</ul>
+<p>The UFS Weather Model is currently included in two UFS Application releases.  These UFS Apps also contain pre- and post-processing components, a comprehensive build system, and workflows for configuration and execution of the application.</p>
+<p>The UFS WM v2.0 is included as part of the UFS Short Range Weather App, and details can be found <a class="reference external" href="https://ufs-srweather-app.readthedocs.io/en/ufs-v1.0.0">here</a>.</p>
+<p>The UFS WM v1.1 and v1.0 is included as part of the UFS Medium Range Weather App, and details can be found <a class="reference external" href="https://ufs-mrweather-app.readthedocs.io/en/ufs-v1.1.0">here</a>.</p>
+<p>The UFS WM v2 code is portable and can be used with Linux and Mac operating systems with Intel and GNU compilers. It has been tested in a variety of platforms widely used by atmospheric scientists, such as the NOAA research Hera system, the National Center for Atmospheric Research (NCAR) Cheyenne system, the National Science Foundation Stampede system, and Mac laptops.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>At this time, the following aspects are unsupported:  configurations in which a mediator is used to couple the atmospheric model to models of other earth domains (such as ocean, ice, and waves), horizontal resolutions other than the supported ones, different number or placement of vertical levels, the <em>cellular automata</em> stochastic scheme, and the use of different file formats for input and output.  It is expected that the UFS WM supported capabilities will be expanded in future releases.</p>
+</div>
+<p>Those wishing to contribute development to the UFS WM should become familiar with the procedures for running the model as a standalone component and for executing the regression tests described in the UFS WM GitHub <a class="reference external" href="https://github.com/ufs-community/ufs-weather-model/wiki/Making-code-changes-in-the-UFS-weather-model-and-its-subcomponents">wiki</a> to make sure no inadvertent changes to the results have been introduced during the development process.</p>
+<p>Support for the UFS WM is provided through the <a class="reference external" href="https://forums.ufscommunity.org/forum/ufs-weather-model">UFS Forum</a> by the Developmental Testbed Center (DTC) and other groups involved in UFS development, such as NOAA’s Environmental Modeling Center (EMC), NOAA research laboratories (GFDL, NSSL, ESRL, and AOML), and NCAR. UFS users and developers are encouraged not only to post questions, but also to help address questions posted by other members of the community.</p>
+<p>This WM User’s Guide is organized as follows:</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="CodeOverview.html#codeoverview"><span class="std std-numref">Chapter 2</span></a> (Code Overview) provides a description of the various
+code repositories from which source code is pulled and an overview of the directory structure.</p></li>
+<li><p><a class="reference internal" href="BuildingAndRunning.html#buildingandrunning"><span class="std std-numref">Chapter 3</span></a> (Building and Running the WM) explains how to use the WM without an application.</p></li>
+<li><p><a class="reference internal" href="InputsOutputs.html#inputsoutputs"><span class="std std-numref">Chapter 4</span></a> (Inputs and Outputs) lists the model inputs and outputs
+and has a description of the key files.</p></li>
+<li><p><a class="reference internal" href="FAQ.html#faq"><span class="std std-numref">Chapter 5</span></a> (FAQ) lists frequently asked questions and answers.</p></li>
+</ul>
+<p>Finally, <a class="reference internal" href="Acronyms.html#acronyms"><span class="std std-numref">Chapters 6</span></a> and <a class="reference internal" href="Glossary.html#glossary"><span class="std std-numref">7</span></a> contain a list of acronyms and a glossary, respectively.</p>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Welcome to the UFS Weather Model User’s Guide</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="CodeOverview.html"
+                        title="next chapter"><span class="section-number">2. </span>Code Overview</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/Introduction.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="CodeOverview.html" title="2. Code Overview"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Welcome to the UFS Weather Model User’s Guide"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">UFS Weather Model Users Guide  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><span class="section-number">1. </span>Introduction</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.1.
+    </div>
+  </body>
+</html>

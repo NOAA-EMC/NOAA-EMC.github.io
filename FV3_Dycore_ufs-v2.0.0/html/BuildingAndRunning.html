@@ -1,0 +1,315 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3. Building and Running the UFS Weather Model &#8212; UFS Weather Model Users Guide  documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="4. Inputs and Outputs" href="InputsOutputs.html" />
+    <link rel="prev" title="2. Code Overview" href="CodeOverview.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="InputsOutputs.html" title="4. Inputs and Outputs"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="CodeOverview.html" title="2. Code Overview"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">UFS Weather Model Users Guide  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><span class="section-number">3. </span>Building and Running the UFS Weather Model</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="building-and-running-the-ufs-weather-model">
+<span id="buildingandrunning"></span><h1><span class="section-number">3. </span>Building and Running the UFS Weather Model<a class="headerlink" href="#building-and-running-the-ufs-weather-model" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="prerequisite-libraries">
+<h2><span class="section-number">3.1. </span>Prerequisite Libraries<a class="headerlink" href="#prerequisite-libraries" title="Permalink to this headline">¶</a></h2>
+<p>The UFS Weather Model requires a number of libraries for it to compile.
+There are two categories of libraries that are needed:</p>
+<ol class="arabic simple">
+<li><p>Bundled libraries (NCEPLIBS). These are libraries developed for use with NOAA weather models.
+Most have an NCEPLIBS prefix in the repository, e.g. NCEPLIBS-bacio. Select tools from the UFS
+Utilities repository (UFS-UTILS) are also included in this category. A list of the bundled
+libraries tested with this WM release is in the top-level <code class="docutils literal notranslate"><span class="pre">README</span></code> of the <a class="reference external" href="https://github.com/NOAA-EMC/NCEPLIBS/tree/ufs-v2.0.0">NCEPLIBS repository</a> (<strong>be sure to look at the tag in that repository that
+matches the tag on this WM release</strong>).</p></li>
+<li><p>Third-party libraries (NCEPLIBS-external). These are libraries that were developed external to
+the UFS Weather Model. They are general software packages that are also used by other models in
+the community. Building these is optional, since existing builds of these libraries can be pointed
+to instead. A list of the external libraries tested with this WM release is in the top-level <code class="docutils literal notranslate"><span class="pre">README</span></code>
+of the <a class="reference external" href="https://github.com/NOAA-EMC/NCEPLIBS-external/tree/ufs-v2.0.0">NCEPLIBS-external repository</a>. Again, be
+sure to look at the tag in that repository that matches the tag on this WM release.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The libraries in NCEPLIBS-external must be built <em>before</em> the libraries in NCEPLIBS.</p>
+</div>
+<p>See this <a class="reference external" href="https://github.com/ufs-community/ufs/wiki/Supported-Platforms-and-Compilers">wiki link</a> for
+an explanation of which platforms and compilers are supported. This will help to determine if you need
+to build NCEPLIBS and NCEPLIBS-external or are working on a system that is already pre-configured. On
+pre-configured platforms, the libraries are already available.</p>
+<p>If you do have to build the libraries, it is a good idea to check the platform- and compiler-specific
+<code class="docutils literal notranslate"><span class="pre">README</span></code> files in the doc/ directory of the <a class="reference external" href="https://github.com/NOAA-EMC/NCEPLIBS-external/tree/ufs-v2.0.0">NCEPLIBS-external repository</a>
+as a first step, to see if your system or one similar to it is included. These files have detailed
+instructions for building NCEPLIBS-external, NCEPLIBS, and the UFS Weather Model. They may be all the
+documentation you need. Be sure to use the tag that corresponds to this version of the WM, and define a
+WORK directory path before you get started.</p>
+<p>If your platform is not included in these platform- and compiler-specific <code class="docutils literal notranslate"><span class="pre">README</span></code> files, there is a more
+generic set of instructions in the <code class="docutils literal notranslate"><span class="pre">README</span></code> file at the top level of the <a class="reference external" href="https://github.com/NOAA-EMC/NCEPLIBS-external/tree/ufs-v2.0.0">NCEPLIBS-external repository</a>, and at the top level of the <a class="reference external" href="https://github.com/NOAA-EMC/NCEPLIBS/tree/ufs-v2.0.0">NCEPLIBS repository</a>. It may still be a good idea to look at some of the platform-
+and compiler-specific <code class="docutils literal notranslate"><span class="pre">README</span></code> files as a guide. Again, be sure to use the tag that corresponds to this version of the WM.</p>
+<p>The top-level <code class="docutils literal notranslate"><span class="pre">README</span></code> in the NCEPLIBS-external repository includes a troubleshooting section that may be helpful.</p>
+<p>You can also get expert help through a <a class="reference external" href="https://forums.ufscommunity.org/forum/build-dependencies">user support forum</a>
+set up specifically for issues related to build dependencies.</p>
+</div>
+<div class="section" id="downloading-the-weather-model-code">
+<span id="downloadingwmcode"></span><h2><span class="section-number">3.2. </span>Downloading the Weather Model Code<a class="headerlink" href="#downloading-the-weather-model-code" title="Permalink to this headline">¶</a></h2>
+<p>To clone the ufs-weather-model repository for this v2.0.0 release, execute the following commands:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">git clone https://github.com/ufs-community/ufs-weather-model.git ufs-weather-model</span>
+<span class="go">cd ufs-weather-model</span>
+<span class="go">git checkout ufs-v2.0.0</span>
+<span class="go">git submodule update --init --recursive</span>
+</pre></div>
+</div>
+<p>Compiling the model will take place within the <cite>ufs-weather-model</cite> directory you just created.</p>
+</div>
+<div class="section" id="building-the-weather-model">
+<h2><span class="section-number">3.3. </span>Building the Weather Model<a class="headerlink" href="#building-the-weather-model" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="setting-environment-variables-for-nceplibs-nceplibs-external-and-cmake">
+<h3><span class="section-number">3.3.1. </span>Setting environment variables for NCEPLIBS, NCEPLIBS-external and CMake<a class="headerlink" href="#setting-environment-variables-for-nceplibs-nceplibs-external-and-cmake" title="Permalink to this headline">¶</a></h3>
+<p>You will need to make sure that the WM has the paths to the libraries that it requires. In order to do
+that, these environment variables need to be set, as shown in <a class="reference internal" href="#reqlibenvvar"><span class="std std-numref">Table 3.1</span></a> and
+<a class="reference internal" href="#reqlibenvvar2"><span class="std std-numref">Table 3.2</span></a> for the bash shell.</p>
+<span id="reqlibenvvar"></span><table class="docutils align-default" id="id5">
+<caption><span class="caption-number">Table 3.1 </span><span class="caption-text"><em>Bundled libraries (NCEPLIBS) required for the Weather Model</em></span><a class="headerlink" href="#id5" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 78%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>NCEP Library</strong></p></th>
+<th class="head"><p><strong>Environment Variables</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>nemsio</p></td>
+<td><p>export NEMSIO_INC=&lt;path_to_nemsio_include_dir&gt;</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>export NEMSIO_LIB=&lt;path_to_nemsio_lib_dir&gt;/libnemsio&lt;version&gt;.a</p></td>
+</tr>
+<tr class="row-even"><td><p>bacio</p></td>
+<td><p>export BACIO_LIB4=&lt;path_to_bacio_lib_dir&gt;/libbacio&lt;version&gt;.a</p></td>
+</tr>
+<tr class="row-odd"><td><p>splib</p></td>
+<td><p>export SP_LIBd=&lt;path_to_sp_lib_dir&gt;/libsp&lt;version&gt;_d.a</p></td>
+</tr>
+<tr class="row-even"><td><p>w3emc</p></td>
+<td><p>export W3EMC_LIBd=&lt;path_to_w3emc_lib_dir&gt;/libw3emc&lt;version&gt;_d.a</p></td>
+</tr>
+<tr class="row-odd"><td><p>w3nco</p></td>
+<td><p>export W3NCO_LIBd=&lt;path_to_w3nco_lib_dir&gt;/libw3nco&lt;version&gt;_d.a</p></td>
+</tr>
+</tbody>
+</table>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<span id="reqlibenvvar2"></span><table class="docutils align-default" id="id6">
+<caption><span class="caption-number">Table 3.2 </span><span class="caption-text"><em>Third-party libraries (NCEPLIBS-external) required for the Weather Model</em></span><a class="headerlink" href="#id6" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 74%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>Library</strong></p></th>
+<th class="head"><p><strong>Environment Variables</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>NetCDF</p></td>
+<td><p>export NETCDF=&lt;path_to_netcdf_install_dir&gt;</p></td>
+</tr>
+<tr class="row-odd"><td><p>ESMF</p></td>
+<td><p>export ESMFMKFILE=&lt;path_to_esmfmk_file&gt;/esmf.mk</p></td>
+</tr>
+</tbody>
+</table>
+<p>The following are a few different ways to set the required environment variables to the correct values.
+If you are running on one of the <a class="reference external" href="https://github.com/ufs-community/ufs/wiki/Supported-Platforms-and-Compilers">pre-configured platforms</a>, you can set them using
+modulefiles.  Modulefiles for all supported platforms are located in <code class="docutils literal notranslate"><span class="pre">modulefiles/&lt;platform&gt;/fv3</span></code>. To
+load the modules from the <cite>ufs-weather-model</cite> directory on hera:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cd modulefiles/hera.intel</span>
+<span class="go">module use $(pwd)</span>
+<span class="go">module load fv3</span>
+<span class="go">cd ../..</span>
+</pre></div>
+</div>
+<p>Note that loading this module file will also set the CMake environment variables shown in
+<a class="reference internal" href="#cmakeenv"><span class="std std-numref">Table 3.3</span></a>.</p>
+<span id="cmakeenv"></span><table class="docutils align-default" id="id7">
+<caption><span class="caption-number">Table 3.3 </span><span class="caption-text"><em>CMake environment variables required to configure the build for the Weather Model</em></span><a class="headerlink" href="#id7" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 49%" />
+<col style="width: 24%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p><strong>EnvironmentVariable</strong></p></th>
+<th class="head"><p><strong>Description</strong></p></th>
+<th class="head"><p><strong>Hera Intel Value</strong></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>CMAKE_C_COMPILER</p></td>
+<td><p>Name of C compiler</p></td>
+<td><p>mpiicc</p></td>
+</tr>
+<tr class="row-odd"><td><p>CMAKE_CXX_COMPILER</p></td>
+<td><p>Name of C++ compiler</p></td>
+<td><p>mpiicpc</p></td>
+</tr>
+<tr class="row-even"><td><p>CMAKE_Fortran_COMPILER</p></td>
+<td><p>Name of Fortran compiler</p></td>
+<td><p>mpiifort</p></td>
+</tr>
+<tr class="row-odd"><td><p>CMAKE_Platform</p></td>
+<td><p>String containing platform and compiler name</p></td>
+<td><p>hera.intel</p></td>
+</tr>
+</tbody>
+</table>
+<p>If you are not running on one of the pre-configured platforms, you will need to set the environment variables
+in a different way.</p>
+<p>If you used one of the platform- and compiler-specific <code class="docutils literal notranslate"><span class="pre">README</span></code> files in the <code class="docutils literal notranslate"><span class="pre">doc/</span></code> directory of NCEPLIBS-external
+to build the prerequisite libraries, there is a script in the <code class="docutils literal notranslate"><span class="pre">NCEPLIBS-ufs-v2.0.0/bin</span></code> directory called
+<code class="docutils literal notranslate"><span class="pre">setenv_nceplibs.sh</span></code> that will set the NCEPLIBS-external variables for you.</p>
+<p>Of course, you can also set the values of these variables yourself if you know where the paths are on your system.</p>
+</div>
+<div class="section" id="setting-the-ccpp-suites-environment-variable">
+<h3><span class="section-number">3.3.2. </span>Setting the CCPP_SUITES environment variable<a class="headerlink" href="#setting-the-ccpp-suites-environment-variable" title="Permalink to this headline">¶</a></h3>
+<p>In order to have one or more CCPP physics suites available at runtime, you need to select those suites at
+build time by setting the <code class="docutils literal notranslate"><span class="pre">CCPP_SUITES</span></code> environment variable. Multiple suites can be set, as shown below
+in an example for the bash shell:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">export CCPP_SUITES=&quot;FV3_GFS_v15p2,FV3_GFS_v16beta&quot;</span>
+</pre></div>
+</div>
+<p>If <code class="docutils literal notranslate"><span class="pre">CCPP_SUITES</span></code> is not set, the default is set to <code class="docutils literal notranslate"><span class="pre">‘FV3_GFS_v15p2’</span></code> in <code class="docutils literal notranslate"><span class="pre">build.sh</span></code>.</p>
+</div>
+<div class="section" id="building-the-model">
+<h3><span class="section-number">3.3.3. </span>Building the model<a class="headerlink" href="#building-the-model" title="Permalink to this headline">¶</a></h3>
+<p>The UFS Weather Model uses the CMake build system.  There is a build script called <code class="docutils literal notranslate"><span class="pre">build.sh</span></code> in the
+top-level directory of the WM repository that configures the build environment and runs the <code class="docutils literal notranslate"><span class="pre">make</span></code>
+command.  This script also checks that all necessary environment variables have been set.</p>
+<p>If any of the environment variables have not been set, the <code class="docutils literal notranslate"><span class="pre">build.sh</span></code> script will exit with a message similar to:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">./build.sh: line 11: CMAKE_Platform: Please set the CMAKE_Platform environment variable, e.g. [macosx.gnu|linux.gnu|linux.intel|hera.intel|...]</span>
+</pre></div>
+</div>
+<p>The WM can be built by running the following command from the <cite>ufs-weather-model</cite> directory:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">./build.sh</span>
+</pre></div>
+</div>
+<p>Once <code class="docutils literal notranslate"><span class="pre">build.sh</span></code> is finished, you should see the executable, named <code class="docutils literal notranslate"><span class="pre">ufs_weather_model</span></code>, in the top-level directory.</p>
+<p>Expert help is available through a <a class="reference external" href="https://forums.ufscommunity.org/forum/ufs-weather-model">user support forum</a>
+set up specifically for issues related to the Weather Model.</p>
+</div>
+</div>
+<div class="section" id="running-the-model">
+<h2><span class="section-number">3.4. </span>Running the model<a class="headerlink" href="#running-the-model" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference external" href="https://github.com/ufs-community/ufs-weather-model/wiki">UFS Weather Model wiki</a> includes a simple
+test case that illustrates how the model can be run.</p>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">3. Building and Running the UFS Weather Model</a><ul>
+<li><a class="reference internal" href="#prerequisite-libraries">3.1. Prerequisite Libraries</a></li>
+<li><a class="reference internal" href="#downloading-the-weather-model-code">3.2. Downloading the Weather Model Code</a></li>
+<li><a class="reference internal" href="#building-the-weather-model">3.3. Building the Weather Model</a><ul>
+<li><a class="reference internal" href="#setting-environment-variables-for-nceplibs-nceplibs-external-and-cmake">3.3.1. Setting environment variables for NCEPLIBS, NCEPLIBS-external and CMake</a></li>
+<li><a class="reference internal" href="#setting-the-ccpp-suites-environment-variable">3.3.2. Setting the CCPP_SUITES environment variable</a></li>
+<li><a class="reference internal" href="#building-the-model">3.3.3. Building the model</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#running-the-model">3.4. Running the model</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="CodeOverview.html"
+                        title="previous chapter"><span class="section-number">2. </span>Code Overview</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="InputsOutputs.html"
+                        title="next chapter"><span class="section-number">4. </span>Inputs and Outputs</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/BuildingAndRunning.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="InputsOutputs.html" title="4. Inputs and Outputs"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="CodeOverview.html" title="2. Code Overview"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">UFS Weather Model Users Guide  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><span class="section-number">3. </span>Building and Running the UFS Weather Model</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.1.
+    </div>
+  </body>
+</html>
