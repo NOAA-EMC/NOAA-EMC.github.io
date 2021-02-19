@@ -1,0 +1,274 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5. FAQ &#8212; UFS Weather Model Users Guide  documentation</title>
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css" />
+    
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="6. Acronyms" href="Acronyms.html" />
+    <link rel="prev" title="4. Inputs and Outputs" href="InputsOutputs.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="Acronyms.html" title="6. Acronyms"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="InputsOutputs.html" title="4. Inputs and Outputs"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">UFS Weather Model Users Guide  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><span class="section-number">5. </span>FAQ</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="faq">
+<span id="id1"></span><h1><span class="section-number">5. </span>FAQ<a class="headerlink" href="#faq" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="how-do-i-build-and-run-a-single-test-of-the-ufs-weather-model">
+<h2><span class="section-number">5.1. </span>How do I build and run a single test of the UFS Weather Model?<a class="headerlink" href="#how-do-i-build-and-run-a-single-test-of-the-ufs-weather-model" title="Permalink to this headline">¶</a></h2>
+<p>An efficient way to build and run the UFS Weather Model is to use the regression test
+(<code class="docutils literal notranslate"><span class="pre">rt.sh</span></code>).  This script is widely used by model developers on Tier 1 and 2 platforms
+and is described in the UFS WM GitHub <a class="reference external" href="https://github.com/ufs-community/ufs-weather-model/wiki/Making-code-changes-in-the-UFS-weather-model-and-its-subcomponents">wiki</a>.  The advantages to this approach are:</p>
+<ul class="simple">
+<li><p>It does not require a workflow, pre- or post-processing steps.</p></li>
+<li><p>The batch submission script is generated.</p></li>
+<li><p>Any required input data is already available for machines used by the regression test.</p></li>
+<li><p>Once the <code class="docutils literal notranslate"><span class="pre">rt.sh</span></code> test completes, you will have a working copy in your run directory
+where you can make modifications to the namelist and other files, and then re-run the
+executable.</p></li>
+</ul>
+<p>The steps are:</p>
+<ol class="arabic">
+<li><p>Clone the source code and all the submodules as described in <a class="reference internal" href="BuildingAndRunning.html#downloadingwmcode"><span class="std std-numref">Section 3.2</span></a>, then
+go into the <code class="docutils literal notranslate"><span class="pre">tests</span></code> directory:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">cd ufs-weather-model (or the top level where you checked out the code)</span>
+<span class="go">cd tests</span>
+</pre></div>
+</div>
+</li>
+<li><p>Find a configure (<code class="docutils literal notranslate"><span class="pre">*.conf</span></code>) file that contains the machine and compiler you are using. For this
+example, the Intel compiler on Cheyenne is used.  To create a custom configure file, two lines are
+needed:  a <code class="docutils literal notranslate"><span class="pre">COMPILE</span></code> line and a <code class="docutils literal notranslate"><span class="pre">RUN</span></code> line.   The <code class="docutils literal notranslate"><span class="pre">COMPILE</span></code> line should contain the name
+of the machine and compiler <code class="docutils literal notranslate"><span class="pre">cheyenne.intel</span></code> and the desired <code class="docutils literal notranslate"><span class="pre">SUITES</span></code> for the build.  Choose a
+<code class="docutils literal notranslate"><span class="pre">RUN</span></code> line under this <code class="docutils literal notranslate"><span class="pre">COMPILE</span></code> command that uses the desired <code class="docutils literal notranslate"><span class="pre">SUITE</span></code>.  For example:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">COMPILE | 32BIT=Y CCPP=Y STATIC=Y SUITES=FV3_GFS_v15p2,FV3_GFS_v16beta,FV3_GFS_v15p2_no_nsst,FV3_GFS_v16beta_no_nsst                     | standard    | cheyenne.intel | fv3</span>
+<span class="go">RUN     | fv3_ccpp_gfs_v16beta                                                                                                           | standard    |                | fv3         |</span>
+</pre></div>
+</div>
+<p>Put these two lines into a file called <code class="docutils literal notranslate"><span class="pre">my_test.conf</span></code>.  The parameters used in this run can be
+found in the <code class="docutils literal notranslate"><span class="pre">fv3_ccpp_gfs_v16beta</span></code> file in the <code class="docutils literal notranslate"><span class="pre">ufs-weather-model/tests/tests</span></code> directory.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>These two lines are long and may not appear in entirety in your browser. Scroll to the right to see
+the entire line.</p>
+</div>
+</li>
+<li><p>Modify the <code class="docutils literal notranslate"><span class="pre">rt.sh</span></code> script to put the output in a run directory where you have write permission:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">if [[ $MACHINE_ID = cheyenne.* ]]; then stanza:</span>
+<span class="go">...</span>
+<span class="go">dprefix=/glade/scratch</span>
+</pre></div>
+</div>
+<p>This works for Cheyenne, since <code class="docutils literal notranslate"><span class="pre">$USER/FV3_RT</span></code> will be appended.  Also check that <code class="docutils literal notranslate"><span class="pre">RTPWD</span></code>
+points to a diretory that exists:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">if [[ $MACHINE_ID = cheyenne.* ]]; then</span>
+<span class="go">  RTPWD=${RTPWD:-$DISKNM/ufs-public-release-20200224/${COMPILER^^}}</span>
+</pre></div>
+</div>
+</li>
+<li><p>Run the <code class="docutils literal notranslate"><span class="pre">rt.sh</span></code> script from the <code class="docutils literal notranslate"><span class="pre">tests</span></code> directory:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">./rt.sh -k -l my_test.conf &gt;&amp; my_test.out &amp;</span>
+</pre></div>
+</div>
+<p>Check <code class="docutils literal notranslate"><span class="pre">my_test.out</span></code> for build and run status, plus other standard output. Check
+<code class="docutils literal notranslate"><span class="pre">/glade/scratch/$USER/FV3_RT/rt_PID</span></code> for the model run, where <code class="docutils literal notranslate"><span class="pre">PID</span></code> is a process ID.
+The build will take about 10-15 minutes and the run will be fast, depending on how long
+it waits in the queue.  A message <code class="docutils literal notranslate"><span class="pre">&quot;REGRESSION</span> <span class="pre">TEST</span> <span class="pre">WAS</span> <span class="pre">SUCCESSFUL&quot;</span></code> will be written to this
+file, along with other entertainment: <code class="docutils literal notranslate"><span class="pre">'Elapsed</span> <span class="pre">time:</span> <span class="pre">00h:14m:12s.</span> <span class="pre">Have</span> <span class="pre">a</span> <span class="pre">nice</span> <span class="pre">day!'</span></code>.</p>
+</li>
+<li><p>When the build and run are complete, modify the namelist or <code class="docutils literal notranslate"><span class="pre">model_configure</span></code> files
+and re-run by submitting the <code class="docutils literal notranslate"><span class="pre">job_card</span></code> file:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">qsub job_card</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="how-do-i-change-the-length-of-the-model-run">
+<h2><span class="section-number">5.2. </span>How do I change the length of the model run?<a class="headerlink" href="#how-do-i-change-the-length-of-the-model-run" title="Permalink to this headline">¶</a></h2>
+<p>In your run directory, there is a file named <code class="docutils literal notranslate"><span class="pre">model_configure</span></code>.  Change the
+variable <code class="docutils literal notranslate"><span class="pre">nhours_fcst</span></code> to the desired number of hours.</p>
+</div>
+<div class="section" id="how-do-i-select-the-file-format-for-the-model-output-netcdf-or-nemsio">
+<h2><span class="section-number">5.3. </span>How do I select the file format for the model output (netCDF or NEMSIO)?<a class="headerlink" href="#how-do-i-select-the-file-format-for-the-model-output-netcdf-or-nemsio" title="Permalink to this headline">¶</a></h2>
+<p>In your run directory, there is a file named <code class="docutils literal notranslate"><span class="pre">model_configure</span></code>.  Change the
+variable <code class="docutils literal notranslate"><span class="pre">output_file</span></code> to <code class="docutils literal notranslate"><span class="pre">'netcdf'</span></code> or <code class="docutils literal notranslate"><span class="pre">'nemsio'</span></code>. The variable <code class="docutils literal notranslate"><span class="pre">output_file</span></code>
+is only valid when the write component is activated by setting <code class="docutils literal notranslate"><span class="pre">quilting</span></code> to .true.
+in the <code class="docutils literal notranslate"><span class="pre">model_configure</span></code> file.</p>
+</div>
+<div class="section" id="how-do-i-set-the-output-history-interval">
+<h2><span class="section-number">5.4. </span>How do I set the output history interval?<a class="headerlink" href="#how-do-i-set-the-output-history-interval" title="Permalink to this headline">¶</a></h2>
+<p>The interval at which output (history) files are written is controlled in two
+places, and depends on whether you are using the write component to generate your output files.
+<a class="reference internal" href="#outputcontrol"><span class="std std-numref">Table 5.1</span></a> describes the relevant variables.  If the write_component is used, then the variables listed as <em>model_configure</em> are required.  It is however, also required that the settings in <em>input.nml</em> match those same settings in <em>model_configure</em>.  If these settings are inconsistent, then unpredictable output files and intervals may occur!</p>
+<span id="outputcontrol"></span><table class="colwidths-given docutils align-default" id="id2">
+<caption><span class="caption-number">Table 5.1 </span><span class="caption-text"><em>Namelist variables used to control the output file frequency.</em></span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 23%" />
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 46%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Namelist variable</p></th>
+<th class="head"><p>Location</p></th>
+<th class="head"><p>Default Value</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>fdiag</p></td>
+<td><p>input.nml</p></td>
+<td><p>0</p></td>
+<td><p>Array with dimension <code class="docutils literal notranslate"><span class="pre">maxhr</span></code> = 4096 listing the diagnostic output times (in hours) for the GFS physics.
+This can either be a list of times after initialization, or an interval if only the first entry is
+nonzero. The default setting of 0 will result in no outputs.</p></td>
+</tr>
+<tr class="row-odd"><td><p>fhmax</p></td>
+<td><p>input.nml</p></td>
+<td><p>384</p></td>
+<td><p>The maximal forecast time for output.</p></td>
+</tr>
+<tr class="row-even"><td><p>fhmaxhf</p></td>
+<td><p>input.nml</p></td>
+<td><p>120</p></td>
+<td><p>The maximal forecast hour for high frequency output.</p></td>
+</tr>
+<tr class="row-odd"><td><p>fhout</p></td>
+<td><p>input.nml</p></td>
+<td><p>3</p></td>
+<td><p>Output frequency during forecast time from 0 to <code class="docutils literal notranslate"><span class="pre">fhmax</span></code>, or from <code class="docutils literal notranslate"><span class="pre">fhmaxhf</span></code> to <code class="docutils literal notranslate"><span class="pre">fhmax</span></code> if <code class="docutils literal notranslate"><span class="pre">fhmaxf&gt;0</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p>fhouthf</p></td>
+<td><p>input.nml</p></td>
+<td><p>1</p></td>
+<td><p>The high frequency output frequency during the forecast time from 0 to <code class="docutils literal notranslate"><span class="pre">fhmaxhf</span></code> hour.</p></td>
+</tr>
+<tr class="row-odd"><td><p>nfhmax_hf</p></td>
+<td><p>model_configure</p></td>
+<td><p>0</p></td>
+<td><p>forecast length of high history file</p></td>
+</tr>
+<tr class="row-even"><td><p>nfhout_hf</p></td>
+<td><p>model_configure</p></td>
+<td><p>1</p></td>
+<td><p>high history file output frequency</p></td>
+</tr>
+<tr class="row-odd"><td><p>nfhout</p></td>
+<td><p>model_configure</p></td>
+<td><p>3</p></td>
+<td><p>history file output frequency</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="how-do-i-set-the-total-number-of-tasks-for-my-job">
+<h2><span class="section-number">5.5. </span>How do I set the total number of tasks for my job?<a class="headerlink" href="#how-do-i-set-the-total-number-of-tasks-for-my-job" title="Permalink to this headline">¶</a></h2>
+<p>The total number of MPI tasks used by the UFS Weather Model is a combination of compute and quilt tasks, and can be calculated using the following relationship:</p>
+<ul class="simple">
+<li><p>total tasks = compute tasks + quilt tasks</p></li>
+<li><p>compute tasks = x layout * y layout * number of tiles</p></li>
+<li><p>quilt tasks = write_groups * write_tasks_per_group if quilting==.true.</p></li>
+</ul>
+<p>The layout and tiles settings are in <code class="docutils literal notranslate"><span class="pre">input.nml</span></code>, and the quilt task settings are in <code class="docutils literal notranslate"><span class="pre">model_configure</span></code></p>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">5. FAQ</a><ul>
+<li><a class="reference internal" href="#how-do-i-build-and-run-a-single-test-of-the-ufs-weather-model">5.1. How do I build and run a single test of the UFS Weather Model?</a></li>
+<li><a class="reference internal" href="#how-do-i-change-the-length-of-the-model-run">5.2. How do I change the length of the model run?</a></li>
+<li><a class="reference internal" href="#how-do-i-select-the-file-format-for-the-model-output-netcdf-or-nemsio">5.3. How do I select the file format for the model output (netCDF or NEMSIO)?</a></li>
+<li><a class="reference internal" href="#how-do-i-set-the-output-history-interval">5.4. How do I set the output history interval?</a></li>
+<li><a class="reference internal" href="#how-do-i-set-the-total-number-of-tasks-for-my-job">5.5. How do I set the total number of tasks for my job?</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="InputsOutputs.html"
+                        title="previous chapter"><span class="section-number">4. </span>Inputs and Outputs</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="Acronyms.html"
+                        title="next chapter"><span class="section-number">6. </span>Acronyms</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/FAQ.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="Acronyms.html" title="6. Acronyms"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="InputsOutputs.html" title="4. Inputs and Outputs"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">UFS Weather Model Users Guide  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><span class="section-number">5. </span>FAQ</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.1.
+    </div>
+  </body>
+</html>
