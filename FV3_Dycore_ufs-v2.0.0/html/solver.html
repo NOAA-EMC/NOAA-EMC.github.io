@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>FV3DYCORE: Main Page</title>
+<title>FV3DYCORE: The Nonhydrostatic Solver</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -78,7 +78,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('index.html','');});
+$(document).ready(function(){initNavTree('solver.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -97,27 +97,37 @@ $(document).ready(function(){initNavTree('index.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">FV3DYCORE Documentation</div>  </div>
+<div class="title">The Nonhydrostatic Solver </div>  </div>
 </div><!--header-->
 <div class="contents">
-<ul><li><a href="index.html"><span>Main&#160;Page</span></a>
-</li><li><a href="pages.html"><span>Related&#160;Pages</span></a>
-</li><li><a href="modules.html"><span>Namelist&#160;Guide</span></a>
-</li><li><a href="namespaces.html"><span>Modules</span></a>
-<ul><li><a href="namespaces.html"><span>Modules&#160;List</span></a>
-</li><li><a href="namespacemembers.html"><span>Module&#160;Members</span></a>
-</li></ul>
-</li><li><a href="annotated.html"><span>Data&#160;Types&#160;List</span></a>
-<ul><li><a href="annotated.html"><span>Data&#160;Types&#160;List</span></a>
-</li><li><a href="classes.html"><span>Data&#160;Types</span></a>
-</li><li><a href="functions.html"><span>Data&#160;Fields</span></a>
-</li></ul>
-</li><li><a href="files.html"><span>Files</span></a>
-<ul><li><a href="files.html"><span>File&#160;List</span></a>
-</li><li><a href="globals.html"><span>File&#160;Members</span></a>
-</li></ul>
-</li></ul>
-</div><!-- contents -->
+<div class="textblock"><h2>Chapter 6</h2>
+<p>GFDL will provide the additional documentation by the end of May 2021.</p>
+<p>(This information is a reproduction of Section 6 from HCZC20)</p>
+<p>An equation for \(z\) can be derived from the definition of \(w\):</p>
+<p class="formulaDsp">
+\[ w = \frac{Dz}{Dt} = D_Lz + \vec{U} \cdot \nabla z \\ \tag {6.1} \]
+</p>
+<p>The time-tendency of geopotential height is then the sum of the advective height flux along the Lagrangian interfaces and the vertical distortion of the surfaces by the gradient of \(z\). Discretizing:</p>
+<p class="formulaDsp">
+\[ z^{n + 1} = z^n + F [\tilde{u^*}, \delta z_y] + G[\tilde{v^*}, \delta z_x] + w^{n + 1} \triangle t \\ \tag {6.2} \]
+</p>
+<p>Since \(w\) is solved for on the interfaces, we can then simply take the vertical difference to get \(\delta z\).</p>
+<p>Recalling that the Lagrangian dynamics in (7) only performs the forward advection of the vertical velocity, yielding \(w^*\), we then need to evaluate the vertical pressure-gradient force:</p>
+<p class="formulaDsp">
+\[ w^{n + 1} = w^* -g \delta z^{n + 1} \delta_z p&#39;^{n + 1} \\ \tag {6.3} \]
+</p>
+<p>The pressure perturbation \(p&#39;\) can be evaluated from the ideal gas law,</p>
+<p class="formulaDsp">
+\[ p&#39; = p - p^* = \frac{\delta p}{g \delta z} R_d T_v - p^* \\ \tag {6.4} \]
+</p>
+<p>requiring simultaneous solution of \(w\), \(p&#39;\), and \(\delta z\) using a tridiagonal solver.</p>
+<p>There is an option to off-center the semi-implicit solver toreduce implicit diffusion. The parameter \(\alpha\) can be varied between 0.5 and 1 to control the amount of off-centering, with \(\alpha = 1\) being fully-implicit. As discussed in Chapter 4 this off-centering parameter should be set to \(\alpha = \beta - 1\), consistent with that used for the horizontal pressure-gradient force.</p>
+<p>The boundary conditions used are \(p&#39; = 0\) at the model top, and \(\vec{U} \widehat{\cdot} n_s = 0\) at the lower boundary of \(z = z_s\). This is the “free-slip” boundary condition, that the lower boundary is a streamline. The surface vertical velocity \(w_s\) can be computed from (11) by advecting the surface height \(z_s\):</p>
+<p class="formulaDsp">
+\[ w_s = \frac{z^*_s - z_s}{\triangle t} \\ \tag {6.5} \]
+</p>
+<p>where \(z_s^*\) is the advected value and \(z_s\) the height of the topography. </p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
