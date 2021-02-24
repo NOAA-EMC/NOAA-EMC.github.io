@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>FV3DYCORE: Main Page</title>
+<title>FV3DYCORE: fv_mp_mod Module Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -78,7 +78,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('index.html','');});
+$(document).ready(function(){initNavTree('namespacefv__mp__mod.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -96,32 +96,82 @@ $(document).ready(function(){initNavTree('index.html','');});
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">FV3DYCORE Documentation</div>  </div>
+<div class="title">fv_mp_mod Module Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<ul><li><a href="index.html"><span>Main&#160;Page</span></a>
-</li><li><a href="pages.html"><span>Related&#160;Pages</span></a>
-</li><li><a href="modules.html"><span>Namelist&#160;Guide</span></a>
-</li><li><a href="namespaces.html"><span>Modules</span></a>
-<ul><li><a href="namespaces.html"><span>Modules&#160;List</span></a>
-</li><li><a href="namespacemembers.html"><span>Module&#160;Members</span></a>
-</li></ul>
-</li><li><a href="annotated.html"><span>Data&#160;Types&#160;List</span></a>
-<ul><li><a href="annotated.html"><span>Data&#160;Types&#160;List</span></a>
-</li><li><a href="classes.html"><span>Data&#160;Types</span></a>
-</li><li><a href="functions.html"><span>Data&#160;Fields</span></a>
-</li></ul>
-</li><li><a href="files.html"><span>Files</span></a>
-<ul><li><a href="files.html"><span>File&#160;List</span></a>
-</li><li><a href="globals.html"><span>File&#160;Members</span></a>
-</li></ul>
-</li></ul>
+
+<p>The module '<a class="el" href="namespacefv__mp__mod.html" title="The module &#39;fv_mp_mod&#39; is a single program multiple data (SPMD) parallel decompostion/communication m...">fv_mp_mod</a>' is a single program multiple data (SPMD) parallel decompostion/communication module.  
+<a href="#details">More...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a5040ccdc5ac106793b009fe1ec4bf5d1"><td class="memItemLeft" align="right" valign="top">integer, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefv__mp__mod.html#a5040ccdc5ac106793b009fe1ec4bf5d1">masterproc</a> = 0</td></tr>
+<tr class="separator:a5040ccdc5ac106793b009fe1ec4bf5d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30b2cd26ed97df412ac7618005f079a5"><td class="memItemLeft" align="right" valign="top">integer, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefv__mp__mod.html#a30b2cd26ed97df412ac7618005f079a5">gid</a> = 0</td></tr>
+<tr class="separator:a30b2cd26ed97df412ac7618005f079a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac41de456a8350a1ffd448c11ad07f923"><td class="memItemLeft" align="right" valign="top">integer, parameter, public&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacefv__mp__mod.html#ac41de456a8350a1ffd448c11ad07f923">ng</a> = 3</td></tr>
+<tr class="separator:ac41de456a8350a1ffd448c11ad07f923"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>The module '<a class="el" href="namespacefv__mp__mod.html" title="The module &#39;fv_mp_mod&#39; is a single program multiple data (SPMD) parallel decompostion/communication m...">fv_mp_mod</a>' is a single program multiple data (SPMD) parallel decompostion/communication module. </p>
+</div><h2 class="groupheader">Variable Documentation</h2>
+<a id="a30b2cd26ed97df412ac7618005f079a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30b2cd26ed97df412ac7618005f079a5">&#9670;&nbsp;</a></span>gid</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">integer, public fv_mp_mod::gid = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__mp__mod_8F90_source.html#l02336">2336</a> of file <a class="el" href="fv__mp__mod_8F90_source.html">fv_mp_mod.F90</a>.</p>
+
+</div>
+</div>
+<a id="a5040ccdc5ac106793b009fe1ec4bf5d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5040ccdc5ac106793b009fe1ec4bf5d1">&#9670;&nbsp;</a></span>masterproc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">integer, public fv_mp_mod::masterproc = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__mp__mod_8F90_source.html#l02335">2335</a> of file <a class="el" href="fv__mp__mod_8F90_source.html">fv_mp_mod.F90</a>.</p>
+
+</div>
+</div>
+<a id="ac41de456a8350a1ffd448c11ad07f923"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac41de456a8350a1ffd448c11ad07f923">&#9670;&nbsp;</a></span>ng</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">integer, parameter, public fv_mp_mod::ng = 3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fv__mp__mod_8F90_source.html#l02337">2337</a> of file <a class="el" href="fv__mp__mod_8F90_source.html">fv_mp_mod.F90</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
+    <li class="navelem"><a class="el" href="namespacefv__mp__mod.html">fv_mp_mod</a></li>
     <li class="footer">Generated on Wed Feb 24 2021 08:04:37 for FV3DYCORE by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>

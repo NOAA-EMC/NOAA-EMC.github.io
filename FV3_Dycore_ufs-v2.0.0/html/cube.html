@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>FV3DYCORE: Main Page</title>
+<title>FV3DYCORE: Cubed-sphere grid</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -78,7 +78,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('index.html','');});
+$(document).ready(function(){initNavTree('cube.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -97,27 +97,44 @@ $(document).ready(function(){initNavTree('index.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">FV3DYCORE Documentation</div>  </div>
+<div class="title">Cubed-sphere grid </div>  </div>
 </div><!--header-->
 <div class="contents">
-<ul><li><a href="index.html"><span>Main&#160;Page</span></a>
-</li><li><a href="pages.html"><span>Related&#160;Pages</span></a>
-</li><li><a href="modules.html"><span>Namelist&#160;Guide</span></a>
-</li><li><a href="namespaces.html"><span>Modules</span></a>
-<ul><li><a href="namespaces.html"><span>Modules&#160;List</span></a>
-</li><li><a href="namespacemembers.html"><span>Module&#160;Members</span></a>
-</li></ul>
-</li><li><a href="annotated.html"><span>Data&#160;Types&#160;List</span></a>
-<ul><li><a href="annotated.html"><span>Data&#160;Types&#160;List</span></a>
-</li><li><a href="classes.html"><span>Data&#160;Types</span></a>
-</li><li><a href="functions.html"><span>Data&#160;Fields</span></a>
-</li></ul>
-</li><li><a href="files.html"><span>Files</span></a>
-<ul><li><a href="files.html"><span>File&#160;List</span></a>
-</li><li><a href="globals.html"><span>File&#160;Members</span></a>
-</li></ul>
-</li></ul>
-</div><!-- contents -->
+<div class="textblock"><h2>Chapter 2</h2>
+<p>GFDL will provide the additional documentation by the end of May 2021.</p>
+<p>(This information is a reproduction of Appendix A from PL07)</p>
+<p>In Section 2 of PL07 the flux-form multidimensional transport scheme is discretized in general non-orthogonal curvilinear coordinates. The covariant and contra-variant wind vector components are presented in Eqs. (4) and (5) (of Section 2 of PL07) based on the local unit vectors \( (\vec{e_1},\vec{e_2}) \) of the coordinate system. Given the angle \((\alpha)\) between the two unit vectors</p>
+<p class="formulaDsp">
+\[ \cos \alpha = \vec{e_1} \cdot \vec{e_2} \\ \tag {2.1} \]
+</p>
+<p>the covariant and contravariant components are related by the following relationships:</p>
+<p class="formulaDsp">
+\[ u = \tilde{u} + \tilde{v} \cos \alpha \\ \tag {2.2} \]
+</p>
+<p class="formulaDsp">
+\[ v = \tilde{v} + \tilde{u} \cos \alpha \\ \tag {2.3} \]
+</p>
+<p>or (solving for the contravaraint components)</p>
+<p class="formulaDsp">
+\[ \tilde{u} = \frac{1}{\sin^2 \alpha} [u - v \cos \alpha] \\ \tag {2.4} \]
+</p>
+<p class="formulaDsp">
+\[ \tilde{v} = \frac{1}{\sin^2 \alpha} [v - u \cos \alpha] \\ \tag {2.5} \]
+</p>
+<p>The winds on the cubed-sphere can be oriented to/from local coordinate orientation to a spherical latitude–longitude component form using the local unit vectors of the curvilinear coordinate system \((\vec{e_1},\vec{e_2})\) and the unit vector from the center of the sphere to the surface at the point of the vector location \((\vec{e_\lambda},\vec{e_\theta})\). Eqs.(2.6) and (2.7) represent the transformation from the spherical orientation \((u_{\lambda \theta},v_{\lambda \theta})\) to the local cubed-sphere form \((u,v)\) and the reverse transformation is presented in Eqs. (2.8) and (2.9).</p>
+<p class="formulaDsp">
+\[ u = (\vec{e_1} \cdot \vec{e_\lambda}) u_{\lambda \theta} + (\vec{e_1} \cdot \vec{e_\theta}) v_{\lambda \theta} \ \tag {2.6} \]
+</p>
+<p class="formulaDsp">
+\[ v = (\vec{e_2} \cdot \vec{e_\lambda}) u_{\lambda \theta} + (\vec{e_2} \cdot \vec{e_\theta}) v_{\lambda \theta} \ \tag {2.7} \]
+</p>
+<p class="formulaDsp">
+\[ u_{\lambda \theta} = \frac{ (\vec{e_2} \cdot \vec{e_\theta}) u - (\vec{e_1} \cdot \vec{e_\theta}) v }{ (\vec{e_1} \cdot \vec{e_\lambda}) (\vec{e_2} \cdot \vec{e_\theta}) - (\vec{e_2} \cdot \vec{e_\lambda}) (\vec{e_1} \cdot \vec{e_\theta}) } \\ \tag {2.8} \]
+</p>
+<p class="formulaDsp">
+\[ v_{\lambda \theta} = \frac{ (\vec{e_2} \cdot \vec{e_\lambda}) u - (\vec{e_1} \cdot \vec{e_\lambda}) v }{ (\vec{e_1} \cdot \vec{e_\lambda}) (\vec{e_2} \cdot \vec{e_\theta}) - (\vec{e_2} \cdot \vec{e_\lambda}) (\vec{e_1} \cdot \vec{e_\theta}) } \\ \tag {2.9} \]
+</p>
+ </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
