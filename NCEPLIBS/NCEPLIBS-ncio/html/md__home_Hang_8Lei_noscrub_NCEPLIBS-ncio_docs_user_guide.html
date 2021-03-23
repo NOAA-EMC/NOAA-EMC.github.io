@@ -155,7 +155,6 @@ $(document).ready(function(){initNavTree('md__home_Hang_8Lei_noscrub_NCEPLIBS-nc
 <li>integer function get_ndim(dset,varname)<ul>
 <li>! get Dimension index (ndim) given name</li>
 <li>! Dimension object can then be accessed via Datasetdimensions(ndim)</li>
-<li></li>
 </ul>
 </li>
 <li>function get_var(dset, varname) result (var) ! get Variable object given name</li>
@@ -174,7 +173,6 @@ $(document).ready(function(){initNavTree('md__home_Hang_8Lei_noscrub_NCEPLIBS-nc
 <li>! access (Default .false.)</li>
 <li>! mpicomm: optional MPI communicator to use (Default MPI_COMM_WORLD)</li>
 <li>! ignored if paropen=F</li>
-<li>!</li>
 <li>! returns Dataset object.</li>
 <li></li>
 </ul>
@@ -182,7 +180,6 @@ $(document).ready(function(){initNavTree('md__home_Hang_8Lei_noscrub_NCEPLIBS-nc
 <li>function create_dataset(filename, dsetin, copy_vardata, paropen, nocompress, mpicomm, errcode) result(dset)<ul>
 <li>! create new dataset, using an existing dataset object to define</li>
 <li>! variables, dimensions and attributes.</li>
-<li>!</li>
 <li>! filename: filename for netCDF Dataset.</li>
 <li>! dsetin: dataset object to use as a template.</li>
 <li>! copyvardata: optional flag to control whether all variable</li>
@@ -196,7 +193,6 @@ $(document).ready(function(){initNavTree('md__home_Hang_8Lei_noscrub_NCEPLIBS-nc
 <li>! compressed (Default .false.).</li>
 <li>! mpicomm: optional MPI communicator to use (Default MPI_COMM_WORLD)</li>
 <li>! ignored if paropen=F</li>
-<li>!</li>
 <li>! returns Dataset object.</li>
 </ul>
 </li>
@@ -208,7 +204,6 @@ $(document).ready(function(){initNavTree('md__home_Hang_8Lei_noscrub_NCEPLIBS-nc
 </li>
 <li>subroutine read_vardata(dset,varname,values,nslice,slicedim,errcode)<ul>
 <li>! read data from variable varname in dataset dset, return in it array values.</li>
-<li>!</li>
 <li>! dset: Input dataset instance returned by open_dataset/create_dataset.</li>
 <li>! varname: Input string name of variable.</li>
 <li>! values: Array to hold variable data. Must be</li>
@@ -228,7 +223,6 @@ $(document).ready(function(){initNavTree('md__home_Hang_8Lei_noscrub_NCEPLIBS-nc
 </li>
 <li>subroutine write_vardata(dset,varname,values,nslice,slicedim,errcode)<ul>
 <li>! write data (in array values) to variable varname in dataset dset.</li>
-<li>!</li>
 <li>! dset: Input dataset instance returned by open_dataset/create_dataset.</li>
 <li>! varname: Input string name of variable.</li>
 <li>! values: Array with variable data. Must be</li>
