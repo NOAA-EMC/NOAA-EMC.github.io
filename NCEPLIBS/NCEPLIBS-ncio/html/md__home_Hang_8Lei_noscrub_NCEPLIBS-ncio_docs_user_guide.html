@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.5"/>
-<title>NCEPLIBS-ncio: user_guide</title>
+<title>NCEPLIBS-ncio: API</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -97,10 +97,170 @@ $(document).ready(function(){initNavTree('md__home_Hang_8Lei_noscrub_NCEPLIBS-nc
 
 <div class="header">
   <div class="headertitle">
-<div class="title">user_guide </div>  </div>
+<div class="title">API </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"></div></div><!-- contents -->
+<div class="textblock"><ul>
+<li>type Variable<ul>
+<li>integer varid ! netCDF variable ID</li>
+<li>integer ndims ! number of dimensions</li>
+<li>integer dtype ! netCDF data type</li>
+<li>integer natts ! number of attributes</li>
+<li>integer deflate_level ! compression level (if &gt; 0)</li>
+<li>logical shuffle ! shuffle filter?</li>
+<li>logical hasunlim ! has an unlimited dim?</li>
+<li>character(len=nf90_max_name) :: name ! variable name</li>
+<li>integer, allocatable, dimension(:) :: dimids ! netCDF dimension IDs</li>
+<li>! indices into Datasetdimensions for associated dimensions.</li>
+<li>integer, allocatable, dimension(:) :: dimindxs</li>
+<li>! names of associated dimensions.</li>
+<li>character(len=nf90_max_name), allocatable, dimension(:) :: dimnames</li>
+<li>! current dimension lengths (updated after every write_vardata call)</li>
+<li>integer, allocatable, dimension(:) :: dimlens</li>
+<li>integer, allocatable, dimension(:) :: chunksizes</li>
+</ul>
+</li>
+<li>end type Variable</li>
+<li>type Dimension<ul>
+<li>integer dimid ! netCDF dimension ID</li>
+<li>integer len ! dimension length (updated after every write_vardata call)</li>
+<li>logical isunlimited ! unlimited?</li>
+<li>character(len=nf90_max_name) :: name ! name of dimension</li>
+</ul>
+</li>
+<li>end type Dimension</li>
+<li>type Dataset<ul>
+<li>integer :: ncid ! netCDF ID.</li>
+<li>integer :: nvars ! number of variables in dataset</li>
+<li>integer :: ndims ! number of dimensions in dataset</li>
+<li>integer :: natts ! number of dataset (global) attributes</li>
+<li>integer :: nunlimdim ! dimension ID for unlimited dimension</li>
+<li>logical :: ishdf5 ! is underlying disk format HDF5?</li>
+<li>logical :: isparallel ! was file opened for parallel I/O?</li>
+<li>character(len=500) filename ! netCDF filename</li>
+<li>! array of Variable instances</li>
+<li>type(Variable), allocatable, dimension(:) :: variables</li>
+<li>! array of Dimension instances</li>
+<li>type(Dimension), allocatable, dimension(:) :: dimensions</li>
+</ul>
+</li>
+<li>end type Dataset</li>
+<li>logical function has_var(dset, varname) ! returns .true. is varname exists in dset, otherwise .false.</li>
+<li>logical function has_attr(dset, attname, varname)<ul>
+<li>! returns .true. if attribute exists in dset, otherwise .false.</li>
+<li>! use optional kwarg varname to check for a variable attribute.</li>
+</ul>
+</li>
+<li>function get_dim(dset, dimname) result(dim) ! get Dimension object given name</li>
+<li>integer function get_ndim(dset,varname)<ul>
+<li>! get Dimension index (ndim) given name</li>
+<li>! Dimension object can then be accessed via Datasetdimensions(ndim)</li>
+<li></li>
+</ul>
+</li>
+<li>function get_var(dset, varname) result (var) ! get Variable object given name</li>
+<li>integer function get_nvar(dset,varname)<ul>
+<li>! get variable index (nvar) given name</li>
+<li>! Variable object can then be accessed via Datasetvariables(nvar)</li>
+</ul>
+</li>
+<li>function open_dataset(filename,errcode,paropen, mpicomm) result(dset)<ul>
+<li>! open existing dataset, create dataset object for reading netcdf file</li>
+<li>!</li>
+<li>! filename: filename of netCDF Dataset.</li>
+<li>! errcode: optional error return code. If not specified</li>
+<li>! the program will stop if a nonzero error code returned by the netcdf lib.</li>
+<li>! paropen: optional flag to indicate whether to open dataset for parallel</li>
+<li>! access (Default .false.)</li>
+<li>! mpicomm: optional MPI communicator to use (Default MPI_COMM_WORLD)</li>
+<li>! ignored if paropen=F</li>
+<li>!</li>
+<li>! returns Dataset object.</li>
+<li></li>
+</ul>
+</li>
+<li>function create_dataset(filename, dsetin, copy_vardata, paropen, nocompress, mpicomm, errcode) result(dset)<ul>
+<li>! create new dataset, using an existing dataset object to define</li>
+<li>! variables, dimensions and attributes.</li>
+<li>!</li>
+<li>! filename: filename for netCDF Dataset.</li>
+<li>! dsetin: dataset object to use as a template.</li>
+<li>! copyvardata: optional flag to control whether all variable</li>
+<li>! data is copied (Default is .false., only coordinate</li>
+<li>! variable data is copied).</li>
+<li>! errcode: optional error return code. If not specified</li>
+<li>! the program will stop if a nonzero error code returned by the netcdf lib.</li>
+<li>! paropen: optional flag to indicate whether to open dataset for parallel</li>
+<li>! access (Default .false.)</li>
+<li>! nocompress: optional flag to disable compression even if input dataset is</li>
+<li>! compressed (Default .false.).</li>
+<li>! mpicomm: optional MPI communicator to use (Default MPI_COMM_WORLD)</li>
+<li>! ignored if paropen=F</li>
+<li>!</li>
+<li>! returns Dataset object.</li>
+</ul>
+</li>
+<li>subroutine close_dataset(dset,errcode)<ul>
+<li>! close netcdf file, deallocate members of dataset object.</li>
+<li>! if optional error return code errcode is not specified,</li>
+<li>! program will stop if a nonzero error code returned by the netcdf lib.</li>
+</ul>
+</li>
+<li>subroutine read_vardata(dset,varname,values,nslice,slicedim,errcode)<ul>
+<li>! read data from variable varname in dataset dset, return in it array values.</li>
+<li>!</li>
+<li>! dset: Input dataset instance returned by open_dataset/create_dataset.</li>
+<li>! varname: Input string name of variable.</li>
+<li>! values: Array to hold variable data. Must be</li>
+<li>! an allocatable array with same rank</li>
+<li>! as variable varname (or 1 dimension less).</li>
+<li>! nslice: optional index along dimension slicedim</li>
+<li>! slicedim: optional, if nslice is set, index of which dimension to slice with</li>
+<li>! nslice, default is ndims</li>
+<li>! ncstart: optional, if ncstart and nccount are set, manually specify the</li>
+<li>! start and count of netCDF read</li>
+<li>! nccount: optional, if ncstart and nccount are set, manually specify the</li>
+<li>! start and count of netCDF read</li>
+<li>! errcode: optional error return code. If not specified,</li>
+<li>! program will stop if a nonzero error code returned</li>
+<li>! from netcdf library. /</li>
+</ul>
+</li>
+<li>subroutine write_vardata(dset,varname,values,nslice,slicedim,errcode)<ul>
+<li>! write data (in array values) to variable varname in dataset dset.</li>
+<li>!</li>
+<li>! dset: Input dataset instance returned by open_dataset/create_dataset.</li>
+<li>! varname: Input string name of variable.</li>
+<li>! values: Array with variable data. Must be</li>
+<li>! an allocatable array with same rank</li>
+<li>! as variable varname (or 1 dimension less).</li>
+<li>! nslice: optional index along dimension slicedim</li>
+<li>! slicedim: optional, if nslice is set, index of which dimension to slice with</li>
+<li>! nslice, default is ndims</li>
+<li>! ncstart: optional, if ncstart and nccount are set, manually specify the</li>
+<li>! start and count of netCDF write</li>
+<li>! nccount: optional, if ncstart and nccount are set, manually specify the</li>
+<li>! start and count of netCDF write</li>
+<li>! errcode: optional error return code. If not specified,</li>
+<li>! program will stop if a nonzero error code returned</li>
+<li>! from netcdf library.</li>
+</ul>
+</li>
+<li>subroutine read_attribute(dset, attname, values, varname, errcode)<ul>
+<li>! read attribute 'attname' return in 'values'. If optional</li>
+<li>! argument 'varname' is given, a variable attribute is returned.</li>
+<li>! if the attribute is a 1d array, values should be an allocatable 1d</li>
+<li>! array of the correct type.</li>
+</ul>
+</li>
+<li>subroutine write_attribute(dset, attname, values, varname, errcode)<ul>
+<li>! write attribute 'attname' with data in 'values'. If optional</li>
+<li>! argument 'varname' is given, a variable attribute is written.</li>
+<li>! values can be a real(4), real(8), integer, string or 1d array. </li>
+</ul>
+</li>
+</ul>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

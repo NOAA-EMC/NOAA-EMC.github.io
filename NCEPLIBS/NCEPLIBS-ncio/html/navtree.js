@@ -1,7 +1,8 @@
 var NAVTREE =
 [
   [ "NCEPLIBS-ncio", "index.html", [
-    [ "user_guide", "md__home_Hang_8Lei_noscrub_NCEPLIBS-ncio_docs_user_guide.html", null ],
+    [ "Main", "md__home_Hang_8Lei_noscrub_NCEPLIBS-ncio_docs_Main.html", null ],
+    [ "API", "md__home_Hang_8Lei_noscrub_NCEPLIBS-ncio_docs_user_guide.html", null ],
     [ "Data Types List", null, [
       [ "Data Types List", "annotated.html", "annotated" ],
       [ "Data Fields", "functions.html", [
